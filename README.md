@@ -1,8 +1,6 @@
 # IbrahimJahwari.github.io
 
-** Author: Ibrahim **
-
-
+**Author: Ibrahim"**
 asdf
 just some updates! 
 
