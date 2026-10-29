@@ -40,3 +40,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-10-29T15:59:00Z,waterloo-city,tube,0,10,Good Service,
 2026-10-29T15:59:00Z,weaver,overground,0,10,Good Service,
 2026-10-29T15:59:00Z,windrush,overground,0,10,Good Service,
+2026-10-29T21:15:00Z,bakerloo,tube,0,10,Good Service,
+2026-10-29T21:15:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-10-29T21:15:00Z,circle,tube,0,10,Good Service,
+2026-10-29T21:15:00Z,district,tube,0,10,Good Service,
+2026-10-29T21:15:00Z,dlr,dlr,0,10,Good Service,
+2026-10-29T21:15:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-10-29T21:15:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-10-29T21:15:00Z,jubilee,tube,0,9,Minor Delays,Jubilee Line: Minor delays due to train cancellations.
+2026-10-29T21:15:00Z,liberty,overground,0,10,Good Service,
+2026-10-29T21:15:00Z,lioness,overground,0,10,Good Service,
+2026-10-29T21:15:00Z,metropolitan,tube,0,9,Minor Delays,Metropolitan Line: No service between Harrow-on-the-Hill and Uxbridge and MINOR DELAYS between Harrow-on-the-Hill and Aldgate while we fix a signal failure at Harrow-on-the-Hill and NO SERVICE between Moor Park and Watford while we deal with a signalling problem at Croxley. GOOD SERVICE on the rest of the line. Tickets are being accepted on London Buses.
+2026-10-29T21:15:00Z,metropolitan,tube,1,3,Part Suspended,Metropolitan Line: No service between Harrow-on-the-Hill and Uxbridge and MINOR DELAYS between Harrow-on-the-Hill and Aldgate while we fix a signal failure at Harrow-on-the-Hill and NO SERVICE between Moor Park and Watford while we deal with a signalling problem at Croxley. GOOD SERVICE on the rest of the line. Tickets are being accepted on London Buses.
+2026-10-29T21:15:00Z,mildmay,overground,0,7,Reduced Service,"MILDMAY LINE: Wednesday 28 and Thursday 29 October, The 2129 and 2159 trains from Stratford to Richmond and 2135 train from Stratford to Clapham Junction will terminate at Camden Road."
+2026-10-29T21:15:00Z,northern,tube,0,10,Good Service,
+2026-10-29T21:15:00Z,piccadilly,tube,0,5,Part Closure,"PICCADILLY LINE: Wednesday 28, Thursday 29 and Friday 30 October, no service between Cockfosters and Uxbridge. Trains continue to operate between Acton Town and Heathrow, all terminals. Use the METROPOLITAN LINE between Rayners Lane and Uxbridge, and ELIZABETH LINE services between Central London and Heathrow. Replacement bus services operate."
+2026-10-29T21:15:00Z,suffragette,overground,0,5,Part Closure,Suffragette Line: No service between South Tottenham and Barking Riverside due to a operational incident. MINOR DELAYS on the rest of the line. London Underground and London Buses are accepting tickets via any reasonable routes. Disruption is expected until early next week.
+2026-10-29T21:15:00Z,suffragette,overground,1,9,Minor Delays,Suffragette Line: No service between South Tottenham and Barking Riverside due to a operational incident. MINOR DELAYS on the rest of the line. London Underground accepting tickets via any reasonable routes. Disruption expected until the end of the week.
+2026-10-29T21:15:00Z,tram,tram,0,5,Part Closure,"LONDON TRAMS: Saturday 24 October to Thursday 5 November, no service between East Croydon and Beckenham Junction / Elmers End / New Addington due to planned engineering work. SOUTHERN services continue to serve Birkbeck, except on Sundays. Replacement bus services operate"
+2026-10-29T21:15:00Z,victoria,tube,0,10,Good Service,
+2026-10-29T21:15:00Z,waterloo-city,tube,0,10,Good Service,
+2026-10-29T21:15:00Z,weaver,overground,0,10,Good Service,
+2026-10-29T21:15:00Z,windrush,overground,0,10,Good Service,
