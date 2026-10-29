@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TfL pipeline status</title>
+<style>
+:root{--bg:#fff;--fg:#1a1a19;--muted:#6b6a66;--line:#e1e0d9}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1a19;--fg:#f0efec;--muted:#a3a29b;--line:#383835}}
+body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--fg);max-width:640px;margin:2rem auto;padding:0 1rem}
+table{border-collapse:collapse;width:100%}
+td{padding:.4rem 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+p{color:var(--muted)}
+</style>
+</head>
+<body>
+<h1>Pipeline status</h1>
+<table id="t"></table>
+<p id="note">Loading...</p>
+<script>
+// The pipeline writes to the `data` branch of this repo; the page reads it from there.
+const DATA = "https://raw.githubusercontent.com/IbrahimJahwari/IbrahimJahwari.github.io/data/";
+fetch(DATA + "processed/status.json?t=" + Date.now())
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(s => {
+    const rows = [
+      ["Latest collection (UTC)", s.latest_run_utc],
+      ["Latest crowding reading (UTC)", s.latest_observation_utc],
+      ["Collections today", s.runs_today],
+      ["Stations reporting", s.stations_with_data + " of " + s.stations_total],
+      ["Median crowding index", s.median_crowding],
+      ["Lines not on good service", (s.lines_not_good_service || []).length],
+      ["Stations with a lift out", s.stations_with_lift_out],
+      ["Failed source calls today", s.failed_source_calls_today]
+    ];
+    document.getElementById("t").innerHTML =
+      rows.map(r => "<tr><td>" + r[0] + "</td><td>" + (r[1] ?? "n/a") + "</td></tr>").join("");
+    document.getElementById("note").textContent = "Status file written: " + s.generated_utc + " UTC";
+  })
+  .catch(() => { document.getElementById("note").textContent = "No status file yet."; });
+</script>
+</body>
+</html>
