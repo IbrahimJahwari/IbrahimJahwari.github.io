@@ -3,19 +3,22 @@
 Run by GitHub Actions every 15 minutes (.github/workflows/collect.yml), or by hand:
     TFL_APP_KEY=... python pipeline/collect.py
 
+Also keeps reference/disruption_texts.csv: each distinct disruption text, stored once.
+
 Writes to $DATA_DIR/raw/YYYY-MM-DD/ (default _data/raw/..., which is git-ignored;
 in CI DATA_DIR is the checked-out `data` branch) (all rows share one run_utc, the join key):
     crowding             live crowding for every Underground station (demand proxy)
     line_status          status of every rail line (supply shock: delays, closures)
     lifts                lifts currently out of service (accessibility shock)
-    station_disruptions  station-level disruptions (supply shock)
-    line_supply          trains with predictions, per line and direction (supply)
+    station_disruptions  station-level disruptions, one short row each (text is stored once)
+    line_supply          trains with predictions per line; direction 'all' counts each train once
+                         (direction 'unknown' = predictions TfL gives no direction for)
     station_supply       trains due in 15 min, per station/line/direction (hourly only)
     collection_log       one row per source per run, so gaps and failures are visible
 """
 import argparse
 import csv
-import json
+import hashlib
 import sys
 import time
 from collections import defaultdict
@@ -31,11 +34,14 @@ NORMAL_STATUS = (10, 18)  # Good Service / No Issues
 
 class Store:
     def __init__(self, root, run_utc):
-        self.dir = Path(root) / run_utc[:10]
+        self.root = Path(root)
+        self.dir = self.root / run_utc[:10]
         self.dir.mkdir(parents=True, exist_ok=True)
 
     def append(self, table, header, rows):
-        path = self.dir / f"{table}.csv"
+        # tables named "reference/..." live in raw/reference/, everything else in the daily folder
+        path = (self.root / f"{table}.csv") if table.startswith("reference/") else (self.dir / f"{table}.csv")
+        path.parent.mkdir(parents=True, exist_ok=True)
         new = not path.exists()
         with open(path, "a", newline="", encoding="utf-8") as f:
             w = csv.writer(f)
@@ -109,15 +115,39 @@ def collect_lifts(api, run):
     return [("lifts", header, rows)], ["lifts", True, r["status"], len(rows), 0, r["secs"], ""]
 
 
-def collect_station_disruptions(api, run):
+def load_known_texts(root):
+    path = Path(root) / "reference" / "disruption_texts.csv"
+    if not path.exists():
+        return set()
+    with open(path, newline="", encoding="utf-8") as f:
+        return {r["text_id"] for r in csv.DictReader(f)}
+
+
+def squash(text):
+    return " ".join((text or "").split())
+
+
+def collect_station_disruptions(api, run, root):
     r, body = simple(api, "/StopPoint/Mode/tube/Disruption")
     if body is None:
         return [], ["station_disruptions", False, r["status"], 0, 1, r["secs"], r["err"] or "unexpected body"]
-    rows = [[run, d.get("atcoCode") or d.get("stationAtcoCode"), d.get("commonName"), d.get("type"),
-             d.get("fromDate"), d.get("toDate"), json.dumps(d, separators=(",", ":"))] for d in body]
-    header = ["run_utc", "atco_code", "common_name", "type", "from_date", "to_date", "item_json"]
-    return [("station_disruptions", header, rows)], \
-        ["station_disruptions", True, r["status"], len(rows), 0, r["secs"], ""]
+    known = load_known_texts(root)
+    rows, new_texts = [], []
+    for d in body:
+        desc, extra = squash(d.get("description")), squash(d.get("additionalInformation"))
+        key = "|".join([desc, extra, str(d.get("type")), str(d.get("appearance")),
+                        str(d.get("fromDate")), str(d.get("toDate"))])
+        tid = hashlib.sha1(key.encode("utf-8")).hexdigest()[:12]
+        if tid not in known:  # same text at 40 stations is stored once
+            known.add(tid)
+            new_texts.append([tid, run, desc, extra])
+        lines = ";".join(str(c.get("id")) for c in d.get("concernedLines") or [])
+        rows.append([run, d.get("atcoCode") or d.get("stationAtcoCode"), d.get("type"), d.get("appearance"),
+                     d.get("fromDate"), d.get("toDate"), lines, tid])
+    header = ["run_utc", "atco_code", "type", "appearance", "from_date", "to_date", "lines", "text_id"]
+    tables = [("station_disruptions", header, rows),
+              ("reference/disruption_texts", ["text_id", "first_seen_utc", "description", "additional_information"], new_texts)]
+    return tables, ["station_disruptions", True, r["status"], len(rows), 0, r["secs"], f"{len(new_texts)} new texts"]
 
 
 def collect_supply(api, run, hourly):
@@ -136,6 +166,8 @@ def collect_supply(api, run, hourly):
             by_dir = defaultdict(list)
             for p in preds:
                 by_dir[p.get("direction") or "unknown"].append(p)
+            all_vehicles = {p.get("vehicleId") for p in preds if p.get("vehicleId")}
+            line_rows.append([run, line, "all", len(preds), len(all_vehicles), len({p.get("naptanId") for p in preds})])
             for direction, ps in by_dir.items():
                 vehicles = {p.get("vehicleId") for p in ps if p.get("vehicleId")}
                 stops = {p.get("naptanId") for p in ps}
@@ -178,7 +210,7 @@ def main():
         ("crowding", lambda: collect_crowding(api, run, station_ids)),
         ("line_status", lambda: collect_line_status(api, run)),
         ("lifts", lambda: collect_lifts(api, run)),
-        ("station_disruptions", lambda: collect_station_disruptions(api, run)),
+        ("station_disruptions", lambda: collect_station_disruptions(api, run, args.out)),
         ("supply", lambda: collect_supply(api, run, hourly)),
     ]
     log_rows, n_ok = [], 0
