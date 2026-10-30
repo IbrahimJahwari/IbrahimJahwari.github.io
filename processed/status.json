@@ -1,21 +1,18 @@
 {
- "generated_utc": "2026-10-30T01:08:16Z",
- "latest_run_utc": "2026-10-30T01:08:00Z",
- "latest_observation_utc": "2026-10-30T01:06:00.000Z",
- "runs_today": 1,
+ "generated_utc": "2026-10-30T05:51:48Z",
+ "latest_run_utc": "2026-10-30T05:51:00Z",
+ "latest_observation_utc": "2026-10-30T05:46:00.000Z",
+ "runs_today": 2,
  "stations_total": 270,
  "stations_with_data": 252,
- "median_crowding": 0.021,
+ "median_crowding": 0.019,
  "lines_not_good_service": [
-  "jubilee",
-  "metropolitan",
-  "mildmay",
+  "elizabeth",
   "piccadilly",
   "suffragette",
   "tram",
-  "waterloo-city",
-  "windrush"
+  "waterloo-city"
  ],
- "stations_with_lift_out": 14,
+ "stations_with_lift_out": 12,
  "failed_source_calls_today": 0
 }
