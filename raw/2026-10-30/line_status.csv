@@ -1,0 +1,23 @@
+run_utc,line_id,mode,status_index,severity,description,reason
+2026-10-30T01:08:00Z,bakerloo,tube,0,10,Good Service,
+2026-10-30T01:08:00Z,central,tube,0,10,Good Service,
+2026-10-30T01:08:00Z,circle,tube,0,10,Good Service,
+2026-10-30T01:08:00Z,district,tube,0,10,Good Service,
+2026-10-30T01:08:00Z,dlr,dlr,0,10,Good Service,
+2026-10-30T01:08:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-10-30T01:08:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-10-30T01:08:00Z,jubilee,tube,0,9,Minor Delays,Jubilee Line: Minor delays due to train cancellations.
+2026-10-30T01:08:00Z,liberty,overground,0,10,Good Service,
+2026-10-30T01:08:00Z,lioness,overground,0,10,Good Service,
+2026-10-30T01:08:00Z,metropolitan,tube,0,6,Severe Delays,"Metropolitan Line: Severe delays due to an earlier signal failure at Harrow-on-the Hill. Tickets are being accepted on London Buses, London Overground, London Northwestern Railway, Chiltern Railways and Thameslink services."
+2026-10-30T01:08:00Z,mildmay,overground,0,5,Part Closure,"MILDMAY LINE: Monday 26, Tuesday 27, Wednesday 28 and Thursday 29 October, from 2345 each evening, no westbound service from Stratford to Camden Road. The 2359 and 0015 services from Stratford will start from Camden Road at 0018 and 0035. Customers should use the last westbound service from Stratford at 2344, or local bus routes 30, 274, 388, 393 or 488."
+2026-10-30T01:08:00Z,mildmay,overground,1,5,Part Closure,"MILDMAY LINE: Wednesday 28 and Thursday 29 October, after 2300 each evening, no eastbound service from Willesden Junction to Stratford. Customers should use the last eastbound services detailed or London Overground services to Euston. Last through trains: Clapham Junction to Stratford 2218; Richmond to Stratford 2232; Willesden Junction to Stratford 2252. In addition, the 2249 train from Richmond to Stratford will not run, the 2302 train from Richmond to Stratford will terminate at Willesden Junction and the 2318 train from Richmond to Willesden Junction will not run"
+2026-10-30T01:08:00Z,northern,tube,0,10,Good Service,
+2026-10-30T01:08:00Z,piccadilly,tube,0,5,Part Closure,"PICCADILLY LINE: Wednesday 28, Thursday 29 and Friday 30 October, no service between Cockfosters and Uxbridge. Trains continue to operate between Acton Town and Heathrow, all terminals. Use the METROPOLITAN LINE between Rayners Lane and Uxbridge, and ELIZABETH LINE services between Central London and Heathrow. Replacement bus services operate."
+2026-10-30T01:08:00Z,suffragette,overground,0,5,Part Closure,Suffragette Line: No service between South Tottenham and Barking Riverside due to a operational incident. MINOR DELAYS on the rest of the line. London Underground and London Buses are accepting tickets via any reasonable routes. Disruption is expected until early next week.
+2026-10-30T01:08:00Z,suffragette,overground,1,9,Minor Delays,Suffragette Line: No service between South Tottenham and Barking Riverside due to a operational incident. MINOR DELAYS on the rest of the line. London Underground accepting tickets via any reasonable routes. Disruption expected until the end of the week.
+2026-10-30T01:08:00Z,tram,tram,0,5,Part Closure,"LONDON TRAMS: Saturday 24 October to Thursday 5 November, no service between East Croydon and Beckenham Junction / Elmers End / New Addington due to planned engineering work. SOUTHERN services continue to serve Birkbeck, except on Sundays. Replacement bus services operate"
+2026-10-30T01:08:00Z,victoria,tube,0,10,Good Service,
+2026-10-30T01:08:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00.
+2026-10-30T01:08:00Z,weaver,overground,0,10,Good Service,
+2026-10-30T01:08:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: Monday 26, Tuesday 27, Wednesday 28 and Thursday 29 October, after 2330 each evening, no service between New Cross Gate and West Croydon / Crystal Palace. Rail replacement buses will run as follows: The bus for Crystal Palace will depart London Bridge at 2358 calling at New Cross Gate, Brockley, Honor Oak Park, Forest Hill, Sydenham, Crystal Palace, Gipsy Hill, West Norwood, Tulse Hill and Streatham Hill. The bus for East Croydon will depart London Bridge at 0035 calling at New Cross Gate, Brockley, Honor Oak Park, Forest Hill, Sydenham, Norwood Junction and East Croydon (Arr 01:27). One return bus from Crystal Palace departs at 2359, calling at all stations to London Bridge via New Cross Gate. Alternatively, use local buses or trams via any reasonable route. The 2232 and 2247 trains from Highbury & Islington to West Croydon will both divert to Crystal Palace. The 2338 train from Dalston Junction to New Cross Gate will not run"
