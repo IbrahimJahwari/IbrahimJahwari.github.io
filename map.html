@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tube crowding against normal</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+:root{--bg:#fff;--fg:#1a1a19;--muted:#6b6a66;--line:#e1e0d9}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1a19;--fg:#f0efec;--muted:#a3a29b;--line:#383835}}
+body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--fg);max-width:960px;margin:1.5rem auto;padding:0 1rem}
+h1{font-size:1.5rem;margin:0 0 .25rem}
+.muted{color:var(--muted);font-size:.9rem;margin:.25rem 0}
+.controls{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin:.75rem 0}
+.controls label{display:inline-flex;gap:.35rem;align-items:center}
+select{font:inherit;padding:.2rem .4rem;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:6px}
+#map{height:68vh;min-height:420px;border-radius:12px;border:1px solid var(--line)}
+.legend{display:flex;align-items:center;gap:.6rem;margin:.75rem 0;font-size:.85rem;color:var(--muted)}
+.bar{flex:0 1 260px;height:10px;border-radius:5px}
+</style>
+</head>
+<body>
+<h1>Tube crowding against normal</h1>
+<p id="status" class="muted">Loading…</p>
+
+<div class="controls">
+  <span role="radiogroup" aria-label="Colour stations by">
+    <label><input type="radio" name="mode" value="excess" checked> Compared with typical</label>
+    <label><input type="radio" name="mode" value="live"> Live level</label>
+  </span>
+  <label>Line <select id="line"><option value="">All lines</option></select></label>
+</div>
+
+<div id="map" role="img" aria-label="Map of London Underground stations coloured by crowding"></div>
+<div class="legend" id="legend"></div>
+<p class="muted">The crowding index is each station’s Wi-Fi-based reading as a share of its own busiest week since July 2019. Typical is TfL’s average for the same weekday and 15-minute band. Hollow grey dots have no usable reading.</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+// The pipeline writes to the `data` branch of this repo; this page reads it from there.
+const DATA = "https://raw.githubusercontent.com/IbrahimJahwari/IbrahimJahwari.github.io/data/";
+
+const GREY = [184, 182, 174], BLUE = [42, 120, 214], ORANGE = [235, 104, 52];
+const LOW = [235, 233, 225], HIGH = [24, 72, 140];
+const LIMIT = 0.25;                      // colour saturates at +/- 25 index points
+const mix = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
+const rgb = c => `rgb(${c[0]},${c[1]},${c[2]})`;
+const colExcess = x => rgb(mix(GREY, x < 0 ? BLUE : ORANGE, Math.min(Math.abs(x) / LIMIT, 1)));
+const colLive = x => rgb(mix(LOW, HIGH, Math.min(x / 0.5, 1)));
+const pts = x => (x * 100).toFixed(0);
+const sign = x => (x > 0 ? "+" : x < 0 ? "−" : "");
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;"}[c]));
+
+const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const map = L.map("map", {zoomSnap: 0.5}).setView([51.51, -0.12], 10.5);
+L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark ? "dark_all" : "light_all"}/{z}/{x}/{y}{r}.png`, {
+  maxZoom: 16, subdomains: "abcd",
+  attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
+}).addTo(map);
+
+let stations = [], markers = [];
+
+function style(s) {
+  const mode = document.querySelector("input[name=mode]:checked").value;
+  const line = document.getElementById("line").value;
+  const onLine = !line || s.lines.includes(line);
+  const value = mode === "excess" ? s.excess : s.live;
+  if (value === null || value === undefined) {
+    return {radius: 4, weight: 1.5, color: "#8a8982", fillColor: "#8a8982", fillOpacity: 0, opacity: onLine ? 0.8 : 0.15};
+  }
+  return {
+    radius: 6.5, weight: 1, color: dark ? "#111" : "#fff", opacity: onLine ? 1 : 0.15,
+    fillColor: mode === "excess" ? colExcess(value) : colLive(value), fillOpacity: onLine ? 0.92 : 0.12
+  };
+}
+
+function tip(s) {
+  let t = `<strong>${esc(s.name)}</strong><br>${esc(s.lines.join(", "))}`;
+  if (s.live === null) return t + "<br>No reading";
+  t += `<br>Live ${pts(s.live)}`;
+  if (s.typical !== null && s.typical !== undefined) {
+    t += ` · typical ${pts(s.typical)} · ${sign(s.excess)}${pts(Math.abs(s.excess))}`;
+  } else {
+    t += " · no typical value";
+  }
+  if (s.lifts) t += `<br>${s.lifts} lifts`;
+  return t;
+}
+
+function legend() {
+  const mode = document.querySelector("input[name=mode]:checked").value;
+  const el = document.getElementById("legend");
+  const stops = mode === "excess"
+    ? `${rgb(BLUE)}, ${rgb(GREY)}, ${rgb(ORANGE)}`
+    : `${rgb(LOW)}, ${rgb(HIGH)}`;
+  const [a, b] = mode === "excess" ? ["below typical (−25 or more)", "above typical (+25 or more)"]
+                                    : ["quiet (0)", "busy (50 or more)"];
+  el.innerHTML = `<span>${a}</span><span class="bar" style="background:linear-gradient(to right, ${stops})"></span><span>${b}</span>`;
+}
+
+function redraw() {
+  markers.forEach((m, i) => m.setStyle(style(stations[i])));
+  legend();
+}
+
+fetch(DATA + "processed/map_latest.json?t=" + Date.now())
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => {
+    stations = d.stations.filter(s => s.lat !== null && s.lon !== null);
+    const lines = [...new Set(stations.flatMap(s => s.lines))].sort();
+    const sel = document.getElementById("line");
+    lines.forEach(l => sel.add(new Option(l, l)));
+    stations.forEach(s => {
+      const m = L.circleMarker([s.lat, s.lon], style(s)).bindTooltip(tip(s), {sticky: true}).addTo(map);
+      markers.push(m);
+    });
+    const withLive = stations.filter(s => s.live !== null).length;
+    const when = new Date(d.run_utc).toLocaleString("en-GB", {timeZone: "UTC", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit"});
+    document.getElementById("status").textContent =
+      `Collected ${when} UTC · ${withLive} of ${stations.length} stations reporting`;
+    legend();
+  })
+  .catch(() => { document.getElementById("status").textContent = "No data file yet."; });
+
+document.querySelectorAll("input[name=mode]").forEach(r => r.addEventListener("change", redraw));
+document.getElementById("line").addEventListener("change", redraw);
+</script>
+</body>
+</html>
