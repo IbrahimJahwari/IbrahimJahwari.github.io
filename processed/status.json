@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-10-30T18:45:41Z",
- "latest_run_utc": "2026-10-30T18:45:00Z",
- "latest_observation_utc": "2026-10-30T18:41:00.000Z",
- "runs_today": 56,
+ "generated_utc": "2026-10-30T19:01:14Z",
+ "latest_run_utc": "2026-10-30T19:00:00Z",
+ "latest_observation_utc": "2026-10-30T18:56:00.000Z",
+ "runs_today": 57,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.229,
+ "median_crowding": 0.227,
  "lines_not_good_service": [
   "central",
   "mildmay",
@@ -14,6 +14,6 @@
   "tram",
   "victoria"
  ],
- "stations_with_lift_out": 14,
+ "stations_with_lift_out": 15,
  "failed_source_calls_today": 0
 }
