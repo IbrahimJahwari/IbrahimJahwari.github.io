@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
 :root{--bg:#fff;--fg:#1a1a19;--muted:#6b6a66;--line:#e1e0d9}
-@media (prefers-color-scheme:dark){:root{--bg:#1a1a19;--fg:#f0efec;--muted:#a3a29b;--line:#383835}}
+@media (prefers-color-scheme:dark){:root{--bg:#1a1a19;--fg:#f0efec;--muted:#a3a29b;--line:#383835}
+  .leaflet-tile-pane{filter:invert(1) hue-rotate(180deg) brightness(.9) contrast(.85) saturate(.6)}}
 body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--fg);max-width:960px;margin:1.5rem auto;padding:0 1rem}
 h1{font-size:1.5rem;margin:0 0 .25rem}
 .muted{color:var(--muted);font-size:.9rem;margin:.25rem 0}
@@ -33,7 +34,7 @@ select{font:inherit;padding:.2rem .4rem;background:var(--bg);color:var(--fg);bor
 
 <div id="map" role="img" aria-label="Map of London Underground stations coloured by crowding"></div>
 <div class="legend" id="legend"></div>
-<p class="muted">The crowding index is each station’s Wi-Fi-based reading as a share of its own busiest week since July 2019. Typical is TfL’s average for the same weekday and 15-minute band. Hollow grey dots have no usable reading.</p>
+<p class="muted">The crowding index is each station’s Wi-Fi-based reading as a share of its own busiest week since July 2019. Typical is TfL’s average for the same weekday and 15-minute band. Hollow grey dots have no usable reading. Base map: OpenStreetMap.</p>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
@@ -53,9 +54,9 @@ const esc = s => String(s).replace(/[&<>"]/g, c => ({"&": "&amp;", "<": "&lt;", 
 
 const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 const map = L.map("map", {zoomSnap: 0.5}).setView([51.51, -0.12], 10.5);
-L.tileLayer(`https://{s}.basemaps.cartocdn.com/${dark ? "dark_all" : "light_all"}/{z}/{x}/{y}{r}.png`, {
-  maxZoom: 16, subdomains: "abcd",
-  attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
+L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  maxZoom: 17,
+  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 let stations = [], markers = [];
