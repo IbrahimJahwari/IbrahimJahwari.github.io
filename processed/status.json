@@ -1,12 +1,13 @@
 {
- "generated_utc": "2026-10-30T12:30:53Z",
- "latest_run_utc": "2026-10-30T12:30:00Z",
- "latest_observation_utc": "2026-10-30T12:26:00.000Z",
- "runs_today": 30,
+ "generated_utc": "2026-10-30T12:45:49Z",
+ "latest_run_utc": "2026-10-30T12:45:00Z",
+ "latest_observation_utc": "2026-10-30T12:41:00.000Z",
+ "runs_today": 31,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.145,
+ "median_crowding": 0.147,
  "lines_not_good_service": [
+  "central",
   "piccadilly",
   "suffragette",
   "tram"
