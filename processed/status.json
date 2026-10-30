@@ -1,17 +1,16 @@
 {
- "generated_utc": "2026-10-30T11:45:40Z",
- "latest_run_utc": "2026-10-30T11:45:00Z",
- "latest_observation_utc": "2026-10-30T11:41:00.000Z",
- "runs_today": 27,
+ "generated_utc": "2026-10-30T12:01:14Z",
+ "latest_run_utc": "2026-10-30T12:01:00Z",
+ "latest_observation_utc": "2026-10-30T11:56:00.000Z",
+ "runs_today": 28,
  "stations_total": 270,
  "stations_with_data": 253,
  "median_crowding": 0.135,
  "lines_not_good_service": [
-  "district",
   "piccadilly",
   "suffragette",
   "tram"
  ],
- "stations_with_lift_out": 14,
+ "stations_with_lift_out": 13,
  "failed_source_calls_today": 0
 }
