@@ -1,13 +1,12 @@
 {
- "generated_utc": "2026-10-30T07:45:37Z",
- "latest_run_utc": "2026-10-30T07:45:00Z",
- "latest_observation_utc": "2026-10-30T07:41:00.000Z",
- "runs_today": 11,
+ "generated_utc": "2026-10-30T08:01:13Z",
+ "latest_run_utc": "2026-10-30T08:00:00Z",
+ "latest_observation_utc": "2026-10-30T07:56:00.000Z",
+ "runs_today": 12,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.145,
+ "median_crowding": 0.162,
  "lines_not_good_service": [
-  "bakerloo",
   "district",
   "elizabeth",
   "piccadilly",
