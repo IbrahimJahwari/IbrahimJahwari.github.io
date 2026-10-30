@@ -397,3 +397,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-10-30T09:45:00Z,waterloo-city,tube,0,10,Good Service,
 2026-10-30T09:45:00Z,weaver,overground,0,10,Good Service,
 2026-10-30T09:45:00Z,windrush,overground,0,10,Good Service,
+2026-10-30T10:00:00Z,bakerloo,tube,0,10,Good Service,
+2026-10-30T10:00:00Z,central,tube,0,10,Good Service,
+2026-10-30T10:00:00Z,circle,tube,0,10,Good Service,
+2026-10-30T10:00:00Z,district,tube,0,10,Good Service,
+2026-10-30T10:00:00Z,dlr,dlr,0,10,Good Service,
+2026-10-30T10:00:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-10-30T10:00:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-10-30T10:00:00Z,jubilee,tube,0,10,Good Service,
+2026-10-30T10:00:00Z,liberty,overground,0,10,Good Service,
+2026-10-30T10:00:00Z,lioness,overground,0,10,Good Service,
+2026-10-30T10:00:00Z,metropolitan,tube,0,10,Good Service,
+2026-10-30T10:00:00Z,mildmay,overground,0,10,Good Service,
+2026-10-30T10:00:00Z,northern,tube,0,10,Good Service,
+2026-10-30T10:00:00Z,piccadilly,tube,0,5,Part Closure,"PICCADILLY LINE: Wednesday 28, Thursday 29 and Friday 30 October, no service between Cockfosters and Uxbridge. Trains continue to operate between Acton Town and Heathrow, all terminals. Use the METROPOLITAN LINE between Rayners Lane and Uxbridge, and ELIZABETH LINE services between Central London and Heathrow. Replacement bus services operate."
+2026-10-30T10:00:00Z,suffragette,overground,0,5,Part Closure,Suffragette Line: No service between South Tottenham and Barking Riverside due to a operational incident. MINOR DELAYS on the rest of the line. London Underground and London Buses are accepting tickets via any reasonable routes. Disruption is expected until early next week.
+2026-10-30T10:00:00Z,tram,tram,0,5,Part Closure,"LONDON TRAMS: Saturday 24 October to Thursday 5 November, no service between East Croydon and Beckenham Junction / Elmers End / New Addington due to planned engineering work. SOUTHERN services continue to serve Birkbeck, except on Sundays. Replacement bus services operate"
+2026-10-30T10:00:00Z,victoria,tube,0,10,Good Service,
+2026-10-30T10:00:00Z,waterloo-city,tube,0,10,Good Service,
+2026-10-30T10:00:00Z,weaver,overground,0,10,Good Service,
+2026-10-30T10:00:00Z,windrush,overground,0,10,Good Service,
