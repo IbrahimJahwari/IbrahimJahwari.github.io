@@ -1,14 +1,13 @@
 {
- "generated_utc": "2026-10-30T06:15:43Z",
- "latest_run_utc": "2026-10-30T06:15:00Z",
- "latest_observation_utc": "2026-10-30T06:11:00.000Z",
- "runs_today": 4,
+ "generated_utc": "2026-10-30T06:30:54Z",
+ "latest_run_utc": "2026-10-30T06:30:00Z",
+ "latest_observation_utc": "2026-10-30T06:26:00.000Z",
+ "runs_today": 5,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.037,
+ "median_crowding": 0.056,
  "lines_not_good_service": [
   "elizabeth",
-  "hammersmith-city",
   "piccadilly",
   "suffragette",
   "tram"
