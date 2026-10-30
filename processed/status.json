@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-10-30T06:30:54Z",
- "latest_run_utc": "2026-10-30T06:30:00Z",
- "latest_observation_utc": "2026-10-30T06:26:00.000Z",
- "runs_today": 5,
+ "generated_utc": "2026-10-30T06:45:47Z",
+ "latest_run_utc": "2026-10-30T06:45:00Z",
+ "latest_observation_utc": "2026-10-30T06:41:00.000Z",
+ "runs_today": 6,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.056,
+ "median_crowding": 0.073,
  "lines_not_good_service": [
   "elizabeth",
   "piccadilly",
