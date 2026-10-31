@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-10-31T15:45:45Z",
- "latest_run_utc": "2026-10-31T15:45:00Z",
- "latest_observation_utc": "2026-10-31T15:41:00.000Z",
- "runs_today": 66,
+ "generated_utc": "2026-10-31T16:01:10Z",
+ "latest_run_utc": "2026-10-31T16:01:00Z",
+ "latest_observation_utc": "2026-10-31T15:56:00.000Z",
+ "runs_today": 67,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.17,
+ "median_crowding": 0.176,
  "lines_not_good_service": [
   "bakerloo",
   "district",
@@ -17,6 +17,6 @@
   "waterloo-city",
   "windrush"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 17,
  "failed_source_calls_today": 1
 }
