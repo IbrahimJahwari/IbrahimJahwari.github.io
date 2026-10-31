@@ -289,3 +289,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-10-31T03:00:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-10-31T03:00:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning.
 2026-10-31T03:00:00Z,windrush,overground,0,10,Good Service,
+2026-10-31T03:15:00Z,bakerloo,tube,0,20,Service Closed,Bakerloo Line: Service will resume later this morning.
+2026-10-31T03:15:00Z,central,tube,0,10,Good Service,
+2026-10-31T03:15:00Z,circle,tube,0,20,Service Closed,Circle Line: Service will resume later this morning.
+2026-10-31T03:15:00Z,district,tube,0,20,Service Closed,District Line: Service will resume later this morning.
+2026-10-31T03:15:00Z,dlr,dlr,0,20,Service Closed,Docklands Light Railway: Service will resume later this morning.
+2026-10-31T03:15:00Z,elizabeth,elizabeth-line,0,20,Service Closed,Service will resume later this morning.
+2026-10-31T03:15:00Z,hammersmith-city,tube,0,20,Service Closed,Hammersmith and City Line: Service will resume later this morning.
+2026-10-31T03:15:00Z,jubilee,tube,0,10,Good Service,
+2026-10-31T03:15:00Z,liberty,overground,0,20,Service Closed,Liberty Line: Service will resume later this morning.
+2026-10-31T03:15:00Z,lioness,overground,0,20,Service Closed,Lioness Line: Service will resume later this morning.
+2026-10-31T03:15:00Z,metropolitan,tube,0,20,Service Closed,Metropolitan Line: Service will resume later this morning.
+2026-10-31T03:15:00Z,mildmay,overground,0,20,Service Closed,Mildmay Line: Service will resume later this morning.
+2026-10-31T03:15:00Z,northern,tube,0,10,Good Service,
+2026-10-31T03:15:00Z,piccadilly,tube,0,4,Planned Closure,"PICCADILLY LINE: Saturday 31 October, from 0100, and all day Sunday 1 November, including Friday and Saturday Night Tube, no service on the entire line. Use ELIZABETH LINE services between Central London and Heathrow, and METROPOLITAN LINE services between Rayners Lane and Uxbridge. Replacement bus services operate."
+2026-10-31T03:15:00Z,suffragette,overground,0,5,Part Closure,"Suffragette Line: No service between South Tottenham and Barking Riverside, until the end of service on Tuesday 10 November, due to a operational incident. MINOR DELAYS on the rest of the line. London Underground and London Buses are accepting tickets via any reasonable routes."
+2026-10-31T03:15:00Z,suffragette,overground,1,20,Service Closed,Suffragette Line: Service will resume later this morning. No service between South Tottenham and Barking Riverside due to a operational incident. London Underground and London Buses are accepting tickets via any reasonable routes. Disruption expected until the end of the week.
+2026-10-31T03:15:00Z,tram,tram,0,20,Service Closed,London Tramlink: Service will resume later this morning. No service between East Croydon and New Addington / Elmers End and Beckenham Junction due to planned engineering work. GOOD SERVICE on the rest of the line.
+2026-10-31T03:15:00Z,victoria,tube,0,10,Good Service,
+2026-10-31T03:15:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
+2026-10-31T03:15:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning.
+2026-10-31T03:15:00Z,windrush,overground,0,10,Good Service,
