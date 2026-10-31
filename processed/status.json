@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-10-31T13:31:12Z",
- "latest_run_utc": "2026-10-31T13:30:00Z",
- "latest_observation_utc": "2026-10-31T13:26:00.000Z",
- "runs_today": 57,
+ "generated_utc": "2026-10-31T13:45:41Z",
+ "latest_run_utc": "2026-10-31T13:45:00Z",
+ "latest_observation_utc": "2026-10-31T13:41:00.000Z",
+ "runs_today": 58,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.171,
+ "median_crowding": 0.174,
  "lines_not_good_service": [
   "district",
   "northern",
@@ -15,6 +15,6 @@
   "waterloo-city",
   "windrush"
  ],
- "stations_with_lift_out": 15,
+ "stations_with_lift_out": 16,
  "failed_source_calls_today": 1
 }
