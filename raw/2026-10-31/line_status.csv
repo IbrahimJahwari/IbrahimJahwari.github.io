@@ -39,3 +39,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-10-31T00:15:00Z,waterloo-city,tube,0,10,Good Service,
 2026-10-31T00:15:00Z,weaver,overground,0,10,Good Service,
 2026-10-31T00:15:00Z,windrush,overground,0,10,Good Service,
+2026-10-31T00:30:00Z,bakerloo,tube,0,10,Good Service,
+2026-10-31T00:30:00Z,central,tube,0,6,Severe Delays,"Central Line: Severe delays due to an earlier signal failure at Bond Street. Please board the first train and change at Leytonstone or North Acton to continue your journey. Tickets are being accepted on London Buses, London Overground, Elizabeth line and Chiltern Railways via any reasonable route."
+2026-10-31T00:30:00Z,circle,tube,0,10,Good Service,
+2026-10-31T00:30:00Z,district,tube,0,10,Good Service,
+2026-10-31T00:30:00Z,dlr,dlr,0,10,Good Service,
+2026-10-31T00:30:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-10-31T00:30:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-10-31T00:30:00Z,jubilee,tube,0,10,Good Service,
+2026-10-31T00:30:00Z,liberty,overground,0,10,Good Service,
+2026-10-31T00:30:00Z,lioness,overground,0,10,Good Service,
+2026-10-31T00:30:00Z,metropolitan,tube,0,10,Good Service,
+2026-10-31T00:30:00Z,mildmay,overground,0,5,Part Closure,"MILDMAY LINE: Wednesday 28 and Thursday 29 October, after 2300 each evening, no eastbound service from Willesden Junction to Stratford. Customers should use the last eastbound services detailed or London Overground services to Euston. Last through trains: Clapham Junction to Stratford 2218; Richmond to Stratford 2232; Willesden Junction to Stratford 2252. In addition, the 2249 train from Richmond to Stratford will not run, the 2302 train from Richmond to Stratford will terminate at Willesden Junction and the 2318 train from Richmond to Willesden Junction will not run"
+2026-10-31T00:30:00Z,northern,tube,0,10,Good Service,
+2026-10-31T00:30:00Z,piccadilly,tube,0,5,Part Closure,"PICCADILLY LINE: Wednesday 28, Thursday 29 and Friday 30 October, no service between Cockfosters and Uxbridge. Trains continue to operate between Acton Town and Heathrow, all terminals. Use the METROPOLITAN LINE between Rayners Lane and Uxbridge, and ELIZABETH LINE services between Central London and Heathrow. Replacement bus services operate."
+2026-10-31T00:30:00Z,suffragette,overground,0,5,Part Closure,"Suffragette Line: No service between South Tottenham and Barking Riverside, until the end of service on Tuesday 10 November, due to a operational incident. MINOR DELAYS on the rest of the line. London Underground and London Buses are accepting tickets via any reasonable routes."
+2026-10-31T00:30:00Z,tram,tram,0,5,Part Closure,"LONDON TRAMS: Saturday 24 October to Thursday 5 November, no service between East Croydon and Beckenham Junction / Elmers End / New Addington due to planned engineering work. SOUTHERN services continue to serve Birkbeck, except on Sundays. Replacement bus services operate"
+2026-10-31T00:30:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to train cancellations.
+2026-10-31T00:30:00Z,waterloo-city,tube,0,10,Good Service,
+2026-10-31T00:30:00Z,weaver,overground,0,10,Good Service,
+2026-10-31T00:30:00Z,windrush,overground,0,10,Good Service,
