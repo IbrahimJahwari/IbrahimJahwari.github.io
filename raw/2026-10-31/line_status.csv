@@ -1905,3 +1905,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-10-31T20:30:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-10-31T20:30:00Z,weaver,overground,0,6,Severe Delays,Weaver Line: Severe delays due to an earlier a trespasser at Wood Street.
 2026-10-31T20:30:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: Saturday 31 October and Sunday 1 November, no service between New Cross Gate and West Croydon / Crystal Palace. In addition, no SOUTHERN service between London Bridge and Crystal Palace / East Croydon via Forest Hill, and THAMESLINK services via East Croydon do not call at London Bridge or Norwood Junction. Rail replacement buses will run as follows: New Cross Gate - Brockley - Honor Oak Park - Forest Hill - Sydenham - Crystal Palace."
+2026-10-31T20:45:00Z,bakerloo,tube,0,6,Severe Delays,"Bakerloo Line: Severe delays between Queen's Park and Harrow & Wealdstone, and MINOR DELAYS on the rest of the line due to an earlier points failure at Elephant & Castle. Tickets are being accepted on London Buses."
+2026-10-31T20:45:00Z,bakerloo,tube,1,9,Minor Delays,"Bakerloo Line: Severe delays between Queen's Park and Harrow & Wealdstone, and MINOR DELAYS on the rest of the line due to an earlier points failure at Elephant & Castle. Tickets are being accepted on London Buses."
+2026-10-31T20:45:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-10-31T20:45:00Z,circle,tube,0,10,Good Service,
+2026-10-31T20:45:00Z,district,tube,0,6,Severe Delays,District Line: Severe delays due to train cancellations.
+2026-10-31T20:45:00Z,dlr,dlr,0,10,Good Service,
+2026-10-31T20:45:00Z,elizabeth,elizabeth-line,0,6,Severe Delays,"Severe delays between Abbey Wood and Heathrow Terminals/ Reading due to an earlier points failure at Whitechapel. GOOD SERVICE on the rest of the line. Tickets are being accepted on London Underground, London Buses, DLR, Thameslink, South Eastern Railway, South Western Railway and Great Western Railway."
+2026-10-31T20:45:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-10-31T20:45:00Z,jubilee,tube,0,10,Good Service,
+2026-10-31T20:45:00Z,liberty,overground,0,10,Good Service,
+2026-10-31T20:45:00Z,lioness,overground,0,3,Part Suspended,Lioness Line: No service between Kilburn High Road and Euston while we fix a signal failure at Euston. GOOD SERVICE on the rest of the line. Tickets are being accepted on London Underground.
+2026-10-31T20:45:00Z,metropolitan,tube,0,10,Good Service,
+2026-10-31T20:45:00Z,mildmay,overground,0,10,Good Service,
+2026-10-31T20:45:00Z,northern,tube,0,10,Good Service,
+2026-10-31T20:45:00Z,piccadilly,tube,0,4,Planned Closure,"PICCADILLY LINE: Saturday 31 October, from 0100, and all day Sunday 1 November, including Friday and Saturday Night Tube, no service on the entire line. Use ELIZABETH LINE services between Central London and Heathrow, and METROPOLITAN LINE services between Rayners Lane and Uxbridge. Replacement bus services operate."
+2026-10-31T20:45:00Z,suffragette,overground,0,5,Part Closure,"Suffragette Line: No service between South Tottenham and Barking Riverside, until the end of service on Tuesday 10 November, due to a operational incident. MINOR DELAYS on the rest of the line. London Underground and London Buses are accepting tickets via any reasonable routes."
+2026-10-31T20:45:00Z,tram,tram,0,5,Part Closure,"LONDON TRAMS: Saturday 24 October to Thursday 5 November, no service between East Croydon and Beckenham Junction / Elmers End / New Addington due to planned engineering work. SOUTHERN services continue to serve Birkbeck, except on Sundays. Replacement bus services operate"
+2026-10-31T20:45:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to train cancellations.
+2026-10-31T20:45:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
+2026-10-31T20:45:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
+2026-10-31T20:45:00Z,weaver,overground,0,6,Severe Delays,Weaver Line: Severe delays due to an earlier a trespasser at Wood Street.
+2026-10-31T20:45:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: Saturday 31 October and Sunday 1 November, no service between New Cross Gate and West Croydon / Crystal Palace. In addition, no SOUTHERN service between London Bridge and Crystal Palace / East Croydon via Forest Hill, and THAMESLINK services via East Croydon do not call at London Bridge or Norwood Junction. Rail replacement buses will run as follows: New Cross Gate - Brockley - Honor Oak Park - Forest Hill - Sydenham - Crystal Palace."
