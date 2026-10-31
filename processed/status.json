@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-10-31T05:01:06Z",
- "latest_run_utc": "2026-10-31T05:00:00Z",
- "latest_observation_utc": "2026-10-31T04:56:00.000Z",
- "runs_today": 22,
+ "generated_utc": "2026-10-31T05:15:50Z",
+ "latest_run_utc": "2026-10-31T05:15:00Z",
+ "latest_observation_utc": "2026-10-31T05:11:00.000Z",
+ "runs_today": 23,
  "stations_total": 270,
- "stations_with_data": 244,
- "median_crowding": 0.005,
+ "stations_with_data": 249,
+ "median_crowding": 0.006,
  "lines_not_good_service": [
   "piccadilly",
   "suffragette",
