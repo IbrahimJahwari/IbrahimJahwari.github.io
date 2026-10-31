@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-10-31T12:01:10Z",
- "latest_run_utc": "2026-10-31T12:00:00Z",
- "latest_observation_utc": "2026-10-31T11:56:00.000Z",
- "runs_today": 51,
+ "generated_utc": "2026-10-31T12:15:45Z",
+ "latest_run_utc": "2026-10-31T12:15:00Z",
+ "latest_observation_utc": "2026-10-31T12:11:00.000Z",
+ "runs_today": 52,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.153,
+ "median_crowding": 0.152,
  "lines_not_good_service": [
   "district",
   "piccadilly",
