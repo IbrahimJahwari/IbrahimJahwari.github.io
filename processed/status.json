@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-10-31T06:45:56Z",
- "latest_run_utc": "2026-10-31T06:45:00Z",
- "latest_observation_utc": "2026-10-31T06:41:00.000Z",
- "runs_today": 29,
+ "generated_utc": "2026-10-31T07:01:02Z",
+ "latest_run_utc": "2026-10-31T07:00:00Z",
+ "latest_observation_utc": "2026-10-31T06:56:00.000Z",
+ "runs_today": 30,
  "stations_total": 270,
- "stations_with_data": 252,
- "median_crowding": 0.033,
+ "stations_with_data": 253,
+ "median_crowding": 0.038,
  "lines_not_good_service": [
   "district",
   "jubilee",
