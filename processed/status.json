@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-10-31T23:31:11Z",
- "latest_run_utc": "2026-10-31T23:30:00Z",
- "latest_observation_utc": "2026-10-31T23:26:00.000Z",
- "runs_today": 98,
+ "generated_utc": "2026-10-31T23:45:43Z",
+ "latest_run_utc": "2026-10-31T23:45:00Z",
+ "latest_observation_utc": "2026-10-31T23:41:00.000Z",
+ "runs_today": 99,
  "stations_total": 270,
  "stations_with_data": 252,
- "median_crowding": 0.108,
+ "median_crowding": 0.102,
  "lines_not_good_service": [
   "bakerloo",
   "central",
@@ -17,7 +17,6 @@
   "tram",
   "victoria",
   "waterloo-city",
-  "weaver",
   "windrush"
  ],
  "stations_with_lift_out": 15,
