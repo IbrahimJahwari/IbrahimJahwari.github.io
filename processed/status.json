@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-10-31T05:45:38Z",
- "latest_run_utc": "2026-10-31T05:45:00Z",
- "latest_observation_utc": "2026-10-31T05:41:00.000Z",
- "runs_today": 25,
+ "generated_utc": "2026-10-31T06:01:17Z",
+ "latest_run_utc": "2026-10-31T06:00:00Z",
+ "latest_observation_utc": "2026-10-31T05:56:00.000Z",
+ "runs_today": 26,
  "stations_total": 270,
  "stations_with_data": 252,
- "median_crowding": 0.013,
+ "median_crowding": 0.017,
  "lines_not_good_service": [
   "district",
   "piccadilly",
@@ -14,6 +14,6 @@
   "waterloo-city",
   "windrush"
  ],
- "stations_with_lift_out": 15,
+ "stations_with_lift_out": 14,
  "failed_source_calls_today": 0
 }
