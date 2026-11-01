@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-01T06:45:37Z",
- "latest_run_utc": "2026-11-01T06:45:00Z",
- "latest_observation_utc": "2026-11-01T06:41:00.000Z",
- "runs_today": 29,
+ "generated_utc": "2026-11-01T07:01:07Z",
+ "latest_run_utc": "2026-11-01T07:00:00Z",
+ "latest_observation_utc": "2026-11-01T06:56:00.000Z",
+ "runs_today": 30,
  "stations_total": 270,
- "stations_with_data": 249,
- "median_crowding": 0.016,
+ "stations_with_data": 252,
+ "median_crowding": 0.025,
  "lines_not_good_service": [
   "dlr",
   "elizabeth",
