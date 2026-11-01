@@ -1,22 +1,21 @@
 {
- "generated_utc": "2026-11-01T06:30:50Z",
- "latest_run_utc": "2026-11-01T06:30:00Z",
- "latest_observation_utc": "2026-11-01T06:26:00.000Z",
- "runs_today": 28,
+ "generated_utc": "2026-11-01T06:45:37Z",
+ "latest_run_utc": "2026-11-01T06:45:00Z",
+ "latest_observation_utc": "2026-11-01T06:41:00.000Z",
+ "runs_today": 29,
  "stations_total": 270,
- "stations_with_data": 247,
- "median_crowding": 0.011,
+ "stations_with_data": 249,
+ "median_crowding": 0.016,
  "lines_not_good_service": [
   "dlr",
   "elizabeth",
   "mildmay",
-  "northern",
   "piccadilly",
   "suffragette",
   "tram",
   "waterloo-city",
   "windrush"
  ],
- "stations_with_lift_out": 11,
+ "stations_with_lift_out": 12,
  "failed_source_calls_today": 0
 }
