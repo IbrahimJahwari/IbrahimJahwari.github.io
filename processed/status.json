@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-01T04:01:05Z",
- "latest_run_utc": "2026-11-01T04:00:00Z",
- "latest_observation_utc": "2026-11-01T03:56:00.000Z",
- "runs_today": 18,
+ "generated_utc": "2026-11-01T04:15:48Z",
+ "latest_run_utc": "2026-11-01T04:15:00Z",
+ "latest_observation_utc": "2026-11-01T04:11:00.000Z",
+ "runs_today": 19,
  "stations_total": 270,
- "stations_with_data": 240,
- "median_crowding": 0.007,
+ "stations_with_data": 242,
+ "median_crowding": 0.004,
  "lines_not_good_service": [
   "bakerloo",
   "circle",
@@ -21,6 +21,7 @@
   "piccadilly",
   "suffragette",
   "tram",
+  "waterloo-city",
   "weaver",
   "windrush"
  ],
