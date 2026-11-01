@@ -1,24 +1,22 @@
 {
- "generated_utc": "2026-10-31T23:45:43Z",
- "latest_run_utc": "2026-10-31T23:45:00Z",
- "latest_observation_utc": "2026-10-31T23:41:00.000Z",
- "runs_today": 99,
+ "generated_utc": "2026-11-01T00:01:09Z",
+ "latest_run_utc": "2026-11-01T00:00:00Z",
+ "latest_observation_utc": "2026-10-31T23:56:00.000Z",
+ "runs_today": 1,
  "stations_total": 270,
  "stations_with_data": 252,
- "median_crowding": 0.102,
+ "median_crowding": 0.098,
  "lines_not_good_service": [
   "bakerloo",
   "central",
   "district",
-  "dlr",
   "lioness",
   "piccadilly",
   "suffragette",
   "tram",
-  "victoria",
   "waterloo-city",
   "windrush"
  ],
- "stations_with_lift_out": 15,
- "failed_source_calls_today": 1
+ "stations_with_lift_out": 14,
+ "failed_source_calls_today": 0
 }
