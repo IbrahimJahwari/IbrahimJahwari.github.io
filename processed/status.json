@@ -1,13 +1,12 @@
 {
- "generated_utc": "2026-11-02T11:01:06Z",
- "latest_run_utc": "2026-11-02T11:00:00Z",
- "latest_observation_utc": "2026-11-02T10:56:00.000Z",
- "runs_today": 47,
+ "generated_utc": "2026-11-02T11:15:45Z",
+ "latest_run_utc": "2026-11-02T11:15:00Z",
+ "latest_observation_utc": "2026-11-02T11:11:00.000Z",
+ "runs_today": 48,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.122,
+ "median_crowding": 0.115,
  "lines_not_good_service": [
-  "central",
   "metropolitan",
   "piccadilly",
   "suffragette",
