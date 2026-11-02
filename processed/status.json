@@ -1,13 +1,12 @@
 {
- "generated_utc": "2026-11-02T14:31:09Z",
- "latest_run_utc": "2026-11-02T14:31:00Z",
- "latest_observation_utc": "2026-11-02T14:26:00.000Z",
- "runs_today": 61,
+ "generated_utc": "2026-11-02T14:45:59Z",
+ "latest_run_utc": "2026-11-02T14:45:00Z",
+ "latest_observation_utc": "2026-11-02T14:41:00.000Z",
+ "runs_today": 62,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.121,
+ "median_crowding": 0.122,
  "lines_not_good_service": [
-  "central",
   "metropolitan",
   "suffragette",
   "tram"
