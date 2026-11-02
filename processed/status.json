@@ -1,16 +1,16 @@
 {
- "generated_utc": "2026-11-02T23:01:12Z",
- "latest_run_utc": "2026-11-02T23:01:00Z",
- "latest_observation_utc": "2026-11-02T22:56:00.000Z",
- "runs_today": 96,
+ "generated_utc": "2026-11-02T23:15:46Z",
+ "latest_run_utc": "2026-11-02T23:15:00Z",
+ "latest_observation_utc": "2026-11-02T23:11:00.000Z",
+ "runs_today": 97,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.065,
+ "median_crowding": 0.06,
  "lines_not_good_service": [
   "mildmay",
   "suffragette",
   "tram"
  ],
- "stations_with_lift_out": 11,
+ "stations_with_lift_out": 12,
  "failed_source_calls_today": 1
 }
