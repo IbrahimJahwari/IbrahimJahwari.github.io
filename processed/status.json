@@ -1,22 +1,20 @@
 {
- "generated_utc": "2026-11-02T09:48:32Z",
- "latest_run_utc": "2026-11-02T09:45:00Z",
- "latest_observation_utc": "2026-11-02T09:41:00.000Z",
- "runs_today": 41,
+ "generated_utc": "2026-11-02T10:01:10Z",
+ "latest_run_utc": "2026-11-02T10:00:00Z",
+ "latest_observation_utc": "2026-11-02T09:56:00.000Z",
+ "runs_today": 42,
  "stations_total": 270,
- "stations_with_data": 252,
- "median_crowding": 0.213,
+ "stations_with_data": 253,
+ "median_crowding": 0.175,
  "lines_not_good_service": [
   "central",
-  "district",
   "elizabeth",
   "hammersmith-city",
   "metropolitan",
   "piccadilly",
   "suffragette",
-  "tram",
-  "victoria"
+  "tram"
  ],
- "stations_with_lift_out": 12,
+ "stations_with_lift_out": 13,
  "failed_source_calls_today": 1
 }
