@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-02T18:16:07Z",
- "latest_run_utc": "2026-11-02T18:15:00Z",
- "latest_observation_utc": "2026-11-02T18:11:00.000Z",
- "runs_today": 76,
+ "generated_utc": "2026-11-02T18:31:04Z",
+ "latest_run_utc": "2026-11-02T18:30:00Z",
+ "latest_observation_utc": "2026-11-02T18:21:00.000Z",
+ "runs_today": 77,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.286,
+ "median_crowding": 0.273,
  "lines_not_good_service": [
   "suffragette",
   "tram",
