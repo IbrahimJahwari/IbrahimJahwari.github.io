@@ -1,18 +1,17 @@
 {
- "generated_utc": "2026-11-02T07:45:42Z",
- "latest_run_utc": "2026-11-02T07:45:00Z",
- "latest_observation_utc": "2026-11-02T07:41:00.000Z",
- "runs_today": 33,
+ "generated_utc": "2026-11-02T08:01:17Z",
+ "latest_run_utc": "2026-11-02T08:01:00Z",
+ "latest_observation_utc": "2026-11-02T07:56:00.000Z",
+ "runs_today": 34,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.212,
+ "median_crowding": 0.244,
  "lines_not_good_service": [
   "district",
   "hammersmith-city",
   "suffragette",
   "tram",
-  "victoria",
-  "waterloo-city"
+  "victoria"
  ],
  "stations_with_lift_out": 12,
  "failed_source_calls_today": 0
