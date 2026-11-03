@@ -1,20 +1,19 @@
 {
- "generated_utc": "2026-11-03T11:15:44Z",
- "latest_run_utc": "2026-11-03T11:15:00Z",
- "latest_observation_utc": "2026-11-03T11:11:00.000Z",
- "runs_today": 48,
+ "generated_utc": "2026-11-03T11:34:37Z",
+ "latest_run_utc": "2026-11-03T11:30:00Z",
+ "latest_observation_utc": "2026-11-03T11:31:00.000Z",
+ "runs_today": 49,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.133,
+ "median_crowding": 0.126,
  "lines_not_good_service": [
   "central",
-  "district",
   "elizabeth",
   "piccadilly",
   "suffragette",
   "tram",
   "windrush"
  ],
- "stations_with_lift_out": 15,
+ "stations_with_lift_out": 14,
  "failed_source_calls_today": 0
 }
