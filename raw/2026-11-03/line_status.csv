@@ -938,3 +938,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-03T10:30:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-03T10:30:00Z,weaver,overground,0,10,Good Service,
 2026-11-03T10:30:00Z,windrush,overground,0,10,Good Service,
+2026-11-03T10:45:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-03T10:45:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays between North Acton and Ealing Broadway/ West Ruislip and between Leytonstone and Epping / Hainault via Newbury Park due to earlier signal failures at Hanger Lane and Loughton. GOOD SERVICE on the rest of the line.
+2026-11-03T10:45:00Z,circle,tube,0,10,Good Service,
+2026-11-03T10:45:00Z,district,tube,0,6,Severe Delays,District Line: Severe delays between Earl's Court and Wimbledon while we fix a faulty train at Parsons Green. MINOR DELAYS between Earl's Court and Ealing Broadway / Richmond due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-03T10:45:00Z,district,tube,1,9,Minor Delays,District Line: Severe delays between Earl's Court and Wimbledon while we fix a faulty train at Parsons Green. MINOR DELAYS between Earl's Court and Ealing Broadway / Richmond due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-03T10:45:00Z,dlr,dlr,0,10,Good Service,
+2026-11-03T10:45:00Z,elizabeth,elizabeth-line,0,9,Minor Delays,Severe delays between Paddington and Heathrow Terminals / Reading and MINOR DELAYS between Abbey Wood and Whitechapel while we fix a track fault at Hayes and Harlington. GOOD SERVICE on the rest of the line.
+2026-11-03T10:45:00Z,elizabeth,elizabeth-line,1,6,Severe Delays,Severe delays between Paddington and Heathrow Terminals / Reading and MINOR DELAYS between Abbey Wood and Whitechapel while we fix a track fault at Hayes and Harlington. GOOD SERVICE on the rest of the line.
+2026-11-03T10:45:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-03T10:45:00Z,jubilee,tube,0,10,Good Service,
+2026-11-03T10:45:00Z,liberty,overground,0,10,Good Service,
+2026-11-03T10:45:00Z,lioness,overground,0,10,Good Service,
+2026-11-03T10:45:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-03T10:45:00Z,mildmay,overground,0,10,Good Service,
+2026-11-03T10:45:00Z,northern,tube,0,10,Good Service,
+2026-11-03T10:45:00Z,piccadilly,tube,0,9,Minor Delays,Piccadilly Line: Minor delays between Acton Town and Rayners Lane / Heathrow Terminals westbound only due to an earlier signalling problem at Acton Town. GOOD SERVICE on the rest of the line.
+2026-11-03T10:45:00Z,suffragette,overground,0,5,Part Closure,"Suffragette Line: No service between South Tottenham and Barking Riverside, until the end of service on Tuesday 10 November, due to a operational incident. A reduced service is operating on the rest of the line. Trains will operate every thirty minutes in either direction departing Gospel Oak at xx:09 and xx:39 and departing South Tottenham at xx:13 and xx:43. London Underground and London Buses are accepting tickets via any reasonable routes."
+2026-11-03T10:45:00Z,tram,tram,0,5,Part Closure,"LONDON TRAMS: Saturday 24 October to Thursday 5 November, no service between East Croydon and Beckenham Junction / Elmers End / New Addington due to planned engineering work. SOUTHERN services continue to serve Birkbeck, except on Sundays. Replacement bus services operate"
+2026-11-03T10:45:00Z,victoria,tube,0,10,Good Service,
+2026-11-03T10:45:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-03T10:45:00Z,weaver,overground,0,10,Good Service,
+2026-11-03T10:45:00Z,windrush,overground,0,6,Severe Delays,Windrush Line: Severe delays between Surrey Quays and Clapham Junction due to an earlier customer incident at Queens Road Peckham. GOOD SERVICE on the rest of the line.
