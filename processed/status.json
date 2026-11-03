@@ -1,18 +1,19 @@
 {
- "generated_utc": "2026-11-03T20:45:58Z",
- "latest_run_utc": "2026-11-03T20:45:00Z",
- "latest_observation_utc": "2026-11-03T20:41:00.000Z",
- "runs_today": 87,
+ "generated_utc": "2026-11-03T21:01:18Z",
+ "latest_run_utc": "2026-11-03T21:01:00Z",
+ "latest_observation_utc": "2026-11-03T20:56:00.000Z",
+ "runs_today": 88,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.124,
+ "median_crowding": 0.113,
  "lines_not_good_service": [
   "central",
   "elizabeth",
   "metropolitan",
   "suffragette",
   "tram",
-  "victoria"
+  "victoria",
+  "waterloo-city"
  ],
  "stations_with_lift_out": 13,
  "failed_source_calls_today": 0
