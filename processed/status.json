@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-03T15:15:48Z",
- "latest_run_utc": "2026-11-03T15:15:00Z",
- "latest_observation_utc": "2026-11-03T15:11:00.000Z",
- "runs_today": 64,
+ "generated_utc": "2026-11-03T15:31:01Z",
+ "latest_run_utc": "2026-11-03T15:30:00Z",
+ "latest_observation_utc": "2026-11-03T15:26:00.000Z",
+ "runs_today": 65,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.137,
+ "median_crowding": 0.154,
  "lines_not_good_service": [
   "elizabeth",
   "suffragette",
