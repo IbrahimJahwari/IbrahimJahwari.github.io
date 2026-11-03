@@ -1,17 +1,18 @@
 {
- "generated_utc": "2026-11-03T22:30:58Z",
- "latest_run_utc": "2026-11-03T22:30:00Z",
- "latest_observation_utc": "2026-11-03T22:26:00.000Z",
- "runs_today": 94,
+ "generated_utc": "2026-11-03T22:34:25Z",
+ "latest_run_utc": "2026-11-03T22:34:00Z",
+ "latest_observation_utc": "2026-11-03T22:31:00.000Z",
+ "runs_today": 95,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.095,
+ "median_crowding": 0.096,
  "lines_not_good_service": [
   "elizabeth",
   "metropolitan",
   "mildmay",
   "suffragette",
-  "tram"
+  "tram",
+  "victoria"
  ],
  "stations_with_lift_out": 13,
  "failed_source_calls_today": 0
