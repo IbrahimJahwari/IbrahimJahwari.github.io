@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-03T22:45:50Z",
- "latest_run_utc": "2026-11-03T22:45:00Z",
- "latest_observation_utc": "2026-11-03T22:41:00.000Z",
- "runs_today": 96,
+ "generated_utc": "2026-11-03T23:01:09Z",
+ "latest_run_utc": "2026-11-03T23:01:00Z",
+ "latest_observation_utc": "2026-11-03T22:56:00.000Z",
+ "runs_today": 97,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.1,
+ "median_crowding": 0.086,
  "lines_not_good_service": [
   "elizabeth",
   "metropolitan",
@@ -14,6 +14,6 @@
   "tram",
   "victoria"
  ],
- "stations_with_lift_out": 13,
+ "stations_with_lift_out": 12,
  "failed_source_calls_today": 0
 }
