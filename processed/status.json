@@ -1,12 +1,13 @@
 {
- "generated_utc": "2026-11-04T04:15:41Z",
- "latest_run_utc": "2026-11-04T04:15:00Z",
- "latest_observation_utc": "2026-11-04T04:11:00.000Z",
- "runs_today": 19,
+ "generated_utc": "2026-11-04T04:31:02Z",
+ "latest_run_utc": "2026-11-04T04:30:00Z",
+ "latest_observation_utc": "2026-11-04T04:26:00.000Z",
+ "runs_today": 20,
  "stations_total": 270,
- "stations_with_data": 237,
+ "stations_with_data": 233,
  "median_crowding": 0.001,
  "lines_not_good_service": [
+  "mildmay",
   "suffragette",
   "tram",
   "waterloo-city"
