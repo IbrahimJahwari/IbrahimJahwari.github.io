@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-04T18:46:04Z",
- "latest_run_utc": "2026-11-04T18:45:00Z",
- "latest_observation_utc": "2026-11-04T18:41:00.000Z",
- "runs_today": 78,
+ "generated_utc": "2026-11-04T19:01:21Z",
+ "latest_run_utc": "2026-11-04T19:01:00Z",
+ "latest_observation_utc": "2026-11-04T18:56:00.000Z",
+ "runs_today": 79,
  "stations_total": 270,
- "stations_with_data": 252,
- "median_crowding": 0.291,
+ "stations_with_data": 253,
+ "median_crowding": 0.258,
  "lines_not_good_service": [
   "central",
   "district",
@@ -15,6 +15,6 @@
   "tram",
   "victoria"
  ],
- "stations_with_lift_out": 15,
+ "stations_with_lift_out": 16,
  "failed_source_calls_today": 1
 }
