@@ -533,3 +533,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-04T06:01:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-04T06:01:00Z,weaver,overground,0,10,Good Service,
 2026-11-04T06:01:00Z,windrush,overground,0,10,Good Service,
+2026-11-04T06:15:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-04T06:15:00Z,central,tube,0,10,Good Service,
+2026-11-04T06:15:00Z,circle,tube,0,10,Good Service,
+2026-11-04T06:15:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays due to train cancellations and while we deal with a signalling problem.
+2026-11-04T06:15:00Z,dlr,dlr,0,10,Good Service,
+2026-11-04T06:15:00Z,elizabeth,elizabeth-line,0,6,Severe Delays,Severe delays between Paddington and Reading/Heathrow Terminals while we fix a track fault at Ealing Broadway. GOOD SERVICE on the rest of the line.
+2026-11-04T06:15:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-04T06:15:00Z,jubilee,tube,0,10,Good Service,
+2026-11-04T06:15:00Z,liberty,overground,0,10,Good Service,
+2026-11-04T06:15:00Z,lioness,overground,0,10,Good Service,
+2026-11-04T06:15:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-04T06:15:00Z,mildmay,overground,0,5,Part Closure,"MILDMAY LINE: Tuesday 3, Wednesday 4, Thursday 5 and Friday 6 November, until 0615 each morning, no southbound service from Willesden Junction to Shepherds Bush. The 0552 first train from Willesden Junction to Clapham Junction starts from Shepherd's Bush at 0600 and the 0608 second train from Willesden Junction to Clapham Junction does not run. Use the next service at 0623 or local bus routes 220 or 228. The 0611 train from Stratford to Willesden Junction will start at Shepherds Bush at 0701 and the 0651 from Stratford to Richmond will start from Acton Central at 0743."
+2026-11-04T06:15:00Z,northern,tube,0,10,Good Service,
+2026-11-04T06:15:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-04T06:15:00Z,suffragette,overground,0,7,Reduced Service,"SUFFRAGETTE LINE: Tuesday 3, Wednesday 4, Thursday 5 and Friday 6 November, the 0548 train from Barking Riverside to Gospel Oak and the 0624 train from Gospel Oak to Barking Riverside will not run"
+2026-11-04T06:15:00Z,suffragette,overground,1,5,Part Closure,"Suffragette Line: No service between South Tottenham and Barking Riverside, until the end of service on Tuesday 10 November, due to a operational incident. A reduced service is operating on the rest of the line. Trains will operate every thirty minutes in either direction departing Gospel Oak at xx:09 and xx:39 and departing South Tottenham at xx:13 and xx:43. London Underground and London Buses are accepting tickets via any reasonable routes."
+2026-11-04T06:15:00Z,tram,tram,0,5,Part Closure,"LONDON TRAMS: Saturday 24 October to Thursday 5 November, no service between East Croydon and Beckenham Junction / Elmers End / New Addington due to planned engineering work. SOUTHERN services continue to serve Birkbeck, except on Sundays. Replacement bus services operate"
+2026-11-04T06:15:00Z,victoria,tube,0,10,Good Service,
+2026-11-04T06:15:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-04T06:15:00Z,weaver,overground,0,10,Good Service,
+2026-11-04T06:15:00Z,windrush,overground,0,10,Good Service,
