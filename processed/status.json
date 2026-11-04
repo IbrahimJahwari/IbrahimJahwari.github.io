@@ -1,22 +1,20 @@
 {
- "generated_utc": "2026-11-04T12:01:09Z",
- "latest_run_utc": "2026-11-04T12:01:00Z",
- "latest_observation_utc": "2026-11-04T11:56:00.000Z",
- "runs_today": 51,
+ "generated_utc": "2026-11-04T12:15:42Z",
+ "latest_run_utc": "2026-11-04T12:15:00Z",
+ "latest_observation_utc": "2026-11-04T12:11:00.000Z",
+ "runs_today": 52,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.129,
+ "median_crowding": 0.131,
  "lines_not_good_service": [
   "bakerloo",
   "central",
-  "district",
   "elizabeth",
   "lioness",
   "piccadilly",
   "suffragette",
-  "tram",
-  "windrush"
+  "tram"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 15,
  "failed_source_calls_today": 1
 }
