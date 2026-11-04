@@ -1917,3 +1917,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-04T22:15:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-04T22:15:00Z,weaver,overground,0,10,Good Service,
 2026-11-04T22:15:00Z,windrush,overground,0,3,Part Suspended,Windrush Line: No service between Clapham Junction and Wandsworth Road while we remove a tree from the track. GOOD SERVICE on the rest of the line.
+2026-11-04T22:30:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-04T22:30:00Z,central,tube,0,6,Severe Delays,Central Line: Severe delays between Leytonstone and Epping/Hainault via Newbury Park and SEVERE DELAYS between White City and Ealing Broadway/West Ruislip due to train cancellations. Tickets being accepted on London Buses. MINOR DELAYS on the rest of the line.
+2026-11-04T22:30:00Z,central,tube,1,9,Minor Delays,Central Line: Severe delays between Leytonstone and Epping/Hainault via Newbury Park and SEVERE DELAYS between White City and Ealing Broadway/West Ruislip due to train cancellations. Tickets being accepted on London Buses. MINOR DELAYS on the rest of the line.
+2026-11-04T22:30:00Z,circle,tube,0,10,Good Service,
+2026-11-04T22:30:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays due to train cancellations.
+2026-11-04T22:30:00Z,dlr,dlr,0,10,Good Service,
+2026-11-04T22:30:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-04T22:30:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-04T22:30:00Z,jubilee,tube,0,10,Good Service,
+2026-11-04T22:30:00Z,liberty,overground,0,10,Good Service,
+2026-11-04T22:30:00Z,lioness,overground,0,10,Good Service,
+2026-11-04T22:30:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-04T22:30:00Z,mildmay,overground,0,7,Reduced Service,"MILDMAY LINE: Monday 2, Tuesday 3, Wednesday 4 and Thursday 5 November, the 2203 and 2234 trains from Clapham Junction to Stratford operate between Clapham Junction and Willesden Junction only."
+2026-11-04T22:30:00Z,northern,tube,0,10,Good Service,
+2026-11-04T22:30:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-04T22:30:00Z,suffragette,overground,0,5,Part Closure,"Suffragette Line: No service between South Tottenham and Barking Riverside, until the end of service on Tuesday 10 November, due to a operational incident. A reduced service is operating on the rest of the line. Trains will operate every thirty minutes in either direction departing Gospel Oak at xx:09 and xx:39 and departing South Tottenham at xx:13 and xx:43. London Underground and London Buses are accepting tickets via any reasonable routes."
+2026-11-04T22:30:00Z,tram,tram,0,5,Part Closure,"LONDON TRAMS: Saturday 24 October to Thursday 5 November, no service between East Croydon and Beckenham Junction / Elmers End / New Addington due to planned engineering work. SOUTHERN services continue to serve Birkbeck, except on Sundays. Replacement bus services operate"
+2026-11-04T22:30:00Z,victoria,tube,0,10,Good Service,
+2026-11-04T22:30:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-04T22:30:00Z,weaver,overground,0,10,Good Service,
+2026-11-04T22:30:00Z,windrush,overground,0,3,Part Suspended,Windrush Line: No service between Clapham Junction and Wandsworth Road while we remove a tree from the track. GOOD SERVICE on the rest of the line.
