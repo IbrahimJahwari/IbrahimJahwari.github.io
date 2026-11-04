@@ -1,17 +1,17 @@
 {
- "generated_utc": "2026-11-04T06:31:04Z",
- "latest_run_utc": "2026-11-04T06:30:00Z",
- "latest_observation_utc": "2026-11-04T06:26:00.000Z",
- "runs_today": 28,
+ "generated_utc": "2026-11-04T06:45:57Z",
+ "latest_run_utc": "2026-11-04T06:45:00Z",
+ "latest_observation_utc": "2026-11-04T06:41:00.000Z",
+ "runs_today": 29,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.07,
+ "median_crowding": 0.095,
  "lines_not_good_service": [
   "district",
   "elizabeth",
   "suffragette",
   "tram"
  ],
- "stations_with_lift_out": 13,
+ "stations_with_lift_out": 12,
  "failed_source_calls_today": 0
 }
