@@ -1,20 +1,19 @@
 {
- "generated_utc": "2026-11-04T09:45:51Z",
- "latest_run_utc": "2026-11-04T09:45:00Z",
- "latest_observation_utc": "2026-11-04T09:41:00.000Z",
- "runs_today": 41,
+ "generated_utc": "2026-11-04T09:58:16Z",
+ "latest_run_utc": "2026-11-04T09:58:00Z",
+ "latest_observation_utc": "2026-11-04T09:51:00.000Z",
+ "runs_today": 42,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.251,
+ "median_crowding": 0.213,
  "lines_not_good_service": [
   "district",
   "jubilee",
   "metropolitan",
   "piccadilly",
   "suffragette",
-  "tram",
-  "victoria"
+  "tram"
  ],
- "stations_with_lift_out": 13,
+ "stations_with_lift_out": 14,
  "failed_source_calls_today": 1
 }
