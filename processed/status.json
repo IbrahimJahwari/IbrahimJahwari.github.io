@@ -1,18 +1,19 @@
 {
- "generated_utc": "2026-11-04T05:31:07Z",
- "latest_run_utc": "2026-11-04T05:30:00Z",
- "latest_observation_utc": "2026-11-04T05:26:00.000Z",
- "runs_today": 24,
+ "generated_utc": "2026-11-04T05:45:43Z",
+ "latest_run_utc": "2026-11-04T05:45:00Z",
+ "latest_observation_utc": "2026-11-04T05:41:00.000Z",
+ "runs_today": 25,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.007,
+ "median_crowding": 0.02,
  "lines_not_good_service": [
+  "district",
   "lioness",
   "mildmay",
   "suffragette",
   "tram",
   "waterloo-city"
  ],
- "stations_with_lift_out": 12,
+ "stations_with_lift_out": 13,
  "failed_source_calls_today": 0
 }
