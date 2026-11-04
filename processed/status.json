@@ -1,15 +1,15 @@
 {
- "generated_utc": "2026-11-04T07:47:21Z",
- "latest_run_utc": "2026-11-04T07:45:00Z",
- "latest_observation_utc": "2026-11-04T07:41:00.000Z",
- "runs_today": 33,
+ "generated_utc": "2026-11-04T08:01:09Z",
+ "latest_run_utc": "2026-11-04T08:01:00Z",
+ "latest_observation_utc": "2026-11-04T07:56:00.000Z",
+ "runs_today": 34,
  "stations_total": 270,
- "stations_with_data": 252,
- "median_crowding": 0.223,
+ "stations_with_data": 253,
+ "median_crowding": 0.276,
  "lines_not_good_service": [
+  "central",
   "district",
   "elizabeth",
-  "metropolitan",
   "suffragette",
   "tram",
   "victoria"
