@@ -1,15 +1,16 @@
 {
- "generated_utc": "2026-11-04T14:15:58Z",
- "latest_run_utc": "2026-11-04T14:15:00Z",
- "latest_observation_utc": "2026-11-04T14:11:00.000Z",
- "runs_today": 60,
+ "generated_utc": "2026-11-04T14:31:03Z",
+ "latest_run_utc": "2026-11-04T14:30:00Z",
+ "latest_observation_utc": "2026-11-04T14:26:00.000Z",
+ "runs_today": 61,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.133,
+ "median_crowding": 0.142,
  "lines_not_good_service": [
   "bakerloo",
   "central",
   "lioness",
+  "metropolitan",
   "suffragette",
   "tram"
  ],
