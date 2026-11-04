@@ -1,13 +1,12 @@
 {
- "generated_utc": "2026-11-04T08:45:45Z",
- "latest_run_utc": "2026-11-04T08:45:00Z",
- "latest_observation_utc": "2026-11-04T08:36:00.000Z",
- "runs_today": 37,
+ "generated_utc": "2026-11-04T09:01:11Z",
+ "latest_run_utc": "2026-11-04T09:01:00Z",
+ "latest_observation_utc": "2026-11-04T08:51:00.000Z",
+ "runs_today": 38,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.364,
+ "median_crowding": 0.343,
  "lines_not_good_service": [
-  "central",
   "district",
   "elizabeth",
   "piccadilly",
@@ -15,6 +14,6 @@
   "tram",
   "victoria"
  ],
- "stations_with_lift_out": 12,
+ "stations_with_lift_out": 14,
  "failed_source_calls_today": 1
 }
