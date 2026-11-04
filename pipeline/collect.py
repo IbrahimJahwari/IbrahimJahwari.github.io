@@ -13,7 +13,7 @@ in CI DATA_DIR is the checked-out `data` branch) (all rows share one run_utc, th
     station_disruptions  station-level disruptions, one short row each (text is stored once)
     line_supply          trains with predictions per line; direction 'all' counts each train once
                          (direction 'unknown' = predictions TfL gives no direction for)
-    station_supply       trains due in 15 min, per station/line/direction (hourly only)
+    station_supply       trains due in 15 min, per station/line/direction (every run)
     collection_log       one row per source per run, so gaps and failures are visible
 """
 import argparse
@@ -201,7 +201,7 @@ def main():
     api = Api(key)
     now = datetime.now(timezone.utc).replace(second=0, microsecond=0)
     run = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-    hourly = now.minute < 15  # station-level supply is stored once an hour to keep files small
+    hourly = True  # station-level supply every run, to pair with crowding in the same 15-minute slot
     store = Store(args.out, run)
     station_ids = load_station_ids(api, args.out)
     print(f"run {run} | {len(station_ids)} stations | hourly={hourly}")
