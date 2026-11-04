@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-04T05:01:09Z",
- "latest_run_utc": "2026-11-04T05:01:00Z",
- "latest_observation_utc": "2026-11-04T04:56:00.000Z",
- "runs_today": 22,
+ "generated_utc": "2026-11-04T05:15:56Z",
+ "latest_run_utc": "2026-11-04T05:15:00Z",
+ "latest_observation_utc": "2026-11-04T05:11:00.000Z",
+ "runs_today": 23,
  "stations_total": 270,
- "stations_with_data": 240,
- "median_crowding": 0.001,
+ "stations_with_data": 243,
+ "median_crowding": 0.002,
  "lines_not_good_service": [
   "mildmay",
   "suffragette",
