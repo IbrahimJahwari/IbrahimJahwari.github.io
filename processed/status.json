@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-04T00:01:19Z",
- "latest_run_utc": "2026-11-04T00:01:00Z",
- "latest_observation_utc": "2026-11-03T23:56:00.000Z",
- "runs_today": 1,
+ "generated_utc": "2026-11-04T00:15:49Z",
+ "latest_run_utc": "2026-11-04T00:15:00Z",
+ "latest_observation_utc": "2026-11-04T00:11:00.000Z",
+ "runs_today": 2,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.049,
+ "median_crowding": 0.042,
  "lines_not_good_service": [
   "elizabeth",
   "lioness",
