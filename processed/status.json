@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-04T19:45:45Z",
- "latest_run_utc": "2026-11-04T19:45:00Z",
- "latest_observation_utc": "2026-11-04T19:41:00.000Z",
- "runs_today": 82,
+ "generated_utc": "2026-11-04T20:01:16Z",
+ "latest_run_utc": "2026-11-04T20:01:00Z",
+ "latest_observation_utc": "2026-11-04T19:56:00.000Z",
+ "runs_today": 83,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.167,
+ "median_crowding": 0.152,
  "lines_not_good_service": [
   "central",
   "district",
@@ -14,6 +14,6 @@
   "suffragette",
   "tram"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 15,
  "failed_source_calls_today": 1
 }
