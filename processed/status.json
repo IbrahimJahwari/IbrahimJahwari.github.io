@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-04T10:45:59Z",
- "latest_run_utc": "2026-11-04T10:45:00Z",
- "latest_observation_utc": "2026-11-04T10:41:00.000Z",
- "runs_today": 46,
+ "generated_utc": "2026-11-04T11:01:17Z",
+ "latest_run_utc": "2026-11-04T11:01:00Z",
+ "latest_observation_utc": "2026-11-04T10:56:00.000Z",
+ "runs_today": 47,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.148,
+ "median_crowding": 0.143,
  "lines_not_good_service": [
   "bakerloo",
   "district",
