@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-05T06:30:57Z",
- "latest_run_utc": "2026-11-05T06:30:00Z",
- "latest_observation_utc": "2026-11-05T06:26:00.000Z",
- "runs_today": 28,
+ "generated_utc": "2026-11-05T06:45:46Z",
+ "latest_run_utc": "2026-11-05T06:45:00Z",
+ "latest_observation_utc": "2026-11-05T06:41:00.000Z",
+ "runs_today": 29,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.071,
+ "median_crowding": 0.091,
  "lines_not_good_service": [
   "district",
   "suffragette",
