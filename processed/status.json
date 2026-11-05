@@ -1,13 +1,15 @@
 {
- "generated_utc": "2026-11-05T23:31:00Z",
- "latest_run_utc": "2026-11-05T23:30:00Z",
- "latest_observation_utc": "2026-11-05T23:26:00.000Z",
- "runs_today": 97,
+ "generated_utc": "2026-11-05T23:45:50Z",
+ "latest_run_utc": "2026-11-05T23:45:00Z",
+ "latest_observation_utc": "2026-11-05T23:41:00.000Z",
+ "runs_today": 98,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.082,
+ "median_crowding": 0.076,
  "lines_not_good_service": [
   "central",
+  "lioness",
+  "mildmay",
   "suffragette",
   "tram"
  ],
