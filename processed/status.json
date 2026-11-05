@@ -1,15 +1,14 @@
 {
- "generated_utc": "2026-11-05T18:16:09Z",
- "latest_run_utc": "2026-11-05T18:15:00Z",
- "latest_observation_utc": "2026-11-05T18:06:00.000Z",
- "runs_today": 75,
+ "generated_utc": "2026-11-05T18:31:13Z",
+ "latest_run_utc": "2026-11-05T18:30:00Z",
+ "latest_observation_utc": "2026-11-05T18:21:00.000Z",
+ "runs_today": 76,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.291,
+ "median_crowding": 0.285,
  "lines_not_good_service": [
   "central",
   "district",
-  "elizabeth",
   "northern",
   "suffragette",
   "tram"
