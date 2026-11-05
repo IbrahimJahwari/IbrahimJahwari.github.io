@@ -1,15 +1,17 @@
 {
- "generated_utc": "2026-11-05T07:15:43Z",
- "latest_run_utc": "2026-11-05T07:15:00Z",
- "latest_observation_utc": "2026-11-05T07:11:00.000Z",
- "runs_today": 31,
+ "generated_utc": "2026-11-05T07:31:08Z",
+ "latest_run_utc": "2026-11-05T07:30:00Z",
+ "latest_observation_utc": "2026-11-05T07:26:00.000Z",
+ "runs_today": 32,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.141,
+ "median_crowding": 0.173,
  "lines_not_good_service": [
   "district",
   "suffragette",
-  "tram"
+  "tram",
+  "victoria",
+  "weaver"
  ],
  "stations_with_lift_out": 12,
  "failed_source_calls_today": 0
