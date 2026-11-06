@@ -1,0 +1,6 @@
+run_utc,source,ok,http_status,n_items,n_errors,seconds,note
+2026-11-06T00:01:00Z,crowding,True,,270,0,3.99,253 stations with data
+2026-11-06T00:01:00Z,line_status,True,200,20,0,4.01,
+2026-11-06T00:01:00Z,lifts,True,200,14,0,0.16,
+2026-11-06T00:01:00Z,station_disruptions,True,200,33,0,0.21,5 new texts
+2026-11-06T00:01:00Z,supply,True,,43,0,5.91,"2664 predictions, hourly=True"

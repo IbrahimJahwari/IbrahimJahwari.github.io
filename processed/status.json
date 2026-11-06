@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-05T23:45:50Z",
- "latest_run_utc": "2026-11-05T23:45:00Z",
- "latest_observation_utc": "2026-11-05T23:41:00.000Z",
- "runs_today": 98,
+ "generated_utc": "2026-11-06T00:01:22Z",
+ "latest_run_utc": "2026-11-06T00:01:00Z",
+ "latest_observation_utc": "2026-11-05T23:56:00.000Z",
+ "runs_today": 1,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.076,
+ "median_crowding": 0.066,
  "lines_not_good_service": [
   "central",
   "lioness",
@@ -14,5 +14,5 @@
   "tram"
  ],
  "stations_with_lift_out": 13,
- "failed_source_calls_today": 1
+ "failed_source_calls_today": 0
 }
