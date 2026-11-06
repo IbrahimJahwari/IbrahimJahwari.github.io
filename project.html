@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -18,14 +21,18 @@
   <nav aria-label="Site"><ul>
     <li><a href="index.html">Home</a></li>
     <li><a href="project.html" aria-current="page">PP434 project</a></li>
+    <li><a href="explore.html">Workbench</a></li>
     <li><a href="portfolio.html">PP434 portfolio</a></li>
     <li><a href="tfl-status.html">Pipeline status</a></li>
   </ul></nav>
 </div></header>
 
 <!-- Open this page with ?words on the end (project.html?words) to see a live word count against the 800 limit.
-     The yellow [bracketed] text is placeholder. Replace it with your own words; bracketed text is not counted.
-     Suggested budget: Aims 120, Data 200, Tools 220, Conclusions 150, leaving about 110 for chart titles and captions. -->
+     The yellow [bracketed] text is placeholder: replace it with your own words. Bracketed text is not counted.
+     Suggested budget: Aims 120, Data 200, Tools 220, Conclusions 150, leaving about 110 for chart titles and captions.
+     The story runs: the system, then lines and stations, then what it means for passengers, TfL and London.
+     The eight chart slots are a starting point: pick the best charts from the workbench (explore.html) and change the
+     number of slots per section to suit. The syllabus allows 5 to 8 in total. -->
 
 <main id="main" class="wrap">
   <div class="pagehead">
@@ -37,55 +44,63 @@
     <p class="prose ph" data-wc="prose">[Write the aims in your own words, about 120 words.]</p>
   </section>
 
+  <section class="aud" id="system">
+    <h2>The system</h2>
+    <figure class="chart" id="system-1">
+      <h3 class="ph" data-wc="chart">[Chart 1 title: state what the chart shows]</h3>
+      <div class="plot" id="system-1-plot"><p class="slot nowords">Chart slot 1. Move a chart here from the workbench.</p></div>
+      <figcaption class="ph" data-wc="chart">[Chart 1 caption: one line on how to read it]</figcaption>
+    </figure>
+    <figure class="chart" id="system-2">
+      <h3 class="ph" data-wc="chart">[Chart 2 title: state what the chart shows]</h3>
+      <div class="plot" id="system-2-plot"><p class="slot nowords">Chart slot 2. Move a chart here from the workbench.</p></div>
+      <figcaption class="ph" data-wc="chart">[Chart 2 caption: one line on how to read it]</figcaption>
+    </figure>
+  </section>
+
+  <section class="aud" id="lines">
+    <h2>Lines and stations</h2>
+    <figure class="chart" id="lines-1">
+      <h3 class="ph" data-wc="chart">[Chart 3 title: state what the chart shows]</h3>
+      <div class="plot" id="lines-1-plot"><p class="slot nowords">Chart slot 3. Move a chart here from the workbench.</p></div>
+      <figcaption class="ph" data-wc="chart">[Chart 3 caption: one line on how to read it]</figcaption>
+    </figure>
+  </section>
+
   <section class="aud" id="passengers">
     <h2>Passengers</h2>
-    <figure class="chart" id="p1">
-      <h3 class="ph" data-wc="chart">[P1 title: state what the chart shows]</h3>
-      <div class="plot" id="p1-plot"><p class="slot nowords">Chart P1 goes here. Network diagram, right now.</p></div>
-      <figcaption class="ph" data-wc="chart">[P1 caption: one line on how to read it]</figcaption>
+    <figure class="chart" id="passengers-1">
+      <h3 class="ph" data-wc="chart">[Chart 4 title: state what the chart shows]</h3>
+      <div class="plot" id="passengers-1-plot"><p class="slot nowords">Chart slot 4. Move a chart here from the workbench.</p></div>
+      <figcaption class="ph" data-wc="chart">[Chart 4 caption: one line on how to read it]</figcaption>
     </figure>
-    <figure class="chart" id="p2">
-      <h3 class="ph" data-wc="chart">[P2 title: state what the chart shows]</h3>
-      <div class="plot" id="p2-plot"><p class="slot nowords">Chart P2 goes here. Waits at a station, with a compare mode (the old P3 map lives here).</p></div>
-      <figcaption class="ph" data-wc="chart">[P2 caption: one line on how to read it]</figcaption>
+    <figure class="chart" id="passengers-2">
+      <h3 class="ph" data-wc="chart">[Chart 5 title: state what the chart shows]</h3>
+      <div class="plot" id="passengers-2-plot"><p class="slot nowords">Chart slot 5. Move a chart here from the workbench.</p></div>
+      <figcaption class="ph" data-wc="chart">[Chart 5 caption: one line on how to read it]</figcaption>
     </figure>
   </section>
 
   <section class="aud" id="tfl">
     <h2>TfL</h2>
-    <figure class="chart" id="t1">
-      <h3 class="ph" data-wc="chart">[T1 title: state what the chart shows]</h3>
-      <div class="plot" id="t1-plot"><p class="slot nowords">Chart T1 goes here. Strain grid.</p></div>
-      <figcaption class="ph" data-wc="chart">[T1 caption: one line on how to read it]</figcaption>
+    <figure class="chart" id="tfl-1">
+      <h3 class="ph" data-wc="chart">[Chart 6 title: state what the chart shows]</h3>
+      <div class="plot" id="tfl-1-plot"><p class="slot nowords">Chart slot 6. Move a chart here from the workbench.</p></div>
+      <figcaption class="ph" data-wc="chart">[Chart 6 caption: one line on how to read it]</figcaption>
     </figure>
-    <figure class="chart" id="t2">
-      <h3 class="ph" data-wc="chart">[T2 title: state what the chart shows]</h3>
-      <div class="plot" id="t2-plot"><p class="slot nowords">Chart T2 goes here. Shock response.</p></div>
-      <figcaption class="ph" data-wc="chart">[T2 caption: one line on how to read it]</figcaption>
-    </figure>
-    <figure class="chart" id="t3">
-      <h3 class="ph" data-wc="chart">[T3 title: state what the chart shows]</h3>
-      <div class="plot" id="t3-plot"><p class="slot nowords">Chart T3 goes here. Time-space diagram.</p></div>
-      <figcaption class="ph" data-wc="chart">[T3 caption: one line on how to read it]</figcaption>
+    <figure class="chart" id="tfl-2">
+      <h3 class="ph" data-wc="chart">[Chart 7 title: state what the chart shows]</h3>
+      <div class="plot" id="tfl-2-plot"><p class="slot nowords">Chart slot 7. Move a chart here from the workbench.</p></div>
+      <figcaption class="ph" data-wc="chart">[Chart 7 caption: one line on how to read it]</figcaption>
     </figure>
   </section>
 
-  <section class="aud" id="mayor">
-    <h2>Mayor and London</h2>
-    <figure class="chart" id="m1">
-      <h3 class="ph" data-wc="chart">[M1 title: state what the chart shows]</h3>
-      <div class="plot" id="m1-plot"><p class="slot nowords">Chart M1 goes here. Strain map.</p></div>
-      <figcaption class="ph" data-wc="chart">[M1 caption: one line on how to read it]</figcaption>
-    </figure>
-    <figure class="chart" id="m2">
-      <h3 class="ph" data-wc="chart">[M2 title: state what the chart shows]</h3>
-      <div class="plot" id="m2-plot"><p class="slot nowords">Chart M2 goes here. Closures by cause.</p></div>
-      <figcaption class="ph" data-wc="chart">[M2 caption: one line on how to read it]</figcaption>
-    </figure>
-    <figure class="chart" id="m3">
-      <h3 class="ph" data-wc="chart">[M3 title: state what the chart shows]</h3>
-      <div class="plot" id="m3-plot"><p class="slot nowords">Chart M3 goes here. Step-free access.</p></div>
-      <figcaption class="ph" data-wc="chart">[M3 caption: one line on how to read it]</figcaption>
+  <section class="aud" id="london">
+    <h2>London</h2>
+    <figure class="chart" id="london-1">
+      <h3 class="ph" data-wc="chart">[Chart 8 title: state what the chart shows]</h3>
+      <div class="plot" id="london-1-plot"><p class="slot nowords">Chart slot 8. Move a chart here from the workbench.</p></div>
+      <figcaption class="ph" data-wc="chart">[Chart 8 caption: one line on how to read it]</figcaption>
     </figure>
   </section>
 
@@ -116,6 +131,6 @@
 </div></footer>
 
 <script src="assets/js/wordcount.js"></script>
-<!-- Charts are added here one at a time, as modules: assets/js/charts/p1.js and so on. -->
+<!-- Charts are added here as modules, copied from assets/js/explore.js. -->
 </body>
 </html>

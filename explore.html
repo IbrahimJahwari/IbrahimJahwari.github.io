@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workbench | Ibrahim Al Jahwari</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='white' stroke='%231E2330' stroke-width='5'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site"><div class="wrap">
+  <p class="brand"><a href="index.html">Ibrahim Al Jahwari</a></p>
+  <nav aria-label="Site"><ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="project.html">PP434 project</a></li>
+    <li><a href="explore.html" aria-current="page">Workbench</a></li>
+    <li><a href="portfolio.html">PP434 portfolio</a></li>
+    <li><a href="tfl-status.html">Pipeline status</a></li>
+  </ul></nav>
+</div></header>
+
+<main id="main" class="wrap">
+  <div class="wb-head">
+    <h1>Workbench</h1>
+    <p>Every candidate chart for the project, drawn from the collected data. The best 5 to 8 move to the project page; the rest stay here.</p>
+    <p class="status" id="status">Loading the data.</p>
+    <nav class="wb-nav" aria-label="Sections"><a href="#a">A. The system</a><a href="#b">B. Lines and stations</a><a href="#next">Coming next</a></nav>
+  </div>
+
+  <section class="aud" id="a">
+    <h2>A. The system</h2>
+    <p class="read">How the whole network moves: through the week, day by day, and demand against supply.</p>
+    <figure class="chart" id="a1">
+      <h3>A1. The weekly rhythm</h3>
+      <p class="read">Each cell is a weekday and a quarter-hour; colour is how busy the average station is. Reads left to right as a day, top to bottom as a week.</p>
+      <div class="plot" id="a1-plot"></div>
+      <p class="note">Median across the complete days collected. Grey cells have no data yet. With more weeks, each cell becomes a median of more days.</p>
+    </figure>
+    <figure class="chart" id="a2">
+      <h3>A2. Every day as its own line</h3>
+      <p class="read">One line per day, in three panels. The thick line is the median; dashed is a partial day (today).</p>
+      <div class="plot" id="a2-plot"></div>
+      <p class="note">Shows how much days differ, not just the average. Faint lines are single days.</p>
+    </figure>
+    <figure class="chart" id="a3">
+      <h3>A3. Day by day</h3>
+      <p class="read">One cell per date, one column per week. Three measures side by side: crowding, trains, and line-hours not on good service. Faded cells are partial days.</p>
+      <div class="plot" id="a3-plot"></div>
+      <p class="note">This is the monthly view: it fills in week by week, so busy and quiet days stand out once a month exists.</p>
+    </figure>
+    <figure class="chart" id="a4">
+      <h3>A4. Demand and supply through the day</h3>
+      <p class="read">Crowding (orange) above, trains (purple) below, for weekdays, Saturdays and Sundays.</p>
+      <div class="plot" id="a4-plot"></div>
+      <p class="note">Trains are those with a live arrival prediction, summed over the 11 lines: a close proxy for trains running, not an exact count.</p>
+    </figure>
+    <figure class="chart" id="a5">
+      <h3>A5. Demand against supply</h3>
+      <p class="read">The same two measures plotted against each other. A typical day traces a path; dots mark every third hour.</p>
+      <div class="plot" id="a5-plot"></div>
+      <p class="note">Each point is a median for that quarter-hour. A path that bends back shows crowding and service peaking at different times.</p>
+    </figure>
+    <figure class="chart" id="a6">
+      <h3>A6. When service goes wrong</h3>
+      <p class="read">Each row is a line, each block an hour, coloured by the worst status in that hour. The stronger the shade, the worse the status.</p>
+      <div class="plot" id="a6-plot"></div>
+      <p class="note">Lines are ordered by how many hours they spent off good service. Weekend planned closures show up as long dark runs.</p>
+    </figure>  </section>
+
+  <section class="aud" id="b">
+    <h2>B. Lines and stations</h2>
+    <p class="read">Zooming in: which lines carry the load, and what kind of station is each one.</p>
+    <figure class="chart" id="b1">
+      <h3>B1. Crowding by line and hour</h3>
+      <p class="read">Weekday average crowding of each line's stations, by hour.</p>
+      <div class="plot" id="b1-plot"></div>
+      <p class="note">Interchange stations count towards every line that serves them. Lines are ordered by their average.</p>
+    </figure>
+    <figure class="chart" id="b2">
+      <h3>B2. Service by line and hour</h3>
+      <p class="read">Weekday trains as a share of each line's own peak, by hour.</p>
+      <div class="plot" id="b2-plot"></div>
+      <p class="note">Scaled per line, so a short line and a long line can be compared by shape.</p>
+    </figure>
+    <figure class="chart" id="b3">
+      <h3>B3. Weekday against Saturday</h3>
+      <p class="read">One dot per station. Above the dotted line a station is busier on Saturdays than on weekdays; below it, the reverse.</p>
+      <div class="plot" id="b3-plot"></div>
+      <p class="note">Levels are each station's own share of its busiest week, so read the position relative to the line, not across stations.</p>
+    </figure>
+    <figure class="chart" id="b4">
+      <h3>B4. Morning against evening</h3>
+      <p class="read">One dot per station: weekday 07-10 against weekday 16-19. Above the dotted line is an evening-heavy station.</p>
+      <div class="plot" id="b4-plot"></div>
+      <p class="note">Same caveat as B3. The crowding index does not say which direction people are travelling.</p>
+    </figure>  </section>
+
+  <section class="aud" id="next">
+    <h2>Coming next</h2>
+    <p class="soon"><b>C. Passengers.</b> Is my journey OK right now, how long will I actually wait, which area should I move to.</p>
+    <p class="soon"><b>D. TfL.</b> Is the network out of balance, where does the crowd go when something fails, how a disruption travels along a line.</p>
+    <p class="soon"><b>E. London.</b> Where strain is chronic, what closes stations, whether step-free access is delivered.</p>
+  </section>
+</main>
+
+<footer class="site-foot"><div class="wrap">
+  <a href="index.html">Home</a>
+  <a href="project.html">PP434 project</a>
+  <a href="https://github.com/IbrahimJahwari/IbrahimJahwari.github.io">Code for this site</a>
+</div></footer>
+
+<script type="module">
+  import { start } from "./assets/js/explore.js";
+  start();
+</script>
+</body>
+</html>
