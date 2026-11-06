@@ -164,3 +164,8 @@ run_utc,source,ok,http_status,n_items,n_errors,seconds,note
 2026-11-06T07:30:00Z,lifts,True,200,17,0,0.28,
 2026-11-06T07:30:00Z,station_disruptions,True,200,41,0,0.32,0 new texts
 2026-11-06T07:30:00Z,supply,True,,44,0,1.55,"4102 predictions, hourly=True"
+2026-11-06T07:45:00Z,crowding,True,,270,0,4.94,253 stations with data
+2026-11-06T07:45:00Z,line_status,True,200,20,0,0.23,
+2026-11-06T07:45:00Z,lifts,True,200,18,0,0.27,
+2026-11-06T07:45:00Z,station_disruptions,True,200,40,0,0.32,1 new texts
+2026-11-06T07:45:00Z,supply,True,,42,0,2.97,"4092 predictions, hourly=True"
