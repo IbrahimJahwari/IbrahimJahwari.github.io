@@ -1,12 +1,13 @@
 {
- "generated_utc": "2026-11-06T17:45:51Z",
- "latest_run_utc": "2026-11-06T17:45:00Z",
- "latest_observation_utc": "2026-11-06T17:41:00.000Z",
- "runs_today": 74,
+ "generated_utc": "2026-11-06T18:01:20Z",
+ "latest_run_utc": "2026-11-06T18:01:00Z",
+ "latest_observation_utc": "2026-11-06T17:56:00.000Z",
+ "runs_today": 75,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.264,
+ "median_crowding": 0.261,
  "lines_not_good_service": [
+  "bakerloo",
   "central",
   "district",
   "hammersmith-city",
