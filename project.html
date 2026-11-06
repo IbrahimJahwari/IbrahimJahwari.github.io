@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PP434 project | Ibrahim Al Jahwari</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='white' stroke='%231E2330' stroke-width='5'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
+  <title>PP434 Project | Ibrahim Al Jahwari</title>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega@6.4.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@6.4.3"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@7.3.0"></script>
@@ -19,24 +20,22 @@
 <header class="site"><div class="wrap">
   <p class="brand"><a href="index.html">Ibrahim Al Jahwari</a></p>
   <nav aria-label="Site"><ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="project.html" aria-current="page">PP434 project</a></li>
-    <li><a href="explore.html">Workbench</a></li>
-    <li><a href="portfolio.html">PP434 portfolio</a></li>
-    <li><a href="tfl-status.html">Pipeline status</a></li>
+    <li><a href="project.html" aria-current="page">PP434 Project</a></li>
+    <li><a href="portfolio.html">PP434 Portfolio</a></li>
   </ul></nav>
 </div></header>
 
 <!-- Open this page with ?words on the end (project.html?words) to see a live word count against the 800 limit.
-     The yellow [bracketed] text is placeholder: replace it with your own words. Bracketed text is not counted.
-     Suggested budget: Aims 120, Data 200, Tools 220, Conclusions 150, leaving about 110 for chart titles and captions.
-     The story runs: the system, then lines and stations, then what it means for passengers, TfL and London.
-     The eight chart slots are a starting point: pick the best charts from the workbench (explore.html) and change the
-     number of slots per section to suit. The syllabus allows 5 to 8 in total. -->
+     Yellow [bracketed] text is placeholder: replace it with your own words. Bracketed text is not counted.
+     Suggested budget: Aims 120, Data 200, Tools 220, Conclusions 150, leaving about 110 for captions.
+     The grey "Working note" blocks under each plot, and the "Notes for the write-up" block at the end, are reminders for you:
+     they are not counted and MUST be deleted before you submit (the course does not allow AI-drafted prose in the assessed page).
+     Plots 1 to 6 are the main plots (2 and 6 each have a second panel, 2b and 6b); Appendix A and B are optional extras. -->
 
 <main id="main" class="wrap">
   <div class="pagehead">
     <h1 class="ph" data-wc="chart">[Project title]</h1>
+    <p class="status" id="status">Loading the data.</p>
   </div>
 
   <section class="text" id="aims">
@@ -44,65 +43,331 @@
     <p class="prose ph" data-wc="prose">[Write the aims in your own words, about 120 words.]</p>
   </section>
 
-  <section class="aud" id="system">
-    <h2>The system</h2>
-    <figure class="chart" id="system-1">
-      <h3 class="ph" data-wc="chart">[Chart 1 title: state what the chart shows]</h3>
-      <div class="plot" id="system-1-plot"><p class="slot nowords">Chart slot 1. Move a chart here from the workbench.</p></div>
-      <figcaption class="ph" data-wc="chart">[Chart 1 caption: one line on how to read it]</figcaption>
+  <section class="aud" id="network">
+    <h2>The network through the week</h2>
+    <figure class="chart" id="p1">
+      <p class="tag nowords">Plot 1 &middot; Crowding through the day, one line per day</p>
+      <div class="plot" data-chart="p1"></div>
+      <div class="wn nowords"><h3>Working note, not for the page</h3>
+<h4>What it shows</h4>
+<p>How crowding on the Underground moves through a day, one thin line per day, for all lines together or for one line. Weekdays are orange, weekend days blue. It is the opening picture: it establishes that crowding is strongly peaked on weekdays and flatter at weekends, which the next plots then break down (which stations, how supply compares).</p>
+<h4>Data</h4>
+<ul>
+<li>Raw table <code>crowding.csv</code> on the <code>data</code> branch: one row per station per collection run (about every 15 minutes), with TfL's live crowding index in <code>pct_baseline</code> (the API's percentageOfBaseline, from <code>/crowding/{naptan}/Live</code>).</li>
+<li><code>code/build.py</code> turns it into <code>system.json</code> (all lines, 15-minute slots) and <code>lines.json</code> (per line, per hour). The plot uses hourly values.</li>
+</ul>
+<h4>How each variable is built</h4>
+<ul>
+<li><b>TfL crowding index.</b> How busy a station is right now as a proportion of the busiest it has been since TfL began collecting this Wi-Fi-based data (July 2019). Usually between 0 and 1, but it can exceed 1 (Elm Park, South Wimbledon and Highbury &amp; Islington often do). It is relative to each station's own history, so it is not comparable between stations and is not a head-count. 17 of the 270 stations never report (for example Arsenal, Holloway Road, Finsbury Park).</li>
+<li><b>Slots.</b> Each collection run is assigned to the nearest 15 minutes on the London clock (wall-clock London time); if two runs land in one slot the earlier one is used. An hour is the mean of its slots.</li>
+<li><b>Masked readings.</b> A station's reading is left out of every average while the station is closed or exit-only (station-disruption feed) and while every line serving it is suspended or closed. Reason: TfL's count is capped when entry is restricted, so it would look quiet exactly when the station was so busy that TfL stopped entry (see Appendix B on overcrowding controls).</li>
+<li><b>Value for a line.</b> The unweighted mean of the index over the open, reporting stations on that line (an interchange counts for every line it serves). <b>All lines</b> is the mean over all open reporting stations, and only for slots where at least 100 stations report.</li>
+<li><b>Scaling to 100.</b> For the chosen line, each weekday-and-hour has a typical value (the median across all complete days). The largest of those 168 values is set to 100; every day's hourly value is divided by it and multiplied by 100. A particular day can therefore exceed 100. The note under the plot also reports what 100 is on TfL's original scale.</li>
+<li><b>Thick lines.</b> The median across the days currently shown (the shown weekdays together; the shown weekend days together) at each hour. The Days buttons toggle single days; Weekdays, Weekend and All days are shortcuts.</li>
+<li><b>Complete day.</b> At least 56 of the 64 quarter-hours between 06:00 and 22:00 have a network crowding value. Today, still running, is left out until it is complete.</li>
+</ul>
+<h4>Why it is built this way</h4>
+<ul>
+<li><b>Own maximum = 100, not TfL's 2019 reference.</b> The question is "within a week, when is it busiest", not "is this week busier than the last". TfL's reference is a different all-time maximum for every station, mixes in 2019 behaviour, and cannot be compared across lines. Scaling each picture to itself makes shapes comparable. Resetting the scale every week was rejected because it forces every week's maximum to be exactly 100 and hides differences between weeks.</li>
+<li><b>Median across days.</b> A one-off event (a closure, a strike day) cannot drag the typical line; it also settles as weeks accumulate. A mean would let one bad day move it.</li>
+<li><b>Mean across stations.</b> Simple, and every station counts equally. I also tried "share of stations at or above 40% of their record" (TfL's own guidance calls below 0.4 quiet) and dropped it as less direct.</li>
+<li><b>Colour grammar used on the whole page.</b> Orange = crowding (demand), plum = supply (trains), blue = weekend or quiet, grey = usual or no data.</li>
+</ul>
+<h4>How to read it / what it means</h4>
+<p>Weekdays show two sharp peaks (a taller morning one around 08:00 to 09:00 and an evening one around 17:00 to 18:00 at the time of building); weekends show a low, broad hump. The spread between thin lines is how regular the pattern is. This is descriptive: it says when, not why.</p>
+<h4>Caveats and limits</h4>
+<ul>
+<li>Few days so far (8 at the time of building): the typical lines rest on 5 weekdays and 2 weekend days, and will change as data accumulates.</li>
+<li>The first full day, Fri 30 Oct, falls in a Piccadilly line closure (TfL's status text for the line said no service between Cockfosters and Uxbridge on 28, 29 and 30 October, and the data show almost no Piccadilly trains over the following weekend too). That lowers the Piccadilly line's typical values and pushes crowding onto neighbouring lines. Four test runs on 29 Oct are in the raw data but not in any complete day.</li>
+<li>The index is a Wi-Fi-based proxy, not a count of people; averaging over stations hides the mix of stations on a line.</li>
+</ul>
+<h4>For the write-up</h4>
+<p>Check how the picture looks after a month (several weekends, no closure week). Decide whether to describe the index in one sentence and cite TfL's definition (TfL staff on the TfL Tech Forum describe the index as how busy a station is relative to the busiest it has been since data collection began in July 2019).</p>
+</div>
+      <figcaption class="ph" data-wc="chart">[P1 caption: one line on how to read it]</figcaption>
     </figure>
-    <figure class="chart" id="system-2">
-      <h3 class="ph" data-wc="chart">[Chart 2 title: state what the chart shows]</h3>
-      <div class="plot" id="system-2-plot"><p class="slot nowords">Chart slot 2. Move a chart here from the workbench.</p></div>
-      <figcaption class="ph" data-wc="chart">[Chart 2 caption: one line on how to read it]</figcaption>
+    <figure class="chart" id="p2">
+      <p class="tag nowords">Plot 2 and 2b &middot; What kind of station is each one</p>
+      <div class="plot" data-chart="p2"></div>
+      <div class="wn nowords"><h3>Working note, not for the page</h3>
+<h4>What it shows</h4>
+<p>What kind of station each station is, judged from its own typical week: commuter, weekend visitor or all-day. Plot 2 (the map) says where they are; Plot 2b (the bars, out of 100%) says how each line's stations split. It follows Plot 1 because Plot 1 shows weekday peaks against a weekend hump, and this classifies stations by exactly that contrast. Use the search box to find a station, the buttons to show one type, and the Line dropdown to look at one line.</p>
+<h4>Data</h4>
+<ul>
+<li><code>crowding.csv</code> through <code>stations.json</code> (built by <code>code/build.py</code>): for each station, the mean of its crowding index (masked readings excluded) in these windows: <b>wk</b> weekdays 06:00 to 22:00; <b>am</b> weekdays 07:00 to 10:00; <b>mid</b> weekdays 11:00 to 15:00; <b>pm</b> weekdays 16:00 to 19:00; <b>sat</b> and <b>sun</b> 08:00 to 20:00; <b>n</b> the number of weekday readings behind it.</li>
+</ul>
+<h4>How each variable is built</h4>
+<ul>
+<li><b>Rush-hour peak ratio</b> = the larger of am and pm, divided by mid. A value of 1.8 means the busier rush hour is 80% above midday.</li>
+<li><b>Weekend ratio</b> = the mean of the available weekend values (sat, sun), divided by wk. 0.9 means weekends run at 90% of weekdays.</li>
+<li><b>Type rule</b> (applied in this order): <i>weekend visitors</i> if the weekend ratio is at least 1.1; otherwise <i>commuter</i> if the peak ratio is at least 1.8 and the weekend ratio is below 0.9 (or there is no weekend data yet); otherwise <i>all-day</i>.</li>
+<li><b>Which stations.</b> Those with at least 100 weekday readings: 252 of 270 at the time of building (157 commuter, 83 all-day, 12 weekend visitors).</li>
+<li><b>Bars (2b).</b> For each line, the percentage of its stations of each type. An interchange counts once for every line it serves. Lines are sorted by commuter share. Waterloo &amp; City is left out (two stations).</li>
+<li><b>Map (2).</b> All dots are the same size and coloured by type. Filtered-out types fade to small grey dots; the searched station gets a ring and a label.</li>
+</ul>
+<h4>Why it is built this way</h4>
+<ul>
+<li>The three thresholds (1.8, 0.9, 1.1) are judgement-based rules of thumb chosen to give interpretable groups. They are not estimated from the data. If asked, say so, and run a sensitivity check (move them and see how the counts change). A formal alternative is clustering the normalised weekly profiles (for example k-means), which would be a next step.</li>
+<li>The purpose is policy-facing: a line serving commuters needs peak capacity, one serving weekend visitors needs weekend and evening service. The bars are out of 100% so lines of different length are comparable.</li>
+</ul>
+<h4>Caveats and limits</h4>
+<ul>
+<li>The weekend ratio rests on one weekend at the time of building, and that weekend overlapped the Piccadilly closure; more weekends will firm it up and may move some stations between types.</li>
+<li>"Commuter" is inferred from a crowding pattern, not from ticketing (entry and exit) data, so it is a label for a pattern.</li>
+<li>Station crowding is relative to each station's own record, so the ratios compare a station with itself, not with other stations.</li>
+</ul>
+</div>
+      <figcaption class="ph" data-wc="chart">[P2 caption: one line on how to read it]</figcaption>
+    </figure>
+    <figure class="chart" id="p3">
+      <p class="tag nowords">Plot 3 &middot; Supply is rigid; crowding is not</p>
+      <div class="plot" data-chart="p3"></div>
+      <div class="wn nowords"><h3>Working note, not for the page</h3>
+<h4>What it shows</h4>
+<p>The story of the project in one picture: supply (trains running) is rigid and crowding is volatile. Supply is the main variable (plum). Crowding is drawn behind it in grey, on the same 0 to 100 scale, and the checkbox shows or hides it. Same line and day controls as Plot 1. Solid lines are weekdays, dashed lines are weekend days.</p>
+<h4>Data</h4>
+<ul>
+<li><code>line_supply.csv</code>: per run and per line, <code>n_vehicles</code> (the number of distinct trains with a live arrival prediction, from the line's Arrivals feed; the collector stores a row with direction "all" for both directions together) alongside <code>n_predictions</code> and <code>n_stations</code>.</li>
+<li><code>crowding.csv</code> for the grey crowding lines, built exactly as in Plot 1.</li>
+<li>Processed into <code>lines.json</code> (per line, per hour) and <code>system.json</code> (all lines).</li>
+</ul>
+<h4>How each variable is built</h4>
+<ul>
+<li><b>Supply (trains running).</b> Trains with a live arrival prediction on the line: close to the number of trains running, not an exact count and not the timetable. For all lines it is the total across the 11 Underground lines in a slot (needs at least 9 lines reporting). Hourly value = mean of the hour's slots.</li>
+<li><b>Scaling.</b> Each of supply and crowding is scaled to its own busiest hour of the typical week (median across complete days of each weekday-and-hour; the largest of the 168 values = 100). So the picture compares shapes: it does not say that a supply of 70 means 30% less capacity than at the peak, only that 70% as many trains were running as at the busiest hour.</li>
+<li><b>Thin lines</b> are single days; <b>thick lines</b> the median of the days shown, weekdays together and weekend days together.</li>
+<li><b>The sentence under the plot</b> is computed live: on a typical weekday between 06:00 and 22:00, the lowest point of the thick supply line and of the thick crowding line (at the time of building, all lines: supply never below 69% of its busiest hour, crowding down to 21%).</li>
+</ul>
+<h4>Why it is built this way</h4>
+<ul>
+<li>Supply is the main variable because the claim is about supply: it moves, but between a high floor and its peak, while crowding swings from near zero to its peak. Crowding is shown in grey because it is the context, not the subject, and because blue was already used for weekends in Plot 1.</li>
+<li>Same scaling as Plot 1 so that the two are directly comparable in shape; the plum/grey colouring keeps supply distinct from the orange/blue day colours.</li>
+<li>An earlier version showed heat grids for supply and crowding separately, plus a chart of how low each line goes at its quietest. The grids were repetitive and the second chart did not add anything, so they were cut.</li>
+</ul>
+<h4>How to read it / what it means</h4>
+<p>If supply followed crowding the plum and grey lines would rise and fall together. They do not: supply is flat for most of the day and drops mainly in the late evening and early morning, while crowding peaks twice and falls to a fraction of its peak between. At peak times that means each train is much fuller; off-peak, each is emptier. This is the descriptive basis for the later plots on strain.</p>
+<h4>Caveats and limits</h4>
+<ul>
+<li>"Trains with a prediction" can undercount trains near terminals or not yet in the prediction horizon, and says nothing about train length or capacity; a flat supply line is a flat number of trains, not flat capacity.</li>
+<li>Closures show as unusually low supply days (the Piccadilly closure in the first week), which pulls that line's thick line down; the typical line settles as more weeks arrive.</li>
+<li>Supply and crowding are each scaled to themselves, so heights are not comparable between the two; only shapes are.</li>
+</ul>
+</div>
+      <figcaption class="ph" data-wc="chart">[P3 caption: one line on how to read it]</figcaption>
     </figure>
   </section>
 
-  <section class="aud" id="lines">
-    <h2>Lines and stations</h2>
-    <figure class="chart" id="lines-1">
-      <h3 class="ph" data-wc="chart">[Chart 3 title: state what the chart shows]</h3>
-      <div class="plot" id="lines-1-plot"><p class="slot nowords">Chart slot 3. Move a chart here from the workbench.</p></div>
-      <figcaption class="ph" data-wc="chart">[Chart 3 caption: one line on how to read it]</figcaption>
+  <section class="aud" id="zoom">
+    <h2>Zooming in: my station and my wait</h2>
+    <figure class="chart" id="p4">
+      <p class="tag nowords">Plot 4 &middot; When is my station busy</p>
+      <div class="plot" data-chart="p4"></div>
+      <div class="wn nowords"><h3>Working note, not for the page</h3>
+<h4>What it shows</h4>
+<p>A single station's typical week, in the same grid style for crowding (orange) or for trains per hour (plum), with an optional second station to compare. Plots 1 to 3 describe the network; this is the first zoom into one place.</p>
+<h4>Data</h4>
+<ul>
+<li><b>Crowding:</b> <code>typical.json</code>, from <code>crowding.csv</code>: for each station, weekday and quarter-hour, the median crowding index across complete days (masked readings excluded).</li>
+<li><b>Trains per hour:</b> <code>typical_supply.json</code>, from <code>station_supply.csv</code>: per run, per line and direction at the station, <code>trains_next_15m</code> (trains predicted to arrive in the next 15 minutes). The build multiplies by 4 for trains per hour, sums over every line and both directions at the station, and takes the median across complete days.</li>
+</ul>
+<h4>How each variable is built</h4>
+<ul>
+<li><b>Scaling.</b> Each station is scaled to itself: its own busiest quarter-hour of the typical week is 100 (for either measure), so the picture shows when a station is busiest, not whether it is busier than another station. The note under the plot reports what 100 is on the original scale (percent of the station's record, or trains an hour).</li>
+<li><b>Cell.</b> A weekday and quarter-hour; each is a median across days, so it settles as weeks accumulate. Grey cells have no data yet.</li>
+<li><b>Compare with.</b> Draws a second grid for another station on the same scale; each is scaled to itself.</li>
+</ul>
+<h4>Why it is built this way</h4>
+<ul>
+<li>Same self-scaling as Plot 1 so the whole page reads consistently, and so that a quiet suburban station and a hub can be compared for pattern.</li>
+<li>Trains per hour is summed over both directions and all lines because the aim is how much service the station has, which interchange stations have most of.</li>
+</ul>
+<h4>Caveats and limits</h4>
+<ul>
+<li>Station supply was stored only hourly until 4 Nov 2026 (about 18:30 UTC) and every 15 minutes after that, so the trains-per-hour grid has gaps (several weekdays, weekends) that fill in over time.</li>
+<li>The crowding index is relative to the station's own record; interchange stations can have a different index per mode in TfL's data, and only Underground stations are covered.</li>
+<li>The medians rest on few days at the time of building.</li>
+</ul>
+</div>
+      <figcaption class="ph" data-wc="chart">[P4 caption: one line on how to read it]</figcaption>
+    </figure>
+    <figure class="chart" id="p5">
+      <p class="tag nowords">Plot 5 &middot; How long will I wait</p>
+      <div class="plot" data-chart="p5"></div>
+      <div class="wn nowords"><h3>Working note, not for the page</h3>
+<h4>What it shows</h4>
+<p>How long a passenger arriving at a station at a given time would wait for the next train, for any station, line and direction, optionally against any other. One plot: choose weekdays, weekend, or any single day. It continues from Plot 4 (when is my station busy) to the passenger's experience of service.</p>
+<h4>Data</h4>
+<ul>
+<li><code>station_supply.csv</code>: per run, station, line and direction, <code>next_arrival_s</code>, the seconds until the next predicted train at that station (the minimum over the predictions); each run gives one value per station, line and direction.</li>
+<li><code>code/build.py</code> writes one file per station, <code>waits/&lt;naptan&gt;.json</code>, with the waits grouped by line, direction and day group.</li>
+</ul>
+<h4>How each variable is built</h4>
+<ul>
+<li><b>Wait (minutes)</b> = next_arrival_s divided by 60: what someone arriving at that instant would wait. It is a prediction at that moment, not an experienced wait.</li>
+<li><b>Bins.</b> 15-minute bins from 06:00 on the London clock; each day contributes one value per bin (the first run in the bin). Day groups: weekdays (Mon to Fri pooled), weekend (Sat and Sun pooled), or one weekday.</li>
+<li><b>Line</b> = the median across days of the wait in that bin. <b>Dots</b> = each day's value, shown while a bin has fewer than 5 days. <b>Band</b> = the full range of days while a bin has fewer than 10 days (so every dot lies inside it), then the middle 80% of days (10th to 90th percentile) from 10 days on. It therefore shows day-to-day variation, and it is built from accumulating data by design.</li>
+<li><b>Fixed scale</b> 0 to 15 minutes (values above are drawn at the top) so stations can be compared; the plot starts at 06:00 because few trains run earlier and they stretch the axis.</li>
+<li><b>Direction labels.</b> TfL labels directions only "inbound" and "outbound", which mean different things on different lines. Each is turned into a heading and a next stop in two ways. (1) From the data: for two neighbouring stations A and B on a line, if trains in a direction go from A to B, the next train at B is usually later than at A, so the median of (B minus A) is positive; the build uses both directions together (the difference of the two medians, requiring opposite signs and at least 12 slots), which makes it impossible for both directions at a station to have the same next stop. Where one side is known the other is the line's remaining neighbour; where nothing is known the label is "Next stop: X" with no compass heading. (2) From TfL's own route sequences: <code>code/fetch_routes.py</code> downloads each line's ordered stops (Route/Sequence, field orderedLineRoutes) in the build workflow, and if present the label becomes "Northbound to Amersham, next stop Preston Road". At the time of building the data-driven labels cover 97% of line-directions (640 with a heading, 28 "Next stop" only, 5 line ends, 23 none).</li>
+</ul>
+<h4>Why it is built this way</h4>
+<ul>
+<li>Fifteen-minute bins and "one value per day" so the band is variation across days (this Friday against last Friday, pooled), which gets more informative as days accumulate; an earlier version pooled snapshots within an hour and showed dots outside the band, which was confusing and was changed.</li>
+<li>Line colours are the lines' own. Comparing two stations on the same line uses a darker, dashed second line.</li>
+</ul>
+<h4>Caveats and limits</h4>
+<ul>
+<li>Predictions are not the timetable and are not experienced waits; they can be missing when no train is predicted.</li>
+<li>Weekdays are pooled, so day-of-week differences are mixed; pick a single day to separate them.</li>
+<li>Routes with fast and slow services (for example the Metropolitan line) share a station sequence, so "next stop" is the next stop on the route and a fast train may skip it; the route-sequence step could not be tested against TfL's live API when this was built, so check the first build log for the line "routes written".</li>
+<li>Few days per bin at the time of building: most bands are still ranges of 2 to 6 days.</li>
+</ul>
+</div>
+      <figcaption class="ph" data-wc="chart">[P5 caption: one line on how to read it]</figcaption>
     </figure>
   </section>
 
-  <section class="aud" id="passengers">
-    <h2>Passengers</h2>
-    <figure class="chart" id="passengers-1">
-      <h3 class="ph" data-wc="chart">[Chart 4 title: state what the chart shows]</h3>
-      <div class="plot" id="passengers-1-plot"><p class="slot nowords">Chart slot 4. Move a chart here from the workbench.</p></div>
-      <figcaption class="ph" data-wc="chart">[Chart 4 caption: one line on how to read it]</figcaption>
-    </figure>
-    <figure class="chart" id="passengers-2">
-      <h3 class="ph" data-wc="chart">[Chart 5 title: state what the chart shows]</h3>
-      <div class="plot" id="passengers-2-plot"><p class="slot nowords">Chart slot 5. Move a chart here from the workbench.</p></div>
-      <figcaption class="ph" data-wc="chart">[Chart 5 caption: one line on how to read it]</figcaption>
+  <section class="aud" id="strain">
+    <h2>Where the network strains</h2>
+    <figure class="chart" id="p6">
+      <p class="tag nowords">Plot 6 and 6b &middot; Where strain concentrates</p>
+      <div class="plot" data-chart="p6"></div>
+      <div class="wn nowords"><h3>Working note, not for the page</h3>
+<h4>What it shows</h4>
+<p>Where on the network strain concentrates, and whether it comes from too few trains or too many people. Plot 6 (the map) says where; Plot 6b (the bars, out of 100% as in Plot 2b) says how each line's stations split by main cause. This is the first of the TfL-facing plots.</p>
+<h4>Data</h4>
+<ul>
+<li>Crowding (<code>crowding.csv</code>), line supply (<code>line_supply.csv</code>), line status (<code>line_status.csv</code>) and station disruptions (<code>station_disruptions.csv</code>), combined by <code>code/build.py</code> into <code>strain.json</code>.</li>
+</ul>
+<h4>How each variable is built</h4>
+<ul>
+<li><b>"Usual" crowding</b> for a station and a quarter-hour: the median of that station's readings in the same quarter-hour and the 15 minutes either side, on other days of the same type (weekday, Saturday, Sunday), excluding the day itself. It needs at least 2 other days and 3 readings, so weekends fill in from the second weekend and early days have no baseline.</li>
+<li><b>Deviation</b> = (reading minus usual) divided by the larger of usual and 8 (the floor stops quiet hours looking dramatic), then divided by that station's own typical spread (1.4826 times the median absolute deviation, estimated separately for the morning peak 06 to 10, midday 10 to 16, evening peak 16 to 20, and other times; at least 0.05; capped at plus or minus 6). "Much busier than usual" means deviation above 2.</li>
+<li><b>Supply against usual</b>: for each line, trains against the median trains in the same hour on days of the same type, with disrupted hours left out of the baseline (hour-only fallback); a station takes the mean over its lines. "Fewer trains than usual" means more than 20% below usual, or the station is closed.</li>
+<li><b>Classification of each station quarter-hour</b> (from 06:00 on days with a baseline): <i>supply-led</i> = fewer trains and not much busier; <i>demand-led</i> = much busier while trains are within 20% of usual; <i>both</i> = fewer trains and much busier.</li>
+<li><b>Hours a week</b> = the number of quarter-hours times 0.25, scaled to a week (times 7 divided by the number of days with a baseline). A station's <b>main cause</b> is the largest of the three; stations under 12 hours a week in total are "ordinary".</li>
+<li><b>Bars (6b).</b> For each line, the share of its stations in each category; interchanges count for every line they serve; lines are sorted by the share of stations under strain. Waterloo &amp; City is left out.</li>
+</ul>
+<h4>Why it is built this way</h4>
+<ul>
+<li>Crowding alone cannot separate "more people" from "fewer trains"; comparing crowding with usual and trains with usual, together, can. Supply-led strain is fixed by running trains, demand-led by managing crowds, so the split matters to TfL.</li>
+<li>The 12-hour cut-off is about twice what chance produces: even in an ordinary week roughly 5% of quarter-hours have deviation above 2, about 6 hours a week.</li>
+<li>Planned closures are included in "fewer trains" on purpose (they are real loss of supply); Appendix B excludes planned works because it studies surprises.</li>
+</ul>
+<h4>Caveats and limits</h4>
+<ul>
+<li>The baseline rests on few days at the time of building, and Friday is compared with a Mon to Fri baseline (so Friday reads quieter).</li>
+<li>The first week's Piccadilly closure makes the Piccadilly line almost entirely "supply-led" (98% of its stations at the time of building) and Central is 75% supply-led; this will dilute as weeks without closures accumulate.</li>
+<li>Crowding is a proxy, supply a count of predicted trains; both have the limits described under Plots 1 and 3.</li>
+</ul>
+</div>
+      <figcaption class="ph" data-wc="chart">[P6 caption: one line on how to read it]</figcaption>
     </figure>
   </section>
 
-  <section class="aud" id="tfl">
-    <h2>TfL</h2>
-    <figure class="chart" id="tfl-1">
-      <h3 class="ph" data-wc="chart">[Chart 6 title: state what the chart shows]</h3>
-      <div class="plot" id="tfl-1-plot"><p class="slot nowords">Chart slot 6. Move a chart here from the workbench.</p></div>
-      <figcaption class="ph" data-wc="chart">[Chart 6 caption: one line on how to read it]</figcaption>
+  <section class="aud" id="appendix">
+    <h2>Appendix</h2>
+    <figure class="chart" id="appA">
+      <p class="tag nowords">Appendix A &middot; The most strained moments</p>
+      <div class="plot" data-chart="appA" data-lazy></div>
+      <div class="wn nowords"><h3>Working note, not for the page</h3>
+<h4>What it shows</h4>
+<p>The most strained moments, for the whole network or one line, over today, this week, this month or all time, and what was going on at each. A station is in the critical zone when crowds are very high and supply very low. Moved to the appendix; the jump buttons under the chart open Appendix B for the kind of disruption on each line at that moment.</p>
+<h4>How each variable is built</h4>
+<ul>
+<li><b>Crowding (vertical axis)</b> = a station's reading as a percentage of its own busiest quarter-hour of the typical week (the median across complete days; same scaling as Plots 1 and 4). It can exceed 100.</li>
+<li><b>Supply (horizontal axis)</b> = the trains on the station's lines as a percentage of the most trains those lines run in a quarter-hour of the typical week, averaged over the station's lines.</li>
+<li><b>Critical zone</b> = crowding at or above the 90th percentile of all in-service (06:00 to 22:00) station moments so far, and supply at or below the 10th percentile. At the time of building: crowding 61 or more and supply 44 or less. Either alone happens about one time in ten; if crowding and supply were unrelated both together would be about one in a hundred, so a station inside the box has crowds its service is not meeting. The 10% is a convention and the thresholds move as data accumulate.</li>
+<li><b>Which moments.</b> For each line and period, quarter-hours are scored by the number of stations in the zone (ties broken by mean crowding); the five best are listed, with a rule that they must be more than three hours apart so one bad morning is not listed five times.</li>
+<li><b>What was going on.</b> The lines with a status other than good at that moment (severity and reason from TfL's text); the stations closed or exit-only (state and cause); and, over all critical station moments so far, the share on a disrupted line (63%), with TfL entry restrictions (0%) and with neither (37%) at the time of building.</li>
+<li>Exit-only stations stay in the plot (diamonds; their count is capped so it is a floor); closed stations are left out.</li>
+</ul>
+<h4>Caveats</h4>
+<ul>
+<li>75 critical station moments in the data at the time of building: small, and several come from one morning (Fri 6 Nov 08:45, six stations on the Bakerloo line with no disruption declared).</li>
+<li>Thresholds depend on the data collected so far; a month from now they may differ.</li>
+</ul>
+</div>
+      <figcaption class="ph" data-wc="chart">[APPA caption: one line on how to read it]</figcaption>
     </figure>
-    <figure class="chart" id="tfl-2">
-      <h3 class="ph" data-wc="chart">[Chart 7 title: state what the chart shows]</h3>
-      <div class="plot" id="tfl-2-plot"><p class="slot nowords">Chart slot 7. Move a chart here from the workbench.</p></div>
-      <figcaption class="ph" data-wc="chart">[Chart 7 caption: one line on how to read it]</figcaption>
+    <figure class="chart" id="appB">
+      <p class="tag nowords">Appendix B &middot; What happens after a disruption</p>
+      <div class="plot" data-chart="appB" data-lazy></div>
+      <div class="wn nowords"><h3>Working note, not for the page</h3>
+<h4>What it shows</h4>
+<p>The forward-looking view: when a disruption of a given kind starts on a line, what should the control room expect over the next hour? The matrix (what goes wrong and why, in hours of disruption per week) is clickable; below it, trains running on the line, crowding at the line's stations and how long such disruptions last. Moved to the appendix.</p>
+<h4>How each variable is built</h4>
+<ul>
+<li><b>Disruption start.</b> The first quarter-hour in which a line's status is other than good after at least an hour of good service, between 06:00 and 22:00.</li>
+<li><b>Severity.</b> From the worst status in the first hour: minor delays; severe delays or reduced service; part suspended or suspended. Planned works (statuses planned closure and part closure) are excluded.</li>
+<li><b>Reason.</b> Read from TfL's status text by keywords: signal, track, power, points, overhead (signal, track or power fault); train fault, cancellation, train shortage (train fault or cancellation); customer, passenger, person, trespass (customer incident); "earlier" (knock-on from an earlier incident); otherwise other or not stated.</li>
+<li><b>Hours per week (matrix)</b> = total length of those disruptions divided by the number of weeks of data (at least 1). A disruption's length is the time until the line returns to good service. Cells with fewer than 5 disruptions are pale.</li>
+<li><b>Trains and crowding panels.</b> Average, over the stations on the line, of supply against usual and crowding against usual (percent), at 30 minutes before to 60 minutes after the start, in 15-minute steps. "Against usual" is as defined under Plot 6. With fewer than 5 events each event is a dot; from 5 a 95% band from resampling events (300 resamples) appears.</li>
+<li><b>How long does it last</b> = the share of events still disrupted after each number of minutes.</li>
+</ul>
+<h4>Why it is built this way</h4>
+<ul>
+<li>It uses every event collected, so it improves as weeks accumulate. Seeing the minutes before the start matters: trains falling before the start would suggest TfL cutting service first (not seen so far); crowding already high before a station control would show TfL reacting to crowds, so crowding is partly TfL's own decision.</li>
+<li>An earlier version had event-by-event grids and a station-control option; they were cut as hard to read.</li>
+</ul>
+<h4>Caveats</h4>
+<ul>
+<li>Many cells have few events at the time of building (22 events for the biggest cell, minor delays from train faults).</li>
+<li>Reasons are text-matched, so some are "other or not stated"; severity uses the worst status in the first hour.</li>
+</ul>
+</div>
+      <figcaption class="ph" data-wc="chart">[APPB caption: one line on how to read it]</figcaption>
     </figure>
   </section>
 
-  <section class="aud" id="london">
-    <h2>London</h2>
-    <figure class="chart" id="london-1">
-      <h3 class="ph" data-wc="chart">[Chart 8 title: state what the chart shows]</h3>
-      <div class="plot" id="london-1-plot"><p class="slot nowords">Chart slot 8. Move a chart here from the workbench.</p></div>
-      <figcaption class="ph" data-wc="chart">[Chart 8 caption: one line on how to read it]</figcaption>
-    </figure>
-  </section>
+  <section class="wn nowords" id="writeup-notes">
+<h3>Notes for the write-up (not part of the submission)</h3>
+<p><b>Reminder on the rules.</b> The course allows AI for coding, debugging, data retrieval and data cleaning, and does not allow it for drafting prose; checks are made and penalties applied. Every grey working note on this page, this block and the yellow bracketed placeholders are reminders, not text to submit: delete them before 4pm on 7 January 2027 and write the page's text yourself (800 words in total, four topics: aims, data, tools and challenges, conclusions).</p>
+<h4>How the system works (one paragraph for your own memory)</h4>
+<ul>
+<li><b>Collector</b> (<code>code/collect.py</code>, <code>.github/workflows/collect.yml</code>): a GitHub Actions workflow calls the TfL Unified API about every 15 minutes (triggered by an external cron service via workflow_dispatch because GitHub's own schedule is unreliable) and appends raw CSVs for crowding, line supply, line status, station disruptions, lifts and station supply to the <code>data</code> branch, with a <code>collection_log.csv</code> of what each run got. <code>tfl-status.html</code> shows the latest runs.</li>
+<li><b>Build</b> (<code>code/build.py</code>, <code>.github/workflows/build.yml</code>): once a day (00:40 UTC) and by hand, recomputes every processed JSON file in <code>processed/</code> on the <code>data</code> branch from all the raw files, so numbers always match the data. It also fetches TfL's route sequences (<code>code/fetch_routes.py</code>) to name train directions.</li>
+<li><b>Site</b> (<code>index.html</code>, <code>project.html</code>, <code>portfolio.html</code>, <code>assets/</code>): static pages on GitHub Pages; the JavaScript (<code>assets/js/charts.js</code>, Vega-Lite and D3) reads the processed files from <code>raw.githubusercontent.com/.../data/processed/</code> and draws every chart in the browser, so charts update without anyone touching them.</li>
+</ul>
+<h4>Decision log</h4>
+<ul>
+<li><b>Demand is not observed.</b> Crowding at stations is the outcome of demand and supply (and of TfL's own controls); supply is observed only through trains with a live prediction.</li>
+<li><b>Self-scaled 0 to 100</b> (busiest quarter-hour or hour of the typical week) for all week-pattern plots, instead of TfL's fixed 2019 reference, because the questions are about patterns within a week.</li>
+<li><b>Median across days</b> for every typical value; <b>complete days</b> only (56 of 64 daytime quarter-hours); mean across stations within a slot.</li>
+<li><b>Masking</b> of closed, exit-only and fully suspended stations because TfL's count is capped when entry is restricted.</li>
+<li><b>Waterloo &amp; City left out</b> of every line list and chart (two stations).</li>
+<li><b>15-minute grid</b> on the London clock; the earlier of two runs in one slot is used.</li>
+<li><b>Planned works</b> are counted as lost supply in Plot 6 and excluded from Appendix B.</li>
+<li><b>Colours:</b> orange crowding, plum supply, blue weekend or quiet, grey usual or no data; line colours are TfL's.</li>
+<li><b>Thresholds that are judgement, not estimated:</b> station types 1.8 / 0.9 / 1.1 (Plot 2); 20% fewer trains, deviation above 2, 12 hours a week (Plot 6); top and bottom 10% (Appendix A); 5 and 10 days for dots and bands (Plot 5); 5 events for a band (Appendix B).</li>
+</ul>
+<h4>Things that were different in the first weeks (check before interpreting)</h4>
+<ul>
+<li>Continuous collection starts Fri 30 Oct 2026 about 05:51 UTC (four test runs on 29 Oct).</li>
+<li>Piccadilly line closure 28 to 30 October and near-zero Piccadilly trains the following weekend.</li>
+<li>Station supply stored hourly until 4 Nov about 18:30 UTC, every 15 minutes after.</li>
+<li>Weekend baselines (for strain) fill in only from the second weekend; Friday is compared with a Mon to Fri baseline.</li>
+</ul>
+<h4>Where the marking criteria are evidenced (facts only)</h4>
+<ul>
+<li><b>Open-data approach:</b> public repository; raw CSVs and processed JSON on the <code>data</code> branch; code in <code>code/</code>; data dictionary in <code>data/README.md</code>.</li>
+<li><b>Data design:</b> each plot has a stated question and the variables that answer it (notes above).</li>
+<li><b>Automation and replication:</b> two scheduled workflows (collect, build); charts read the processed files, nothing is hand-edited.</li>
+<li><b>Visual impact and grammar of graphics:</b> Vega-Lite specifications (encodings of position, colour, size), interactive controls on every plot, consistent colour grammar.</li>
+</ul>
+<h4>Open questions to ask Richard Davies</h4>
+<ul>
+<li>Do the 800 words include captions and technical notes?</li>
+<li>Does a plot with two linked panels (2 and 2b; 6 and 6b) count as one chart? Do the two appendix charts count towards the 5 to 8?</li>
+<li>Where should the portfolio page live and what should it be called (the brief for the 10 portfolio challenges has not been seen)?</li>
+</ul>
+<h4>When you come back</h4>
+<ul>
+<li>Open <code>tfl-status.html</code> and the Actions tab: look for gaps in collection.</li>
+<li>Look at every plot again: do the shapes still hold with a month of data, several weekends and no closure week? Re-read each plot's thresholds above.</li>
+<li>Screenshot the final plots into <code>output/figures/</code> (the files there are from 6 Nov 2026 with 8 days of data).</li>
+<li>Decide what to do with the appendix, write the text, delete the grey notes, check the count with <code>project.html?words</code>.</li>
+</ul>
+</section>
 
   <section class="text" id="data">
     <h2>Data</h2>
@@ -126,11 +391,15 @@
 </main>
 
 <footer class="site-foot"><div class="wrap">
-  <a href="index.html">Home</a>
+  <a href="https://www.linkedin.com/in/ibrahimaljahwari/">LinkedIn</a>
+  <a href="https://github.com/IbrahimJahwari">GitHub</a>
   <a href="https://github.com/IbrahimJahwari/IbrahimJahwari.github.io">Code for this site</a>
+  <a href="tfl-status.html">Pipeline status</a>
 </div></footer>
-
 <script src="assets/js/wordcount.js"></script>
-<!-- Charts are added here as modules, copied from assets/js/explore.js. -->
+<script type="module">
+  import { mountAll } from "./assets/js/charts.js";
+  mountAll();
+</script>
 </body>
 </html>

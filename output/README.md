@@ -1,0 +1,17 @@
+# Output
+
+`figures/` holds PNG snapshots of the plots on `project.html`, taken on 6 November 2026 with 8 days of data:
+
+| File | Plot |
+|---|---|
+| `plot1_crowding_by_day.png` | Plot 1: crowding through the day, one line per day |
+| `plot2_2b_station_types.png` | Plots 2 and 2b: what kind of station is each one |
+| `plot3_supply_vs_crowding.png` | Plot 3: supply is rigid, crowding is not |
+| `plot4_station_week.png` | Plot 4: when is my station busy |
+| `plot5_waits.png` | Plot 5: how long will I wait |
+| `plot6_6b_strain.png` | Plots 6 and 6b: where strain concentrates |
+| `appendixA_strained_moments.png` | Appendix A: the most strained moments |
+| `appendixB_what_happens_next.png` | Appendix B: what happens after a disruption |
+
+These are snapshots of the default view of each plot and will be out of date as data accumulates: re-take them from the live site
+(Cmd+Shift+4 on a Mac) when the data is final.

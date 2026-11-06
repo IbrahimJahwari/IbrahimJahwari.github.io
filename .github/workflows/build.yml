@@ -17,7 +17,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     env:
       DATA_DIR: ${{ github.workspace }}/data-branch
       REMOTE_URL: https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git
@@ -34,6 +34,12 @@ jobs:
 
       - name: Check out the data branch
         run: bash code/ci/prepare_data_branch.sh data-branch
+
+      - name: Fetch TfL's route sequences (names each direction by where it is heading)
+        continue-on-error: true
+        env:
+          TFL_APP_KEY: ${{ secrets.TFL_APP_KEY }}
+        run: python code/fetch_routes.py data-branch/raw/reference/routes.json
 
       - name: Build processed files
         run: python code/build.py

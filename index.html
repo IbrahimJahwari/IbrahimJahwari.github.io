@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ibrahim Al Jahwari</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='white' stroke='%231E2330' stroke-width='5'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
+  <title>Ibrahim Al Jahwari</title>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -16,57 +16,23 @@
 <header class="site"><div class="wrap">
   <h1 class="brand"><a href="index.html">Ibrahim Al Jahwari</a></h1>
   <nav aria-label="Site"><ul>
-    <li><a href="index.html" aria-current="page">Home</a></li>
-    <li><a href="project.html">PP434 project</a></li>
-    <li><a href="explore.html">Workbench</a></li>
-    <li><a href="portfolio.html">PP434 portfolio</a></li>
-    <li><a href="tfl-status.html">Pipeline status</a></li>
+    <li><a href="project.html">PP434 Project</a></li>
+    <li><a href="portfolio.html">PP434 Portfolio</a></li>
   </ul></nav>
 </div></header>
 
-<!-- Add a one-line intro about yourself here if you want one. -->
-
 <main id="main" class="wrap">
-  <!-- The page is a line diagram: the project is the lead stop (the big ring), everything else follows it.
-       To add a project later, copy a <li class="stop"> block below and put it before "Other work". -->
-  <ol class="line">
-    <li class="stop lead">
-      <h2>PP434 project</h2>
-      <p class="live" id="live" aria-live="polite">Checking the collector.</p>
-      <a class="btn" href="project.html">Open the project</a>
-      <p class="live" style="margin:14px 0 0"><a class="textlink" href="explore.html">See every candidate chart in the workbench</a></p>
-    </li>
-
-    <li class="stop">
-      <h2>PP434 portfolio</h2>
-      <a class="textlink" href="portfolio.html">Open the portfolio</a>
-    </li>
-
-    <li class="stop">
-      <h2>Other work</h2>
-      <!-- Each link is a repository. Add a short description under any of them when you are ready. -->
-      <ul class="repos">
-        <li><a href="https://github.com/IbrahimJahwari/electricity_regulation_europe">electricity_regulation_europe</a></li>
-        <li><a href="https://github.com/IbrahimJahwari/Sweden_Nuclear">Sweden_Nuclear</a></li>
-        <li><a href="https://github.com/IbrahimJahwari/PDO_Dashboard">PDO_Dashboard</a></li>
-        <li><a href="https://github.com/IbrahimJahwari/Scholarship_Evaluation">Scholarship_Evaluation</a></li>
-      </ul>
-    </li>
-  </ol>
+  <div class="boxes">
+    <a class="box" href="project.html">PP434 Project</a>
+    <a class="box" href="portfolio.html">PP434 Portfolio</a>
+  </div>
 </main>
 
 <footer class="site-foot"><div class="wrap">
   <a href="https://www.linkedin.com/in/ibrahimaljahwari/">LinkedIn</a>
   <a href="https://github.com/IbrahimJahwari">GitHub</a>
   <a href="https://github.com/IbrahimJahwari/IbrahimJahwari.github.io">Code for this site</a>
+  <a href="tfl-status.html">Pipeline status</a>
 </div></footer>
-
-<script type="module">
-  import { getJSON, heartbeatText } from "./assets/js/tube.js";
-  const el = document.getElementById("live");
-  getJSON("processed/status.json")
-    .then((s) => { const h = heartbeatText(s); el.textContent = h.text; el.classList.toggle("late", h.late); })
-    .catch(() => { el.textContent = "Live status is unavailable right now."; });
-</script>
 </body>
 </html>

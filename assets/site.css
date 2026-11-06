@@ -1,26 +1,15 @@
-/* site.css - shared look for index.html and project.html.
-   Colours are variables so dark mode is one block. Chart colours live in the chart code, not here. */
+/* site.css - shared look for every page. Plain white for now; chart colours live here as variables. */
 :root {
-  color-scheme: light dark;
-  --bg: #FBFBFC; --panel: #FFFFFF; --ink: #1E2330; --ink2: #5B6272; --ink3: #8A909C; --rule: #E2E4E9;
+  color-scheme: light;
+  --bg: #FFFFFF; --panel: #FFFFFF; --ink: #1E2330; --ink2: #5B6272; --ink3: #8A909C; --rule: #E2E4E9;
   --focus: #2F6DB5; --ph: #FFF1CC; --warn: #B4531A;
-  /* chart colours: orange is demand (crowding), purple is supply (trains), grey is "usual" or no data */
-  --busy: #D2601A; --usual: #EEEFF2; --supply: #6B6FB5; --nodata: #B9BDC6;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14171D; --panel: #1A1E25; --ink: #E7E9EE; --ink2: #AAB0BC; --ink3: #7C8391; --rule: #2C313B;
-    --focus: #6FA3E6; --ph: #3A3426; --warn: #F08A4B;
-    --busy: #F08A4B; --usual: #343A45; --supply: #9A9EE0; --nodata: #5C6370;
-  }
+  /* chart colours: orange is demand (crowding), plum is supply (trains), blue is "quieter" and weekends, grey is "usual" or no data */
+  --busy: #D2601A; --quiet: #2F6DB5; --usual: #EEEFF2; --supply: #8E3A93; --nodata: #B9BDC6;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-padding-top: 16px; }
-body {
-  margin: 0; background: var(--bg); color: var(--ink);
-  font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  font-size: 1.0625rem; line-height: 1.55;
-}
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font-family: "Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 1.0625rem; line-height: 1.55; }
 .wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .skip { position: absolute; left: 12px; top: -48px; background: var(--ink); color: var(--bg); padding: 8px 12px; border-radius: 6px; z-index: 30; }
@@ -28,78 +17,74 @@ body {
 a { color: var(--ink); text-underline-offset: 3px; }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
 
-/* ---- site header ---- */
+/* ---- site header: the name goes home, three tabs on every page ---- */
 .site { border-bottom: 1px solid var(--rule); }
 .site .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 28px; padding-block: 14px; }
 .brand { margin: 0; font-size: 1.05rem; font-weight: 700; }
 .brand a { text-decoration: none; }
-.site nav ul { display: flex; flex-wrap: wrap; gap: 2px 22px; list-style: none; margin: 0; padding: 0; }
+.site nav ul { display: flex; flex-wrap: wrap; gap: 2px 26px; list-style: none; margin: 0; padding: 0; }
 .site nav a { display: inline-block; padding: 4px 0; color: var(--ink2); text-decoration: none; border-bottom: 2px solid transparent; }
 .site nav a:hover { color: var(--ink); }
 .site nav a[aria-current="page"] { color: var(--ink); font-weight: 700; border-bottom-color: var(--ink); }
-
-/* ---- home: the line diagram. A bigger ring marks the lead stop (an interchange). ---- */
-ol.line { list-style: none; margin: 0; padding: 40px 0 8px 64px; }
-.stop { position: relative; padding-bottom: 52px; --mt: 0.4rem; --mn: calc(0.4rem + 9px); }
-.stop::before {                      /* marker */
-  content: ""; position: absolute; left: -32px; top: var(--mt); transform: translateX(-50%);
-  width: 18px; height: 18px; border-radius: 50%; border: 4px solid var(--ink); background: var(--bg);
-}
-.stop:not(:last-child)::after {      /* connector to the next stop */
-  content: ""; position: absolute; left: -32px; top: var(--mt); bottom: calc(-1 * var(--mn));
-  width: 4px; transform: translateX(-50%); background: var(--ink); z-index: -1;
-}
-.stop.lead { --mt: 1.35rem; }
-.stop.lead::before { width: 34px; height: 34px; border-width: 6px; margin-top: -8px; }
-.stop h2 { margin: 0 0 8px; font-size: 1.6rem; line-height: 1.2; }
-.stop.lead h2 { font-size: clamp(2.1rem, 6vw, 3.4rem); letter-spacing: -0.015em; line-height: 1.08; }
-.stop .live { margin: 0 0 18px; max-width: 52ch; color: var(--ink2); }
-.stop .live.late { color: var(--warn); }
-.btn { display: inline-block; padding: 10px 18px; border-radius: 8px; background: var(--ink); color: var(--bg); font-weight: 700; text-decoration: none; }
-.btn:hover { opacity: .88; }
-.textlink { font-weight: 700; }
-ul.repos { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px 20px; }
-ul.repos a { display: block; padding: 10px 0; border-top: 1px solid var(--rule); text-decoration: none; font-weight: 700; overflow-wrap: anywhere; }
-ul.repos a:hover { text-decoration: underline; }
-footer.site-foot { border-top: 1px solid var(--rule); padding: 18px 0 48px; color: var(--ink2); font-size: .95rem; }
+footer.site-foot { border-top: 1px solid var(--rule); margin-top: 48px; padding: 18px 0 48px; color: var(--ink2); font-size: .95rem; }
 footer.site-foot .wrap { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 
-/* ---- workbench (explore.html): every candidate chart, so the best can be moved to project.html ---- */
-.wb-head { padding: 32px 0 4px; }
-.wb-head h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.12; }
-.wb-head p { margin: 0 0 6px; max-width: 70ch; color: var(--ink2); }
-.wb-head .status { color: var(--ink); font-weight: 700; }
-.wb-head .status.err { color: var(--warn); }
-.wb-nav { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 14px 0 0; }
-.wb-nav a { font-weight: 700; }
-.read { margin: 0 0 8px; max-width: 78ch; color: var(--ink2); font-size: .95rem; }
-.note { margin: 8px 0 0; max-width: 86ch; color: var(--ink3); font-size: .85rem; }
-.note b { color: var(--ink2); }
-figure.chart .plot { min-height: 120px; }
-.plot .vega-embed { width: 100%; display: block; }
-.plot .vega-embed summary { display: none; }
-.soon { margin: 0 0 18px; color: var(--ink2); max-width: 70ch; }
-.err-msg { color: var(--warn); font-size: .95rem; }
+/* ---- home: two boxes ---- */
+.boxes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; padding: 56px 0 24px; }
+.box { display: flex; align-items: center; justify-content: center; min-height: 260px; padding: 24px; text-align: center; border: 2px solid var(--ink);
+  border-radius: 10px; color: var(--ink); text-decoration: none; font-size: clamp(1.5rem, 3.4vw, 2.2rem); font-weight: 700; }
+.box:hover { background: var(--usual); }
+@media (max-width: 640px) { .boxes { grid-template-columns: 1fr; } }
 
-/* ---- project page ---- */
-.pagehead { padding: 36px 0 8px; }
-.pagehead h1 { margin: 0; font-size: clamp(1.9rem, 4.6vw, 2.9rem); line-height: 1.12; letter-spacing: -0.01em; max-width: 22ch; }
+/* ---- project page and workbench ---- */
+.pagehead { padding: 32px 0 6px; }
+.pagehead h1 { margin: 0 0 8px; font-size: clamp(1.8rem, 4.4vw, 2.7rem); line-height: 1.12; letter-spacing: -0.01em; max-width: 24ch; }
+.status { margin: 0 0 6px; color: var(--ink2); font-size: .95rem; }
+.status.err { color: var(--warn); font-weight: 700; }
 .text { padding: 28px 0 6px; }
 .text h2 { margin: 0 0 6px; font-size: 1.35rem; }
 .prose { max-width: 68ch; margin: 0 0 12px; }
-section.aud { padding-top: 40px; margin-top: 36px; border-top: 4px solid var(--ink); }
-section.aud > h2 { margin: 0 0 18px; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; display: flex; align-items: center; gap: 12px; }
-section.aud > h2::before { content: ""; flex: none; width: 16px; height: 16px; border-radius: 50%; border: 4px solid var(--ink); background: var(--bg); margin-top: 2px; }
-figure.chart { margin: 0 0 44px; padding-top: 16px; border-top: 1px solid var(--rule); }
-figure.chart h3 { margin: 0 0 4px; font-size: 1.15rem; line-height: 1.3; }
+section.aud { padding-top: 36px; margin-top: 32px; border-top: 4px solid var(--ink); }
+section.aud > h2 { margin: 0 0 18px; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; }
+figure.chart { margin: 0 0 40px; padding-top: 14px; border-top: 1px solid var(--rule); }
 figure.chart figcaption { color: var(--ink2); font-size: .95rem; max-width: 76ch; margin-top: 8px; }
-.plot { position: relative; width: 100%; overflow-x: auto; }
-.plot .slot { display: grid; place-items: center; min-height: 280px; margin: 10px 0 0; border: 2px dashed var(--rule); border-radius: 10px; color: var(--ink3); text-align: center; padding: 12px; }
+.tag { margin: 0 0 8px; font-size: .85rem; font-weight: 700; color: var(--ink3); }
+.read { margin: 0 0 8px; max-width: 78ch; color: var(--ink2); font-size: .95rem; }
+.note { margin: 8px 0 0; max-width: 86ch; color: var(--ink3); font-size: .85rem; }
+.plot { position: relative; width: 100%; overflow-x: auto; min-height: 80px; }
+.plot .vega-embed { display: block; }
+.plot .vega-embed summary { display: none; }
+.err-msg { color: var(--warn); font-size: .95rem; }
 .ph { background: var(--ph); border-radius: 3px; padding: 0 .3em; }
 .links { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 8px 0 0; }
+.soon { margin: 0 0 12px; color: var(--ink2); max-width: 70ch; }
 
-@media (max-width: 560px) {
-  ol.line { padding-left: 52px; }
-  .stop::before, .stop:not(:last-child)::after { left: -26px; }
-}
-@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+/* ---- controls above a chart ---- */
+.controls { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; margin: 0 0 10px; font-size: .92rem; }
+.controls:empty { display: none; }
+.controls label { display: flex; gap: 6px; align-items: center; color: var(--ink2); }
+select, button { font: inherit; font-size: .92rem; color: var(--ink); background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 5px 9px; }
+button { cursor: pointer; }
+button:hover { background: var(--usual); }
+input[type=range] { width: min(420px, 60vw); accent-color: var(--ink); }
+.stamp { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 13ch; }
+.tip { position: fixed; pointer-events: none; z-index: 20; background: var(--panel); color: var(--ink); border: 1px solid var(--rule); box-shadow: 0 2px 10px rgba(0,0,0,.12);
+  border-radius: 8px; padding: 8px 10px; font-size: .84rem; max-width: 300px; line-height: 1.4; display: none; }
+.tip .mut { color: var(--ink2); }
+
+/* ---- working notes: explanations for the author while the charts are explored. Not part of the submission. ---- */
+.wn { margin: 10px 0 0; padding: 8px 12px; border-left: 3px solid var(--rule); background: #FAFAFB; font-size: .88rem; color: var(--ink2); max-width: 88ch; }
+.wn b { color: var(--ink); }
+button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.appendix-note { margin: 0 0 18px; color: var(--ink2); max-width: 70ch; }
+
+.sbs { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+.sbs > .area { min-width: 0; }
+
+/* working notes: long, structured reminders under each plot (delete before submitting) */
+.wn p { margin: .45em 0; }
+.wn ul { margin: .35em 0 .5em 1.2em; padding: 0; }
+.wn li { margin: .25em 0; }
+.wn h4 { margin: 1em 0 .2em; font-size: .95rem; }
+.wn h3 { margin: 0 0 .5em; }
+.wn code { font-size: .88em; }
