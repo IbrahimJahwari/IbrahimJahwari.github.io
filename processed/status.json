@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-06T22:01:18Z",
- "latest_run_utc": "2026-11-06T22:01:00Z",
- "latest_observation_utc": "2026-11-06T21:56:00.000Z",
- "runs_today": 92,
+ "generated_utc": "2026-11-06T22:15:53Z",
+ "latest_run_utc": "2026-11-06T22:15:00Z",
+ "latest_observation_utc": "2026-11-06T22:11:00.000Z",
+ "runs_today": 93,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.095,
+ "median_crowding": 0.091,
  "lines_not_good_service": [
   "bakerloo",
   "central",
@@ -13,6 +13,6 @@
   "suffragette",
   "victoria"
  ],
- "stations_with_lift_out": 17,
+ "stations_with_lift_out": 16,
  "failed_source_calls_today": 1
 }
