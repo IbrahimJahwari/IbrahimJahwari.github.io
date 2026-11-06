@@ -26,19 +26,19 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: pipeline/requirements.txt
+          cache-dependency-path: code/requirements.txt
 
-      - run: pip install -r pipeline/requirements.txt
+      - run: pip install -r code/requirements.txt
 
       - name: Check out the data branch
-        run: bash pipeline/ci/prepare_data_branch.sh data-branch
+        run: bash code/ci/prepare_data_branch.sh data-branch
 
       - name: Build reference tables
         env:
           TFL_APP_KEY: ${{ secrets.TFL_APP_KEY }}
-        run: python pipeline/build_reference.py
+        run: python code/build_reference.py
 
       - name: Commit to the data branch
         if: always()
         run: |
-          bash pipeline/ci/commit_data.sh data-branch "reference $(date -u +%Y-%m-%d)"
+          bash code/ci/commit_data.sh data-branch "reference $(date -u +%Y-%m-%d)"
