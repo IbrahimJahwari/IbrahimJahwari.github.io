@@ -1,15 +1,15 @@
 {
- "generated_utc": "2026-11-06T13:45:56Z",
- "latest_run_utc": "2026-11-06T13:45:00Z",
- "latest_observation_utc": "2026-11-06T13:41:00.000Z",
- "runs_today": 58,
+ "generated_utc": "2026-11-06T14:01:16Z",
+ "latest_run_utc": "2026-11-06T14:01:00Z",
+ "latest_observation_utc": "2026-11-06T13:56:00.000Z",
+ "runs_today": 59,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.145,
+ "median_crowding": 0.148,
  "lines_not_good_service": [
-  "district",
+  "metropolitan",
   "suffragette"
  ],
- "stations_with_lift_out": 18,
+ "stations_with_lift_out": 17,
  "failed_source_calls_today": 1
 }
