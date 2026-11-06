@@ -1,16 +1,16 @@
 {
- "generated_utc": "2026-11-06T04:45:44Z",
- "latest_run_utc": "2026-11-06T04:45:00Z",
- "latest_observation_utc": "2026-11-06T04:41:00.000Z",
- "runs_today": 21,
+ "generated_utc": "2026-11-06T05:01:11Z",
+ "latest_run_utc": "2026-11-06T05:01:00Z",
+ "latest_observation_utc": "2026-11-06T04:56:00.000Z",
+ "runs_today": 22,
  "stations_total": 270,
- "stations_with_data": 237,
+ "stations_with_data": 245,
  "median_crowding": 0.001,
  "lines_not_good_service": [
   "mildmay",
   "suffragette",
   "waterloo-city"
  ],
- "stations_with_lift_out": 14,
+ "stations_with_lift_out": 15,
  "failed_source_calls_today": 0
 }
