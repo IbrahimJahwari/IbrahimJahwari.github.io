@@ -1,17 +1,17 @@
 {
- "generated_utc": "2026-11-06T05:31:15Z",
- "latest_run_utc": "2026-11-06T05:30:00Z",
- "latest_observation_utc": "2026-11-06T05:26:00.000Z",
- "runs_today": 24,
+ "generated_utc": "2026-11-06T05:45:49Z",
+ "latest_run_utc": "2026-11-06T05:45:00Z",
+ "latest_observation_utc": "2026-11-06T05:41:00.000Z",
+ "runs_today": 25,
  "stations_total": 270,
- "stations_with_data": 252,
- "median_crowding": 0.007,
+ "stations_with_data": 253,
+ "median_crowding": 0.018,
  "lines_not_good_service": [
   "lioness",
   "mildmay",
   "suffragette",
   "waterloo-city"
  ],
- "stations_with_lift_out": 15,
+ "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
 }
