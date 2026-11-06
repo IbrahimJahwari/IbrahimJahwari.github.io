@@ -1,8 +1,8 @@
 {
- "generated_utc": "2026-11-06T18:01:20Z",
- "latest_run_utc": "2026-11-06T18:01:00Z",
- "latest_observation_utc": "2026-11-06T17:56:00.000Z",
- "runs_today": 75,
+ "generated_utc": "2026-11-06T18:15:51Z",
+ "latest_run_utc": "2026-11-06T18:15:00Z",
+ "latest_observation_utc": "2026-11-06T18:11:00.000Z",
+ "runs_today": 76,
  "stations_total": 270,
  "stations_with_data": 253,
  "median_crowding": 0.261,
@@ -12,6 +12,7 @@
   "district",
   "hammersmith-city",
   "jubilee",
+  "metropolitan",
   "suffragette",
   "victoria"
  ],
