@@ -2003,3 +2003,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-06T23:15:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-06T23:15:00Z,weaver,overground,0,10,Good Service,
 2026-11-06T23:15:00Z,windrush,overground,0,10,Good Service,
+2026-11-06T23:30:00Z,bakerloo,tube,0,9,Minor Delays,"Bakerloo Line: No service between Queen's Park and Harrow & Wealdstone due to infrastructure damage at Harlesden. Tickets will be accepted on London Buses, Lioness line and London Northwestern services. MINOR DELAYS on the rest of the line."
+2026-11-06T23:30:00Z,bakerloo,tube,1,3,Part Suspended,"Bakerloo Line: No service between Queen's Park and Harrow & Wealdstone due to infrastructure damage at Harlesden. Tickets will be accepted on London Buses, Lioness line and London Northwestern services. MINOR DELAYS on the rest of the line."
+2026-11-06T23:30:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-06T23:30:00Z,circle,tube,0,10,Good Service,
+2026-11-06T23:30:00Z,district,tube,0,10,Good Service,
+2026-11-06T23:30:00Z,dlr,dlr,0,10,Good Service,
+2026-11-06T23:30:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-06T23:30:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-06T23:30:00Z,jubilee,tube,0,10,Good Service,
+2026-11-06T23:30:00Z,liberty,overground,0,10,Good Service,
+2026-11-06T23:30:00Z,lioness,overground,0,9,Minor Delays,Lioness Line: No service between Harrow & Wealdstone and Willesden Junction due to infrastructure damage at Harlesden MINOR DELAYS on the rest of the line.
+2026-11-06T23:30:00Z,lioness,overground,1,3,Part Suspended,Lioness Line: No service between Harrow & Wealdstone and Willesden Junction due to infrastructure damage at Harlesden MINOR DELAYS on the rest of the line.
+2026-11-06T23:30:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-06T23:30:00Z,mildmay,overground,0,10,Good Service,
+2026-11-06T23:30:00Z,northern,tube,0,10,Good Service,
+2026-11-06T23:30:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-06T23:30:00Z,suffragette,overground,0,5,Part Closure,"Suffragette Line: No service between South Tottenham and Barking Riverside, until the end of service on Tuesday 10 November, due to a operational incident. A reduced service is operating on the rest of the line. Trains will operate every thirty minutes in either direction departing Gospel Oak at xx:09 and xx:39 and departing South Tottenham at xx:13 and xx:43. London Underground and London Buses are accepting tickets via any reasonable routes."
+2026-11-06T23:30:00Z,tram,tram,0,10,Good Service,
+2026-11-06T23:30:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to train cancellations.
+2026-11-06T23:30:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-06T23:30:00Z,weaver,overground,0,10,Good Service,
+2026-11-06T23:30:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: Friday 6 November, after 2330, no service between New Cross Gate and West Croydon / Crystal Palace. Rail replacement buses will run as follows: The bus for Crystal Palace will depart London Bridge at 2358 calling at New Cross Gate, Brockley, Honor Oak Park, Forest Hill, Sydenham, Crystal Palace, Gipsy Hill, West Norwood, Tulse Hill and Streatham Hill. The bus for East Croydon will depart London Bridge at 0035 calling at New Cross Gate, Brockley, Honor Oak Park, Forest Hill, Sydenham, Norwood Junction and East Croydon. One return bus from Crystal Palace departs at 2359, calling at all stations to London Bridge via New Cross Gate. Alternatively, use local buses or trams via any reasonable route. The 2232 and 2247 trains from Highbury & Islington to West Croydon will both divert to Crystal Palace. The 2338 train from Dalston Junction to New Cross Gate will not run"
