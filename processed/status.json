@@ -1,16 +1,16 @@
 {
- "generated_utc": "2026-11-06T08:31:06Z",
- "latest_run_utc": "2026-11-06T08:30:00Z",
- "latest_observation_utc": "2026-11-06T08:26:00.000Z",
- "runs_today": 37,
+ "generated_utc": "2026-11-06T08:45:51Z",
+ "latest_run_utc": "2026-11-06T08:45:00Z",
+ "latest_observation_utc": "2026-11-06T08:41:00.000Z",
+ "runs_today": 38,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.248,
+ "median_crowding": 0.261,
  "lines_not_good_service": [
   "district",
   "suffragette",
   "victoria"
  ],
- "stations_with_lift_out": 17,
+ "stations_with_lift_out": 18,
  "failed_source_calls_today": 1
 }
