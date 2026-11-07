@@ -559,3 +559,5 @@ bc575232aa1c,2026-11-07T14:01:00Z,Holloway Road: Part Closed - Eastbound trains 
 7bb6b3f7e1f5,2026-11-07T16:45:00Z,Holloway Road: Closed - This station is closed due to a planned event.,
 f624dc273cce,2026-11-07T17:30:00Z,London Bridge: Closed - This station is closed while we respond to a fire alert. Tickets will be accepted on London Buses.,
 ca01d65eb24e,2026-11-07T18:15:00Z,Bakerloo Line: No service between Lambeth North and Elephant & Castle while we fix a points failure at Elephant & Castle. Tickets will be accepted on London Buses and Thameslink. MINOR DELAYS on the rest of the line due to infrastructure damage at Harlesden.,
+a2308aa73e28,2026-11-07T18:30:00Z,Euston: Part Closed - Victoria and Northern line northbound trains are not stopping at this station due to faulty station equipment.,
+00dcb644ae43,2026-11-07T18:30:00Z,"Bakerloo Line: No service between Lambeth North and Elephant & Castle while we fix a points failure at Elephant & Castle. SEVERE DELAYS on the rest of the line due to infrastructure damage at Harlesden. Tickets will be accepted on London Buses, Thameslink and London Northwestern Railway.",
