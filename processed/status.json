@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-07T16:01:17Z",
- "latest_run_utc": "2026-11-07T16:01:00Z",
- "latest_observation_utc": "2026-11-07T15:56:00.000Z",
- "runs_today": 68,
+ "generated_utc": "2026-11-07T16:16:14Z",
+ "latest_run_utc": "2026-11-07T16:15:00Z",
+ "latest_observation_utc": "2026-11-07T16:11:00.000Z",
+ "runs_today": 69,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.171,
+ "median_crowding": 0.168,
  "lines_not_good_service": [
   "bakerloo",
   "district",
@@ -16,6 +16,6 @@
   "victoria",
   "waterloo-city"
  ],
- "stations_with_lift_out": 13,
+ "stations_with_lift_out": 12,
  "failed_source_calls_today": 0
 }
