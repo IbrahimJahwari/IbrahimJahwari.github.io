@@ -1083,3 +1083,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-07T12:01:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
 2026-11-07T12:01:00Z,weaver,overground,0,10,Good Service,
 2026-11-07T12:01:00Z,windrush,overground,0,10,Good Service,
+2026-11-07T12:15:00Z,bakerloo,tube,0,9,Minor Delays,"Bakerloo Line: Severe delays between Harrow & Wealdstone and Queen's Park due to infrastructure damage at Harlesden. MINOR DELAYS on the rest of the line. Tickets are being accepted on London Buses, London Overground and North Western Railway."
+2026-11-07T12:15:00Z,bakerloo,tube,1,6,Severe Delays,"Bakerloo Line: Severe delays between Harrow & Wealdstone and Queen's Park due to infrastructure damage at Harlesden. MINOR DELAYS on the rest of the line. Tickets are being accepted on London Buses, London Overground and North Western Railway."
+2026-11-07T12:15:00Z,central,tube,0,10,Good Service,
+2026-11-07T12:15:00Z,circle,tube,0,6,Severe Delays,Circle Line: Severe delays due to an earlier faulty train at Tower Hill. Tickets are being accepted on London Buses.
+2026-11-07T12:15:00Z,district,tube,0,9,Minor Delays,District Line: Severe delays between Tower Hill and Upminster and MINOR DELAYS between Tower Hill and Earl's Court due to an earlier faulty train at Tower Hill. Tickets are being accepted on London Buses and C2C. GOOD SERVICE on the rest of the line.
+2026-11-07T12:15:00Z,district,tube,1,6,Severe Delays,District Line: Severe delays between Tower Hill and Upminster and MINOR DELAYS between Tower Hill and Earl's Court due to an earlier faulty train at Tower Hill. Tickets are being accepted on London Buses and C2C. GOOD SERVICE on the rest of the line.
+2026-11-07T12:15:00Z,dlr,dlr,0,10,Good Service,
+2026-11-07T12:15:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-07T12:15:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-07T12:15:00Z,jubilee,tube,0,10,Good Service,
+2026-11-07T12:15:00Z,liberty,overground,0,10,Good Service,
+2026-11-07T12:15:00Z,lioness,overground,0,7,Reduced Service,"LIONESS LINE: Saturday 7 and Sunday 8 November, a reduced service will run between Kilburn High Road and Euston. On Saturday, between 0630 and 2030, trains departing Watford Junction at 30 minutes past each hour will terminate at Kilburn High Road. From 0715 until 2115, trains departing Euston at 15 minutes past each hour will start from Kilburn High Road. On Sunday, between 1130 and 2030, trains departing Watford Junction at 30 minutes past each hour will terminate at Kilburn High Road. From 1215 until 2115, trains departing Euston at 15 minutes past each hour will start from Kilburn High Road"
+2026-11-07T12:15:00Z,metropolitan,tube,0,9,Minor Delays,Metropolitan Line: Minor delays between Harrow-on-the-Hill and Uxbridge due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-07T12:15:00Z,mildmay,overground,0,5,Part Closure,"MILDMAY LINE: Saturday 7 and Sunday 8 November, no service between Willesden Junction and Clapham Junction. There will also be no SOUTHERN services between Watford Junction and Clapham Junction at these times. Please use local London Buses connections."
+2026-11-07T12:15:00Z,northern,tube,0,10,Good Service,
+2026-11-07T12:15:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-07T12:15:00Z,suffragette,overground,0,5,Part Closure,"Suffragette Line: No service between South Tottenham and Barking Riverside, until the end of service on Tuesday 10 November, due to a operational incident. A reduced service is operating on the rest of the line. Trains will operate every thirty minutes in either direction departing Gospel Oak at xx:09 and xx:39 and departing South Tottenham at xx:13 and xx:43. London Underground and London Buses are accepting tickets via any reasonable routes."
+2026-11-07T12:15:00Z,tram,tram,0,10,Good Service,
+2026-11-07T12:15:00Z,victoria,tube,0,10,Good Service,
+2026-11-07T12:15:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
+2026-11-07T12:15:00Z,weaver,overground,0,10,Good Service,
+2026-11-07T12:15:00Z,windrush,overground,0,10,Good Service,
