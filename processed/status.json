@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-07T14:01:13Z",
- "latest_run_utc": "2026-11-07T14:01:00Z",
- "latest_observation_utc": "2026-11-07T13:56:00.000Z",
- "runs_today": 60,
+ "generated_utc": "2026-11-07T14:15:49Z",
+ "latest_run_utc": "2026-11-07T14:15:00Z",
+ "latest_observation_utc": "2026-11-07T14:11:00.000Z",
+ "runs_today": 61,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.189,
+ "median_crowding": 0.197,
  "lines_not_good_service": [
   "bakerloo",
   "central",
@@ -17,6 +17,6 @@
   "suffragette",
   "waterloo-city"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 15,
  "failed_source_calls_today": 0
 }
