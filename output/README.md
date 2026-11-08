@@ -1,14 +1,14 @@
 # Output
 
-`figures/` holds PNG snapshots of the plots on `project.html`, taken on 6 November 2026 with 8 days of data:
+`figures/` holds PNG snapshots of the plots on `project.html`, taken on 8 November 2026 with 9 complete days of data:
 
 | File | Plot |
 |---|---|
-| `plot1_crowding_by_day.png` | Plot 1: crowding through the day, one line per day |
-| `plot2_2b_station_types.png` | Plots 2 and 2b: what kind of station is each one |
-| `plot3_supply_vs_crowding.png` | Plot 3: supply is rigid, crowding is not |
-| `plot4_station_week.png` | Plot 4: when is my station busy |
-| `plot5_waits.png` | Plot 5: how long will I wait |
+| `plot1_crowding_by_day.png` | Plot 1: crowding through the day, one line per day of the week |
+| `plot2_station_week.png` | Plot 2: when is my station busy |
+| `plot3_3b_station_types.png` | Plots 3 and 3b: what kind of station is each one |
+| `plot4_waits.png` | Plot 4: how long will I wait |
+| `plot5_supply_vs_crowding.png` | Plot 5: supply is rigid, crowding is not |
 | `plot6_6b_strain.png` | Plots 6 and 6b: where strain concentrates |
 | `appendixA_strained_moments.png` | Appendix A: the most strained moments |
 | `appendixB_what_happens_next.png` | Appendix B: what happens after a disruption |

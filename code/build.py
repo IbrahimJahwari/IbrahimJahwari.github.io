@@ -5,11 +5,12 @@ Reads   $DATA_DIR/raw/YYYY-MM-DD/{crowding,line_supply,line_status,station_disru
 Writes  $DATA_DIR/processed/
     system.json      whole network, one row per 15-minute slot, plus one row per day
     lines.json       one row per line per hour: crowding, trains, frequency, worst status
+    lines15.json     the whole network and every line, every 15 minutes from 05:00, one row per complete day: crowding and trains
     stations.json    one row per station: typical levels by day type, plus weekday-morning measures
     weekly.json      the typical week: for the whole network and each line, every weekday and quarter-hour
     reliability.json hours each line spent in each kind of disruption, by reason
     controls.json    how many stations were closed or exit-only, by cause, for every weekday and quarter-hour
-    typical.json     the typical week for every station (weekday x quarter-hour), as a compact matrix
+    typical.json     the typical week for every station (weekday x quarter-hour), as a compact matrix, with the days behind each cell
     recent.json      the last 7 days for every station and line, as compact matrices
     events.json      every delay, suspension, closure and control, with crowding and trains from 1 hour before to 1 hour after
     strained.json    the most strained moments for the network and each line, over today / this week / this month / all time
@@ -29,8 +30,10 @@ Definitions
   crowding   TfL's live index: how busy a station is as a share of its own busiest-week level. The network figure is the
              unweighted average over stations that report and are open. It says how busy the typical station is, not how
              many people there are, and levels cannot be compared between stations.
-  usual      each station's own median for the same time of day on other days of the same type (weekday, Saturday, Sunday),
-             from the 15 minutes either side. It needs at least two other days, so weekends fill in from the second weekend.
+  usual      each station's own median for the same time of day on other days of the same type (Monday to Thursday, Friday,
+             Saturday, Sunday), from the 15 minutes either side. Fridays have their own type because they are shaped differently
+             from Monday to Thursday. It needs at least two other days of the type, so Saturdays and Sundays fill in from the
+             second weekend and Fridays from the third Friday.
   deviation  how far a reading is from usual, in units of that station's own typical spread at that time of day
              (morning peak, midday, evening peak, other; robust, capped at +-6).
   trains     trains with a live arrival prediction on a line. Close to trains running, not an exact count.
@@ -201,6 +204,11 @@ def main():
     tod = (slots_idx.hour * 4 + slots_idx.minute // 15).to_numpy()
     H = slots_idx.hour.to_numpy()
     dtype = np.where(slots_idx.dayofweek < 5, 0, np.where(slots_idx.dayofweek == 5, 1, 2))
+    # What counts as "usual" for a Friday is other Fridays: Fridays are shaped differently from Monday to Thursday (in the first two
+    # weeks the 07:00-10:00 average was about 19 on the Fridays against about 29 on Monday to Thursday), so against a Mon-Fri baseline
+    # a Friday reads quieter than it is and real strain is missed. Used only for the usual crowding and usual trains; everything
+    # else keeps dtype (0 Mon-Fri, 1 Saturday, 2 Sunday).
+    btype = np.where(slots_idx.dayofweek == 4, 3, dtype)
     daynum = np.asarray((slots_idx.normalize() - slots_idx[0].normalize()).days)
     print(f"{NS} slots, {slots_idx[0]} to {slots_idx[-1]}")
 
@@ -298,10 +306,10 @@ def main():
     # ---- usual: each station's own median for this time of day on other days of the same type
     by_key = {}
     for j in range(NS):
-        by_key.setdefault((dtype[j], tod[j]), []).append(j)
+        by_key.setdefault((btype[j], tod[j]), []).append(j)
     BASE = np.full((N, NS), np.nan, np.float32)
     for j in range(NS):
-        cand = np.concatenate([by_key.get((dtype[j], (tod[j] + d) % 96), []) for d in (-1, 0, 1)]).astype(int)
+        cand = np.concatenate([by_key.get((btype[j], (tod[j] + d) % 96), []) for d in (-1, 0, 1)]).astype(int)
         cand = cand[daynum[cand] != daynum[j]]
         if len(set(daynum[cand])) < 2:
             continue
@@ -331,7 +339,7 @@ def main():
     # supply against usual, per line then per station
     SUPB = np.full(TRM.shape, np.nan)
     for li in range(len(TUBE)):
-        df = pd.DataFrame({"dt": dtype, "h": H, "tr": TRM[li], "st": STM[li]})
+        df = pd.DataFrame({"dt": btype, "h": H, "tr": TRM[li], "st": STM[li]})
         ok = df[(df.st == 0) & df.tr.notna()]
         b1, b2 = ok.groupby(["dt", "h"]).tr.median(), ok.groupby("h").tr.median()
         SUPB[li] = [b1.get(k, b2.get(k[1], np.nan)) for k in zip(df.dt, df.h)]
@@ -451,26 +459,59 @@ def main():
                                "groups": GROUPS, "days": NS * 0.25 / 24,
                                "rows": {"cols": ["line", "cls", "grp", "hours", "episodes"], "rows": [[k[0], k[1], k[2], v[1], v[0]] for k, v in epi.items()]}})
     TY = np.full((N, 7, 96), np.nan, np.float32)
+    TYN = np.zeros((N, 7, 96), np.float32)                  # days behind each cell
     for d in range(7):
         for t in range(96):
             cols = np.where(comp & (dow == d) & (tod == t))[0]
             if len(cols):
                 TY[:, d, t] = np.nanmedian(LEVEL[:, cols], axis=1)
+                TYN[:, d, t] = np.sum(~np.isnan(LEVEL[:, cols]), axis=1)
     write("typical.json", {"note": "Median crowding index per station, weekday (0 = Monday) x quarter-hour, complete days only. "
-                                   "int8 percent, -128 missing; index = station * 672 + dow * 96 + quarter-hour.",
-                           "stations": stations.naptan.tolist(), "ty": b64(TY.reshape(N, -1), 1, 0, 127)})
+                                   "int8 percent, -128 missing; index = station * 672 + dow * 96 + quarter-hour. "
+                                   "tn: how many days sit behind each cell (int8, same index).",
+                           "stations": stations.naptan.tolist(), "ty": b64(TY.reshape(N, -1), 1, 0, 127), "tn": b64(TYN.reshape(N, -1), 1, 0, 127)})
     SP = np.full((N, NS), np.nan, np.float32)
     stp = ss.groupby(["naptan", "slot"]).tph.sum().reset_index()           # trains per hour past the station, all lines and directions
     put(SP, stp.naptan.map(IDX), stp.slot.map(SI), stp.tph.to_numpy())
     TS = np.full((N, 7, 96), np.nan, np.float32)
+    TSN = np.zeros((N, 7, 96), np.float32)
     for d in range(7):
         for t in range(96):
             cols = np.where(comp & (dow == d) & (tod == t))[0]
             if len(cols):
                 TS[:, d, t] = np.nanmedian(SP[:, cols], axis=1)
+                TSN[:, d, t] = np.sum(~np.isnan(SP[:, cols]), axis=1)
     write("typical_supply.json", {"note": "Median trains per hour past each station (all lines, both directions), weekday x quarter-hour. "
-                                          "int8, -128 missing; index = station * 672 + dow * 96 + quarter-hour.",
-                                  "stations": stations.naptan.tolist(), "tp": b64(TS.reshape(N, -1), 1, 0, 127)})
+                                          "int8, -128 missing; index = station * 672 + dow * 96 + quarter-hour. "
+                                          "tpn: how many days sit behind each cell (int8, same index).",
+                                  "stations": stations.naptan.tolist(), "tp": b64(TS.reshape(N, -1), 1, 0, 127), "tpn": b64(TSN.reshape(N, -1), 1, 0, 127)})
+
+    # ---------------------------------------------------------------- lines15.json
+    # Plots 1 and 5: the whole network and every line, every 15-minute slot from 05:00 to 23:45, one row per complete day.
+    # c: mean crowding index over the line's open, reporting stations (at least 3 must report; the network needs MIN_STATIONS);
+    # tr: trains with a live arrival prediction (the network total needs MIN_LINES lines reporting). null = no reading.
+    Q0, NQ = 20, 76
+    cdays = sorted(per_day[per_day >= 56].index)
+    skipped = sorted(set(dates_arr) - set(cdays))
+
+    def day_grid(a):
+        df = pd.DataFrame({"d": dates_arr, "t": tod, "v": np.asarray(a, float)})
+        df = df[df.d.isin(cdays) & (df.t >= Q0) & (df.t < Q0 + NQ)]
+        return df.pivot(index="d", columns="t", values="v").reindex(index=cdays, columns=range(Q0, Q0 + NQ)).to_numpy()
+
+    l15 = {}
+    for name, cc, tt in [("all", c, tr)] + [(ln, None, TRM[li]) for li, ln in enumerate(TUBE)]:
+        if cc is None:
+            idx = [i for i in range(N) if lidx[name] in LINES_OF[i]]
+            cnt = np.sum(~np.isnan(LEVEL[idx]), axis=0)
+            cc = np.where(cnt >= 3, np.nanmean(LEVEL[idx], axis=0), np.nan)
+        l15[name] = {"c": [[None if np.isnan(v) else round(float(v), 1) for v in row] for row in day_grid(cc)],
+                     "tr": [[None if np.isnan(v) else int(round(v)) for v in row] for row in day_grid(tt)]}
+    write("lines15.json", {"note": "Crowding (c, TfL index, %) and trains with a live prediction (tr) for the whole network (all) and each line, "
+                                   "every 15 minutes from 05:00 (slot k is 05:00 + 15 min x k) on each complete day in dates. "
+                                   "A complete day has at least 56 of the 64 quarter-hours between 06:00 and 22:00 with a network crowding value; "
+                                   "skipped lists the other days.",
+                           "q0": Q0, "nq": NQ, "dates": cdays, "skipped": skipped, "series": l15})
 
     # ---------------------------------------------------------------- stations.json
     def mean_of(mask):

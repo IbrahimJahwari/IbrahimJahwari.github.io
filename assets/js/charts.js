@@ -52,15 +52,19 @@ const LOADERS = {
     return rows(l.lines).map((r) => ({ ...r, ...stamp(r.t), t2: plusMinutes(r.t, 60), partial: S.partial.has(r.t.slice(0, 10)) })).filter((r) => S.usable.has(r.date));
   },
   async weekly() { return rows((await getJSON("processed/weekly.json")).weekly); },
+  async lines15() {     // every complete day, every quarter-hour from 05:00: crowding and trains for the network and each line
+    const j = await getJSON("processed/lines15.json"), nan = (a) => a.map((row) => Float32Array.from(row, (v) => (v === null ? NaN : v)));
+    return { ...j, dow: j.dates.map((d) => dayInfo(d).dow), series: Object.fromEntries(Object.entries(j.series).map(([k, s]) => [k, { c: nan(s.c), tr: nan(s.tr) }])) };
+  },
   async typical() {
-    const t = await getJSON("processed/typical.json"), a = dec8(t.ty);
-    return { stations: t.stations, idx: new Map(t.stations.map((id, i) => [id, i])), get: (i, d, q) => { const v = a[i * 672 + d * 96 + q]; return v === -128 ? null : v; } };
+    const t = await getJSON("processed/typical.json"), a = dec8(t.ty), nn = t.tn ? dec8(t.tn) : null;
+    return { stations: t.stations, idx: new Map(t.stations.map((id, i) => [id, i])), get: (i, d, q) => { const v = a[i * 672 + d * 96 + q]; return v === -128 ? null : v; }, getN: (i, d, q) => (nn ? nn[i * 672 + d * 96 + q] : null) };
   },
   async stations() { return rows((await getJSON("processed/stations.json")).stations); },
   async strain() { const s = await getJSON("processed/strain.json"); return { stations: rows(s.stations).filter((x) => x.ok), lines: rows(s.lines) }; },
   async events() { const e = await getJSON("processed/events.json"); return { list: rows(e.events), counts: e.counts, offsets: e.offsets, groups: e.groups, days: e.days }; },
   async strained() { return getJSON("processed/strained.json"); },
-  async typicalSupply() { const t = await getJSON("processed/typical_supply.json"), a = dec8(t.tp); return { stations: t.stations, idx: new Map(t.stations.map((id, i) => [id, i])), get: (i, d, q) => { const v = a[i * 672 + d * 96 + q]; return v === -128 ? null : v; } }; },
+  async typicalSupply() { const t = await getJSON("processed/typical_supply.json"), a = dec8(t.tp), nn = t.tpn ? dec8(t.tpn) : null; return { stations: t.stations, idx: new Map(t.stations.map((id, i) => [id, i])), get: (i, d, q) => { const v = a[i * 672 + d * 96 + q]; return v === -128 ? null : v; }, getN: (i, d, q) => (nn ? nn[i * 672 + d * 96 + q] : null) }; },
   async closures() { return rows((await getJSON("processed/closures.json")).closures); },
   async lifts() { const l = await getJSON("processed/lifts.json"); return { episodes: rows(l.episodes), summary: l.summary, from: l.from, to: l.to }; },
   async reliability() { const r = await getJSON("processed/reliability.json"); return { groups: r.groups, rows: rows(r.rows), days: r.days }; },
@@ -105,8 +109,11 @@ function shell(el, n = 1) {
   const ctl = document.createElement("div"); ctl.className = "controls";
   const areas = Array.from({ length: n }, () => { const a = document.createElement("div"); a.className = "area"; return a; });
   const after = document.createElement("p"); after.className = "note";
-  el.append(ctl, ...areas, after);
-  return { ctl, area: areas[0], areas, after };
+  const anchor = document.createElement("span");          // marks where the plot itself ends; extra controls go before it
+  el.append(ctl, ...areas, anchor);
+  const live = el.closest("figure") && el.closest("figure").querySelector(".live");     // the closed "About this plot" box, if the page has one
+  if (live) { live.textContent = ""; live.append(after); } else el.append(after);
+  return { ctl, area: areas[0], areas, after, anchor };
 }
 async function embed(target, spec, c) {
   const full = { $schema: "https://vega.github.io/schema/vega-lite/v6.json", background: "transparent", config: config(c), ...spec };
@@ -132,6 +139,11 @@ function fitMercator(coords, w, h, pad_ = 0.04) {
   return { type: "mercator", scale, center: [(x0 + x1) / 2, (2 * Math.atan(Math.exp(cy)) - Math.PI / 2) * (180 / Math.PI)], translate: [w / 2, h / 2] };
 }
 function geoPoints(gj) { const out = []; const walk = (a) => { if (typeof a[0] === "number") out.push(a); else a.forEach(walk); }; gj.features.forEach((f) => walk(f.geometry.coordinates)); return out; }
+// The map is fitted to the borough outline and to every station, so stations beyond Greater London (Amersham, Chesham, Epping...) are on it.
+const mapPoints = (D, stations) => [...geoPoints(D.boroughs), ...stations.map((s) => [s.lon, s.lat])];
+// The name of a searched-for station, kept inside the map: left-aligned at the west edge, right-aligned at the east edge.
+const labelLayers = (hit, geo, c) => [["left", (h) => h.lon < -0.4, 12], ["right", (h) => h.lon > 0.1, -12], ["center", (h) => h.lon >= -0.4 && h.lon <= 0.1, 0]].map(([align, test, dx]) =>
+  ({ data: { values: hit.filter(test) }, mark: { type: "text", align, dx, dy: -14, fontWeight: "bold", fontSize: 13, color: c.ink }, encoding: { ...geo, text: { field: "name" } } }));
 const boroughLayer = (gj, c) => ({ data: { values: gj, format: { property: "features" } }, mark: { type: "geoshape", fill: mix(c.usual, c.bg, 0.5), stroke: c.rule, strokeWidth: 0.7 } });
 // the lines of the network drawn on a map; the highlighted line is coloured, the rest are faint
 function lineLayer(D, c, highlight) {
@@ -180,7 +192,7 @@ async function stationHeat(el, c, W, D) {
   const { ctl, areas, after } = shell(el, 2), T = D.typical, P = D.typicalSupply, names = new Map(D.stations.map((s) => [s.naptan, s.name]));
   const list = T.stations.map((id) => [id, names.get(id) || id]).sort((a, b) => a[1].localeCompare(b[1]));
   const st = STATE.c1 || (STATE.c1 = { id: (list.find((s) => s[1] === "Oxford Circus") || list[0])[0], id2: "", m: "c" });
-  const cellsOf = (id) => { const src = st.m === "c" ? T : P, i = src.idx.get(id), rs = []; for (let d = 0; d < 7; d++) for (let q = 20; q < 96; q++) { const v = i === undefined ? null : src.get(i, d, q); if (v !== null) rs.push({ dow: d, tod: q, v }); } return normCells(rs, (r) => r.v); };
+  const cellsOf = (id) => { const src = st.m === "c" ? T : P, i = src.idx.get(id), rs = []; for (let d = 0; d < 7; d++) for (let q = 20; q < 96; q++) { const v = i === undefined ? null : src.get(i, d, q); if (v !== null) rs.push({ dow: d, tod: q, v, n: src.getN(i, d, q) }); } return normCells(rs, (r) => r.v, (r) => r.n); };
   const peakText = (id) => { const { cells, mx } = cellsOf(id); if (!cells.length) return `${names.get(id)}: no data yet.`; const top = [...cells].sort((a, b) => b.v - a.v)[0];
     return `${names.get(id)}: busiest ${top.dname} ${top.hl} (${st.m === "c" ? `${mx.toFixed(0)}% of its record` : `${mx.toFixed(0)} trains an hour`}).`; };
   const paint = async () => {
@@ -239,17 +251,17 @@ async function drawWaits(el, c, W, D) {
 
 
 // Side by side when there is room: the map on the left, the bars (out of 100%) on the right.
-function sideBySide(after, left, right, W) {
+function sideBySide(anchor, left, right, W) {
   const wide = W >= 900, gap = 20;
-  if (wide) { const row = document.createElement("div"); row.className = "sbs"; row.append(left, right); after.before(row); }
+  if (wide) { const row = document.createElement("div"); row.className = "sbs"; row.append(left, right); anchor.before(row); }
   return { wide, mapW: wide ? Math.floor((W - gap) * 0.58) : W - 40, barW: wide ? Math.floor((W - gap) * 0.42) - 120 : W - 200 };
 }
 
 // B5. What kind of station is each one? The bars say how each line's stations split (out of 100%), the map says where. Search for a station, or show one type.
 async function stationTypes(el, c, W, D) {
-  const { ctl, areas, after } = shell(el, 2), [a1, a2] = areas, st = STATE.b5 || (STATE.b5 = { line: "all", type: "all", q: "" });
+  const { ctl, areas, after, anchor } = shell(el, 2), [a1, a2] = areas, st = STATE.b5 || (STATE.b5 = { line: "all", type: "all", q: "" });
   const TYPES = ["Commuter: sharp rush hours, quiet weekends", "All-day: steady through the day", "Weekend visitors: busier at weekends"], SHORT = ["Commuter", "All-day", "Weekend visitors"];
-  const colours = [c.quiet, c.nodata, "#3A9C8F"];
+  const colours = [c.busy, c.nodata, c.quiet];      // commuter orange (weekday rush), all-day grey, weekend visitors blue (weekend), as in Plot 1
   const typed = D.stations.filter((s) => s.mid > 0 && s.wk > 0 && s.n >= 100).map((s) => {
     const we = [s.sat, s.sun].filter((v) => v !== null), wkend = we.length ? mean(we) / s.wk : null, peaky = Math.max(s.am ?? 0, s.pm ?? 0) / s.mid;
     return { ...s, peaky, wkend, type: wkend !== null && wkend >= 1.1 ? TYPES[2] : peaky >= 1.8 && (wkend === null || wkend < 0.9) ? TYPES[0] : TYPES[1] };
@@ -258,23 +270,23 @@ async function stationTypes(el, c, W, D) {
   const onLineOf = (s, l) => s.lines.split(";").includes(l);
   const rowsL = []; LINES.forEach((l) => { const ss = typed.filter((s) => onLineOf(s, l)); TYPES.forEach((t, i) => rowsL.push({ line: l, type: lab[i], n: ss.filter((s) => s.type === t).length, pct: ss.length ? (ss.filter((s) => s.type === t).length / ss.length) * 100 : 0 })); });
   const order = [...LINES].sort((x, y) => rowsL.filter((r) => r.line === y && r.type === lab[0]).reduce((s, r) => s + r.pct, 0) - rowsL.filter((r) => r.line === x && r.type === lab[0]).reduce((s, r) => s + r.pct, 0));
-  const { wide, mapW, barW } = sideBySide(after, a2, a1, W), sx = await data("stations");
-  await embed(a1, { title: { text: "Plot 2b: how each line's stations split", anchor: "start", fontSize: 13 }, width: barW, height: 330, data: { values: rowsL }, mark: "bar", encoding: {
+  const { wide, mapW, barW } = sideBySide(anchor, a2, a1, W), sx = await data("stations");
+  await embed(a1, { title: { text: "Plot 3b: how each line's stations split", anchor: "start", fontSize: 13 }, width: barW, height: 330, data: { values: rowsL }, mark: "bar", encoding: {
     x: { field: "line", type: "nominal", sort: order, axis: { title: null, domain: false, ticks: false, labelAngle: -40, labelLimit: 130, labelExpr: lineName } },
     y: { field: "pct", type: "quantitative", stack: "zero", scale: { domain: [0, 100] }, axis: { title: "% of the line's stations", values: [0, 25, 50, 75, 100] } },
     color: { field: "type", type: "nominal", scale: { domain: lab, range: colours }, legend: { title: null, orient: "bottom", columns: 1, labelLimit: 420 } }, order: { field: "type", type: "nominal" },
     tooltip: [{ field: "line", title: "Line" }, { field: "type", title: "Type" }, { field: "n", title: "Stations" }, { field: "pct", title: "% of the line's stations", format: ".0f" }] } }, c);
   const paint = async () => {
-    const h = Math.round(Math.min(mapW * 0.8, 600)), proj = fitMercator(geoPoints(D.boroughs), mapW, h), on = st.line, want = SHORT.indexOf(st.type) >= 0 ? TYPES[SHORT.indexOf(st.type)] : null;
+    const h = Math.round(Math.min(mapW * 0.8, 600)), proj = fitMercator(mapPoints(D, D.stations), mapW, h, 0.08), on = st.line, want = SHORT.indexOf(st.type) >= 0 ? TYPES[SHORT.indexOf(st.type)] : null;
     const base = typed.filter((s) => on === "all" || onLineOf(s, on)).map((s) => ({ ...s, label: L(s) })), shown = base.filter((s) => !want || s.type === want), faded = base.filter((s) => want && s.type !== want);
     const hit = st.q ? typed.filter((s) => s.name.toLowerCase() === st.q.toLowerCase()).map((s) => ({ ...s, label: L(s) })) : [];
     const geo = { longitude: { field: "lon", type: "quantitative" }, latitude: { field: "lat", type: "quantitative" } };
-    await embed(a2, { title: { text: "Plot 2: where each station sits", anchor: "start", fontSize: 13 }, width: mapW, height: h, projection: proj, layer: [boroughLayer(D.boroughs, c), lineLayer({ stations: sx, network: D.network }, c, on),
+    await embed(a2, { title: { text: "Plot 3: where each station sits", anchor: "start", fontSize: 13 }, width: mapW, height: h, projection: proj, layer: [boroughLayer(D.boroughs, c), lineLayer({ stations: sx, network: D.network }, c, on),
       { data: { values: faded }, mark: { type: "circle", size: 22, opacity: 0.35, color: c.nodata }, encoding: geo },
       { data: { values: shown }, mark: { type: "circle", size: 95, opacity: 0.88, stroke: c.panel, strokeWidth: 0.8 }, encoding: { ...geo, color: { field: "label", type: "nominal", scale: { domain: lab, range: colours }, legend: null },
         tooltip: [{ field: "name", title: "Station" }, { field: "label", title: "Type" }, { field: "peaky", title: "Rush-hour peak over midday", format: ".1f" }, { field: "wkend", title: "Weekend over weekday", format: ".2f" }] } },
       { data: { values: hit }, mark: { type: "circle", size: 380, filled: false, stroke: c.ink, strokeWidth: 2.5 }, encoding: geo },
-      { data: { values: hit }, mark: { type: "text", dy: -14, fontWeight: "bold", fontSize: 13, color: c.ink }, encoding: { ...geo, text: { field: "name" } } }] }, c);
+      ...labelLayers(hit, geo, c)] }, c);
     const bits = [`Showing ${shown.length} stations${want ? ` of the type "${SHORT[SHORT.indexOf(st.type)].toLowerCase()}"` : ""}${on === "all" ? "" : ` on the ${LNAME[on]} line`}.`];
     if (st.q && !hit.length) bits.push(`"${st.q}" is not a station with a typical week yet.`);
     if (hit.length) bits.push(`${hit[0].name}: ${SHORT[TYPES.indexOf(hit[0].type)].toLowerCase()} (rush-hour peak ${hit[0].peaky.toFixed(1)} times midday; weekends ${hit[0].wkend === null ? "n/a" : (hit[0].wkend * 100).toFixed(0) + "% of weekdays"}).`);
@@ -297,7 +309,7 @@ const SEVTXT = { 1: "minor delays", 2: "severe delays or reduced service", 3: "p
 // Crowding and supply are built like the week grids (100 = the station's, or the line's, busiest quarter-hour of the typical week).
 // The critical zone is where crowding is among the highest 10% of all station moments and supply among the lowest 10%.
 async function strainMoment(el, c, W, D) {
-  const { ctl, area, after } = shell(el), S = D.strained, N = D.network, usual = new Map(D.strain.stations.map((s) => [s.naptan, s])), st = STATE.d1 || (STATE.d1 = { scope: "all", period: "week", rank: 0, byLine: false });
+  const { ctl, area, after, anchor } = shell(el), S = D.strained, N = D.network, usual = new Map(D.strain.stations.map((s) => [s.naptan, s])), st = STATE.d1 || (STATE.d1 = { scope: "all", period: "week", rank: 0, byLine: false });
   const PERIODS = [["today", "Today"], ["week", "This week (last 7 days)"], ["month", "This month (last 30 days)"], ["all", "All time"]];
   const redraw = () => strainMoment(el, c, W, D), idx = new Map(S.stations.map((id, i) => [id, i])), linesOf = (d) => { const l = d.lines.filter((x) => x !== "waterloo-city"); return l.length ? l : d.lines; };
   const fmtT = (t) => { const d = dayInfo(t.slice(0, 10)); return `${d.dname} ${+t.slice(8, 10)} ${MON[+t.slice(5, 7) - 1]} ${t.slice(11)}`; };
@@ -321,7 +333,7 @@ async function strainMoment(el, c, W, D) {
       tooltip: [{ field: "name", title: "Station" }, { field: "ln", title: "Lines" }, { field: "y", title: "Crowding (0-100)" }, { field: "x", title: "Supply (0-100)" }, { field: "state", title: "Entry" }, { field: "usual", title: "Usual strain (Plot 6)" }] } }] }, c);
   const jump = document.createElement("div"); jump.className = "ctl"; jump.append("What usually follows these disruptions (Appendix B)? ");
   m.lines.filter(([, , g]) => g >= 2).forEach(([ln, sv, g]) => jump.append(button(`${LNAME[ln]} line: ${SEVTXT[sv]} \u2192`, async () => { STATE.d3 = { line: ln, sel: { sev: sv >= 3 ? 3 : sv, grp: g } }; await redrawChart("appB"); document.querySelector('[data-chart="appB"]').scrollIntoView({ behavior: "smooth", block: "start" }); })));
-  if (jump.children.length) after.before(jump);
+  if (jump.children.length) anchor.before(jump);
   const scope = st.scope === "all" ? "the whole network" : `the ${LNAME[st.scope]} line`, period = st.period === "all" ? "in all the data" : "over " + PERIODS.find((p) => p[0] === st.period)[1].toLowerCase();
   const sevOf = ([ln, sv, g]) => `${LNAME[ln]} line: ${g === 1 ? "planned closure" : SEVTXT[sv]}${g > 1 ? " (" + S.groups[g - 1].toLowerCase() + ")" : ""}`;
   const names = crit.map((d) => `${d.name} (${linesOf(d).map((l) => LNAME[l]).join(", ")})`).join("; ");
@@ -335,20 +347,20 @@ async function strainMoment(el, c, W, D) {
 
 // D1. Where does strain concentrate? The bars say how each line's stations split by main cause (out of 100%), the map says where.
 async function strainView(el, c, W, D) {
-  const { ctl, areas, after } = shell(el, 2), [a1, a2] = areas, st = STATE.e1 || (STATE.e1 = { line: "all" });
+  const { ctl, areas, after, anchor } = shell(el, 2), [a1, a2] = areas, st = STATE.e1 || (STATE.e1 = { line: "all" });
   const causes = ["Supply-led: fewer trains than usual", "Demand-led: much busier than usual", "Both at once"], LITTLE = "Ordinary (under 12 hours a week)", labs = [...causes, LITTLE], colours = [c.supply, c.busy, mix(c.busy, c.ink, 0.6), c.nodata];
   const kind = (s) => { const t = s.sl + s.dl + s.cp; return t < 12 ? LITTLE : s.cp >= s.sl && s.cp >= s.dl ? causes[2] : s.sl >= s.dl ? causes[0] : causes[1]; };
   const all = D.strain.stations.map((s) => ({ ...s, cause: kind(s), total: s.sl + s.dl + s.cp })), onLineOf = (s, l) => s.lines.split(";").includes(l);
   const rowsL = []; LINES.forEach((l) => { const ss = all.filter((s) => onLineOf(s, l)); labs.forEach((k) => rowsL.push({ line: l, cause: k, ord: k === LITTLE ? 0 : labs.indexOf(k) + 1, n: ss.filter((s) => s.cause === k).length, pct: ss.length ? (ss.filter((s) => s.cause === k).length / ss.length) * 100 : 0 })); });
   const under = (l) => rowsL.filter((r) => r.line === l && r.cause !== LITTLE).reduce((s, r) => s + r.pct, 0), order = [...LINES].sort((a, b) => under(b) - under(a));
-  const { mapW, barW } = sideBySide(after, a2, a1, W), sx = await data("stations");
+  const { mapW, barW } = sideBySide(anchor, a2, a1, W), sx = await data("stations");
   await embed(a1, { title: { text: "Plot 6b: how each line's stations split", anchor: "start", fontSize: 13 }, width: barW, height: 330, data: { values: rowsL }, mark: "bar", encoding: {
     x: { field: "line", type: "nominal", sort: order, axis: { title: null, domain: false, ticks: false, labelAngle: -40, labelLimit: 130, labelExpr: lineName } },
     y: { field: "pct", type: "quantitative", stack: "zero", scale: { domain: [0, 100] }, axis: { title: "% of the line's stations", values: [0, 25, 50, 75, 100] } },
     color: { field: "cause", type: "nominal", scale: { domain: labs, range: colours }, legend: { title: null, orient: "bottom", columns: 1, labelLimit: 420 } }, order: { field: "ord", type: "quantitative" },
     tooltip: [{ field: "line", title: "Line" }, { field: "cause", title: "Main cause" }, { field: "n", title: "Stations" }, { field: "pct", title: "% of the line's stations", format: ".0f" }] } }, c);
   const paint = async () => {
-    const h = Math.round(Math.min(mapW * 0.8, 600)), proj = fitMercator(geoPoints(D.boroughs), mapW, h), on = st.line;
+    const h = Math.round(Math.min(mapW * 0.8, 600)), proj = fitMercator(mapPoints(D, D.strain.stations), mapW, h, 0.08), on = st.line;
     const pts = all.filter((s) => on === "all" || onLineOf(s, on)).map((s) => ({ ...s, label: s.cause })).sort((p, q) => p.total - q.total);
     await embed(a2, { title: { text: "Plot 6: where each station's strain comes from", anchor: "start", fontSize: 13 }, width: mapW, height: h, projection: proj, layer: [boroughLayer(D.boroughs, c), lineLayer({ stations: sx, network: D.network }, c, on),
       { data: { values: pts }, mark: { type: "circle", size: 110, opacity: 0.88, stroke: c.panel, strokeWidth: 0.8 }, encoding: { longitude: { field: "lon", type: "quantitative" }, latitude: { field: "lat", type: "quantitative" },
@@ -360,68 +372,140 @@ async function strainView(el, c, W, D) {
   after.textContent = "Fewer trains than usual means the number of trains running on the station's lines in that hour was more than 20% below the median for the same hour on days of the same type (or the station was closed). Much busier than usual means crowding was more than two of the station's own typical deviations above usual. A station is coloured by whichever cause accounts for most of its strain hours. The bars are out of 100%: how each line's stations split by main cause (interchanges count for every line that serves them). Counted from 06:00, only on days with a baseline, planned closures included. Even in an ordinary week about 5% of quarter-hours are more than two deviations above usual by chance, roughly 6 hours a week, so stations under 12 hours are shown as ordinary.";
 }
 
-// ================================================================ A2. Crowding through the day, one line per day
-// Click days, or a line, to see what is regular and what is not. 100 = the busiest hour of the typical week on that line.
-const hourlyRows = (D, line) => {
-  if (line !== "all") return D.lines.filter((r) => r.line === line && r.c != null);
-  return [...groupBy(D.system.slots.filter((s) => s.c != null), (s) => `${s.date}|${Math.floor(s.hour)}`)].map(([, v]) => ({ date: v[0].date, dow: v[0].dow, hour: Math.floor(v[0].hour), c: mean(v.map((s) => s.c)), tr: (() => { const t = v.filter((s) => s.tr != null).map((s) => s.tr); return t.length ? mean(t) : null; })(), partial: v[0].partial }));
+// ================================================================ Plots 1 and 5: one line per day of the week (D3)
+// Plot 1 is crowding; Plot 5 is trains running, with crowding behind it if ticked. Both read lines15.json: every complete day, every
+// quarter-hour from 05:00. By default each day of the week is one line (the mean of all the Mondays, all the Tuesdays, and so on);
+// "Show every date separately" draws every date collected as its own thin line instead. 100 = the busiest quarter-hour of the average
+// week, worked out from all complete days whichever days are ticked, so ticking days on and off never moves a line.
+const ORDER = [1, 2, 3, 4, 5, 6, 0], WEEKDAYS = [1, 2, 3, 4, 5], WEEKEND = [6, 0];      // 0 = Sunday, as getUTCDay
+const FULLDAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const DAYCOL = {
+  crowd: { 1: "#E9A23B", 2: "#E07A1F", 3: "#C9581A", 4: "#A8431A", 5: "#7E3210", 6: "#2F6DB5", 0: "#6FA3DC" },     // weekdays orange, weekend blue
+  supply: { 1: "#C07AC3", 2: "#A653A9", 3: "#8E3A93", 4: "#73287A", 5: "#561B5C", 6: "#D2549B", 0: "#EA9AC7" },    // weekdays plum, weekend pink
+  grey: { wd: "#9AA0AC", we: "#C9CDD5" },                                                                              // crowding behind supply
 };
-async function dailyPlot(el, c, W, D) {
-  const { ctl, area, after } = shell(el), st = STATE.a2 || (STATE.a2 = { line: "all", days: [1, 2, 3, 4, 5, 6, 0] });
-  const DAYS = [[1, "Mon"], [2, "Tue"], [3, "Wed"], [4, "Thu"], [5, "Fri"], [6, "Sat"], [0, "Sun"]], redraw = () => dailyPlot(el, c, W, D);
-  ctl.append(select("Line", lineOptions(), st.line, (v) => { st.line = v; redraw(); }));
-  const span = document.createElement("span"); span.append("Days: ");
-  DAYS.forEach(([d, t]) => { const b = button(t, () => { st.days = st.days.includes(d) ? st.days.filter((x) => x !== d) : [...st.days, d]; redraw(); }); b.setAttribute("aria-pressed", st.days.includes(d)); span.append(b); });
-  [["Weekdays", [1, 2, 3, 4, 5]], ["Weekend", [6, 0]], ["All days", [1, 2, 3, 4, 5, 6, 0]]].forEach(([t, ds]) => span.append(button(t, () => { st.days = ds; redraw(); })));
-  ctl.append(span);
-  const rs = hourlyRows(D, st.line).filter((r) => !r.partial && r.hour >= 5);
-  const med = new Map(); groupBy(rs, (r) => `${r.dow}|${r.hour}`).forEach((v, k) => med.set(k, median(v.map((r) => r.c))));
-  const M = Math.max(...med.values());
-  const kind = (dow) => (dow === 0 || dow === 6 ? "Weekend" : "Weekday"), shown = rs.filter((r) => st.days.includes(r.dow)), days = [...new Set(shown.map((r) => r.date))].sort();
-  if (!shown.length) { area.innerHTML = '<p class="err-msg">Pick at least one day.</p>'; return; }
-  const lines = shown.map((r) => ({ date: r.date, label: (() => { const i = dayInfo(r.date); return `${i.dname} ${+r.date.slice(8, 10)} ${MON[+r.date.slice(5, 7) - 1]}`; })(), kind: kind(r.dow), hour: r.hour, v: (r.c / M) * 100 }));
-  const typical = []; ["Weekday", "Weekend"].forEach((k) => { const part = lines.filter((l) => l.kind === k); if (part.length) groupBy(part, (l) => l.hour).forEach((v, h) => typical.push({ kind: k, hour: h, v: median(v.map((l) => l.v)), n: new Set(v.map((l) => l.date)).size })); });
-  const peaks = ["Weekday", "Weekend"].map((k) => { const t = typical.filter((x) => x.kind === k).sort((a, b) => b.v - a.v)[0]; return t ? { ...t, t: `Typical ${k.toLowerCase()}` } : null; }).filter(Boolean);
-  const col = { field: "kind", type: "nominal", scale: { domain: ["Weekday", "Weekend"], range: [c.busy, c.quiet] }, legend: { title: null, orient: "top" } }, x = { field: "hour", type: "quantitative", scale: { domain: [5, 24], nice: false }, axis: hourAxis([6, 9, 12, 15, 18, 21, 24]) };
-  const y = { type: "quantitative", scale: { domain: [0, Math.max(110, ...lines.map((l) => l.v)) + 5], nice: false }, axis: { title: `Crowding, 100 = busiest hour of the typical week ${st.line === "all" ? "across all lines" : "on the " + LNAME[st.line] + " line"}`, values: [0, 25, 50, 75, 100] } };
-  await embed(area, { width: W - 110, height: 300, layer: [
-    { data: { values: lines }, mark: { type: "line", opacity: 0.4, strokeWidth: 1.3 }, encoding: { x, y: { ...y, field: "v" }, detail: { field: "date", type: "nominal" }, color: col, tooltip: [{ field: "label", title: "Day" }, { field: "hour", title: "Hour" }, { field: "v", title: "Crowding (0-100)", format: ".0f" }] } },
-    { data: { values: typical }, mark: { type: "line", strokeWidth: 3.6 }, encoding: { x, y: { ...y, field: "v" }, color: { ...col, legend: null }, tooltip: [{ field: "kind", title: "Typical (median)" }, { field: "hour", title: "Hour" }, { field: "v", title: "Crowding (0-100)", format: ".0f" }, { field: "n", title: "Days" }] } },
-    { data: { values: peaks }, mark: { type: "text", dy: -10, fontWeight: "bold", fontSize: 12, color: c.ink }, encoding: { x, y: { ...y, field: "v" }, text: { field: "t" } } }] }, c);
-  const wk = days.filter((d) => ![0, 6].includes(new Date(d + "T12:00:00Z").getUTCDay())).length, we = days.length - wk;
-  after.textContent = `${days.length} day${days.length === 1 ? "" : "s"} shown (${wk} weekday${wk === 1 ? "" : "s"}, ${we} weekend day${we === 1 ? "" : "s"}); each thin line is one day, so the spread between thin lines is how regular the pattern is. Thick lines are the median of the weekdays and of the weekend days shown, so they settle as weeks accumulate. Crowding is TfL's Wi-Fi index averaged over the stations, then scaled so the busiest hour of the typical week is 100 (that is ${M.toFixed(0)}% on TfL's index here); days can exceed 100. Today is left out until it is complete.`;
+const isWd = (d) => d >= 1 && d <= 5;
+const slotRange = (L, k) => `${hhmm((L.q0 + k) % 96)} to ${hhmm((L.q0 + k + 1) % 96)}`;
+const dateLabel = (iso) => { const d = dayInfo(iso); return `${d.dname} ${+iso.slice(8, 10)} ${MON[+iso.slice(5, 7) - 1]}`; };
+const scopeTxt = (line) => (line === "all" ? "across all lines" : `on the ${LNAME[line]} line`);
+const plural = (n, w) => `${n} ${w}${n === 1 ? "" : "s"}`;
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const meanOf = (rows, idxs, nq) => Array.from({ length: nq }, (_, k) => { let a = 0, n = 0; for (const i of idxs) { const v = rows[i][k]; if (!Number.isNaN(v)) { a += v; n++; } } return n ? a / n : null; });
+function dayMeans(rows, L) {       // the mean of all complete days of each weekday, at each quarter-hour
+  const out = {};
+  ORDER.forEach((dow) => { const idxs = L.dow.map((d, i) => (d === dow ? i : -1)).filter((i) => i >= 0); if (idxs.length) out[dow] = { n: idxs.length, v: meanOf(rows, idxs, L.nq) }; });
+  return out;
+}
+function peakOf(avg) {
+  let b = null;
+  Object.entries(avg).forEach(([dow, a]) => a.v.forEach((v, k) => { if (v !== null && (b === null || v > b.v)) b = { v, dow: +dow, k }; }));
+  return b;
+}
+const scaled = (vs, M) => Array.from(vs, (v) => (v === null || Number.isNaN(v) ? null : (v / M) * 100));
+
+function dodge(items, gap, lo, hi) {
+  items.sort((a, b) => a.ty - b.ty);
+  items.forEach((it, i) => (it.y = Math.max(it.ty, i ? items[i - 1].y + gap : lo)));
+  for (let i = items.length - 1; i >= 0; i--) { const cap = i === items.length - 1 ? hi : items[i + 1].y - gap; if (items[i].y > cap) items[i].y = cap; }
 }
 
-// ================================================================ B1. Supply is rigid; crowding is not
-// Supply (trains running) is the main variable. Crowding can be shown behind it in grey. Both are scaled to their own busiest hour of the
-// typical week (100). Same line and day controls as A2.
-async function supplyRigidity(el, c, W, D) {
-  const { ctl, area, after } = shell(el), st = STATE.b1 || (STATE.b1 = { line: "all", days: [1, 2, 3, 4, 5, 6, 0], crowd: true });
-  const DAYS = [[1, "Mon"], [2, "Tue"], [3, "Wed"], [4, "Thu"], [5, "Fri"], [6, "Sat"], [0, "Sun"]], redraw = () => supplyRigidity(el, c, W, D);
-  ctl.append(select("Line", lineOptions(), st.line, (v) => { st.line = v; redraw(); }));
-  const span = document.createElement("span"); span.append("Days: ");
-  DAYS.forEach(([d, t]) => { const b = button(t, () => { st.days = st.days.includes(d) ? st.days.filter((x) => x !== d) : [...st.days, d]; redraw(); }); b.setAttribute("aria-pressed", st.days.includes(d)); span.append(b); });
-  [["Weekdays", [1, 2, 3, 4, 5]], ["Weekend", [6, 0]], ["All days", [1, 2, 3, 4, 5, 6, 0]]].forEach(([t, ds]) => span.append(button(t, () => { st.days = ds; redraw(); })));
-  ctl.append(span, checkbox("Show crowding (grey)", st.crowd, (v) => { st.crowd = v; redraw(); }));
-  const rs = hourlyRows(D, st.line).filter((r) => !r.partial && r.hour >= 5 && r.tr != null);
-  const mx = (field) => { const m = new Map(); groupBy(rs, (r) => `${r.dow}|${r.hour}`).forEach((v, k) => m.set(k, median(v.map((r) => r[field])))); return Math.max(...m.values()); }, MC = mx("c"), MT = mx("tr");
-  const kind = (dow) => (dow === 0 || dow === 6 ? "Weekend" : "Weekday"), shown = rs.filter((r) => st.days.includes(r.dow)), SUP = "Supply: trains running", CRO = "Crowding";
-  if (!shown.length) { area.innerHTML = '<p class="err-msg">Pick at least one day.</p>'; return; }
-  const thin = (field, measure, M) => shown.map((r) => ({ date: r.date, label: (() => { const i = dayInfo(r.date); return `${i.dname} ${+r.date.slice(8, 10)} ${MON[+r.date.slice(5, 7) - 1]}`; })(), kind: kind(r.dow), hour: r.hour, v: (r[field] / M) * 100, measure }));
-  const typ = (rows_) => { const out = []; ["Weekday", "Weekend"].forEach((k) => { const part = rows_.filter((l) => l.kind === k); if (part.length) groupBy(part, (l) => l.hour).forEach((v, h) => out.push({ kind: k, hour: h, measure: v[0].measure, v: median(v.map((l) => l.v)), n: new Set(v.map((l) => l.date)).size })); }); return out; };
-  const supThin = thin("tr", SUP, MT), croThin = st.crowd ? thin("c", CRO, MC) : [], supTyp = typ(supThin), croTyp = typ(croThin), grey = "#8E95A3";
-  const x = { field: "hour", type: "quantitative", scale: { domain: [5, 24], nice: false }, axis: hourAxis([6, 9, 12, 15, 18, 21, 24]) }, y = { field: "v", type: "quantitative", scale: { domain: [0, 110], nice: false }, axis: { title: `100 = its own busiest hour of the typical week ${st.line === "all" ? "across all lines" : "on the " + LNAME[st.line] + " line"}`, values: [0, 25, 50, 75, 100] } };
-  const col = { field: "measure", type: "nominal", scale: { domain: st.crowd ? [SUP, CRO] : [SUP], range: st.crowd ? [c.supply, grey] : [c.supply] }, legend: { title: null, orient: "top" } };
-  const dash = { field: "kind", type: "nominal", scale: { domain: ["Weekday", "Weekend"], range: [[1, 0], [6, 4]] }, legend: { title: null, orient: "top", symbolType: "stroke", symbolStrokeWidth: 2.5 } };
-  const tip = (t) => [{ field: "measure", title: "Measure" }, { field: "hour", title: "Hour" }, { field: "v", title: t, format: ".0f" }];
-  await embed(area, { width: W - 110, height: 300, encoding: { x, y, color: col, strokeDash: dash }, layer: [
-    { data: { values: croThin }, mark: { type: "line", opacity: 0.3, strokeWidth: 1.2 }, encoding: { detail: { field: "date", type: "nominal" }, tooltip: [{ field: "label", title: "Day" }, ...tip("0-100")] } },
-    { data: { values: croTyp }, mark: { type: "line", opacity: 0.85, strokeWidth: 3.2 }, encoding: { tooltip: [...tip("Typical, 0-100"), { field: "n", title: "Days" }] } },
-    { data: { values: supThin }, mark: { type: "line", opacity: 0.4, strokeWidth: 1.3 }, encoding: { detail: { field: "date", type: "nominal" }, tooltip: [{ field: "label", title: "Day" }, ...tip("0-100")] } },
-    { data: { values: supTyp }, mark: { type: "line", strokeWidth: 3.8 }, encoding: { tooltip: [...tip("Typical, 0-100"), { field: "n", title: "Days" }] } }] }, c);
-  const inService = (arr, k) => arr.filter((t) => t.kind === k && t.hour >= 6 && t.hour < 22).map((t) => t.v), k = supTyp.some((t) => t.kind === "Weekday") ? "Weekday" : "Weekend", sMin = Math.min(...inService(supTyp, k)), cMin = croTyp.length ? Math.min(...inService(croTyp, k)) : null;
-  const days = new Set(shown.map((r) => r.date)).size;
-  after.textContent = `${days} day${days === 1 ? "" : "s"} shown; thin lines are single days, thick lines the median of the weekdays and of the weekend days shown (solid = weekday, dashed = weekend), so they settle as weeks accumulate. On a typical ${k.toLowerCase()} between 06:00 and 22:00, supply never falls below ${sMin.toFixed(0)}% of its busiest hour${cMin === null ? "" : `, while crowding falls to ${cMin.toFixed(0)}%`}: supply is rigid and crowding is volatile. Supply is the number of trains with a live arrival prediction; crowding is TfL's Wi-Fi index averaged over the stations. Each is scaled to its own busiest hour of the typical week, so compare shapes, not heights.`;
+// the chart itself: o.main and o.ctx are lists of {vals (0-100 per quarter-hour, null = no reading), col, w, op, head, scale, label?}
+function dayLines(host, W0, L, o) {
+  host.innerHTML = "";
+  if (!o.main.length) { host.innerHTML = '<p class="err-msg">Pick at least one day of the week.</p>'; return; }
+  const W = Math.max(300, W0 - 4), H = Math.round(Math.min(430, Math.max(290, W * 0.45))), m = { t: 30, r: o.endLabels ? 56 : 18, b: 34, l: 40 }, nq = L.nq;
+  const vals = [...o.main, ...o.ctx].flatMap((s) => s.vals).filter((v) => v !== null);
+  const ymax = Math.max(105, Math.ceil((d3.max(vals) || 100) / 10) * 10 + 4);
+  const x = d3.scaleLinear([L.q0 / 4, 24], [m.l, W - m.r]), y = d3.scaleLinear([0, ymax], [H - m.b, m.t]), hx = (k) => x((L.q0 + k) / 4 + 0.125);
+  const svg = d3.select(host).append("svg").attr("class", "dl").attr("viewBox", `0 0 ${W} ${H}`).attr("width", W).attr("height", H).attr("role", "img").attr("aria-label", o.aria);
+  const yt = [0, 25, 50, 75, 100];
+  svg.append("g").selectAll("line").data(yt).join("line").attr("class", (d) => (d === 100 ? "g100" : "grid")).attr("x1", m.l).attr("x2", W - m.r).attr("y1", y).attr("y2", y);
+  svg.append("g").selectAll("text").data(yt).join("text").attr("x", m.l - 7).attr("y", y).attr("dy", "0.32em").attr("text-anchor", "end").text((d) => d);
+  svg.append("g").selectAll("text").data(W < 640 ? [6, 12, 18, 24] : [6, 9, 12, 15, 18, 21, 24]).join("text").attr("x", x).attr("y", H - m.b + 18).attr("text-anchor", "middle").text((d) => `${String(d % 24).padStart(2, "0")}:00`);
+  svg.append("text").attr("class", "axt").attr("x", 0).attr("y", 13).text(o.ytitle);
+  const line = d3.line().defined((v) => v !== null).x((v, k) => hx(k)).y((v) => y(v)).curve(d3.curveMonotoneX);
+  const draw = (g, ss) => g.selectAll("path").data(ss).join("path").attr("d", (s) => line(s.vals)).attr("fill", "none").attr("stroke", (s) => s.col).attr("stroke-width", (s) => s.w).attr("opacity", (s) => s.op).attr("stroke-linejoin", "round").attr("stroke-linecap", "round");
+  const pC = draw(svg.append("g"), o.ctx), pM = draw(svg.append("g"), o.main);
+  if (o.endLabels) {      // each line is named at its right-hand end
+    const items = o.main.map((s) => { let k = nq - 1; while (k >= 0 && s.vals[k] === null) k--; return k < 0 ? null : { s, ty: y(s.vals[k]), x0: hx(k) }; }).filter(Boolean);
+    dodge(items, 14, m.t, H - m.b);
+    const g = svg.append("g"), xl = W - m.r + 8;
+    items.forEach((it) => {
+      g.append("path").attr("d", `M${it.x0 + 3},${it.ty}C${it.x0 + 8},${it.ty} ${xl - 6},${it.y} ${xl - 2},${it.y}`).attr("fill", "none").attr("stroke", it.s.col).attr("opacity", 0.7);
+      g.append("text").attr("x", xl).attr("y", it.y).attr("dy", "0.32em").style("fill", it.s.col).style("font-weight", 700).style("font-size", "12.5px").text(it.s.label);
+    });
+  }
+  const focus = svg.append("g").style("display", "none"), rule = focus.append("line").attr("class", "rule").attr("y1", m.t).attr("y2", H - m.b);
+  const dot = focus.append("circle").attr("r", 4.5).attr("stroke", "#fff").attr("stroke-width", 2);
+  const reset = () => { focus.style("display", "none"); hideTip(); pM.attr("opacity", (s) => s.op).attr("stroke-width", (s) => s.w); pC.attr("opacity", (s) => s.op).attr("stroke-width", (s) => s.w); };
+  svg.append("rect").attr("x", m.l).attr("y", m.t).attr("width", W - m.l - m.r).attr("height", H - m.t - m.b).attr("fill", "transparent").on("pointerleave", reset).on("pointermove", (ev) => {
+    const [px, py] = d3.pointer(ev), k = clamp(Math.floor((x.invert(px) - L.q0 / 4) * 4), 0, nq - 1);
+    let best = null, bd = Infinity;
+    [...o.main, ...o.ctx].forEach((s) => { const v = s.vals[k]; if (v === null) return; const dd = Math.abs(y(v) - py) + (s.isCtx ? 8 : 0); if (dd < bd) { bd = dd; best = s; } });
+    if (!best) return reset();
+    pM.attr("opacity", (s) => (s === best ? 1 : s.op * 0.3)).attr("stroke-width", (s) => (s === best ? s.w + 1.4 : s.w));
+    pC.attr("opacity", (s) => (s === best ? 1 : s.op * 0.4)).attr("stroke-width", (s) => (s === best ? s.w + 1.4 : s.w));
+    (best.isCtx ? pC : pM).filter((s) => s === best).raise();
+    const cx = hx(k), cy = y(best.vals[k]);
+    focus.style("display", null); rule.attr("x1", cx).attr("x2", cx); dot.attr("cx", cx).attr("cy", cy).attr("fill", best.col);
+    showTip(ev, `<b>${best.head}</b><br>${slotRange(L, k)}<br>${Math.round(best.vals[k])} on the 0\\u2013100 ${best.scale} scale`);
+  });
+}
+
+// the controls both plots share: line, day of the week, and whether to draw the average of each weekday or every date
+function dayControls(ctl, st, which, redraw, extra = []) {
+  const group = document.createElement("span"); group.className = "days"; group.setAttribute("role", "group"); group.setAttribute("aria-label", "Days of the week shown");
+  const lbl = document.createElement("span"); lbl.textContent = "Day of week"; group.append(lbl);
+  ORDER.forEach((d) => {
+    const b = document.createElement("button"), dot = document.createElement("span"); b.type = "button"; b.className = "daybtn"; dot.className = "dot"; dot.style.background = DAYCOL[which][d];
+    b.append(dot, WEEK[(d + 6) % 7]); b.setAttribute("aria-pressed", st.days.includes(d));
+    b.onclick = () => { st.days = st.days.includes(d) ? st.days.filter((x) => x !== d) : [...st.days, d]; redraw(); };
+    group.append(b);
+  });
+  [["Weekdays", WEEKDAYS], ["Weekend", WEEKEND], ["All days", ORDER]].forEach(([t, ds]) => { const b = document.createElement("button"); b.type = "button"; b.className = "short"; b.textContent = t; b.onclick = () => { st.days = [...ds]; redraw(); }; group.append(b); });
+  const every = checkbox("Show every date separately", st.indiv, (v) => { st.indiv = v; redraw(); });
+  every.title = "Instead of one average per day of the week, draw every date collected as its own thin line";
+  ctl.append(select("Line", lineOptions(), st.line, (v) => { st.line = v; redraw(); }), group, every, ...extra);
+}
+
+// ---- Plot 1: crowding through the day
+async function crowdByDay(el, c, W, D) {
+  const { ctl, area, after } = shell(el), L = D.lines15, st = STATE.p1 || (STATE.p1 = { line: "all", days: [...ORDER], indiv: false }), redraw = () => crowdByDay(el, c, W, D);
+  dayControls(ctl, st, "crowd", redraw);
+  const rows = L.series[st.line].c, avg = dayMeans(rows, L), pk = peakOf(avg);
+  if (!pk) { area.innerHTML = '<p class="err-msg">No complete days yet.</p>'; return; }
+  const M = pk.v;
+  const main = !st.indiv
+    ? ORDER.filter((d) => st.days.includes(d) && avg[d]).map((d) => ({ label: FULLDAY[d].slice(0, 3), head: FULLDAY[d], scale: "crowding", col: DAYCOL.crowd[d], w: 2.6, op: 1, vals: scaled(avg[d].v, M) }))
+    : L.dates.map((iso, i) => ({ iso, i })).filter(({ i }) => st.days.includes(L.dow[i])).map(({ iso, i }) => ({ head: dateLabel(iso), scale: "crowding", col: DAYCOL.crowd[L.dow[i]], w: 1.3, op: 0.55, vals: scaled(rows[i], M) }));
+  dayLines(area, W, L, { main, ctx: [], endLabels: !st.indiv, ytitle: `Crowding ${scopeTxt(st.line)}, 100 = busiest quarter-hour of the average week`, aria: `Crowding through the day ${scopeTxt(st.line)}, by day of the week` });
+  const counts = ORDER.filter((d) => avg[d]).map((d) => `${avg[d].n} ${FULLDAY[d].slice(0, 3)}`).join(", ");
+  after.textContent = `${plural(L.dates.length, "complete day")} (${counts}), ${L.dates[0]} to ${L.dates[L.dates.length - 1]}. 100 is the busiest quarter-hour of the average week ${scopeTxt(st.line)}: ${FULLDAY[pk.dow]} ${slotRange(L, pk.k)}, when the stations averaged ${M.toFixed(0)}% of their TfL record. `
+    + (st.indiv ? "Each thin line is one date; hover to see which. " : "Each line is the mean of all collected days of that weekday. ") + (L.skipped.length ? `Left out as incomplete: ${L.skipped.map(dateLabel).join(", ")}.` : "");
+}
+
+// ---- Plot 5: trains running, one line per day of the week; crowding can be shown behind it in grey (off to begin with)
+async function supplyByDay(el, c, W, D) {
+  const { ctl, area, after } = shell(el), L = D.lines15, st = STATE.p5 || (STATE.p5 = { line: "all", days: [...ORDER], indiv: false, crowd: false }), redraw = () => supplyByDay(el, c, W, D);
+  dayControls(ctl, st, "supply", redraw, [checkbox("Show crowding (grey)", st.crowd, (v) => { st.crowd = v; redraw(); })]);
+  const tr = L.series[st.line].tr, cr = L.series[st.line].c, aT = dayMeans(tr, L), aC = dayMeans(cr, L), pT = peakOf(aT), pC = peakOf(aC);
+  if (!pT || !pC) { area.innerHTML = '<p class="err-msg">No complete days yet.</p>'; return; }
+  const MT = pT.v, MC = pC.v, grey = (dow) => (isWd(dow) ? DAYCOL.grey.wd : DAYCOL.grey.we);
+  let main, ctx = [];
+  if (!st.indiv) {
+    main = ORDER.filter((d) => st.days.includes(d) && aT[d]).map((d) => ({ label: FULLDAY[d].slice(0, 3), head: FULLDAY[d], scale: "supply", col: DAYCOL.supply[d], w: 2.6, op: 1, vals: scaled(aT[d].v, MT) }));
+    if (st.crowd) ctx = ORDER.filter((d) => st.days.includes(d) && aC[d]).map((d) => ({ isCtx: true, head: `${FULLDAY[d]}, crowding`, scale: "crowding", col: grey(d), w: 1.8, op: 0.95, vals: scaled(aC[d].v, MC) }));
+  } else {
+    const ix = L.dates.map((iso, i) => ({ iso, i })).filter(({ i }) => st.days.includes(L.dow[i]));
+    main = ix.map(({ iso, i }) => ({ head: `Supply, ${dateLabel(iso)}`, scale: "supply", col: DAYCOL.supply[L.dow[i]], w: 1.3, op: 0.55, vals: scaled(tr[i], MT) }));
+    if (st.crowd) ctx = ix.map(({ iso, i }) => ({ isCtx: true, head: `Crowding, ${dateLabel(iso)}`, scale: "crowding", col: grey(L.dow[i]), w: 1, op: 0.6, vals: scaled(cr[i], MC) }));
+  }
+  dayLines(area, W, L, { main, ctx, endLabels: !st.indiv, ytitle: `Trains running${st.crowd ? " and crowding" : ""} ${scopeTxt(st.line)}, ${st.crowd ? "each " : ""}100 = busiest quarter-hour of the average week`, aria: `Trains running through the day ${scopeTxt(st.line)}, by day of the week` });
+  const wd = L.dates.map((d, i) => i).filter((i) => isWd(L.dow[i])), inSvc = (vs) => vs.filter((v, k) => v !== null && (L.q0 + k) / 4 >= 6 && (L.q0 + k) / 4 < 22);
+  const sMin = wd.length ? (d3.min(inSvc(meanOf(tr, wd, L.nq))) / MT) * 100 : null, cMin = wd.length ? (d3.min(inSvc(meanOf(cr, wd, L.nq))) / MC) * 100 : null;
+  after.textContent = (sMin === null ? "No complete weekday yet. " : `On an average weekday between 06:00 and 22:00, supply never falls below ${sMin.toFixed(0)}% of its busiest quarter-hour, while crowding falls to ${cMin.toFixed(0)}% of its own: supply is rigid and crowding is volatile. `)
+    + `100 for supply is ${Math.round(MT)} trains running (${FULLDAY[pT.dow]} ${slotRange(L, pT.k)}). Based on ${plural(L.dates.length, "complete day")}, ${L.dates[0]} to ${L.dates[L.dates.length - 1]}. `
+    + (st.indiv ? "Each thin line is one date; hover to see which." : "Each line is the mean of all collected days of that weekday.");
 }
 
 // D3. What happens after a disruption starts? Pick how serious and why (click the matrix); the three pictures say what to expect next:
@@ -470,12 +554,12 @@ async function whatNext(el, c, W, D) {
 
 // ================================================================ registry and mounting
 export const CHARTS = {
-  p1: { needs: ["system", "lines"], draw: dailyPlot },
-  p2: { needs: ["stations", "boroughs", "network"], draw: stationTypes },
-  p3: { needs: ["system", "lines"], draw: supplyRigidity },
-  p4: { needs: ["typical", "typicalSupply", "stations"], draw: stationHeat },
-  p5: { needs: ["stations"], draw: drawWaits },
-  p6: { needs: ["strain", "boroughs", "network"], draw: strainView },
+  p1: { needs: ["lines15"], draw: crowdByDay },                                  // Plot 1: crowding through the day, network and line
+  p2: { needs: ["typical", "typicalSupply", "stations"], draw: stationHeat },     // Plot 2: one station's typical week
+  p3: { needs: ["stations", "boroughs", "network"], draw: stationTypes },         // Plots 3 and 3b: what kind of station is each one
+  p4: { needs: ["stations"], draw: drawWaits },                                   // Plot 4: how long will I wait
+  p5: { needs: ["lines15"], draw: supplyByDay },                                  // Plot 5: trains running, network and line
+  p6: { needs: ["strain", "boroughs", "network"], draw: strainView },             // Plots 6 and 6b: where strain concentrates
   appA: { needs: ["strained", "network", "strain"], draw: strainMoment },
   appB: { needs: ["events"], draw: whatNext },
 };

@@ -39,12 +39,13 @@ Tables are `{"cols": [...], "rows": [[...], ...]}`; matrices are base64 int8 (`-
 
 | File | What it holds | Used by |
 |---|---|---|
-| `system.json` | The whole network, one row per 15-minute slot (crowding, trains, status), plus one row per day | Plots 1, 3 |
-| `lines.json` | One row per line per hour: crowding, trains, frequency, worst status | Plots 1, 3 |
-| `stations.json` | Per station: average crowding index by window (`wk` Mon-Fri 06-22, `am` 07-10, `mid` 11-15, `pm` 16-19, `sat`, `sun` 08-20), `n` readings, and weekday-morning measures | Plot 2 |
-| `typical.json` | Median crowding per station, weekday x quarter-hour (complete days) | Plot 4 |
-| `typical_supply.json` | Median trains per hour per station, weekday x quarter-hour | Plot 4 |
-| `waits/<naptan>.json` | Waits at one station by line, direction and day group (weekdays, weekend, each weekday), 72 15-minute bins from 06:00; per bin `n` days, band bounds `a` and `b`, median `m`, single-day values `v`; plus `towards` (direction labels) | Plot 5 |
+| `system.json` | The whole network, one row per 15-minute slot (crowding, trains, status), plus one row per day | The status line at the top of the page (no plot reads it now) |
+| `lines.json` | One row per line per hour: crowding, trains, frequency, worst status | None now (Plots 1 and 5 use `lines15.json`) |
+| `lines15.json` | The whole network (`all`) and every line, every 15 minutes from 05:00 to 23:45, one row per complete day: `c` crowding index (%), `tr` trains with a live prediction; `dates` lists the complete days and `skipped` the others; `null` = no reading | Plots 1, 5 |
+| `stations.json` | Per station: average crowding index by window (`wk` Mon-Fri 06-22, `am` 07-10, `mid` 11-15, `pm` 16-19, `sat`, `sun` 08-20), `n` readings, and weekday-morning measures | Plot 3 |
+| `typical.json` | Median crowding per station, weekday x quarter-hour (complete days); `tn` holds the number of days behind each cell | Plot 2 |
+| `typical_supply.json` | Median trains per hour per station, weekday x quarter-hour; `tpn` holds the number of days behind each cell | Plot 2 |
+| `waits/<naptan>.json` | Waits at one station by line, direction and day group (weekdays, weekend, each weekday), 72 15-minute bins from 06:00; per bin `n` days, band bounds `a` and `b`, median `m`, single-day values `v`; plus `towards` (direction labels) | Plot 4 |
 | `strain.json` | Per station and per line: hours per week supply-led, demand-led, both | Plot 6, 6b (and tooltips in Appendix A) |
 | `strained.json` | The five most strained, distinct moments per line and period, with what was going on; thresholds | Appendix A |
 | `events.json` | Every line disruption and station closure with crowding and trains from 60 minutes before to 60 after | Appendix B |
@@ -54,7 +55,7 @@ Tables are `{"cols": [...], "rows": [[...], ...]}`; matrices are base64 int8 (`-
 
 - **Complete day**: at least 56 of the 64 quarter-hours between 06:00 and 22:00 have a network crowding value.
 - **Masked readings**: a station's crowding is left out while it is closed or exit-only, or while all its lines are suspended or closed.
-- **Usual**: a station's median in the same quarter-hour and the 15 minutes either side, on other days of the same type (weekday, Saturday, Sunday); needs 2 other days.
+- **Usual**: a station's median in the same quarter-hour and the 15 minutes either side, on other days of the same type (Monday to Thursday, Friday, Saturday or Sunday: Fridays are compared with other Fridays since 8 Nov 2026 because they are shaped differently from Monday to Thursday); needs 2 other days of the type, so Saturdays and Sundays fill in from the second weekend and Fridays from the third Friday.
 - **Deviation**: (reading minus usual) / max(usual, 8), divided by the station's own spread for that time band (1.4826 x median absolute deviation; capped at plus or minus 6).
 - **Supply against usual**: a line's trains against the median for the same hour and day type with disrupted hours left out; a station takes the mean over its lines.
 - **Line status classes**: 0 good, 1 minor delays, 2 severe delays or reduced service, 3 part suspended or part closed, 4 suspended or closed, 5 closed for the night. TfL codes: 10, 18, 19 good; 9 minor delays; 6, 7 severe or reduced; 3, 5 part; 2, 4 suspended or closed; 20 closed for the night. Planned works = TfL codes 4 and 5.
