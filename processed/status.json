@@ -1,15 +1,12 @@
 {
- "generated_utc": "2026-11-08T04:01:17Z",
- "latest_run_utc": "2026-11-08T04:01:00Z",
- "latest_observation_utc": "2026-11-08T03:56:00.000Z",
- "runs_today": 17,
+ "generated_utc": "2026-11-08T04:15:49Z",
+ "latest_run_utc": "2026-11-08T04:15:00Z",
+ "latest_observation_utc": "2026-11-08T04:11:00.000Z",
+ "runs_today": 18,
  "stations_total": 270,
- "stations_with_data": 234,
+ "stations_with_data": 233,
  "median_crowding": 0.005,
  "lines_not_good_service": [
-  "bakerloo",
-  "circle",
-  "district",
   "dlr",
   "elizabeth",
   "hammersmith-city",
@@ -19,6 +16,7 @@
   "mildmay",
   "suffragette",
   "tram",
+  "waterloo-city",
   "weaver",
   "windrush"
  ],
