@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-08T23:01:33Z",
- "latest_run_utc": "2026-11-08T23:01:00Z",
- "latest_observation_utc": "2026-11-08T22:56:00.000Z",
- "runs_today": 96,
+ "generated_utc": "2026-11-08T23:12:02Z",
+ "latest_run_utc": "2026-11-08T23:11:00Z",
+ "latest_observation_utc": "2026-11-08T23:06:00.000Z",
+ "runs_today": 97,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.055,
+ "median_crowding": 0.056,
  "lines_not_good_service": [
   "bakerloo",
   "central",
@@ -14,10 +14,9 @@
   "metropolitan",
   "mildmay",
   "suffragette",
-  "victoria",
   "waterloo-city",
   "windrush"
  ],
- "stations_with_lift_out": 15,
+ "stations_with_lift_out": 14,
  "failed_source_calls_today": 0
 }
