@@ -1,14 +1,13 @@
 {
- "generated_utc": "2026-11-09T22:45:57Z",
- "latest_run_utc": "2026-11-09T22:45:00Z",
- "latest_observation_utc": "2026-11-09T22:41:00.000Z",
- "runs_today": 94,
+ "generated_utc": "2026-11-09T23:01:30Z",
+ "latest_run_utc": "2026-11-09T23:01:00Z",
+ "latest_observation_utc": "2026-11-09T22:56:00.000Z",
+ "runs_today": 95,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.069,
+ "median_crowding": 0.061,
  "lines_not_good_service": [
   "central",
-  "elizabeth",
   "jubilee",
   "suffragette",
   "weaver"
