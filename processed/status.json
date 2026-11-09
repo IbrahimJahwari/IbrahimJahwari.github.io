@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-09T23:01:30Z",
- "latest_run_utc": "2026-11-09T23:01:00Z",
- "latest_observation_utc": "2026-11-09T22:56:00.000Z",
- "runs_today": 95,
+ "generated_utc": "2026-11-09T23:15:54Z",
+ "latest_run_utc": "2026-11-09T23:15:00Z",
+ "latest_observation_utc": "2026-11-09T23:11:00.000Z",
+ "runs_today": 96,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.061,
+ "median_crowding": 0.056,
  "lines_not_good_service": [
   "central",
   "jubilee",
