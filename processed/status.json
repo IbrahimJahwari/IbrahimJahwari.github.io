@@ -1,18 +1,17 @@
 {
- "generated_utc": "2026-11-09T17:31:27Z",
- "latest_run_utc": "2026-11-09T17:31:00Z",
- "latest_observation_utc": "2026-11-09T17:26:00.000Z",
- "runs_today": 73,
+ "generated_utc": "2026-11-09T17:45:56Z",
+ "latest_run_utc": "2026-11-09T17:45:00Z",
+ "latest_observation_utc": "2026-11-09T17:36:00.000Z",
+ "runs_today": 74,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.255,
+ "median_crowding": 0.263,
  "lines_not_good_service": [
   "central",
   "district",
-  "elizabeth",
   "jubilee",
   "suffragette"
  ],
- "stations_with_lift_out": 12,
+ "stations_with_lift_out": 14,
  "failed_source_calls_today": 0
 }
