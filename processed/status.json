@@ -1,18 +1,19 @@
 {
- "generated_utc": "2026-11-09T07:45:57Z",
- "latest_run_utc": "2026-11-09T07:45:00Z",
- "latest_observation_utc": "2026-11-09T07:41:00.000Z",
- "runs_today": 33,
+ "generated_utc": "2026-11-09T08:01:21Z",
+ "latest_run_utc": "2026-11-09T08:01:00Z",
+ "latest_observation_utc": "2026-11-09T07:56:00.000Z",
+ "runs_today": 34,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.197,
+ "median_crowding": 0.244,
  "lines_not_good_service": [
+  "bakerloo",
   "central",
   "district",
   "mildmay",
   "northern",
   "suffragette"
  ],
- "stations_with_lift_out": 15,
+ "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
 }
