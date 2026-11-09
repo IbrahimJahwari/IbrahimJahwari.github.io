@@ -1638,3 +1638,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-09T19:15:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-09T19:15:00Z,weaver,overground,0,10,Good Service,
 2026-11-09T19:15:00Z,windrush,overground,0,10,Good Service,
+2026-11-09T19:31:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-09T19:31:00Z,central,tube,0,6,Severe Delays,"Central Line: Severe delays between North Acton and Ealing Broadway / West Ruislip and between Leytonstone and Epping / Hainault via Newbury Park due to train cancellations. MINOR DELAYS on the rest of the line. Ticket are being accepted on London Buses, Elizabeth line, Chiltern Railway and Great Western Railway."
+2026-11-09T19:31:00Z,central,tube,1,9,Minor Delays,"Central Line: Severe delays between North Acton and Ealing Broadway / West Ruislip and between Leytonstone and Epping / Hainault via Newbury Park due to train cancellations. MINOR DELAYS on the rest of the line. Ticket are being accepted on London Buses, Elizabeth line, Chiltern Railway and Great Western Railway."
+2026-11-09T19:31:00Z,circle,tube,0,10,Good Service,
+2026-11-09T19:31:00Z,district,tube,0,6,Severe Delays,District Line: Severe delays between Upminster and Barking due to train cancellations. MINOR DELAYS on the rest of the line. Tickets are being accepted on London Buses and C2C.
+2026-11-09T19:31:00Z,district,tube,1,9,Minor Delays,District Line: Severe delays between Upminster and Barking due to train cancellations. MINOR DELAYS on the rest of the line. Tickets are being accepted on London Buses and C2C.
+2026-11-09T19:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-09T19:31:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-09T19:31:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-09T19:31:00Z,jubilee,tube,0,9,Minor Delays,Jubilee Line: Minor delays due to an earlier faulty train at Canary Wharf.
+2026-11-09T19:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-09T19:31:00Z,lioness,overground,0,10,Good Service,
+2026-11-09T19:31:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-09T19:31:00Z,mildmay,overground,0,10,Good Service,
+2026-11-09T19:31:00Z,northern,tube,0,6,Severe Delays,Northern Line: Severe delays between Camden Town and Battersea Power Station via Charing Cross while we fix a signal failure at Waterloo. Tickets are being accepted on London Buses and Southeastern Railway. GOOD SERVICE on the rest of the line.
+2026-11-09T19:31:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-09T19:31:00Z,suffragette,overground,0,5,Part Closure,"Suffragette Line: No service between South Tottenham and Barking Riverside, until the end of service on Tuesday 10 November, due to a operational incident. A reduced service is operating on the rest of the line. Trains will operate every thirty minutes in either direction departing Gospel Oak at xx:09 and xx:39 and departing South Tottenham at xx:13 and xx:43. London Underground and London Buses are accepting tickets via any reasonable routes."
+2026-11-09T19:31:00Z,tram,tram,0,10,Good Service,
+2026-11-09T19:31:00Z,victoria,tube,0,10,Good Service,
+2026-11-09T19:31:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-09T19:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-09T19:31:00Z,windrush,overground,0,10,Good Service,
