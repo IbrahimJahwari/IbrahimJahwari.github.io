@@ -1,14 +1,16 @@
 {
- "generated_utc": "2026-11-09T05:31:07Z",
- "latest_run_utc": "2026-11-09T05:31:00Z",
- "latest_observation_utc": "2026-11-09T05:26:00.000Z",
- "runs_today": 24,
+ "generated_utc": "2026-11-09T05:45:49Z",
+ "latest_run_utc": "2026-11-09T05:45:00Z",
+ "latest_observation_utc": "2026-11-09T05:41:00.000Z",
+ "runs_today": 25,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.007,
+ "median_crowding": 0.019,
  "lines_not_good_service": [
   "district",
+  "metropolitan",
   "mildmay",
+  "northern",
   "suffragette",
   "waterloo-city"
  ],
