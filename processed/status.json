@@ -1,20 +1,21 @@
 {
- "generated_utc": "2026-11-09T09:01:18Z",
- "latest_run_utc": "2026-11-09T09:01:00Z",
- "latest_observation_utc": "2026-11-09T08:51:00.000Z",
- "runs_today": 38,
+ "generated_utc": "2026-11-09T09:15:52Z",
+ "latest_run_utc": "2026-11-09T09:15:00Z",
+ "latest_observation_utc": "2026-11-09T09:11:00.000Z",
+ "runs_today": 39,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.274,
+ "median_crowding": 0.259,
  "lines_not_good_service": [
-  "bakerloo",
   "central",
   "district",
+  "jubilee",
   "metropolitan",
   "mildmay",
   "northern",
   "suffragette",
-  "victoria"
+  "victoria",
+  "waterloo-city"
  ],
  "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
