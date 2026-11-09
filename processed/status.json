@@ -1,13 +1,12 @@
 {
- "generated_utc": "2026-11-09T06:31:13Z",
- "latest_run_utc": "2026-11-09T06:31:00Z",
- "latest_observation_utc": "2026-11-09T06:26:00.000Z",
- "runs_today": 28,
+ "generated_utc": "2026-11-09T06:45:55Z",
+ "latest_run_utc": "2026-11-09T06:45:00Z",
+ "latest_observation_utc": "2026-11-09T06:41:00.000Z",
+ "runs_today": 29,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.068,
+ "median_crowding": 0.09,
  "lines_not_good_service": [
-  "central",
   "district",
   "metropolitan",
   "mildmay",
