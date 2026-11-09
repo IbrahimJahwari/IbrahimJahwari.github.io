@@ -1905,3 +1905,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-09T22:15:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-09T22:15:00Z,weaver,overground,0,10,Good Service,
 2026-11-09T22:15:00Z,windrush,overground,0,10,Good Service,
+2026-11-09T22:31:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-09T22:31:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-09T22:31:00Z,circle,tube,0,10,Good Service,
+2026-11-09T22:31:00Z,district,tube,0,10,Good Service,
+2026-11-09T22:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-09T22:31:00Z,elizabeth,elizabeth-line,0,6,Severe Delays,Severe delays between Maidenhead and Reading due to an earlier trespasser at Reading. GOOD SERVICE on the rest of the line.
+2026-11-09T22:31:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-09T22:31:00Z,jubilee,tube,0,10,Good Service,
+2026-11-09T22:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-09T22:31:00Z,lioness,overground,0,10,Good Service,
+2026-11-09T22:31:00Z,metropolitan,tube,0,9,Minor Delays,Metropolitan Line: Minor delays between Moor Park and Watford due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-09T22:31:00Z,mildmay,overground,0,10,Good Service,
+2026-11-09T22:31:00Z,northern,tube,0,10,Good Service,
+2026-11-09T22:31:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-09T22:31:00Z,suffragette,overground,0,5,Part Closure,"Suffragette Line: No service between South Tottenham and Barking Riverside, until the end of service on Tuesday 10 November, due to a operational incident. A reduced service is operating on the rest of the line. Trains will operate every thirty minutes in either direction departing Gospel Oak at xx:09 and xx:39 and departing South Tottenham at xx:13 and xx:43. London Underground and London Buses are accepting tickets via any reasonable routes."
+2026-11-09T22:31:00Z,tram,tram,0,10,Good Service,
+2026-11-09T22:31:00Z,victoria,tube,0,10,Good Service,
+2026-11-09T22:31:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-09T22:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-09T22:31:00Z,windrush,overground,0,10,Good Service,

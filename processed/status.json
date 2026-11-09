@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-09T22:15:54Z",
- "latest_run_utc": "2026-11-09T22:15:00Z",
- "latest_observation_utc": "2026-11-09T22:11:00.000Z",
- "runs_today": 92,
+ "generated_utc": "2026-11-09T22:31:08Z",
+ "latest_run_utc": "2026-11-09T22:31:00Z",
+ "latest_observation_utc": "2026-11-09T22:26:00.000Z",
+ "runs_today": 93,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.078,
+ "median_crowding": 0.074,
  "lines_not_good_service": [
   "central",
   "elizabeth",
