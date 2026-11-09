@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-09T07:31:33Z",
- "latest_run_utc": "2026-11-09T07:31:00Z",
- "latest_observation_utc": "2026-11-09T07:26:00.000Z",
- "runs_today": 32,
+ "generated_utc": "2026-11-09T07:45:57Z",
+ "latest_run_utc": "2026-11-09T07:45:00Z",
+ "latest_observation_utc": "2026-11-09T07:41:00.000Z",
+ "runs_today": 33,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.169,
+ "median_crowding": 0.197,
  "lines_not_good_service": [
   "central",
   "district",
@@ -13,6 +13,6 @@
   "northern",
   "suffragette"
  ],
- "stations_with_lift_out": 14,
+ "stations_with_lift_out": 15,
  "failed_source_calls_today": 0
 }
