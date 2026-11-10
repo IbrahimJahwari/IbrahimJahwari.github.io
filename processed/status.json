@@ -1,16 +1,17 @@
 {
- "generated_utc": "2026-11-10T22:31:12Z",
- "latest_run_utc": "2026-11-10T22:31:00Z",
- "latest_observation_utc": "2026-11-10T22:26:00.000Z",
- "runs_today": 94,
+ "generated_utc": "2026-11-10T22:45:56Z",
+ "latest_run_utc": "2026-11-10T22:45:00Z",
+ "latest_observation_utc": "2026-11-10T22:41:00.000Z",
+ "runs_today": 95,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.094,
+ "median_crowding": 0.091,
  "lines_not_good_service": [
   "central",
   "district",
   "suffragette",
-  "victoria"
+  "victoria",
+  "weaver"
  ],
  "stations_with_lift_out": 9,
  "failed_source_calls_today": 1
