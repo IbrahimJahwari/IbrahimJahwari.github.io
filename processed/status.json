@@ -1,14 +1,15 @@
 {
- "generated_utc": "2026-11-10T11:31:13Z",
- "latest_run_utc": "2026-11-10T11:31:00Z",
- "latest_observation_utc": "2026-11-10T11:26:00.000Z",
- "runs_today": 48,
+ "generated_utc": "2026-11-10T11:40:03Z",
+ "latest_run_utc": "2026-11-10T11:39:00Z",
+ "latest_observation_utc": "2026-11-10T11:36:00.000Z",
+ "runs_today": 49,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.127,
+ "median_crowding": 0.124,
  "lines_not_good_service": [
   "district",
   "mildmay",
+  "northern",
   "suffragette"
  ],
  "stations_with_lift_out": 16,
