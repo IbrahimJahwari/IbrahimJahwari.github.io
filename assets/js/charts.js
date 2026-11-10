@@ -118,7 +118,7 @@ function shell(el, n = 1) {
 async function embed(target, spec, c) {
   const full = { $schema: "https://vega.github.io/schema/vega-lite/v6.json", background: "transparent", config: config(c), ...spec };
   target.textContent = "";
-  return vegaEmbed(target, full, { actions: false, renderer: "svg", tooltip: { theme: "light" } });
+  return vegaEmbed(target, full, { actions: false, renderer: "svg", tooltip: vegaTip });
 }
 const select = (label, options, value, on) => {
   const l = document.createElement("label"), s = document.createElement("select");
@@ -162,6 +162,13 @@ function showTip(ev, html) { tip.innerHTML = html; tip.style.display = "block"; 
   if (x + r.width > innerWidth - 8) x = ev.clientX - r.width - 14; if (y + r.height > innerHeight - 8) y = ev.clientY - r.height - 14; tip.style.left = x + "px"; tip.style.top = y + "px"; }
 const hideTip = () => { tip.style.display = "none"; };
 addEventListener("scroll", hideTip, { passive: true });
+// Every tooltip on the page looks the same: the first line in bold (the day, the station, the line), then plain lines. The time-based plots
+// read: day / time range / "X on the 0-100 <measure> scale". Vega-Lite charts hand over either one string (lines separated by \n) or a
+// set of title: value pairs, whose first value becomes the bold line.
+const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+const tipLines = (v) => (typeof v === "string" ? v.split("\n").filter(Boolean) : Object.entries(v || {}).map(([k, x], i) => (i === 0 ? String(x) : `${k}: ${x}`)));
+const tipHtml = (lines) => `<b>${esc(lines[0])}</b>` + lines.slice(1).map((t) => "<br>" + esc(t)).join("");
+function vegaTip(handler, ev, item, value) { if (value === undefined || value === null || value === "") { hideTip(); return; } showTip(ev, tipHtml(tipLines(value))); }
 
 
 
@@ -176,7 +183,9 @@ function heat(cells, c, W, m) {
   const grid = []; for (const d of WEEK) for (let h = 5; h < 24; h += 0.25) grid.push({ dname: d, hour: h, hour2: h + 0.25 });
   const y = { field: "dname", type: "ordinal", sort: WEEK, axis: { title: null, domain: false, ticks: false } };
   const scale = { range: [c.usual, c[m.key]], interpolate: "lab", zero: true, clamp: true, ...(m.domain ? { domain: m.domain, nice: false } : { nice: true }) };
-  const tt = [{ field: "dname", title: "Day" }, { field: "hl", title: "From" }, { field: "v", title: m.name, format: m.fmt }, ...(m.rawName ? [{ field: "raw", title: m.rawName, format: m.rawFmt }] : []), { field: "n", title: "Days behind this cell" }];
+  const what = m.key === "busy" ? "crowding" : "trains per hour", full = (d) => FULLDAY[(WEEK.indexOf(d) + 1) % 7];
+  cells = cells.map((x) => ({ ...x, tip: [full(x.dname), `${hhmm(x.hour * 4)} to ${hhmm((x.hour * 4 + 1) % 96)}`, `${Math.round(x.v)} on the 0\u2013100 ${what} scale`, x.n === null || x.n === undefined ? "" : `${plural(x.n, "day")} behind this cell`].filter(Boolean).join("\n") }));
+  const tt = { field: "tip", type: "nominal" };
   return { ...(m.heading ? { title: m.heading } : {}), width: W, height: 210, autosize: { type: "fit", contains: "padding" }, layer: [
     { data: { values: grid }, mark: "rect", encoding: { x: hourX(), x2: { field: "hour2" }, y, color: { value: c.nodata }, opacity: { value: 0.35 } } },
     { data: { values: cells }, mark: "rect", encoding: { x: hourX(), x2: { field: "hour2" }, y, color: { field: "v", type: "quantitative", scale, legend: gradientLegend(m.title) }, tooltip: tt } }] };
@@ -233,12 +242,14 @@ async function drawWaits(el, c, W, D) {
   const series = [{ X: A, S: st.a, who: `${nm.get(st.a.id)}: ${LNAME[st.a.line]}, ${label(A, st.a, st.a.dir)}` }, ...(B && fb ? [{ X: B, S: st.b, who: `${nm.get(st.b.id)}: ${LNAME[st.b.line]}, ${label(B, st.b, st.b.dir)}` }] : [])];
   const bins = [], pts = [];
   series.forEach(({ X, S, who }) => { const g = X.g[`${S.line}|${S.dir}|${st.day}`]; if (!g) return;
-    g.n.forEach((n, i) => { if (n === null) return; const hour = (24 + i) / 4; bins.push({ who, hour, n, p10: g.a[i], p50: g.m[i], p90: g.b[i] }); (g.v[i] || []).forEach((v) => pts.push({ who, hour, v })); }); });
+    g.n.forEach((n, i) => { if (n === null) return; const hour = (24 + i) / 4, dayName = DAYS_.find((d) => d[0] === st.day)[1].replace(/ \(.*\)/, "");
+      const tipTxt = [dayName, ...(series.length > 1 ? [who] : []), `${hhmm(24 + i)} to ${hhmm((25 + i) % 96)}`, `${g.m[i].toFixed(1)} minutes median wait`, `${plural(n, "day")} behind this point`].join("\n");
+      bins.push({ who, hour, n, p10: g.a[i], p50: g.m[i], p90: g.b[i], tip: tipTxt }); (g.v[i] || []).forEach((v) => pts.push({ who, hour, v })); }); });
   let colA = LINE_COLOURS[st.a.line], colB = LINE_COLOURS[st.b.line] || c.ink;
   if (series.length > 1 && colA === colB) colB = mix(colB, "#000000", 0.5);
   const who = series.map((s) => s.who), hx = { field: "hour", type: "quantitative", scale: { domain: [6, 24], nice: false }, axis: hourAxis([6, 9, 12, 15, 18, 21, 24]) };
   const col = { field: "who", type: "nominal", scale: { domain: who, range: [colA, colB] }, legend: who.length > 1 ? { title: null, orient: "top", labelLimit: 640, columns: 1 } : null }, dash = { field: "who", type: "nominal", scale: { domain: who, range: [[1, 0], [6, 3]] }, legend: null };
-  const y = { type: "quantitative", scale: { domain: [0, 15], clamp: true }, axis: { title: "Minutes until the next train", values: [0, 5, 10, 15] } }, tt = [{ field: "who", title: "Series" }, { field: "hour", title: "Hour", format: ".2f" }, { field: "p50", title: "Median wait (min)", format: ".1f" }, { field: "n", title: "Days behind this point" }];
+  const y = { type: "quantitative", scale: { domain: [0, 15], clamp: true }, axis: { title: "Minutes until the next train", values: [0, 5, 10, 15] } }, tt = { field: "tip", type: "nominal" };
   if (!bins.length) { area.innerHTML = '<p class="err-msg">No data yet for this choice.</p>'; return; }
   await embed(area, { width: W - 110, height: 270, layer: [
     { data: { values: bins.filter((r) => r.n >= 2) }, mark: { type: "area", opacity: 0.16 }, encoding: { x: hx, y: { ...y, field: "p10" }, y2: { field: "p90" }, color: { ...col, legend: null } } },
@@ -268,14 +279,14 @@ async function stationTypes(el, c, W, D) {
   });
   const counts = TYPES.map((t) => typed.filter((s) => s.type === t).length), lab = SHORT.map((t, i) => `${t} (${counts[i]} stations)`), L = (s) => lab[TYPES.indexOf(s.type)];
   const onLineOf = (s, l) => s.lines.split(";").includes(l);
-  const rowsL = []; LINES.forEach((l) => { const ss = typed.filter((s) => onLineOf(s, l)); TYPES.forEach((t, i) => rowsL.push({ line: l, type: lab[i], n: ss.filter((s) => s.type === t).length, pct: ss.length ? (ss.filter((s) => s.type === t).length / ss.length) * 100 : 0 })); });
+  const rowsL = []; LINES.forEach((l) => { const ss = typed.filter((s) => onLineOf(s, l)); TYPES.forEach((t, i) => rowsL.push({ line: l, lname: LNAME[l], type: lab[i], n: ss.filter((s) => s.type === t).length, pct: ss.length ? (ss.filter((s) => s.type === t).length / ss.length) * 100 : 0 })); });
   const order = [...LINES].sort((x, y) => rowsL.filter((r) => r.line === y && r.type === lab[0]).reduce((s, r) => s + r.pct, 0) - rowsL.filter((r) => r.line === x && r.type === lab[0]).reduce((s, r) => s + r.pct, 0));
   const { wide, mapW, barW } = sideBySide(anchor, a2, a1, W), sx = await data("stations");
   await embed(a1, { title: { text: "Plot 3b: how each line's stations split", anchor: "start", fontSize: 13 }, width: barW, height: 330, data: { values: rowsL }, mark: "bar", encoding: {
     x: { field: "line", type: "nominal", sort: order, axis: { title: null, domain: false, ticks: false, labelAngle: -40, labelLimit: 130, labelExpr: lineName } },
     y: { field: "pct", type: "quantitative", stack: "zero", scale: { domain: [0, 100] }, axis: { title: "% of the line's stations", values: [0, 25, 50, 75, 100] } },
     color: { field: "type", type: "nominal", scale: { domain: lab, range: colours }, legend: { title: null, orient: "bottom", columns: 1, labelLimit: 420 } }, order: { field: "type", type: "nominal" },
-    tooltip: [{ field: "line", title: "Line" }, { field: "type", title: "Type" }, { field: "n", title: "Stations" }, { field: "pct", title: "% of the line's stations", format: ".0f" }] } }, c);
+    tooltip: [{ field: "lname", title: "Line" }, { field: "type", title: "Type" }, { field: "n", title: "Stations" }, { field: "pct", title: "% of the line's stations", format: ".0f" }] } }, c);
   const paint = async () => {
     const h = Math.round(Math.min(mapW * 0.8, 600)), proj = fitMercator(mapPoints(D, D.stations), mapW, h, 0.08), on = st.line, want = SHORT.indexOf(st.type) >= 0 ? TYPES[SHORT.indexOf(st.type)] : null;
     const base = typed.filter((s) => on === "all" || onLineOf(s, on)).map((s) => ({ ...s, label: L(s) })), shown = base.filter((s) => !want || s.type === want), faded = base.filter((s) => want && s.type !== want);
@@ -351,14 +362,14 @@ async function strainView(el, c, W, D) {
   const causes = ["Supply-led: fewer trains than usual", "Demand-led: much busier than usual", "Both at once"], LITTLE = "Ordinary (under 12 hours a week)", labs = [...causes, LITTLE], colours = [c.supply, c.busy, mix(c.busy, c.ink, 0.6), c.nodata];
   const kind = (s) => { const t = s.sl + s.dl + s.cp; return t < 12 ? LITTLE : s.cp >= s.sl && s.cp >= s.dl ? causes[2] : s.sl >= s.dl ? causes[0] : causes[1]; };
   const all = D.strain.stations.map((s) => ({ ...s, cause: kind(s), total: s.sl + s.dl + s.cp })), onLineOf = (s, l) => s.lines.split(";").includes(l);
-  const rowsL = []; LINES.forEach((l) => { const ss = all.filter((s) => onLineOf(s, l)); labs.forEach((k) => rowsL.push({ line: l, cause: k, ord: k === LITTLE ? 0 : labs.indexOf(k) + 1, n: ss.filter((s) => s.cause === k).length, pct: ss.length ? (ss.filter((s) => s.cause === k).length / ss.length) * 100 : 0 })); });
+  const rowsL = []; LINES.forEach((l) => { const ss = all.filter((s) => onLineOf(s, l)); labs.forEach((k) => rowsL.push({ line: l, lname: LNAME[l], cause: k, ord: k === LITTLE ? 0 : labs.indexOf(k) + 1, n: ss.filter((s) => s.cause === k).length, pct: ss.length ? (ss.filter((s) => s.cause === k).length / ss.length) * 100 : 0 })); });
   const under = (l) => rowsL.filter((r) => r.line === l && r.cause !== LITTLE).reduce((s, r) => s + r.pct, 0), order = [...LINES].sort((a, b) => under(b) - under(a));
   const { mapW, barW } = sideBySide(anchor, a2, a1, W), sx = await data("stations");
   await embed(a1, { title: { text: "Plot 6b: how each line's stations split", anchor: "start", fontSize: 13 }, width: barW, height: 330, data: { values: rowsL }, mark: "bar", encoding: {
     x: { field: "line", type: "nominal", sort: order, axis: { title: null, domain: false, ticks: false, labelAngle: -40, labelLimit: 130, labelExpr: lineName } },
     y: { field: "pct", type: "quantitative", stack: "zero", scale: { domain: [0, 100] }, axis: { title: "% of the line's stations", values: [0, 25, 50, 75, 100] } },
     color: { field: "cause", type: "nominal", scale: { domain: labs, range: colours }, legend: { title: null, orient: "bottom", columns: 1, labelLimit: 420 } }, order: { field: "ord", type: "quantitative" },
-    tooltip: [{ field: "line", title: "Line" }, { field: "cause", title: "Main cause" }, { field: "n", title: "Stations" }, { field: "pct", title: "% of the line's stations", format: ".0f" }] } }, c);
+    tooltip: [{ field: "lname", title: "Line" }, { field: "cause", title: "Main cause" }, { field: "n", title: "Stations" }, { field: "pct", title: "% of the line's stations", format: ".0f" }] } }, c);
   const paint = async () => {
     const h = Math.round(Math.min(mapW * 0.8, 600)), proj = fitMercator(mapPoints(D, D.strain.stations), mapW, h, 0.08), on = st.line;
     const pts = all.filter((s) => on === "all" || onLineOf(s, on)).map((s) => ({ ...s, label: s.cause })).sort((p, q) => p.total - q.total);
@@ -373,15 +384,14 @@ async function strainView(el, c, W, D) {
 }
 
 // ================================================================ Plots 1 and 5: one line per day of the week (D3)
-// Plot 1 is crowding; Plot 5 is trains running, with crowding behind it if ticked. Both read lines15.json: every complete day, every
+// Plot 1 is crowding; Plot 5 is trains running (same day colours as Plot 1), with crowding in grey behind it if ticked. Both read lines15.json: every complete day, every
 // quarter-hour from 05:00. By default each day of the week is one line (the mean of all the Mondays, all the Tuesdays, and so on);
 // "Show every date separately" draws every date collected as its own thin line instead. 100 = the busiest quarter-hour of the average
 // week, worked out from all complete days whichever days are ticked, so ticking days on and off never moves a line.
 const ORDER = [1, 2, 3, 4, 5, 6, 0], WEEKDAYS = [1, 2, 3, 4, 5], WEEKEND = [6, 0];      // 0 = Sunday, as getUTCDay
 const FULLDAY = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const DAYCOL = {
+const DAYCOL = {      // a day keeps its colour in Plot 1 and Plot 5
   crowd: { 1: "#E9A23B", 2: "#E07A1F", 3: "#C9581A", 4: "#A8431A", 5: "#7E3210", 6: "#2F6DB5", 0: "#6FA3DC" },     // weekdays orange, weekend blue
-  supply: { 1: "#C07AC3", 2: "#A653A9", 3: "#8E3A93", 4: "#73287A", 5: "#561B5C", 6: "#D2549B", 0: "#EA9AC7" },    // weekdays plum, weekend pink
   grey: { wd: "#9AA0AC", we: "#C9CDD5" },                                                                              // crowding behind supply
 };
 const isWd = (d) => d >= 1 && d <= 5;
@@ -448,7 +458,7 @@ function dayLines(host, W0, L, o) {
     (best.isCtx ? pC : pM).filter((s) => s === best).raise();
     const cx = hx(k), cy = y(best.vals[k]);
     focus.style("display", null); rule.attr("x1", cx).attr("x2", cx); dot.attr("cx", cx).attr("cy", cy).attr("fill", best.col);
-    showTip(ev, `<b>${best.head}</b><br>${slotRange(L, k)}<br>${Math.round(best.vals[k])} on the 0\\u2013100 ${best.scale} scale`);
+    showTip(ev, tipHtml([best.head, slotRange(L, k), `${Math.round(best.vals[k])} on the 0\u2013100 ${best.scale} scale`]));
   });
 }
 
@@ -487,18 +497,18 @@ async function crowdByDay(el, c, W, D) {
 // ---- Plot 5: trains running, one line per day of the week; crowding can be shown behind it in grey (off to begin with)
 async function supplyByDay(el, c, W, D) {
   const { ctl, area, after } = shell(el), L = D.lines15, st = STATE.p5 || (STATE.p5 = { line: "all", days: [...ORDER], indiv: false, crowd: false }), redraw = () => supplyByDay(el, c, W, D);
-  dayControls(ctl, st, "supply", redraw, [checkbox("Show crowding (grey)", st.crowd, (v) => { st.crowd = v; redraw(); })]);
+  dayControls(ctl, st, "crowd", redraw, [checkbox("Show crowding (grey)", st.crowd, (v) => { st.crowd = v; redraw(); })]);
   const tr = L.series[st.line].tr, cr = L.series[st.line].c, aT = dayMeans(tr, L), aC = dayMeans(cr, L), pT = peakOf(aT), pC = peakOf(aC);
   if (!pT || !pC) { area.innerHTML = '<p class="err-msg">No complete days yet.</p>'; return; }
   const MT = pT.v, MC = pC.v, grey = (dow) => (isWd(dow) ? DAYCOL.grey.wd : DAYCOL.grey.we);
   let main, ctx = [];
   if (!st.indiv) {
-    main = ORDER.filter((d) => st.days.includes(d) && aT[d]).map((d) => ({ label: FULLDAY[d].slice(0, 3), head: FULLDAY[d], scale: "supply", col: DAYCOL.supply[d], w: 2.6, op: 1, vals: scaled(aT[d].v, MT) }));
-    if (st.crowd) ctx = ORDER.filter((d) => st.days.includes(d) && aC[d]).map((d) => ({ isCtx: true, head: `${FULLDAY[d]}, crowding`, scale: "crowding", col: grey(d), w: 1.8, op: 0.95, vals: scaled(aC[d].v, MC) }));
+    main = ORDER.filter((d) => st.days.includes(d) && aT[d]).map((d) => ({ label: FULLDAY[d].slice(0, 3), head: FULLDAY[d], scale: "supply", col: DAYCOL.crowd[d], w: 2.6, op: 1, vals: scaled(aT[d].v, MT) }));
+    if (st.crowd) ctx = ORDER.filter((d) => st.days.includes(d) && aC[d]).map((d) => ({ isCtx: true, head: FULLDAY[d], scale: "crowding", col: grey(d), w: 1.8, op: 0.95, vals: scaled(aC[d].v, MC) }));
   } else {
     const ix = L.dates.map((iso, i) => ({ iso, i })).filter(({ i }) => st.days.includes(L.dow[i]));
-    main = ix.map(({ iso, i }) => ({ head: `Supply, ${dateLabel(iso)}`, scale: "supply", col: DAYCOL.supply[L.dow[i]], w: 1.3, op: 0.55, vals: scaled(tr[i], MT) }));
-    if (st.crowd) ctx = ix.map(({ iso, i }) => ({ isCtx: true, head: `Crowding, ${dateLabel(iso)}`, scale: "crowding", col: grey(L.dow[i]), w: 1, op: 0.6, vals: scaled(cr[i], MC) }));
+    main = ix.map(({ iso, i }) => ({ head: dateLabel(iso), scale: "supply", col: DAYCOL.crowd[L.dow[i]], w: 1.3, op: 0.55, vals: scaled(tr[i], MT) }));
+    if (st.crowd) ctx = ix.map(({ iso, i }) => ({ isCtx: true, head: dateLabel(iso), scale: "crowding", col: grey(L.dow[i]), w: 1, op: 0.6, vals: scaled(cr[i], MC) }));
   }
   dayLines(area, W, L, { main, ctx, endLabels: !st.indiv, ytitle: `Trains running${st.crowd ? " and crowding" : ""} ${scopeTxt(st.line)}, ${st.crowd ? "each " : ""}100 = busiest quarter-hour of the average week`, aria: `Trains running through the day ${scopeTxt(st.line)}, by day of the week` });
   const wd = L.dates.map((d, i) => i).filter((i) => isWd(L.dow[i])), inSvc = (vs) => vs.filter((v, k) => v !== null && (L.q0 + k) / 4 >= 6 && (L.q0 + k) / 4 < 22);

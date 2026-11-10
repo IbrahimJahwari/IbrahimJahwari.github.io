@@ -32,7 +32,11 @@ LINE_OF = {1: "bakerloo", 2: "central", 3: "circle", 4: "district", 6: "hammersm
 # open-dataset station id -> TfL station ids, where the names differ
 MANUAL = {82: ["940GZZLUERB"], 83: ["940GZZLUERC"], 114: ["940GZZLUHAW"], 117: ["940GZZLUHRC"], 197: ["940GZZLUPCC"],
           226: ["940GZZLUSBC"], 227: ["940GZZLUSBM"], 110: ["940GZZLUHSD", "940GZZLUHSC"], 193: ["940GZZLUPAC", "940GZZLUPAH"]}
-EXTRA = [("940GZZLULRD", "940GZZLUWLA", "hammersmith-city"), ("940GZZLUWLA", "940GZZLUSBM", "hammersmith-city"),
+# Northern line extension (2021): the open connections dataset predates it, and the stations' ids do not start with 940GZZLU.
+EXTRA_STATIONS = {"940GZZNEUGST", "940GZZBPSUST"}
+NOT_SERVED = {("940GZZLUWIG", "metropolitan"), ("940GZZLUNDN", "metropolitan")}    # see tfl_common.py
+EXTRA = [("940GZZLUKNG", "940GZZNEUGST", "northern"), ("940GZZNEUGST", "940GZZBPSUST", "northern"),
+         ("940GZZLULRD", "940GZZLUWLA", "hammersmith-city"), ("940GZZLUWLA", "940GZZLUSBM", "hammersmith-city"),
          ("940GZZLULRD", "940GZZLUWLA", "circle"), ("940GZZLUWLA", "940GZZLUSBM", "circle"),
          ("940GZZLUHRC", "940GZZLUHR5", "piccadilly")]
 LAT0, LON0 = 51.5085, -0.1257
@@ -51,10 +55,10 @@ def norm(s):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     stations = [r for r in csv.DictReader(open(DATA / "raw" / "reference" / "stations.csv", encoding="utf-8"))
-                if r["naptan"].startswith("940GZZLU")]
+                if r["naptan"].startswith("940GZZLU") or r["naptan"] in EXTRA_STATIONS]
     for s in stations:
         s["lat"], s["lon"] = float(s["lat"]), float(s["lon"])
-        s["lines"] = [l for l in s["lines"].split(";") if l in TUBE]
+        s["lines"] = [l for l in s["lines"].split(";") if l in TUBE and (s["naptan"], l) not in NOT_SERVED]
     by_id = {s["naptan"]: s for s in stations}
     by_name = collections.defaultdict(list)
     for s in stations:

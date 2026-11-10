@@ -67,7 +67,7 @@
 </ul>
 <h4>How each variable is built</h4>
 <ul>
-<li><b>TfL crowding index.</b> How busy a station is right now as a proportion of the busiest it has been since TfL began collecting this Wi-Fi-based data (July 2019). Usually between 0 and 1, but it can exceed 1 (Elm Park, South Wimbledon and Highbury &amp; Islington often do). It is relative to each station's own history, so it is not comparable between stations and is not a head-count. 17 of the 270 stations never report (for example Arsenal, Holloway Road, Finsbury Park).</li>
+<li><b>TfL crowding index.</b> How busy a station is right now as a proportion of the busiest it has been since TfL began collecting this Wi-Fi-based data (July 2019). Usually between 0 and 1, but it can exceed 1 (Elm Park, South Wimbledon and Highbury &amp; Islington often do). It is relative to each station's own history, so it is not comparable between stations and is not a head-count. 17 of the original 270 stations never report (for example Arsenal, Holloway Road, Finsbury Park); the list is 272 once Nine Elms and Battersea Power Station are added, and whether those two report is not known yet.</li>
 <li><b>Slots.</b> Each collection run is assigned to the nearest 15 minutes on the London clock (wall-clock London time); if two runs land in one slot the earlier one is used. The plot now uses the 15-minute slots themselves, not hourly means.</li>
 <li><b>Masked readings.</b> A station's reading is left out of every average while the station is closed or exit-only (station-disruption feed) and while every line serving it is suspended or closed. Reason: TfL's count is capped when entry is restricted, so it would look quiet exactly when the station was so busy that TfL stopped entry (see Appendix B on overcrowding controls).</li>
 <li><b>Value for a line in a slot.</b> The unweighted mean of the index over the open, reporting stations on that line (an interchange counts for every line it serves), and only if at least 3 stations report. <b>All lines</b> is the mean over all open reporting stations, and only for slots where at least 100 report.</li>
@@ -82,7 +82,7 @@
 <li><b>Quarter-hours, not hours,</b> so the rush-hour peaks are drawn where they are. The hover therefore works by quarter-hour.</li>
 <li><b>Own maximum = 100, not TfL's 2019 reference.</b> The question is &ldquo;within a week, when is it busiest&rdquo;, not &ldquo;is this week busier than the last&rdquo;. TfL's reference is a different all-time maximum for every station, mixes in 2019 behaviour, and cannot be compared across lines. Scaling each picture to itself makes shapes comparable.</li>
 <li><b>Mean across stations.</b> Simple, and every station counts equally. I also tried &ldquo;share of stations at or above 40% of their record&rdquo; (TfL's own guidance calls below 0.4 quiet) and dropped it as less direct.</li>
-<li><b>Colour grammar used on the whole page.</b> Orange = crowding (demand), plum = supply (trains), blue = weekend or quiet, grey = usual or no data. Within Plot 1 weekdays run from light to dark orange (Monday to Friday) and the weekend is two blues.</li>
+<li><b>Colour grammar used on the whole page.</b> Orange = crowding (demand), plum = supply (trains), blue = weekend or quiet, grey = usual or no data. The exception is Plots 1 and 5, where the colour is the day of the week, the same in both: weekdays run from light to dark orange (Monday to Friday) and the weekend is two blues. In Plot 5 the measure is named in the axis title and the hover, and crowding is the grey.</li>
 </ul>
 <h4>How to read it / what it means</h4>
 <p>Weekdays show two sharp peaks (a taller morning one around 08:00 to 09:00 and an evening one around 17:00 to 18:00 at the time of building); weekends show a low, broad hump. In the individual-dates view the spread between thin lines is how regular the pattern is. This is descriptive: it says when, not why.</p>
@@ -233,7 +233,7 @@
 <h4>The point</h4>
 <p>The number of trains running barely changes through the day and is the same on every weekday, while crowding swings from near empty to its peak. At the rush hours each train is therefore much fuller; in between, much emptier.</p>
 <h4>What it shows</h4>
-<p>Trains running (supply), one line per day of the week: weekdays in shades of plum, weekend days in shades of pink, all solid (the dashes are gone). Ticking &ldquo;Show crowding (grey)&rdquo; draws crowding for the same days behind it (off to begin with; darker grey for weekdays, lighter grey for weekends). Same line, day-of-week and &ldquo;Show every date separately&rdquo; controls as Plot 1.</p>
+<p>Trains running (supply), one line per day of the week: each day of the week keeps the colour it has in Plot 1 (weekdays light to dark orange, Saturday and Sunday blue), all solid (the dashes are gone). Ticking &ldquo;Show crowding (grey)&rdquo; draws crowding for the same days behind it (off to begin with; darker grey for weekdays, lighter grey for weekends). Same line, day-of-week and &ldquo;Show every date separately&rdquo; controls as Plot 1.</p>
 <h4>Data</h4>
 <ul>
 <li><code>line_supply.csv</code>: per run and per line, <code>n_vehicles</code> (the number of distinct trains with a live arrival prediction, from the line's Arrivals feed; the collector stores a row with direction &ldquo;all&rdquo; for both directions together) alongside <code>n_predictions</code> and <code>n_stations</code>.</li>
@@ -248,14 +248,14 @@
 </ul>
 <h4>Why it is built this way</h4>
 <ul>
-<li>Supply is the main variable because the claim is about supply: it moves, but between a high floor and its peak, while crowding swings from near zero to its peak. Crowding is shown in grey because it is the context, not the subject, and because blue was already used for weekends in Plot 1.</li>
+<li>Supply is the main variable because the claim is about supply: it moves, but between a high floor and its peak, while crowding swings from near zero to its peak. Crowding is shown in grey because it is the context, not the subject.</li>
 <li><b>Position in the page.</b> The page tells the crowding story first (Plots 1 to 3), then the supply side: Plot 4 is supply at station level (waits), this plot is supply at network and line level, set against the crowding of Plot 1 (one tick away). It sits just before Plot 6, which needs both.</li>
-<li>Weekday versus weekend is colour (plum / pink), not dashes, so every line reads the same way as in Plot 1. The weekday supply lines lie on top of each other: that overlap is the finding (the timetable is the same every weekday), and the stacked labels at the right-hand end say so.</li>
+<li>Weekday versus weekend is colour, not dashes, and the colours are Plot 1's (so a day keeps its colour from one plot to the next), so every line reads the same way as in Plot 1. The weekday supply lines lie on top of each other: that overlap is the finding (the timetable is the same every weekday), and the stacked labels at the right-hand end say so.</li>
 <li>Same scaling as Plot 1 so that the two are directly comparable in shape. Crowding is off to begin with so the first thing seen is supply.</li>
 <li>Mean, not median, across days, as in Plot 1 (see the note there on what that does with one-off events).</li>
 </ul>
 <h4>How to read it / what it means</h4>
-<p>If supply followed crowding the plum and grey lines would rise and fall together. They do not: supply is flat for most of the day and drops mainly in the late evening and early morning, while crowding peaks twice and falls to a fraction of its peak between. This is the descriptive basis for the plot on strain that follows.</p>
+<p>If supply followed crowding the coloured and grey lines would rise and fall together. They do not: supply is flat for most of the day and drops mainly in the late evening and early morning, while crowding peaks twice and falls to a fraction of its peak between. This is the descriptive basis for the plot on strain that follows.</p>
 <h4>Caveats and limits</h4>
 <ul>
 <li>&ldquo;Trains with a prediction&rdquo; can undercount trains near terminals or not yet in the prediction horizon, and says nothing about train length or capacity; a flat supply line is a flat number of trains, not flat capacity.</li>
@@ -287,7 +287,7 @@
 </ul>
 <h4>How each variable is built</h4>
 <ul>
-<li><b>"Usual" crowding</b> for a station and a quarter-hour: the median of that station's readings in the same quarter-hour and the 15 minutes either side, on other days of the same type, excluding the day itself. The types are Monday to Thursday, Friday, Saturday and Sunday: a Friday is compared with other Fridays, because Fridays are shaped differently from Monday to Thursday (in the first two weeks the 07:00 to 10:00 average was about 19% of record on the two Fridays against about 29% on Monday to Thursday), so against a Mon to Fri baseline a Friday read quieter than it was and real strain would be missed. Friday evenings, by contrast, were no busier than the rest of the week so far (about 16% either way from 19:00 to 22:00). It needs at least 2 other days of the type and 3 readings, so Saturdays and Sundays fill in from the second weekend, Fridays from the third Friday (13 Nov), and early days have no baseline.</li>
+<li><b>"Usual" crowding</b> for a station and a quarter-hour: the median of that station's readings in the same quarter-hour and the 15 minutes either side, on other days of the same type, excluding the day itself. The types are Monday to Thursday, Friday, Saturday and Sunday: a Friday is compared with other Fridays, because Fridays are shaped differently from Monday to Thursday (in the first two weeks the 07:00 to 10:00 average was about 19% of record on the two Fridays against about 29% on Monday to Thursday), so against a Mon to Fri baseline a Friday read quieter than it was and real strain would be missed. Friday evenings, by contrast, were no busier than the rest of the week so far (about 16% either way from 19:00 to 22:00). It needs at least 2 other days of the type and 3 readings, so Saturdays and Sundays fill in from the third weekend (14-15 Nov), Fridays from the third Friday (13 Nov), and early days have no baseline.</li>
 <li><b>Deviation</b> = (reading minus usual) divided by the larger of usual and 8 (the floor stops quiet hours looking dramatic), then divided by that station's own typical spread (1.4826 times the median absolute deviation, estimated separately for the morning peak 06 to 10, midday 10 to 16, evening peak 16 to 20, and other times; at least 0.05; capped at plus or minus 6). "Much busier than usual" means deviation above 2.</li>
 <li><b>Supply against usual</b>: for each line, trains against the median trains in the same hour on days of the same type (the same four types as above), with disrupted hours left out of the baseline (hour-only fallback); a station takes the mean over its lines. "Fewer trains than usual" means more than 20% below usual, or the station is closed.</li>
 <li><b>Classification of each station quarter-hour</b> (from 06:00 on days with a baseline): <i>supply-led</i> = fewer trains and not much busier; <i>demand-led</i> = much busier while trains are within 20% of usual; <i>both</i> = fewer trains and much busier.</li>
@@ -415,6 +415,16 @@
 <li>Plot 6: Fridays have their own baseline (see the note under Plot 6).</li>
 <li>The sentence each plot writes about itself, the caption placeholder and the working note are in a closed &ldquo;About this plot&rdquo; box under each plot; the appendix and these notes are closed boxes.</li>
 </ul>
+<h4>Changes made on 10 November 2026</h4>
+<ul>
+<li>Every tooltip uses one format: the first line in bold (day, station or line), then plain lines. The time-based plots (1, 2, 4, 5) read: day, time range, &ldquo;X on the 0&ndash;100 crowding scale&rdquo; (or supply, or trains per hour), and Plots 2 and 4 add how many days sit behind the cell.</li>
+<li>Plot 5 uses the same day colours as Plot 1 (weekdays orange, weekend blue); the plum and pink are gone.</li>
+<li><b>Stations.</b> Nine Elms and Battersea Power Station (the Northern line extension, ids <code>940GZZNEUGST</code> and <code>940GZZBPSUST</code>) were dropped when the station list was built, because the code kept only ids starting <code>940GZZLU</code>. They are now kept, with the two links to Kennington added to the map's network file. They appear after the <code>reference</code> workflow is run (it takes their coordinates from TfL); trains at both were already in the raw supply data, and whether TfL reports crowding for them is not known until the collector has tried (as with the 17 stations that never report).</li>
+<li><b>Metropolitan line at Willesden Green and Neasden.</b> TfL's station and arrivals feeds list the Metropolitan line there, but Metropolitan trains run non-stop on the fast tracks between Finchley Road and Wembley Park, so both are Jubilee stations only. Metropolitan is taken off Willesden Green's lines and its predictions at both stations are left out of supply; the Metropolitan line has 34 stations.</li>
+<li><b>Scope.</b> The page covers the 11 Underground lines (TfL's tube mode). The Elizabeth line is a separate mode with its own stations and ids, and the DLR, Overground and Trams are out too.</li>
+<li>Corrected: weekend baselines (for strain) start at the third weekend, not the second (a baseline needs two other days of the same type); the first two weekends have none. This was wrong in the notes and in <code>build.py</code> and <code>data/README.md</code>.</li>
+<li>Fixed: the Plot 1 and 5 tooltip printed &ldquo;0\u2013100&rdquo; instead of &ldquo;0&ndash;100&rdquo;.</li>
+</ul>
 <h4>Decision log</h4>
 <ul>
 <li><b>Demand is not observed.</b> Crowding at stations is the outcome of demand and supply (and of TfL's own controls); supply is observed only through trains with a live prediction.</li>
@@ -424,15 +434,20 @@
 <li><b>Waterloo &amp; City left out</b> of every line list and chart (two stations).</li>
 <li><b>15-minute grid</b> on the London clock; the earlier of two runs in one slot is used.</li>
 <li><b>Planned works</b> are counted as lost supply in Plot 6 and excluded from Appendix B.</li>
-<li><b>Colours:</b> orange crowding, plum supply, blue weekend or quiet, grey usual or no data; line colours are TfL's. Plots 1 and 5 use a shade per day of the week (orange for weekdays and blue for the weekend in Plot 1, plum and pink in Plot 5, grey for crowding behind supply). In Plot 3 commuter is orange, weekend visitors blue, all-day grey.</li>
+<li><b>Colours:</b> orange crowding, plum supply, blue weekend or quiet, grey usual or no data; line colours are TfL's. Plots 1 and 5 use the same shade per day of the week (orange for weekdays, blue for the weekend; in Plot 5 the measure is named in the axis title and the hover, and crowding is the grey behind supply). In Plot 3 commuter is orange, weekend visitors blue, all-day grey.</li>
 <li><b>Thresholds that are judgement, not estimated:</b> station types 1.8 / 0.9 / 1.1 (Plot 3); 20% fewer trains, deviation above 2, 12 hours a week (Plot 6); top and bottom 10% (Appendix A); 5 and 10 days for dots and bands (Plot 4); 5 events for a band (Appendix B).</li>
+</ul>
+<h4>Checks on TfL's station and line lists (10 Nov 2026)</h4>
+<ul>
+<li>Over 5 to 9 Nov, TfL's arrivals feed gave Hammersmith &amp; City predictions at about 20 stations that the station list does not give that line, mostly stations on the Circle and District lines (for example Blackfriars, Cannon Street, Bayswater, Notting Hill Gate), 130 to 1,100 predictions each. The cause is unclear, so they are still counted in station supply (Plots 2 and 4); check before relying on station-level supply on the Circle and Hammersmith &amp; City lines. The two Metropolitan cases (Willesden Green, Neasden) are excluded.</li>
+<li>The 17 stations that never report crowding (Arsenal, Caledonian Road, Canning Town, Colindale, Finsbury Park, Heathrow Terminal 5, Hammersmith (District and Piccadilly), Holloway Road, Kensington (Olympia), Ladbroke Grove, Pimlico, Russell Square, St. James's Park, South Kenton, Seven Sisters, Willesden Junction, West Acton) still appear in the waits and supply plots but not in the crowding ones. TfL's typical-profile file covers 16 of them, so having a typical profile does not mean a station reports.</li>
 </ul>
 <h4>Things that were different in the first weeks (check before interpreting)</h4>
 <ul>
 <li>Continuous collection starts Fri 30 Oct 2026 about 05:51 UTC (four test runs on 29 Oct).</li>
 <li>Piccadilly line closure 28 to 30 October and near-zero Piccadilly trains the following weekend.</li>
 <li>Station supply stored hourly until 4 Nov about 18:30 UTC, every 15 minutes after.</li>
-<li>Baselines for strain (Plot 6): Saturdays and Sundays fill in only from the second weekend, and Fridays (which have their own baseline since 8 Nov) from the third Friday, 13 Nov. Until then the Piccadilly closure on Fri 30 Oct is not counted in Plot 6.</li>
+<li>Baselines for strain (Plot 6): Saturdays and Sundays fill in only from the third weekend (14-15 Nov), and Fridays (which have their own baseline since 8 Nov) from the third Friday, 13 Nov. Until then the Piccadilly closure on Fri 30 Oct is not counted in Plot 6.</li>
 </ul>
 <h4>Where the marking criteria are evidenced (facts only)</h4>
 <ul>
@@ -451,7 +466,7 @@
 <ul>
 <li>Open <code>tfl-status.html</code> and the Actions tab: look for gaps in collection.</li>
 <li>Look at every plot again: do the shapes still hold with a month of data, several weekends and no closure week? Re-read each plot's thresholds above.</li>
-<li>Screenshot the final plots into <code>output/figures/</code> (the files there are from 8 Nov 2026 with 9 complete days of data).</li>
+<li>Screenshot the final plots into <code>output/figures/</code> (the files there are from 10 Nov 2026 with 11 complete days of data).</li>
 <li>Rewrite the one-line titles above the plots in your own words, and check the ones that were kept plain (Plots 3, 4 and 6) against the data.</li>
 <li>Decide what to do with the appendix, write the text, delete the grey notes, check the count with <code>project.html?words</code>.</li>
 </ul>

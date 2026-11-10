@@ -1,6 +1,6 @@
 # Output
 
-`figures/` holds PNG snapshots of the plots on `project.html`, taken on 8 November 2026 with 9 complete days of data:
+`figures/` holds PNG snapshots of the plots on `project.html`, taken on 10 November 2026 with 11 complete days of data:
 
 | File | Plot |
 |---|---|

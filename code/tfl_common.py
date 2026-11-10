@@ -60,6 +60,15 @@ class Api:
         return {"status": status, "body": body, "err": err, "secs": round(time.time() - t0, 2)}
 
 
+# Underground stations whose ids do not start with 940GZZLU: the Northern line extension (opened 2021) uses 940GZZ + other letters.
+# Trains at both appear in TfL's arrivals feed, so they are Underground stations and are kept.
+EXTRA_STATIONS = {"940GZZNEUGST", "940GZZBPSUST"}
+# (station, line) pairs TfL lists but where the line does not stop: Metropolitan trains run non-stop on the fast tracks between
+# Finchley Road and Wembley Park, so Willesden Green and Neasden are Jubilee line stations only, yet TfL's feeds give Metropolitan
+# predictions there (pass-through predictions). They are left out of the station's lines and of its supply.
+NOT_SERVED = {("940GZZLUWIG", "metropolitan"), ("940GZZLUNDN", "metropolitan")}
+
+
 def discover_stations(api):
     """Underground stations from the 11 line StopPoint lists, keyed by naptanId."""
     stations = {}
@@ -69,7 +78,7 @@ def discover_stations(api):
             continue
         for sp in r["body"]:
             nid = sp.get("naptanId", "")
-            if not nid.startswith("940GZZLU"):
+            if not (nid.startswith("940GZZLU") or nid in EXTRA_STATIONS) or (nid, line) in NOT_SERVED:
                 continue
             rec = stations.setdefault(nid, {
                 "name": (sp.get("commonName") or "").replace(" Underground Station", ""),
@@ -77,4 +86,16 @@ def discover_stations(api):
                 "lat": sp.get("lat"), "lon": sp.get("lon"), "lines": set(),
             })
             rec["lines"].add(line)
+    for nid in sorted(EXTRA_STATIONS - set(stations)):          # in case a line's StopPoints list leaves one of them out
+        try:
+            r = api.get(f"/StopPoint/{nid}")
+            sp = r["body"] if isinstance(r["body"], dict) else {}
+            lines = {l.get("id") for l in sp.get("lines", []) if l.get("id") in TUBE_LINES}
+            if sp.get("lat") is not None and lines:
+                stations[nid] = {"name": (sp.get("commonName") or "").replace(" Underground Station", ""), "hub": sp.get("hubNaptanCode") or "",
+                                 "lat": sp["lat"], "lon": sp["lon"], "lines": lines}
+            else:
+                print(f"  warning: could not add {nid} (no usable StopPoint reply)")
+        except Exception as e:                                  # never let this stop the reference build
+            print(f"  warning: could not add {nid}: {e}")
     return stations

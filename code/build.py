@@ -33,7 +33,7 @@ Definitions
   usual      each station's own median for the same time of day on other days of the same type (Monday to Thursday, Friday,
              Saturday, Sunday), from the 15 minutes either side. Fridays have their own type because they are shaped differently
              from Monday to Thursday. It needs at least two other days of the type, so Saturdays and Sundays fill in from the
-             second weekend and Fridays from the third Friday.
+             third weekend (14-15 Nov) and Fridays from the third Friday (13 Nov).
   deviation  how far a reading is from usual, in units of that station's own typical spread at that time of day
              (morning peak, midday, evening peak, other; robust, capped at +-6).
   trains     trains with a live arrival prediction on a line. Close to trains running, not an exact count.
@@ -66,6 +66,10 @@ LNAME = {"bakerloo": "Bakerloo", "central": "Central", "circle": "Circle", "dist
 STATUS = {10: 0, 18: 0, 19: 0, 9: 1, 6: 2, 7: 2, 3: 3, 5: 3, 2: 4, 4: 4, 20: 5}
 WORST_RANK = {0: 0, 5: 1, 1: 2, 2: 3, 3: 4, 4: 5}
 RANK_TO_STATUS = {v: k for k, v in WORST_RANK.items()}
+# Underground stations whose ids do not start with 940GZZLU (the Northern line extension), and (station, line) pairs where TfL's feeds
+# list a line that does not stop there (see tfl_common.py). Kept in step with tfl_common.py.
+EXTRA_STATIONS = {"940GZZNEUGST", "940GZZBPSUST"}
+NOT_SERVED = {("940GZZLUWIG", "metropolitan"), ("940GZZLUNDN", "metropolitan")}
 MIN_STATIONS, MIN_LINES = 100, 9     # a slot needs this many stations / lines reporting before its totals are trusted
 RECENT_SLOTS = 7 * 96
 UNPLANNED = {"Fire alert", "Staff unavailable", "Equipment fault", "Lift fault"}
@@ -181,8 +185,11 @@ def runs_of(a):
 # ---------------------------------------------------------------- main
 def main():
     stations = pd.read_csv(RAW / "reference" / "stations.csv", dtype=str)
-    stations = stations[stations.naptan.str.startswith("940GZZLU")].reset_index(drop=True)
+    stations = stations[stations.naptan.str.startswith("940GZZLU") | stations.naptan.isin(EXTRA_STATIONS)].reset_index(drop=True)
     stations["lines"] = stations.lines.fillna("")
+    for nid_, ln_ in NOT_SERVED:      # take the line off the station's list even if an older stations.csv still has it
+        stations.loc[stations.naptan == nid_, "lines"] = stations.loc[stations.naptan == nid_, "lines"].map(
+            lambda s: ";".join(x for x in s.split(";") if x != ln_))
     N = len(stations)
     IDX = {n: i for i, n in enumerate(stations.naptan)}
     NAME = stations.name.tolist()
@@ -378,6 +385,7 @@ def main():
     # ---------------------------------------------------------------- lines.json
     ss = read("station_supply", ["run_utc", "naptan", "line_id", "direction", "trains_next_15m", "next_arrival_s"])
     ss = ss[ss.naptan.isin(IDX) & ss.line_id.isin(TUBE)].copy()
+    ss = ss[[(a_, b_) not in NOT_SERVED for a_, b_ in zip(ss.naptan, ss.line_id)]].copy()    # pass-through predictions are not supply
     ss["slot"] = to_local_slot(ss.run_utc)
     ss = first_per(ss, ["naptan", "line_id", "direction", "slot"])
     ss["wait"] = pd.to_numeric(ss.next_arrival_s, errors="coerce") / 60
@@ -752,6 +760,8 @@ def main():
         net = json.loads(net_path.read_text(encoding="utf-8"))
         adj = {}
         for a_, b_, l_ in net["edges"]:
+            if a_ not in IDX or b_ not in IDX:      # the site's network file may know stations the station list does not (yet)
+                continue
             adj.setdefault((l_, a_), set()).add(b_)
             adj.setdefault((l_, b_), set()).add(a_)
         ssd = ss[ss.direction.isin(["inbound", "outbound"]) & ss.wait.notna()]

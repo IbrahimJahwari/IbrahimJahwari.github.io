@@ -28,7 +28,7 @@ The build assigns each run to the nearest 15 minutes on the London clock (a "slo
 
 | File | Columns |
 |---|---|
-| `stations.csv` | `naptan, name, hub_code, lat, lon, lines, lifts, has_typical` (270 Underground stations; `lines` is semicolon-separated) |
+| `stations.csv` | `naptan, name, hub_code, lat, lon, lines, lifts, has_typical` (the 270 Underground stations with a `940GZZLU` id, plus Nine Elms and Battersea Power Station, `940GZZNEUGST` and `940GZZBPSUST`, once the reference workflow has been run since 10 Nov 2026; `lines` is semicolon-separated; the Metropolitan line is not listed at Willesden Green or Neasden, where its trains do not stop) |
 | `disruption_texts.csv` | `text_id, first_seen_utc, description, additional_information` |
 | `typical_crowding.csv.gz` | `naptan, day, time_band, pct_baseline` (TfL's own typical profile; not used by the final plots) |
 | `routes.json` | `{line: {direction: [[naptan, ...], ...]}}`: the ordered stops of every route, from TfL's Route/Sequence, written by `code/fetch_routes.py` in the build workflow (may be absent) |
@@ -55,7 +55,7 @@ Tables are `{"cols": [...], "rows": [[...], ...]}`; matrices are base64 int8 (`-
 
 - **Complete day**: at least 56 of the 64 quarter-hours between 06:00 and 22:00 have a network crowding value.
 - **Masked readings**: a station's crowding is left out while it is closed or exit-only, or while all its lines are suspended or closed.
-- **Usual**: a station's median in the same quarter-hour and the 15 minutes either side, on other days of the same type (Monday to Thursday, Friday, Saturday or Sunday: Fridays are compared with other Fridays since 8 Nov 2026 because they are shaped differently from Monday to Thursday); needs 2 other days of the type, so Saturdays and Sundays fill in from the second weekend and Fridays from the third Friday.
+- **Usual**: a station's median in the same quarter-hour and the 15 minutes either side, on other days of the same type (Monday to Thursday, Friday, Saturday or Sunday: Fridays are compared with other Fridays since 8 Nov 2026 because they are shaped differently from Monday to Thursday); needs 2 other days of the type, so Saturdays and Sundays fill in from the third weekend (14-15 Nov) and Fridays from the third Friday (13 Nov).
 - **Deviation**: (reading minus usual) / max(usual, 8), divided by the station's own spread for that time band (1.4826 x median absolute deviation; capped at plus or minus 6).
 - **Supply against usual**: a line's trains against the median for the same hour and day type with disrupted hours left out; a station takes the mean over its lines.
 - **Line status classes**: 0 good, 1 minor delays, 2 severe delays or reduced service, 3 part suspended or part closed, 4 suspended or closed, 5 closed for the night. TfL codes: 10, 18, 19 good; 9 minor delays; 6, 7 severe or reduced; 3, 5 part; 2, 4 suspended or closed; 20 closed for the night. Planned works = TfL codes 4 and 5.
