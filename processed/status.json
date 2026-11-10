@@ -1,17 +1,17 @@
 {
- "generated_utc": "2026-11-10T16:46:08Z",
- "latest_run_utc": "2026-11-10T16:46:00Z",
- "latest_observation_utc": "2026-11-10T16:41:00.000Z",
- "runs_today": 70,
+ "generated_utc": "2026-11-10T17:01:35Z",
+ "latest_run_utc": "2026-11-10T17:01:00Z",
+ "latest_observation_utc": "2026-11-10T16:56:00.000Z",
+ "runs_today": 71,
  "stations_total": 270,
  "stations_with_data": 253,
- "median_crowding": 0.226,
+ "median_crowding": 0.241,
  "lines_not_good_service": [
   "central",
   "district",
   "mildmay",
-  "northern",
-  "suffragette"
+  "suffragette",
+  "victoria"
  ],
  "stations_with_lift_out": 12,
  "failed_source_calls_today": 1
