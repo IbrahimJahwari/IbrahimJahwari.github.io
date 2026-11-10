@@ -1,17 +1,16 @@
 {
- "generated_utc": "2026-11-10T20:31:12Z",
- "latest_run_utc": "2026-11-10T20:31:00Z",
- "latest_observation_utc": "2026-11-10T20:26:00.000Z",
- "runs_today": 86,
+ "generated_utc": "2026-11-10T20:46:06Z",
+ "latest_run_utc": "2026-11-10T20:45:00Z",
+ "latest_observation_utc": "2026-11-10T20:41:00.000Z",
+ "runs_today": 87,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.132,
+ "median_crowding": 0.122,
  "lines_not_good_service": [
   "central",
   "district",
   "jubilee",
   "mildmay",
-  "northern",
   "suffragette",
   "victoria"
  ],
