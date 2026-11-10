@@ -1,4 +1,5 @@
 naptan,name,hub_code,lat,lon,lines,lifts,has_typical
+940GZZBPSUST,Battersea Power Station,,51.479932,-0.142142,northern,,True
 940GZZLUACT,Acton Town,,51.503057,-0.280462,district;piccadilly,2,True
 940GZZLUACY,Archway,,51.565478,-0.134819,northern,0,True
 940GZZLUADE,Aldgate East,,51.515037,-0.072384,district;hammersmith-city,0,True
@@ -248,7 +249,7 @@ naptan,name,hub_code,lat,lon,lines,lifts,has_typical
 940GZZLUWHM,West Ham,HUBWEH,51.528136,0.005055,district;hammersmith-city;jubilee,5,True
 940GZZLUWHP,West Hampstead,HUBWHD,51.546638,-0.191059,jubilee,0,True
 940GZZLUWHW,West Harrow,,51.57971,-0.3534,metropolitan,0,True
-940GZZLUWIG,Willesden Green,,51.549146,-0.221537,jubilee;metropolitan,0,True
+940GZZLUWIG,Willesden Green,,51.549146,-0.221537,jubilee,0,True
 940GZZLUWIM,Wimbledon,HUBWIM,51.421207,-0.206573,district,1,True
 940GZZLUWIP,Wimbledon Park,,51.434573,-0.199719,district,0,True
 940GZZLUWJN,Willesden Junction,HUBWIJ,51.532259,-0.244283,bakerloo,2,True
@@ -269,3 +270,4 @@ naptan,name,hub_code,lat,lon,lines,lifts,has_typical
 940GZZLUWWL,Walthamstow Central,HUBWHC,51.582965,-0.019885,victoria,0,True
 940GZZLUWYC,Wembley Central,HUBWMB,51.552304,-0.296852,bakerloo,2,True
 940GZZLUWYP,Wembley Park,,51.563198,-0.279262,jubilee;metropolitan,5,True
+940GZZNEUGST,Nine Elms,,51.479912,-0.128476,northern,2,True
