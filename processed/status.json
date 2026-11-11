@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-10T23:59:12Z",
- "latest_run_utc": "2026-11-10T23:59:00Z",
+ "generated_utc": "2026-11-11T00:01:32Z",
+ "latest_run_utc": "2026-11-11T00:01:00Z",
  "latest_observation_utc": "2026-11-10T23:56:00.000Z",
- "runs_today": 100,
+ "runs_today": 1,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.047,
+ "median_crowding": 0.046,
  "lines_not_good_service": [
   "central",
   "district",
@@ -14,5 +14,5 @@
   "weaver"
  ],
  "stations_with_lift_out": 9,
- "failed_source_calls_today": 1
+ "failed_source_calls_today": 0
 }
