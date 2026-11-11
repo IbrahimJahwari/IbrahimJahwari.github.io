@@ -1064,3 +1064,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-11T12:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-11T12:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-11T12:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-11T12:45:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-11T12:45:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays between Leytonstone and Epping / Hainault via Newbury Park and between North Acton and Ealing Broadway / West Ruislip due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-11T12:45:00Z,circle,tube,0,10,Good Service,
+2026-11-11T12:45:00Z,district,tube,0,9,Minor Delays,District Line: Severe delays between Turnham Green and Richmond due to train cancellations. Tickets will be accepted on London buses and South Western Railway via any reasonable route. MINOR DELAYS rest of the line due to train cancellations.
+2026-11-11T12:45:00Z,district,tube,1,6,Severe Delays,District Line: Severe delays between Turnham Green and Richmond due to train cancellations. Tickets will be accepted on London buses and South Western Railway via any reasonable route. MINOR DELAYS rest of the line due to train cancellations.
+2026-11-11T12:45:00Z,dlr,dlr,0,10,Good Service,
+2026-11-11T12:45:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-11T12:45:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-11T12:45:00Z,jubilee,tube,0,6,Severe Delays,"Jubilee Line: Severe delays due to an earlier faulty train at Westminster. Tickets will be accepted on London Buses, Mildmay line, DLR, Elizabeth line, C2C, Southeastern, Thameslink via any reasonable route."
+2026-11-11T12:45:00Z,liberty,overground,0,10,Good Service,
+2026-11-11T12:45:00Z,lioness,overground,0,10,Good Service,
+2026-11-11T12:45:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-11T12:45:00Z,mildmay,overground,0,10,Good Service,
+2026-11-11T12:45:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays between Camden Town and Kennington via Charing Cross while we fix a points failure at Kennington. GOOD SERVICE on the rest of the line.
+2026-11-11T12:45:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-11T12:45:00Z,suffragette,overground,0,2,Suspended,Suffragette Line: No service due to a vehicle hitting a bridge in the Harringay area.
+2026-11-11T12:45:00Z,tram,tram,0,10,Good Service,
+2026-11-11T12:45:00Z,victoria,tube,0,10,Good Service,
+2026-11-11T12:45:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-11T12:45:00Z,weaver,overground,0,10,Good Service,
+2026-11-11T12:45:00Z,windrush,overground,0,10,Good Service,

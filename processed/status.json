@@ -1,16 +1,17 @@
 {
- "generated_utc": "2026-11-11T12:31:20Z",
- "latest_run_utc": "2026-11-11T12:31:00Z",
- "latest_observation_utc": "2026-11-11T12:26:00.000Z",
- "runs_today": 52,
+ "generated_utc": "2026-11-11T12:45:58Z",
+ "latest_run_utc": "2026-11-11T12:45:00Z",
+ "latest_observation_utc": "2026-11-11T12:41:00.000Z",
+ "runs_today": 53,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.135,
+ "median_crowding": 0.137,
  "lines_not_good_service": [
   "central",
   "district",
   "jubilee",
-  "northern"
+  "northern",
+  "suffragette"
  ],
  "stations_with_lift_out": 7,
  "failed_source_calls_today": 1
