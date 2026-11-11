@@ -1,14 +1,15 @@
 {
- "generated_utc": "2026-11-11T05:56:38Z",
- "latest_run_utc": "2026-11-11T05:56:00Z",
- "latest_observation_utc": "2026-11-11T05:51:00.000Z",
- "runs_today": 25,
+ "generated_utc": "2026-11-11T06:01:37Z",
+ "latest_run_utc": "2026-11-11T06:01:00Z",
+ "latest_observation_utc": "2026-11-11T05:56:00.000Z",
+ "runs_today": 26,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.029,
+ "median_crowding": 0.033,
  "lines_not_good_service": [
   "district",
   "metropolitan",
+  "suffragette",
   "waterloo-city"
  ],
  "stations_with_lift_out": 8,
