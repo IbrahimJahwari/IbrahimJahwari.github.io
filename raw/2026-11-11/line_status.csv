@@ -1614,3 +1614,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-11T19:01:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-11T19:01:00Z,weaver,overground,0,10,Good Service,
 2026-11-11T19:01:00Z,windrush,overground,0,3,Part Suspended,Windrush Line: No service between Sydenham and West Croydon while we fix a points failure at West Croydon. GOOD SERVICE on the rest of the line.
+2026-11-11T19:15:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-11T19:15:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-11T19:15:00Z,circle,tube,0,9,Minor Delays,Circle Line: Minor delays anticlockwise due to an earlier faulty train at Gloucester Road. GOOD SERVICE clockwise.
+2026-11-11T19:15:00Z,district,tube,0,6,Severe Delays,"District Line: Severe delays between Tower Hill and Ealing Broadway / Richmond while we fix a faulty train at Gloucester Road. MINOR DELAYS on the rest of the line due to train cancellations. Tickets are being accepted London Buses, the Mildmay line, the Elizabeth line and South Western Railway."
+2026-11-11T19:15:00Z,district,tube,1,9,Minor Delays,"District Line: Severe delays between Tower Hill and Ealing Broadway / Richmond while we fix a faulty train at Gloucester Road. MINOR DELAYS on the rest of the line due to train cancellations. Tickets are being accepted London Buses, the Mildmay line, the Elizabeth line and South Western Railway."
+2026-11-11T19:15:00Z,dlr,dlr,0,9,Minor Delays,"Docklands Light Railway: No service between Gallions Reach and Beckton, and MINOR DELAYS between Tower Gateway and Gallions Reach while we fix a faulty train at Beckton. GOOD SERVICE on other DLR routes."
+2026-11-11T19:15:00Z,dlr,dlr,1,3,Part Suspended,"Docklands Light Railway: No service between Gallions Reach and Beckton, and MINOR DELAYS between Tower Gateway and Gallions Reach while we fix a faulty train at Beckton. GOOD SERVICE on other DLR routes."
+2026-11-11T19:15:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-11T19:15:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-11T19:15:00Z,jubilee,tube,0,10,Good Service,
+2026-11-11T19:15:00Z,liberty,overground,0,10,Good Service,
+2026-11-11T19:15:00Z,lioness,overground,0,10,Good Service,
+2026-11-11T19:15:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-11T19:15:00Z,mildmay,overground,0,10,Good Service,
+2026-11-11T19:15:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays between Camden Town and Kennington (via Charing Cross) southbound only while we fix a points failure at Kennington. GOOD SERVICE on the rest of the line.
+2026-11-11T19:15:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-11T19:15:00Z,suffragette,overground,0,10,Good Service,
+2026-11-11T19:15:00Z,tram,tram,0,10,Good Service,
+2026-11-11T19:15:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to train cancellations.
+2026-11-11T19:15:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-11T19:15:00Z,weaver,overground,0,10,Good Service,
+2026-11-11T19:15:00Z,windrush,overground,0,3,Part Suspended,Windrush Line: No service between Sydenham and West Croydon while we fix a points failure at West Croydon. GOOD SERVICE on the rest of the line.
