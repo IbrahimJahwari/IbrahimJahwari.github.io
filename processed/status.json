@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-11T23:16:15Z",
- "latest_run_utc": "2026-11-11T23:15:00Z",
- "latest_observation_utc": "2026-11-11T23:11:00.000Z",
- "runs_today": 94,
+ "generated_utc": "2026-11-11T23:31:05Z",
+ "latest_run_utc": "2026-11-11T23:30:00Z",
+ "latest_observation_utc": "2026-11-11T23:26:00.000Z",
+ "runs_today": 95,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.084,
+ "median_crowding": 0.076,
  "lines_not_good_service": [
   "district",
   "elizabeth",
