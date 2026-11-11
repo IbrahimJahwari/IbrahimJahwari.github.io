@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-11T21:16:02Z",
- "latest_run_utc": "2026-11-11T21:15:00Z",
+ "generated_utc": "2026-11-11T21:18:47Z",
+ "latest_run_utc": "2026-11-11T21:18:00Z",
  "latest_observation_utc": "2026-11-11T21:11:00.000Z",
- "runs_today": 85,
+ "runs_today": 86,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.108,
+ "median_crowding": 0.107,
  "lines_not_good_service": [
   "district",
   "dlr",
