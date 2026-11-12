@@ -1,17 +1,18 @@
 {
- "generated_utc": "2026-11-12T09:01:25Z",
- "latest_run_utc": "2026-11-12T09:01:00Z",
- "latest_observation_utc": "2026-11-12T08:51:00.000Z",
- "runs_today": 38,
+ "generated_utc": "2026-11-12T09:15:58Z",
+ "latest_run_utc": "2026-11-12T09:15:00Z",
+ "latest_observation_utc": "2026-11-12T09:06:00.000Z",
+ "runs_today": 39,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.346,
+ "median_crowding": 0.322,
  "lines_not_good_service": [
   "central",
   "district",
   "lioness",
   "metropolitan",
   "northern",
+  "suffragette",
   "victoria"
  ],
  "stations_with_lift_out": 10,
