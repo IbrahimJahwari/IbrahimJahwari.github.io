@@ -1,15 +1,16 @@
 {
- "generated_utc": "2026-11-12T15:01:24Z",
- "latest_run_utc": "2026-11-12T15:01:00Z",
- "latest_observation_utc": "2026-11-12T14:56:00.000Z",
- "runs_today": 63,
+ "generated_utc": "2026-11-12T15:16:01Z",
+ "latest_run_utc": "2026-11-12T15:15:00Z",
+ "latest_observation_utc": "2026-11-12T15:11:00.000Z",
+ "runs_today": 64,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.148,
+ "median_crowding": 0.15,
  "lines_not_good_service": [
   "central",
   "elizabeth",
-  "northern"
+  "northern",
+  "piccadilly"
  ],
  "stations_with_lift_out": 10,
  "failed_source_calls_today": 2
