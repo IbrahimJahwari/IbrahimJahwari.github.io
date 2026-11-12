@@ -890,3 +890,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-12T10:15:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-12T10:15:00Z,weaver,overground,0,10,Good Service,
 2026-11-12T10:15:00Z,windrush,overground,0,10,Good Service,
+2026-11-12T10:31:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-12T10:31:00Z,central,tube,0,6,Severe Delays,Central Line: Severe delays between Leytonstone and Epping while we fix a faulty track at South Woodford. Tickets being accepted on London Buses. MINOR DELAYS on the rest of the line.
+2026-11-12T10:31:00Z,central,tube,1,9,Minor Delays,Central Line: Severe delays between Leytonstone and Epping while we fix a faulty track at South Woodford. Tickets being accepted on London Buses. MINOR DELAYS on the rest of the line.
+2026-11-12T10:31:00Z,circle,tube,0,10,Good Service,
+2026-11-12T10:31:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays between Tower Hill and Earl's Court westbound due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-12T10:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-12T10:31:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-12T10:31:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-12T10:31:00Z,jubilee,tube,0,10,Good Service,
+2026-11-12T10:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-12T10:31:00Z,lioness,overground,0,10,Good Service,
+2026-11-12T10:31:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-12T10:31:00Z,mildmay,overground,0,10,Good Service,
+2026-11-12T10:31:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays between Camden Town and Kennington via Charing Cross while we fix a points failure at Kennington. GOOD SERVICE on the rest of the line.
+2026-11-12T10:31:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-12T10:31:00Z,suffragette,overground,0,3,Part Suspended,Suffragette Line: No service between Barking and Barking Riverside while we fix a points failure at Barking. GOOD SERVICE on the rest of the line.
+2026-11-12T10:31:00Z,tram,tram,0,10,Good Service,
+2026-11-12T10:31:00Z,victoria,tube,0,10,Good Service,
+2026-11-12T10:31:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-12T10:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-12T10:31:00Z,windrush,overground,0,10,Good Service,
