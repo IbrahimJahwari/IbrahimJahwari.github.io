@@ -559,3 +559,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-12T06:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-12T06:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-12T06:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-12T06:45:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-12T06:45:00Z,central,tube,0,10,Good Service,
+2026-11-12T06:45:00Z,circle,tube,0,10,Good Service,
+2026-11-12T06:45:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays due to train cancellations.
+2026-11-12T06:45:00Z,dlr,dlr,0,10,Good Service,
+2026-11-12T06:45:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-12T06:45:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-12T06:45:00Z,jubilee,tube,0,9,Minor Delays,Jubilee Line: Minor delays due to train cancellations.
+2026-11-12T06:45:00Z,liberty,overground,0,10,Good Service,
+2026-11-12T06:45:00Z,lioness,overground,0,10,Good Service,
+2026-11-12T06:45:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-12T06:45:00Z,mildmay,overground,0,10,Good Service,
+2026-11-12T06:45:00Z,northern,tube,0,10,Good Service,
+2026-11-12T06:45:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-12T06:45:00Z,suffragette,overground,0,10,Good Service,
+2026-11-12T06:45:00Z,tram,tram,0,10,Good Service,
+2026-11-12T06:45:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to train cancellations.
+2026-11-12T06:45:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-12T06:45:00Z,weaver,overground,0,10,Good Service,
+2026-11-12T06:45:00Z,windrush,overground,0,10,Good Service,
