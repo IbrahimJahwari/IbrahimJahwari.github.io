@@ -1772,3 +1772,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-12T20:45:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-12T20:45:00Z,weaver,overground,0,10,Good Service,
 2026-11-12T20:45:00Z,windrush,overground,0,10,Good Service,
+2026-11-12T21:01:00Z,bakerloo,tube,0,6,Severe Delays,Bakerloo Line: Severe delays between Stonebridge Park to Harrow & Wealdstone and MINOR DELAYS between Queen's Park and Stonebridge Park while we fix a signal fault at Queen's Park. GOOD SERVICE on the rest of the line. Tickets are being accepted on London Buses.
+2026-11-12T21:01:00Z,bakerloo,tube,1,9,Minor Delays,Bakerloo Line: Severe delays between Stonebridge Park to Harrow & Wealdstone and MINOR DELAYS between Queen's Park and Stonebridge Park while we fix a signal fault at Queen's Park. GOOD SERVICE on the rest of the line. Tickets are being accepted on London Buses.
+2026-11-12T21:01:00Z,central,tube,0,10,Good Service,
+2026-11-12T21:01:00Z,circle,tube,0,10,Good Service,
+2026-11-12T21:01:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays between Earl's Court and Ealing Broadway due to train cancellations.
+2026-11-12T21:01:00Z,district,tube,1,9,Minor Delays,District Line: Minor delays between Earl's Court and Ealing Broadway due to train cancellations.
+2026-11-12T21:01:00Z,dlr,dlr,0,10,Good Service,
+2026-11-12T21:01:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-12T21:01:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-12T21:01:00Z,jubilee,tube,0,9,Minor Delays,Jubilee Line: Minor delays due to train cancellations.
+2026-11-12T21:01:00Z,liberty,overground,0,10,Good Service,
+2026-11-12T21:01:00Z,lioness,overground,0,6,Severe Delays,Lioness Line: Severe delays while we fix a signal failure at South Kenton.
+2026-11-12T21:01:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-12T21:01:00Z,mildmay,overground,0,6,Severe Delays,Mildmay Line: Severe delays while we fix a signal failure in the Stratford area.
+2026-11-12T21:01:00Z,northern,tube,0,6,Severe Delays,"Northern Line: Severe delays due to an earlier points failure at Mornington Crescent. Tickets are being accepted by London Buses, London Trams, Southeastern, Thameslink and South Western Railway services via any reasonable route."
+2026-11-12T21:01:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-12T21:01:00Z,suffragette,overground,0,10,Good Service,
+2026-11-12T21:01:00Z,tram,tram,0,10,Good Service,
+2026-11-12T21:01:00Z,victoria,tube,0,10,Good Service,
+2026-11-12T21:01:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-12T21:01:00Z,weaver,overground,0,10,Good Service,
+2026-11-12T21:01:00Z,windrush,overground,0,10,Good Service,
