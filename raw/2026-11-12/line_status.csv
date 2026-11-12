@@ -2006,3 +2006,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-12T23:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-12T23:31:00Z,weaver,overground,0,5,Part Closure,"WEAVER LINE: Monday 9, Tuesday 10, Wednesday 11 and Thursday 12 November, after 2245 each evening, no service between Hackney Downs and Chingford. Last through trains operate at 2231 from Liverpool Street and at 2253 from Chingford. Replacement bus service L3 operates between Hackney Downs and Chingford via Clapton, St James Street, Walthamstow Central, Wood Street and Highams Park. The last three northbound buses operate from Liverpool Street at 0014 0044 and 0114 and also call at Bethnal Green, Cambridge Heath and London Fields (Mare Street)"
 2026-11-12T23:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-12T23:45:00Z,bakerloo,tube,0,9,Minor Delays,Bakerloo Line: Minor delays between Queen's park and Harrow & Wealdstone due to an earlier signal fault at South Kenton. GOOD SERVICE on the rest of the line.
+2026-11-12T23:45:00Z,central,tube,0,10,Good Service,
+2026-11-12T23:45:00Z,circle,tube,0,9,Minor Delays,Circle Line: Minor delays due to train cancellations.
+2026-11-12T23:45:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays due to an earlier faulty train at Whitechapel and train cancellations.
+2026-11-12T23:45:00Z,dlr,dlr,0,10,Good Service,
+2026-11-12T23:45:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-12T23:45:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-12T23:45:00Z,jubilee,tube,0,9,Minor Delays,Jubilee Line: Minor delays due to train cancellations.
+2026-11-12T23:45:00Z,liberty,overground,0,10,Good Service,
+2026-11-12T23:45:00Z,lioness,overground,0,10,Good Service,
+2026-11-12T23:45:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-12T23:45:00Z,mildmay,overground,0,9,Minor Delays,Mildmay Line: Minor delays due to an earlier signal failure in the Stratford area. London Underground are accepting valid tickets via any reasonable route.
+2026-11-12T23:45:00Z,northern,tube,0,6,Severe Delays,"Northern Line: Severe delays due to an earlier points failure at Mornington Crescent. Tickets are being accepted by London Buses, London Trams, Southeastern, Thameslink and South Western Railway services via any reasonable route."
+2026-11-12T23:45:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-12T23:45:00Z,suffragette,overground,0,10,Good Service,
+2026-11-12T23:45:00Z,tram,tram,0,10,Good Service,
+2026-11-12T23:45:00Z,victoria,tube,0,10,Good Service,
+2026-11-12T23:45:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-12T23:45:00Z,weaver,overground,0,5,Part Closure,"WEAVER LINE: Monday 9, Tuesday 10, Wednesday 11 and Thursday 12 November, after 2245 each evening, no service between Hackney Downs and Chingford. Last through trains operate at 2231 from Liverpool Street and at 2253 from Chingford. Replacement bus service L3 operates between Hackney Downs and Chingford via Clapton, St James Street, Walthamstow Central, Wood Street and Highams Park. The last three northbound buses operate from Liverpool Street at 0014 0044 and 0114 and also call at Bethnal Green, Cambridge Heath and London Fields (Mare Street)"
+2026-11-12T23:45:00Z,windrush,overground,0,10,Good Service,
