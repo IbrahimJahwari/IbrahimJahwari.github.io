@@ -1902,3 +1902,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-12T22:15:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-12T22:15:00Z,weaver,overground,0,10,Good Service,
 2026-11-12T22:15:00Z,windrush,overground,0,10,Good Service,
+2026-11-12T22:31:00Z,bakerloo,tube,0,9,Minor Delays,Bakerloo Line: Minor delays between Queen's park and Harrow & Wealdstone due to an earlier signal fault at South Kenton. GOOD SERVICE on the rest of the line.
+2026-11-12T22:31:00Z,central,tube,0,10,Good Service,
+2026-11-12T22:31:00Z,circle,tube,0,9,Minor Delays,Circle Line: Minor delays due to train cancellations.
+2026-11-12T22:31:00Z,district,tube,0,6,Severe Delays,District Line: Severe delays between Earl's Court and Ealing Broadway/Richmond and MINOR DELAYS between Earl's Court and Wimbledon due to an earlier faulty train at Whitechapel. Tickets will be accepted on London Buses. GOOD SERVICE on the rest of the line.
+2026-11-12T22:31:00Z,district,tube,1,9,Minor Delays,District Line: Severe delays between Earl's Court and Ealing Broadway/Richmond and MINOR DELAYS between Earl's Court and Wimbledon due to an earlier faulty train at Whitechapel. Tickets will be accepted on London Buses. GOOD SERVICE on the rest of the line.
+2026-11-12T22:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-12T22:31:00Z,elizabeth,elizabeth-line,0,9,Minor Delays,Minor delays between Paddington and Heathrow Terminals/ Reading due to an earlier trespasser on the track at Hayes & Harlington. GOOD SERVICE on the rest of the line.
+2026-11-12T22:31:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-12T22:31:00Z,jubilee,tube,0,9,Minor Delays,Jubilee Line: Minor delays due to train cancellations.
+2026-11-12T22:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-12T22:31:00Z,lioness,overground,0,10,Good Service,
+2026-11-12T22:31:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-12T22:31:00Z,mildmay,overground,0,6,Severe Delays,"Mildmay Line: No service between Highbury & Islington and Stratford, and SEVERE DELAYS on the rest of the line while we fix a signal failure in the Stratford area. London Underground are accepting valid tickets via any reasonable route."
+2026-11-12T22:31:00Z,mildmay,overground,1,3,Part Suspended,"Mildmay Line: No service between Highbury & Islington and Stratford, and SEVERE DELAYS on the rest of the line while we fix a signal failure in the Stratford area. London Underground are accepting valid tickets via any reasonable route."
+2026-11-12T22:31:00Z,northern,tube,0,6,Severe Delays,"Northern Line: Severe delays due to an earlier points failure at Mornington Crescent. Tickets are being accepted by London Buses, London Trams, Southeastern, Thameslink and South Western Railway services via any reasonable route."
+2026-11-12T22:31:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-12T22:31:00Z,suffragette,overground,0,10,Good Service,
+2026-11-12T22:31:00Z,tram,tram,0,10,Good Service,
+2026-11-12T22:31:00Z,victoria,tube,0,10,Good Service,
+2026-11-12T22:31:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-12T22:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-12T22:31:00Z,windrush,overground,0,10,Good Service,
