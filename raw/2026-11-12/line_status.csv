@@ -1244,3 +1244,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-12T14:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-12T14:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-12T14:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-12T14:45:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-12T14:45:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-12T14:45:00Z,circle,tube,0,10,Good Service,
+2026-11-12T14:45:00Z,district,tube,0,10,Good Service,
+2026-11-12T14:45:00Z,dlr,dlr,0,10,Good Service,
+2026-11-12T14:45:00Z,elizabeth,elizabeth-line,0,9,Minor Delays,Minor delays between Paddington and Abbey Wood while we fix faulty platform screen doors. GOOD SERVICE on the rest of the line.
+2026-11-12T14:45:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-12T14:45:00Z,jubilee,tube,0,10,Good Service,
+2026-11-12T14:45:00Z,liberty,overground,0,10,Good Service,
+2026-11-12T14:45:00Z,lioness,overground,0,10,Good Service,
+2026-11-12T14:45:00Z,metropolitan,tube,0,9,Minor Delays,"Metropolitan Line: Minor delays between Moor Park and Amersham due to train cancellations. After the 13:48 departure from Amersham, the next southbound train will be at 14:48. GOOD SERVICE on the rest of the line."
+2026-11-12T14:45:00Z,mildmay,overground,0,10,Good Service,
+2026-11-12T14:45:00Z,northern,tube,0,6,Severe Delays,Northern Line: Severe delays due to an earlier customer incident.Tickets being accepted by London Buses.
+2026-11-12T14:45:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-12T14:45:00Z,suffragette,overground,0,10,Good Service,
+2026-11-12T14:45:00Z,tram,tram,0,10,Good Service,
+2026-11-12T14:45:00Z,victoria,tube,0,10,Good Service,
+2026-11-12T14:45:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-12T14:45:00Z,weaver,overground,0,10,Good Service,
+2026-11-12T14:45:00Z,windrush,overground,0,10,Good Service,
