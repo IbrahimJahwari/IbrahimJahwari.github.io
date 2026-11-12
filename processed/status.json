@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-12T09:31:12Z",
- "latest_run_utc": "2026-11-12T09:31:00Z",
- "latest_observation_utc": "2026-11-12T09:21:00.000Z",
- "runs_today": 40,
+ "generated_utc": "2026-11-12T09:46:04Z",
+ "latest_run_utc": "2026-11-12T09:45:00Z",
+ "latest_observation_utc": "2026-11-12T09:41:00.000Z",
+ "runs_today": 41,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.309,
+ "median_crowding": 0.259,
  "lines_not_good_service": [
   "central",
   "district",
@@ -16,6 +16,6 @@
   "victoria",
   "windrush"
  ],
- "stations_with_lift_out": 10,
+ "stations_with_lift_out": 11,
  "failed_source_calls_today": 2
 }
