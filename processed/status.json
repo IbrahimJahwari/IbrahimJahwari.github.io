@@ -1,15 +1,14 @@
 {
- "generated_utc": "2026-11-12T10:01:23Z",
- "latest_run_utc": "2026-11-12T10:01:00Z",
- "latest_observation_utc": "2026-11-12T09:56:00.000Z",
- "runs_today": 42,
+ "generated_utc": "2026-11-12T10:11:12Z",
+ "latest_run_utc": "2026-11-12T10:11:00Z",
+ "latest_observation_utc": "2026-11-12T10:06:00.000Z",
+ "runs_today": 43,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.218,
+ "median_crowding": 0.199,
  "lines_not_good_service": [
   "central",
   "district",
-  "metropolitan",
   "northern",
   "suffragette",
   "victoria"
