@@ -1,18 +1,17 @@
 {
- "generated_utc": "2026-11-12T18:46:01Z",
- "latest_run_utc": "2026-11-12T18:45:00Z",
- "latest_observation_utc": "2026-11-12T18:36:00.000Z",
- "runs_today": 79,
+ "generated_utc": "2026-11-12T19:01:24Z",
+ "latest_run_utc": "2026-11-12T19:01:00Z",
+ "latest_observation_utc": "2026-11-12T18:51:00.000Z",
+ "runs_today": 80,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.285,
+ "median_crowding": 0.268,
  "lines_not_good_service": [
   "central",
   "district",
   "jubilee",
-  "northern",
-  "piccadilly"
+  "northern"
  ],
- "stations_with_lift_out": 11,
+ "stations_with_lift_out": 12,
  "failed_source_calls_today": 2
 }
