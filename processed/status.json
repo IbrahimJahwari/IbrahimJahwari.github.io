@@ -1,12 +1,13 @@
 {
- "generated_utc": "2026-11-12T05:15:55Z",
- "latest_run_utc": "2026-11-12T05:15:00Z",
- "latest_observation_utc": "2026-11-12T05:11:00.000Z",
- "runs_today": 23,
+ "generated_utc": "2026-11-12T05:31:12Z",
+ "latest_run_utc": "2026-11-12T05:31:00Z",
+ "latest_observation_utc": "2026-11-12T05:26:00.000Z",
+ "runs_today": 24,
  "stations_total": 272,
- "stations_with_data": 249,
- "median_crowding": 0.002,
+ "stations_with_data": 255,
+ "median_crowding": 0.007,
  "lines_not_good_service": [
+  "district",
   "waterloo-city"
  ],
  "stations_with_lift_out": 9,
