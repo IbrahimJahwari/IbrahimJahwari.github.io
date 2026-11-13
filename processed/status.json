@@ -1,20 +1,21 @@
 {
- "generated_utc": "2026-11-13T18:46:02Z",
- "latest_run_utc": "2026-11-13T18:45:00Z",
- "latest_observation_utc": "2026-11-13T18:41:00.000Z",
- "runs_today": 78,
+ "generated_utc": "2026-11-13T19:01:26Z",
+ "latest_run_utc": "2026-11-13T19:01:00Z",
+ "latest_observation_utc": "2026-11-13T18:51:00.000Z",
+ "runs_today": 79,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.25,
+ "median_crowding": 0.229,
  "lines_not_good_service": [
   "central",
   "elizabeth",
   "mildmay",
+  "northern",
   "suffragette",
   "tram",
   "weaver",
   "windrush"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 17,
  "failed_source_calls_today": 1
 }
