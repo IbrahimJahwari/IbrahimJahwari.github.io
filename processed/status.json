@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-13T22:31:17Z",
- "latest_run_utc": "2026-11-13T22:31:00Z",
- "latest_observation_utc": "2026-11-13T22:26:00.000Z",
- "runs_today": 94,
+ "generated_utc": "2026-11-13T22:46:01Z",
+ "latest_run_utc": "2026-11-13T22:45:00Z",
+ "latest_observation_utc": "2026-11-13T22:41:00.000Z",
+ "runs_today": 95,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.099,
+ "median_crowding": 0.098,
  "lines_not_good_service": [
   "central",
   "district",
@@ -16,7 +16,6 @@
   "northern",
   "piccadilly",
   "suffragette",
-  "victoria",
   "windrush"
  ],
  "stations_with_lift_out": 15,
