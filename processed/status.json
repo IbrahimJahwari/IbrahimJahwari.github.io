@@ -1,12 +1,13 @@
 {
- "generated_utc": "2026-11-13T05:01:18Z",
- "latest_run_utc": "2026-11-13T05:01:00Z",
- "latest_observation_utc": "2026-11-13T04:56:00.000Z",
- "runs_today": 21,
+ "generated_utc": "2026-11-13T05:16:03Z",
+ "latest_run_utc": "2026-11-13T05:15:00Z",
+ "latest_observation_utc": "2026-11-13T05:11:00.000Z",
+ "runs_today": 22,
  "stations_total": 272,
- "stations_with_data": 241,
- "median_crowding": 0.001,
+ "stations_with_data": 246,
+ "median_crowding": 0.002,
  "lines_not_good_service": [
+  "district",
   "suffragette",
   "waterloo-city",
   "windrush"
