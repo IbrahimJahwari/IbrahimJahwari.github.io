@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-13T17:16:13Z",
- "latest_run_utc": "2026-11-13T17:15:00Z",
- "latest_observation_utc": "2026-11-13T17:07:00.000Z",
- "runs_today": 72,
+ "generated_utc": "2026-11-13T17:31:27Z",
+ "latest_run_utc": "2026-11-13T17:31:00Z",
+ "latest_observation_utc": "2026-11-13T17:26:00.000Z",
+ "runs_today": 73,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.244,
+ "median_crowding": 0.262,
  "lines_not_good_service": [
   "central",
   "elizabeth",
@@ -14,6 +14,6 @@
   "tram",
   "windrush"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 15,
  "failed_source_calls_today": 1
 }
