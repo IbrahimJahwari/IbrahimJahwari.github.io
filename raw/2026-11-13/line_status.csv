@@ -380,3 +380,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-13T04:31:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00.
 2026-11-13T04:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-13T04:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-13T04:45:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-13T04:45:00Z,central,tube,0,10,Good Service,
+2026-11-13T04:45:00Z,circle,tube,0,10,Good Service,
+2026-11-13T04:45:00Z,district,tube,0,10,Good Service,
+2026-11-13T04:45:00Z,dlr,dlr,0,10,Good Service,
+2026-11-13T04:45:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-13T04:45:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-13T04:45:00Z,jubilee,tube,0,10,Good Service,
+2026-11-13T04:45:00Z,liberty,overground,0,10,Good Service,
+2026-11-13T04:45:00Z,lioness,overground,0,10,Good Service,
+2026-11-13T04:45:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-13T04:45:00Z,mildmay,overground,0,10,Good Service,
+2026-11-13T04:45:00Z,northern,tube,0,10,Good Service,
+2026-11-13T04:45:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-13T04:45:00Z,suffragette,overground,0,10,Good Service,
+2026-11-13T04:45:00Z,tram,tram,0,10,Good Service,
+2026-11-13T04:45:00Z,victoria,tube,0,10,Good Service,
+2026-11-13T04:45:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00.
+2026-11-13T04:45:00Z,weaver,overground,0,10,Good Service,
+2026-11-13T04:45:00Z,windrush,overground,0,2,Suspended,Windrush Line: No service while we fix a points failure at Surrey Quays. London Underground and London Buses are accepting valid tickets via any reasonable route.
