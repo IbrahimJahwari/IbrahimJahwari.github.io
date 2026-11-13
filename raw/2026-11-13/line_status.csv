@@ -657,3 +657,26 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-13T07:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-13T07:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-13T07:31:00Z,windrush,overground,0,2,Suspended,Windrush Line: No service while we fix a points failure at Surrey Quays. London Underground and London Buses are accepting valid tickets via any reasonable route.
+2026-11-13T07:45:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-13T07:45:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-13T07:45:00Z,circle,tube,0,10,Good Service,
+2026-11-13T07:45:00Z,district,tube,0,9,Minor Delays,"District Line: Severe delays between Tower Hill and Upminster eastbound only due to train cancellations. London Buses, Mildmay line, DLR, Elizabeth line, C2C and South Western Railway are accepting valid tickets via any reasonable route. MINOR DELAYS on the rest of the line."
+2026-11-13T07:45:00Z,district,tube,1,6,Severe Delays,"District Line: Severe delays between Tower Hill and Upminster eastbound only due to train cancellations. London Buses, Mildmay line, DLR, Elizabeth line, C2C and South Western Railway are accepting valid tickets via any reasonable route. MINOR DELAYS on the rest of the line."
+2026-11-13T07:45:00Z,dlr,dlr,0,10,Good Service,
+2026-11-13T07:45:00Z,elizabeth,elizabeth-line,0,9,Minor Delays,Minor delays between Hayes & Harlington and Reading while we fix a points failure at Slough. GOOD SERVICE on the rest of the line.
+2026-11-13T07:45:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-13T07:45:00Z,jubilee,tube,0,9,Minor Delays,Jubilee Line: No service between Stanmore and Willesden Green and MINOR DELAYS on the rest of the line while we fix a points failure at Wembley Park. London Buses are accepting valid tickets via any reasonable route.
+2026-11-13T07:45:00Z,jubilee,tube,1,3,Part Suspended,Jubilee Line: No service between Stanmore and Willesden Green and MINOR DELAYS on the rest of the line while we fix a points failure at Wembley Park. London Buses are accepting valid tickets via any reasonable route.
+2026-11-13T07:45:00Z,liberty,overground,0,10,Good Service,
+2026-11-13T07:45:00Z,lioness,overground,0,10,Good Service,
+2026-11-13T07:45:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-13T07:45:00Z,mildmay,overground,0,10,Good Service,
+2026-11-13T07:45:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays between Camden Town and Kennington via Charing Cross while we fix a points failure at Kennington. GOOD SERVICE on the rest of the line.
+2026-11-13T07:45:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-13T07:45:00Z,suffragette,overground,0,9,Minor Delays,Suffragette Line: No service between Barking and Barking Riverside while we fix a points failure at Barking. MINOR DELAYS on the rest of the line.
+2026-11-13T07:45:00Z,suffragette,overground,1,3,Part Suspended,Suffragette Line: No service between Barking and Barking Riverside while we fix a points failure at Barking. MINOR DELAYS on the rest of the line.
+2026-11-13T07:45:00Z,tram,tram,0,10,Good Service,
+2026-11-13T07:45:00Z,victoria,tube,0,10,Good Service,
+2026-11-13T07:45:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-13T07:45:00Z,weaver,overground,0,10,Good Service,
+2026-11-13T07:45:00Z,windrush,overground,0,2,Suspended,Windrush Line: No service while we fix a points failure at Surrey Quays. London Underground and London Buses are accepting valid tickets via any reasonable route.
