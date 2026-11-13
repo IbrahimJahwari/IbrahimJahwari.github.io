@@ -33,7 +33,8 @@
      reminders for you: they are not counted and MUST be deleted before you submit (the course does not allow AI-drafted prose in the
      assessed page). That includes the one-line title above each plot (the plot's "point"): it was drafted by the assistant, so write
      your own or check with Richard Davies whether chart titles count as prose.
-     Plots 1 to 6 are the main plots (3 and 6 each have a second panel, 3b and 6b); Appendix A and B are optional extras. -->
+     Plots 1 to 6 are the main plots (3 and 6 each have a second panel, 3b and 6b); Plot 7 is the interactive view of the most strained
+     moments (strained-moments.html, shown in a frame); Appendix A and B are optional extras. -->
 
 <main id="main" class="wrap">
   <div class="pagehead">
@@ -309,6 +310,48 @@
 </div>
       </details>
     </figure>
+
+    <figure class="chart" id="p7">
+      <p class="tag point" data-wc="chart"><span class="n nowords">Plot 7 &middot;</span> [Plot 7 title: one line, in your own words]</p>
+      <div class="plot">
+        <iframe id="p7-frame" src="strained-moments.html" title="Plot 7: the most strained moments on the London Underground (interactive)" loading="lazy" style="width:100%;min-height:1500px;border:0;display:block"></iframe>
+      </div>
+      <p class="nowords"><a href="strained-moments.html">Open Plot 7 on its own page</a></p>
+      <script>
+        window.addEventListener('message', function (e) {
+          if (e.origin !== window.location.origin) return;
+          if (e.data && e.data.type === 'strained-moments-height' && e.data.height > 200) {
+            document.getElementById('p7-frame').style.height = e.data.height + 'px';
+          }
+        });
+      </script>
+      <details class="about">
+        <summary class="nowords">About this plot</summary>
+        <p class="ph caption" data-wc="chart">[Plot 7 caption: one line on how to read it]</p>
+        <div class="wn nowords"><h3>Working note, not for the page</h3>
+<h4>What it shows</h4>
+<p>The most strained moments, for the whole network or one line, in a date range you choose: the five quarter-hours where crowding was furthest above its usual level (more than three hours apart). For the chosen moment it shows crowding against usual through the time window, optionally trains running against usual, TfL's status log, and a strip of every station on the line coloured by how far it was above its usual at the selected time. Opening a line draws its branches and loops as in TfL's route data, and "Show intersected lines" draws every other line crossing at each interchange with its neighbouring stations. It asks the same question as Appendix A with finer detail, so Appendix A can go if you keep this.</p>
+<h4>Data</h4>
+<ul>
+<li><code>processed/moments.json</code>, written by <code>code/build.py</code> in the daily build from <code>crowding.csv</code>, <code>line_supply.csv</code>, <code>line_status.csv</code>, <code>station_disruptions.csv</code> and <code>raw/reference/routes.json</code> (TfL's route sequences, fetched by <code>code/fetch_routes.py</code>). The page is <code>strained-moments.html</code>, shown here in a frame; it reads the file from the data branch like every other plot, so it updates after each build.</li>
+</ul>
+<h4>How each variable is built</h4>
+<ul>
+<li><b>Crowding and usual</b>: exactly as in Plot 6 (the same masking and the same usual: the station's median for the same quarter-hour and 15 minutes either side on other days of the same type, Mon-Thu, Fri, Sat, Sun, the day itself left out). Every 15 minutes from 06:00 to 22:00.</li>
+<li><b>Excess</b> = crowding minus usual, on a 0 to 100 scale where 100 is the busiest average quarter-hour of the week in the chosen scope (as in Plots 1 and 5). A line or the network is the mean over its stations.</li>
+<li><b>Strain episode</b> (light background): excess above the usual range (usual plus two robust spreads, 1.4826 times the median absolute deviation, by part of the day) for at least 30 minutes. The five moments are the highest peaks of excess inside episodes.</li>
+<li><b>Trains</b>: trains with a live prediction against the usual for that hour and day type with disrupted hours left out (Plot 6's usual trains), on the same 0 to 100 scale.</li>
+<li><b>Checks behind the tags</b>: fewer trains (a line at least 10% below its usual for two quarter-hours); disruption logged (any status other than good on the line; for the whole network, severe delays or worse only); problems on other lines; how widespread (share of stations above their own usual range).</li>
+</ul>
+<h4>Caveats and limits</h4>
+<ul>
+<li>Few days at the time of building (15 days, 30 Oct to 13 Nov): Fridays and weekends have a usual only from their third occurrence, so early Fridays and weekends show no strain.</li>
+<li>At the time of building every one of the 17 network-wide strain episodes coincided with severe delays or worse somewhere on the network; on single lines it varies (Jubilee: 6 of 9 episodes with no service problem visible). Check again with more weeks before saying anything about it.</li>
+<li>Timing and coincidence are not cause. Crowding is TfL's index, not a head-count; only the 10 Underground lines are covered.</li>
+</ul>
+</div>
+      </details>
+    </figure>
   </section>
 
   <section class="text" id="data">
@@ -424,6 +467,11 @@
 <li><b>Scope.</b> The page covers the 11 Underground lines (TfL's tube mode). The Elizabeth line is a separate mode with its own stations and ids, and the DLR, Overground and Trams are out too.</li>
 <li>Corrected: weekend baselines (for strain) start at the third weekend, not the second (a baseline needs two other days of the same type); the first two weekends have none. This was wrong in the notes and in <code>build.py</code> and <code>data/README.md</code>.</li>
 <li>Fixed: the Plot 1 and 5 tooltip printed &ldquo;0\u2013100&rdquo; instead of &ldquo;0&ndash;100&rdquo;.</li>
+</ul>
+<h4>Changes made on 13 November 2026</h4>
+<ul>
+<li>Plot 7 added: the most strained moments, interactive (<code>strained-moments.html</code>, shown in a frame under Plot 6). It reads a new file, <code>processed/moments.json</code>, which <code>code/build.py</code> now writes; no other processed file changes. The collector and the workflows are not touched.</li>
+<li>Its station strip draws each line with its branches and loops from TfL's route sequences (<code>raw/reference/routes.json</code>), with the Metropolitan line taken off Neasden and Willesden Green as everywhere else.</li>
 </ul>
 <h4>Decision log</h4>
 <ul>

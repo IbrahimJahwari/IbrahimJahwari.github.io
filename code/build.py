@@ -19,6 +19,8 @@ Writes  $DATA_DIR/processed/
     closures.json    station closure hours by cause, station and line, and how many fell in peak hours
     lifts.json       when each lift-affected station had no working lift, and where
     waits/<id>.json  observed waits at one station, by line, direction, day type and hour, with the direction named
+    moments.json     Plot 7: every station, line and quarter-hour from 06:00 to 22:00, with usual crowding and trains, line status,
+                     closures and each line's routes, as compact arrays for strained-moments.html
 
 Run by .github/workflows/build.yml once a day, or by hand:
     DATA_DIR=path/to/data-branch python code/build.py
@@ -183,6 +185,129 @@ def runs_of(a):
 
 
 # ---------------------------------------------------------------- main
+# ---------------------------------------------------------------- moments.json (Plot 7, strained-moments.html)
+MOMENT_LINES = [l for l in TUBE if l != "waterloo-city"]     # the ten lines in the plot, as everywhere else
+LINE_COLOURS = {"bakerloo": "#B36305", "central": "#E32017", "circle": "#FFD300", "district": "#00782A",
+                "hammersmith-city": "#F3A9BB", "jubilee": "#A0A5A9", "metropolitan": "#9B0056", "northern": "#000000",
+                "piccadilly": "#003688", "victoria": "#0098D4"}
+
+
+def short_name(n):
+    return (n.replace("-Underground", "").replace(" (Circle Line)", " (Circle)").replace(" (H&C Line)", " (H&C)")
+             .replace(" (Dist&Picc Line)", " (Dist&Picc)"))
+
+
+def b64_sqrt(a):
+    """Crowding in % of the station's record (0 to 200) to one byte each on a square-root scale, finer where values are
+    small; 255 = no reading. Decode: value = 200 * (b / 254) ** 2."""
+    a = np.asarray(a, float)
+    q = np.full(a.shape, 255, np.uint8)
+    ok = np.isfinite(a)
+    q[ok] = np.rint(np.sqrt(np.clip(a[ok], 0, 200) / 200) * 254).astype(np.uint8)
+    return base64.b64encode(q.tobytes()).decode("ascii")
+
+
+def b64_count(a):
+    """Counts (trains) to one byte each, 0 to 254; 255 = no value."""
+    a = np.asarray(a, float)
+    q = np.full(a.shape, 255, np.uint8)
+    ok = np.isfinite(a)
+    q[ok] = np.clip(np.rint(a[ok]), 0, 254).astype(np.uint8)
+    return base64.b64encode(q.tobytes()).decode("ascii")
+
+
+def route_set(routes_json, line, idx):
+    """Each distinct route of a line (both directions give the same route reversed), as station indices. A route that visits
+    a station twice (the Circle's loop) is turned round so the loop closes with one link at the end."""
+    def jumps(p):
+        first = {}
+        for i, x in enumerate(p):
+            first.setdefault(x, i)
+        return sum(1 for i in range(1, len(p)) if abs(first[p[i]] - first[p[i - 1]]) > 1)
+    seen, out = set(), []
+    for d in ("inbound", "outbound"):
+        for r in (routes_json.get(line) or {}).get(d) or []:
+            p = [idx[n] for n in r if n in idx and (n, line) not in NOT_SERVED]
+            p = [x for i, x in enumerate(p) if i == 0 or x != p[i - 1]]
+            if len(p) < 2:
+                continue
+            canon = min(tuple(p), tuple(reversed(p)))
+            if canon in seen:
+                continue
+            seen.add(canon)
+            rp = list(reversed(p))
+            out.append(rp if jumps(rp) < jumps(p) else p)
+    return out
+
+
+def runs_2d(M, keep):
+    """[day, first slot, slot after the last, row, value] for every run of equal values in `keep` along the last axis."""
+    out = []
+    rows, nd, ns = M.shape
+    for r in range(rows):
+        for d in range(nd):
+            row, k = M[r, d], 0
+            while k < ns:
+                v = int(row[k])
+                if v in keep:
+                    a = k
+                    while k < ns and int(row[k]) == v:
+                        k += 1
+                    out.append([d, a, k, r, v])
+                else:
+                    k += 1
+    return out
+
+
+def write_moments(NAME, NAPTAN, LINES_OF, IDX, slots_idx, tod, daynum, LEVEL, BASE, TRM, SUPB, STM, CLM):
+    W0, W1 = 24, 88                                    # 06:00 to 22:00 on the London clock: 64 quarter-hours a day
+    win = (tod >= W0) & (tod < W1)
+    good = win & (np.sum(~np.isnan(LEVEL), axis=0) >= MIN_STATIONS)
+    per_day = pd.Series(good).groupby(daynum).sum()
+    keep = per_day[per_day >= 8].index                 # a day needs 2 hours with network crowding (drops the test runs of 29 Oct)
+    if len(keep) == 0:
+        print("  moments.json     skipped: no day with enough data")
+        return
+    d_first, d_last = int(keep.min()), int(daynum.max())
+    nd = d_last - d_first + 1
+    day0 = slots_idx[0].normalize()
+    days = [(day0 + pd.Timedelta(days=d)).strftime("%Y-%m-%d") for d in range(d_first, d_last + 1)]
+    cols = np.where(win)[0]
+    di, ki = daynum[cols] - d_first, tod[cols] - W0
+    ok = (di >= 0) & (di < nd)
+    cols, di, ki = cols[ok], di[ok], ki[ok]
+
+    def grid(M, fill=np.nan, dt=np.float32):
+        G = np.full((M.shape[0], nd, W1 - W0), fill, dt)
+        G[:, di, ki] = M[:, cols]
+        return G
+    li10 = [TUBE.index(l) for l in MOMENT_LINES]
+    status = runs_2d(grid(STM[li10], 9, np.int8), (1, 2, 3, 4))
+    closed = runs_2d(grid(CLM, 0, np.int8), (1, 2))
+    rpath = RAW / "reference" / "routes.json"
+    routes_json = json.loads(rpath.read_text(encoding="utf-8")) if rpath.exists() else {}
+    lines = [{"id": l, "name": LNAME[l], "color": LINE_COLOURS[l], "routes": route_set(routes_json, l, IDX)} for l in MOMENT_LINES]
+    lines_of = [[MOMENT_LINES.index(TUBE[x]) for x in LINES_OF[i] if TUBE[x] in MOMENT_LINES] for i in range(len(NAME))]
+    write("moments.json", {
+        "note": "Plot 7 (strained-moments.html). Every station, line and quarter-hour from 06:00 to 22:00 (London clock) for each "
+                "day in days. crowd: the crowding index (% of the station's record) with closed, exit-only and fully suspended "
+                "stations left out, exactly as in every other plot; usual: the same usual as Plot 6 (the station's median for "
+                "this time on other days of the same type, Mon-Thu, Fri, Sat, Sun, from the 15 minutes either side, the day "
+                "itself left out); trains and trains_usual: trains with a live prediction per line and the usual for that hour "
+                "and day type with disrupted hours left out. Arrays are one byte per value, station (or line) first, then day, "
+                "then quarter-hour: crowd and usual decode as 200 * (b / 254) ** 2, trains as b; 255 means no value. status: "
+                "[day, first quarter-hour, quarter-hour after the last, line, 1 minor delays / 2 severe delays or reduced "
+                "service / 3 part suspended or part closed / 4 suspended or closed]. closed: [day, first, after last, station, "
+                "1 closed / 2 exit only]. lines: the ten lines, each with its routes from TfL's route sequences (station "
+                "indices).",
+        "days": days, "slot0": "06:00", "nslots": W1 - W0,
+        "stations": [short_name(n) for n in NAME], "naptan": list(NAPTAN), "lines_of": lines_of, "lines": lines,
+        "crowd": b64_sqrt(grid(LEVEL)), "usual": b64_sqrt(grid(BASE)),
+        "trains": b64_count(grid(TRM[li10])), "trains_usual": b64_count(grid(SUPB[li10])),
+        "status": status, "closed": closed,
+    })
+
+
 def main():
     stations = pd.read_csv(RAW / "reference" / "stations.csv", dtype=str)
     stations = stations[stations.naptan.str.startswith("940GZZLU") | stations.naptan.isin(EXTRA_STATIONS)].reset_index(drop=True)
@@ -355,6 +480,11 @@ def main():
     for i in range(N):
         if LINES_OF[i]:
             SS[i] = np.nanmean(LSUP[LINES_OF[i]], axis=0)
+
+    try:
+        write_moments(NAME, stations.naptan.tolist(), LINES_OF, IDX, slots_idx, tod, daynum, LEVEL, BASE, TRM, SUPB, STM, CLM)
+    except Exception as e:                 # Plot 7 must never stop the other files being built
+        print(f"  moments.json     skipped: {e!r}")
 
     # ---------------------------------------------------------------- system.json
     c = np.nanmean(LEVEL, axis=0)

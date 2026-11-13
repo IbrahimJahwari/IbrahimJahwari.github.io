@@ -48,6 +48,7 @@ Tables are `{"cols": [...], "rows": [[...], ...]}`; matrices are base64 int8 (`-
 | `waits/<naptan>.json` | Waits at one station by line, direction and day group (weekdays, weekend, each weekday), 72 15-minute bins from 06:00; per bin `n` days, band bounds `a` and `b`, median `m`, single-day values `v`; plus `towards` (direction labels) | Plot 4 |
 | `strain.json` | Per station and per line: hours per week supply-led, demand-led, both | Plot 6, 6b (and tooltips in Appendix A) |
 | `strained.json` | The five most strained, distinct moments per line and period, with what was going on; thresholds | Appendix A |
+| `moments.json` | Every station, line and quarter-hour from 06:00 to 22:00: crowding and usual crowding, trains and usual trains (one byte each), line status and closures as runs, and each line's routes | Plot 7 (`strained-moments.html`) |
 | `events.json` | Every line disruption and station closure with crowding and trains from 60 minutes before to 60 after | Appendix B |
 | `weekly.json`, `recent.json`, `reliability.json`, `closures.json`, `controls.json`, `lifts.json` | Typical week, last 7 days, disruption hours by reason, closure hours by cause, closures by cause and time, lift outages | built daily, not used by a current plot |
 
