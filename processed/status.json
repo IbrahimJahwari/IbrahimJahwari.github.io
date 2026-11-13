@@ -1,14 +1,13 @@
 {
- "generated_utc": "2026-11-13T06:24:37Z",
- "latest_run_utc": "2026-11-13T06:24:00Z",
- "latest_observation_utc": "2026-11-13T06:21:00.000Z",
- "runs_today": 27,
+ "generated_utc": "2026-11-13T06:31:14Z",
+ "latest_run_utc": "2026-11-13T06:31:00Z",
+ "latest_observation_utc": "2026-11-13T06:26:00.000Z",
+ "runs_today": 28,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.049,
+ "median_crowding": 0.06,
  "lines_not_good_service": [
   "district",
-  "dlr",
   "jubilee",
   "suffragette",
   "windrush"
