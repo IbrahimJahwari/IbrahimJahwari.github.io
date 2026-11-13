@@ -1,15 +1,18 @@
 {
- "generated_utc": "2026-11-13T10:46:06Z",
- "latest_run_utc": "2026-11-13T10:45:00Z",
- "latest_observation_utc": "2026-11-13T10:41:00.000Z",
- "runs_today": 45,
+ "generated_utc": "2026-11-13T11:01:32Z",
+ "latest_run_utc": "2026-11-13T11:01:00Z",
+ "latest_observation_utc": "2026-11-13T10:56:00.000Z",
+ "runs_today": 46,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.138,
+ "median_crowding": 0.135,
  "lines_not_good_service": [
   "central",
   "district",
   "jubilee",
+  "metropolitan",
+  "northern",
+  "piccadilly",
   "suffragette",
   "windrush"
  ],
