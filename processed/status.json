@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-13T11:31:34Z",
- "latest_run_utc": "2026-11-13T11:31:00Z",
- "latest_observation_utc": "2026-11-13T11:26:00.000Z",
- "runs_today": 48,
+ "generated_utc": "2026-11-13T11:46:00Z",
+ "latest_run_utc": "2026-11-13T11:45:00Z",
+ "latest_observation_utc": "2026-11-13T11:41:00.000Z",
+ "runs_today": 49,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.129,
+ "median_crowding": 0.13,
  "lines_not_good_service": [
   "central",
   "district",
@@ -14,6 +14,6 @@
   "suffragette",
   "windrush"
  ],
- "stations_with_lift_out": 12,
+ "stations_with_lift_out": 13,
  "failed_source_calls_today": 1
 }
