@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-14T02:01:25Z",
- "latest_run_utc": "2026-11-14T02:01:00Z",
- "latest_observation_utc": "2026-11-14T01:56:00.000Z",
- "runs_today": 10,
+ "generated_utc": "2026-11-14T02:16:07Z",
+ "latest_run_utc": "2026-11-14T02:15:00Z",
+ "latest_observation_utc": "2026-11-14T02:11:00.000Z",
+ "runs_today": 11,
  "stations_total": 272,
- "stations_with_data": 251,
- "median_crowding": 0.011,
+ "stations_with_data": 249,
+ "median_crowding": 0.009,
  "lines_not_good_service": [
   "bakerloo",
   "circle",
@@ -23,6 +23,6 @@
   "waterloo-city",
   "weaver"
  ],
- "stations_with_lift_out": 15,
+ "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
 }
