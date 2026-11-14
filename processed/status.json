@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-14T19:45:55Z",
- "latest_run_utc": "2026-11-14T19:45:00Z",
- "latest_observation_utc": "2026-11-14T19:41:00.000Z",
- "runs_today": 83,
+ "generated_utc": "2026-11-14T19:58:05Z",
+ "latest_run_utc": "2026-11-14T19:57:00Z",
+ "latest_observation_utc": "2026-11-14T19:51:00.000Z",
+ "runs_today": 84,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.153,
+ "median_crowding": 0.144,
  "lines_not_good_service": [
   "central",
   "district",
