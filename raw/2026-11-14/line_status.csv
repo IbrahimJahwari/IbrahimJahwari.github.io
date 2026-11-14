@@ -84,3 +84,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-14T00:45:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-11-14T00:45:00Z,weaver,overground,0,10,Good Service,
 2026-11-14T00:45:00Z,windrush,overground,0,10,Good Service,
+2026-11-14T01:01:00Z,bakerloo,tube,0,2,Suspended,"Bakerloo Line: No Service due to an earlier signal failure and security alert. Tickets accepted on London Buses, London Overground, London NorthWestern railway and Thameslink Services via any reasonable route."
+2026-11-14T01:01:00Z,central,tube,0,10,Good Service,
+2026-11-14T01:01:00Z,circle,tube,0,10,Good Service,
+2026-11-14T01:01:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays due to an earlier faulty train at Richmond and train cancellations.
+2026-11-14T01:01:00Z,dlr,dlr,0,10,Good Service,
+2026-11-14T01:01:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-14T01:01:00Z,hammersmith-city,tube,0,9,Minor Delays,Hammersmith and City Line: Minor delays due to train cancellations.
+2026-11-14T01:01:00Z,jubilee,tube,0,10,Good Service,
+2026-11-14T01:01:00Z,liberty,overground,0,10,Good Service,
+2026-11-14T01:01:00Z,lioness,overground,0,10,Good Service,
+2026-11-14T01:01:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-14T01:01:00Z,mildmay,overground,0,10,Good Service,
+2026-11-14T01:01:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays due to an earlier fire alert at Stockwell.
+2026-11-14T01:01:00Z,piccadilly,tube,0,6,Severe Delays,Piccadilly Line: Severe delays between Acton Town and Uxbridge and MINOR DELAYS on the rest of the line due to the unavailability of depot staff. Tickets are being accepted on London Buses.
+2026-11-14T01:01:00Z,piccadilly,tube,1,9,Minor Delays,Piccadilly Line: Severe delays between Acton Town and Uxbridge and MINOR DELAYS on the rest of the line due to the unavailability of depot staff. Tickets are being accepted on London Buses.
+2026-11-14T01:01:00Z,suffragette,overground,0,3,Part Suspended,Suffragette Line: No service between Barking and Barking Riverside while we fix a points failure at Barking. GOOD SERVICE on the rest of the line.
+2026-11-14T01:01:00Z,tram,tram,0,10,Good Service,
+2026-11-14T01:01:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to an earlier security alert.
+2026-11-14T01:01:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
+2026-11-14T01:01:00Z,weaver,overground,0,10,Good Service,
+2026-11-14T01:01:00Z,windrush,overground,0,10,Good Service,
