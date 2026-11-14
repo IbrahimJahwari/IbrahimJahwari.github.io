@@ -1,19 +1,22 @@
 {
- "generated_utc": "2026-11-14T06:01:22Z",
- "latest_run_utc": "2026-11-14T06:01:00Z",
- "latest_observation_utc": "2026-11-14T05:56:00.000Z",
- "runs_today": 26,
+ "generated_utc": "2026-11-14T06:16:09Z",
+ "latest_run_utc": "2026-11-14T06:15:00Z",
+ "latest_observation_utc": "2026-11-14T06:11:00.000Z",
+ "runs_today": 27,
  "stations_total": 272,
  "stations_with_data": 254,
- "median_crowding": 0.016,
+ "median_crowding": 0.02,
  "lines_not_good_service": [
   "dlr",
   "hammersmith-city",
+  "jubilee",
   "metropolitan",
   "mildmay",
   "northern",
+  "piccadilly",
   "suffragette",
-  "waterloo-city"
+  "waterloo-city",
+  "windrush"
  ],
  "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
