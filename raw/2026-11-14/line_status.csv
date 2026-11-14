@@ -400,3 +400,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-14T04:15:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-11-14T04:15:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning.
 2026-11-14T04:15:00Z,windrush,overground,0,10,Good Service,
+2026-11-14T04:31:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-14T04:31:00Z,central,tube,0,10,Good Service,
+2026-11-14T04:31:00Z,circle,tube,0,10,Good Service,
+2026-11-14T04:31:00Z,district,tube,0,10,Good Service,
+2026-11-14T04:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-14T04:31:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-14T04:31:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-14T04:31:00Z,jubilee,tube,0,10,Good Service,
+2026-11-14T04:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-14T04:31:00Z,lioness,overground,0,10,Good Service,
+2026-11-14T04:31:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-14T04:31:00Z,mildmay,overground,0,10,Good Service,
+2026-11-14T04:31:00Z,northern,tube,0,5,Part Closure,"NORTHERN LINE: From 0130 Saturday 14 until 0130 Sunday 15 November, no service between Euston (Bank Branch) / Charing Cross and Morden / Battersea Power Station. There will be no Friday Night Tube service between Charing Cross and Morden. Replacement bus services operate during day hours only, for Night journeys please use Night Bus services"
+2026-11-14T04:31:00Z,northern,tube,1,3,Part Suspended,Northern Line: No service between Battersea Power Station/Morden and Charing Cross/Euston via Bank due to planned engineering works. GOOD SERVICE on the rest of the line.
+2026-11-14T04:31:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-14T04:31:00Z,suffragette,overground,0,3,Part Suspended,Suffragette Line: No service between Barking and Barking Riverside while we fix a points a points failure at Barking. GOOD SERVICE on the rest of the line.
+2026-11-14T04:31:00Z,tram,tram,0,10,Good Service,
+2026-11-14T04:31:00Z,victoria,tube,0,10,Good Service,
+2026-11-14T04:31:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
+2026-11-14T04:31:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
+2026-11-14T04:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-14T04:31:00Z,windrush,overground,0,10,Good Service,

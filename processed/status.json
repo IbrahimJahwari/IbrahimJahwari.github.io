@@ -1,20 +1,15 @@
 {
- "generated_utc": "2026-11-14T04:16:13Z",
- "latest_run_utc": "2026-11-14T04:15:00Z",
- "latest_observation_utc": "2026-11-14T04:11:00.000Z",
- "runs_today": 19,
+ "generated_utc": "2026-11-14T04:31:14Z",
+ "latest_run_utc": "2026-11-14T04:31:00Z",
+ "latest_observation_utc": "2026-11-14T04:26:00.000Z",
+ "runs_today": 20,
  "stations_total": 272,
- "stations_with_data": 233,
- "median_crowding": 0.005,
+ "stations_with_data": 234,
+ "median_crowding": 0.004,
  "lines_not_good_service": [
-  "elizabeth",
-  "liberty",
-  "lioness",
-  "mildmay",
   "northern",
-  "tram",
-  "waterloo-city",
-  "weaver"
+  "suffragette",
+  "waterloo-city"
  ],
  "stations_with_lift_out": 15,
  "failed_source_calls_today": 0
