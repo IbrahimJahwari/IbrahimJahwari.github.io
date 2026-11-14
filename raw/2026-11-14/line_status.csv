@@ -42,3 +42,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-14T00:15:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-14T00:15:00Z,weaver,overground,0,10,Good Service,
 2026-11-14T00:15:00Z,windrush,overground,0,6,Severe Delays,Windrush Line: Severe delays due to an earlier points failure at Surrey Quays. London Underground and London Buses are accepting valid tickets via any reasonable route.
+2026-11-14T00:31:00Z,bakerloo,tube,0,2,Suspended,"Bakerloo Line: No Service while we respond to a security alert. Tickets accepted on London Buses, London Overground, London NorthWestern railway and Thameslink Services via any reasonable route."
+2026-11-14T00:31:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays between North Acton and Ealing Broadway/West Ruislip and between Leytonstone and Epping/Hainault via Newbury Park due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-14T00:31:00Z,circle,tube,0,10,Good Service,
+2026-11-14T00:31:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays due to an earlier faulty train at Richmond and train cancellations.
+2026-11-14T00:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-14T00:31:00Z,elizabeth,elizabeth-line,0,9,Minor Delays,Minor delays between Paddington and Heathrow Terminals/Reading due to an earlier trespasser on the track at Langley. GOOD SERVICE on the rest of the line.
+2026-11-14T00:31:00Z,hammersmith-city,tube,0,9,Minor Delays,Hammersmith and City Line: Minor delays due to train cancellations.
+2026-11-14T00:31:00Z,jubilee,tube,0,10,Good Service,
+2026-11-14T00:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-14T00:31:00Z,lioness,overground,0,10,Good Service,
+2026-11-14T00:31:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-14T00:31:00Z,mildmay,overground,0,10,Good Service,
+2026-11-14T00:31:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays due to an earlier fire alert at Stockwell.
+2026-11-14T00:31:00Z,piccadilly,tube,0,6,Severe Delays,Piccadilly Line: Severe delays between Acton Town and Uxbridge and MINOR DELAYS on the rest of the line due to the unavailability of depot staff. Tickets are being accepted on London Buses.
+2026-11-14T00:31:00Z,piccadilly,tube,1,9,Minor Delays,Piccadilly Line: Severe delays between Acton Town and Uxbridge and MINOR DELAYS on the rest of the line due to the unavailability of depot staff. Tickets are being accepted on London Buses.
+2026-11-14T00:31:00Z,suffragette,overground,0,3,Part Suspended,Suffragette Line: No service between Barking and Barking Riverside while we fix a points failure at Barking. GOOD SERVICE on the rest of the line.
+2026-11-14T00:31:00Z,tram,tram,0,10,Good Service,
+2026-11-14T00:31:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to an earlier security alert.
+2026-11-14T00:31:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-14T00:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-14T00:31:00Z,windrush,overground,0,10,Good Service,
