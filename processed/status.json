@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-14T14:16:07Z",
- "latest_run_utc": "2026-11-14T14:15:00Z",
- "latest_observation_utc": "2026-11-14T14:11:00.000Z",
- "runs_today": 60,
+ "generated_utc": "2026-11-14T14:31:20Z",
+ "latest_run_utc": "2026-11-14T14:31:00Z",
+ "latest_observation_utc": "2026-11-14T14:26:00.000Z",
+ "runs_today": 61,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.186,
+ "median_crowding": 0.182,
  "lines_not_good_service": [
   "district",
   "hammersmith-city",
@@ -16,6 +16,6 @@
   "waterloo-city",
   "weaver"
  ],
- "stations_with_lift_out": 17,
+ "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
 }
