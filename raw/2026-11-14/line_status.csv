@@ -1093,3 +1093,27 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-14T11:45:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-11-14T11:45:00Z,weaver,overground,0,10,Good Service,
 2026-11-14T11:45:00Z,windrush,overground,0,10,Good Service,
+2026-11-14T12:01:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-14T12:01:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-14T12:01:00Z,circle,tube,0,10,Good Service,
+2026-11-14T12:01:00Z,district,tube,0,6,Severe Delays,District Line: Severe delays between Earl's Court and Kensington (Olympia). MINOR DELAYS between Earl's Court and Wimbledon due to train cancellations. Tickets are being accepted on London Buses. GOOD SERVICE on the rest of the line.
+2026-11-14T12:01:00Z,district,tube,1,9,Minor Delays,District Line: Severe delays between Earl's Court and Kensington (Olympia). MINOR DELAYS between Earl's Court and Wimbledon due to train cancellations. Tickets are being accepted on London Buses. GOOD SERVICE on the rest of the line.
+2026-11-14T12:01:00Z,dlr,dlr,0,10,Good Service,
+2026-11-14T12:01:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-14T12:01:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-14T12:01:00Z,jubilee,tube,0,6,Severe Delays,"Jubilee Line: Severe delays due to an earlier points failure at Wembley Park. Tickets are being accepted on London Buses, Mildmay line, DLR, Elizabeth line, C2C, Southeastern and Thameslink."
+2026-11-14T12:01:00Z,liberty,overground,0,10,Good Service,
+2026-11-14T12:01:00Z,lioness,overground,0,10,Good Service,
+2026-11-14T12:01:00Z,metropolitan,tube,0,9,Minor Delays,Metropolitan Line: Severe delays between Moor Park and Amersham/Chesham due to an earlier signalling problem at Rickmansworth. MINOR DELAYS on the rest of the line due to train cancellations.
+2026-11-14T12:01:00Z,metropolitan,tube,1,6,Severe Delays,Metropolitan Line: Severe delays between Moor Park and Amersham/Chesham due to an earlier signalling problem at Rickmansworth. MINOR DELAYS on the rest of the line due to train cancellations.
+2026-11-14T12:01:00Z,mildmay,overground,0,9,Minor Delays,Mildmay Line: Minor delays between Willesden Junction and Clapham Junction due to an earlier points failure at Kensington (Olympia). GOOD SERVICE on the rest of the line.
+2026-11-14T12:01:00Z,northern,tube,0,5,Part Closure,"NORTHERN LINE: From 0130 Saturday 14 until 0130 Sunday 15 November, no service between Euston (Bank Branch) / Charing Cross and Morden / Battersea Power Station. There will be no Friday Night Tube service between Charing Cross and Morden. Replacement bus services operate during day hours only, for Night journeys please use Night Bus services"
+2026-11-14T12:01:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-14T12:01:00Z,suffragette,overground,0,6,Severe Delays,Suffragette Line: No service between Barking Riverside and Barking for the rest of the day due to a points failure at Barking. SEVERE DELAYS on the rest of the line while we fix a fault with the overhead power lines. London Underground are accepting tickets via any reasonable route.
+2026-11-14T12:01:00Z,suffragette,overground,1,3,Part Suspended,Suffragette Line: No service between Barking Riverside and Barking for the rest of the day due to a points failure at Barking. SEVERE DELAYS on the rest of the line while we fix a fault with the overhead power lines. London Underground are accepting tickets via any reasonable route.
+2026-11-14T12:01:00Z,tram,tram,0,10,Good Service,
+2026-11-14T12:01:00Z,victoria,tube,0,10,Good Service,
+2026-11-14T12:01:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
+2026-11-14T12:01:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
+2026-11-14T12:01:00Z,weaver,overground,0,10,Good Service,
+2026-11-14T12:01:00Z,windrush,overground,0,10,Good Service,
