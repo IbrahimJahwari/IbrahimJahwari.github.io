@@ -1,14 +1,15 @@
 {
- "generated_utc": "2026-11-14T09:46:05Z",
- "latest_run_utc": "2026-11-14T09:45:00Z",
- "latest_observation_utc": "2026-11-14T09:41:00.000Z",
- "runs_today": 42,
+ "generated_utc": "2026-11-14T10:01:24Z",
+ "latest_run_utc": "2026-11-14T10:01:00Z",
+ "latest_observation_utc": "2026-11-14T09:56:00.000Z",
+ "runs_today": 43,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.115,
+ "median_crowding": 0.122,
  "lines_not_good_service": [
   "central",
   "district",
+  "dlr",
   "jubilee",
   "metropolitan",
   "mildmay",
@@ -17,6 +18,6 @@
   "suffragette",
   "waterloo-city"
  ],
- "stations_with_lift_out": 17,
+ "stations_with_lift_out": 18,
  "failed_source_calls_today": 0
 }
