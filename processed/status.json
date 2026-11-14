@@ -1,18 +1,17 @@
 {
- "generated_utc": "2026-11-14T17:46:02Z",
- "latest_run_utc": "2026-11-14T17:45:00Z",
- "latest_observation_utc": "2026-11-14T17:41:00.000Z",
- "runs_today": 75,
+ "generated_utc": "2026-11-14T18:01:25Z",
+ "latest_run_utc": "2026-11-14T18:01:00Z",
+ "latest_observation_utc": "2026-11-14T17:56:00.000Z",
+ "runs_today": 76,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.196,
+ "median_crowding": 0.194,
  "lines_not_good_service": [
   "central",
   "district",
   "jubilee",
   "metropolitan",
   "northern",
-  "piccadilly",
   "suffragette",
   "waterloo-city"
  ],
