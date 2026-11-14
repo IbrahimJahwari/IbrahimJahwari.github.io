@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-14T16:45:58Z",
- "latest_run_utc": "2026-11-14T16:45:00Z",
- "latest_observation_utc": "2026-11-14T16:41:00.000Z",
- "runs_today": 71,
+ "generated_utc": "2026-11-14T17:01:29Z",
+ "latest_run_utc": "2026-11-14T17:01:00Z",
+ "latest_observation_utc": "2026-11-14T16:56:00.000Z",
+ "runs_today": 72,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.185,
+ "median_crowding": 0.189,
  "lines_not_good_service": [
   "bakerloo",
   "central",
@@ -13,6 +13,7 @@
   "jubilee",
   "metropolitan",
   "northern",
+  "piccadilly",
   "suffragette",
   "waterloo-city",
   "weaver"
