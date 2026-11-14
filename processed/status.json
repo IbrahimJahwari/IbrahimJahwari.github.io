@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-14T13:16:02Z",
- "latest_run_utc": "2026-11-14T13:15:00Z",
- "latest_observation_utc": "2026-11-14T13:11:00.000Z",
- "runs_today": 56,
+ "generated_utc": "2026-11-14T13:31:15Z",
+ "latest_run_utc": "2026-11-14T13:31:00Z",
+ "latest_observation_utc": "2026-11-14T13:26:00.000Z",
+ "runs_today": 57,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.183,
+ "median_crowding": 0.187,
  "lines_not_good_service": [
   "district",
   "hammersmith-city",
