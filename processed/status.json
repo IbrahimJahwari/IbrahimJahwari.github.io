@@ -1,16 +1,16 @@
 {
- "generated_utc": "2026-11-14T05:45:57Z",
- "latest_run_utc": "2026-11-14T05:45:00Z",
- "latest_observation_utc": "2026-11-14T05:41:00.000Z",
- "runs_today": 25,
+ "generated_utc": "2026-11-14T06:01:22Z",
+ "latest_run_utc": "2026-11-14T06:01:00Z",
+ "latest_observation_utc": "2026-11-14T05:56:00.000Z",
+ "runs_today": 26,
  "stations_total": 272,
- "stations_with_data": 253,
- "median_crowding": 0.011,
+ "stations_with_data": 254,
+ "median_crowding": 0.016,
  "lines_not_good_service": [
-  "circle",
   "dlr",
   "hammersmith-city",
   "metropolitan",
+  "mildmay",
   "northern",
   "suffragette",
   "waterloo-city"

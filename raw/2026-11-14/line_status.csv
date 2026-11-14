@@ -531,3 +531,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-14T05:45:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-11-14T05:45:00Z,weaver,overground,0,10,Good Service,
 2026-11-14T05:45:00Z,windrush,overground,0,10,Good Service,
+2026-11-14T06:01:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-14T06:01:00Z,central,tube,0,10,Good Service,
+2026-11-14T06:01:00Z,circle,tube,0,10,Good Service,
+2026-11-14T06:01:00Z,district,tube,0,10,Good Service,
+2026-11-14T06:01:00Z,dlr,dlr,0,3,Part Suspended,Docklands Light Railway: No service between Stratford International and Abbey Road due to a power supply failure in the Abbey Road area. GOOD SERVICE on all other DLR routes.
+2026-11-14T06:01:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-14T06:01:00Z,hammersmith-city,tube,0,9,Minor Delays,Hammersmith and City Line: Minor Delays due to train cancellations.
+2026-11-14T06:01:00Z,jubilee,tube,0,10,Good Service,
+2026-11-14T06:01:00Z,liberty,overground,0,10,Good Service,
+2026-11-14T06:01:00Z,lioness,overground,0,10,Good Service,
+2026-11-14T06:01:00Z,metropolitan,tube,0,9,Minor Delays,Metropolitan Line: Minor delays between Moor Park and Amersham due to train cancellations. The next southbound train will be at 06:18. GOOD SERVICE on the rest of the line.
+2026-11-14T06:01:00Z,mildmay,overground,0,3,Part Suspended,Mildmay Line: No service between Willesden Junction and Clapham Junction while we fix a points failure at Kensington (Olympia). GOOD SERVICE on the rest of the line.
+2026-11-14T06:01:00Z,northern,tube,0,5,Part Closure,"NORTHERN LINE: From 0130 Saturday 14 until 0130 Sunday 15 November, no service between Euston (Bank Branch) / Charing Cross and Morden / Battersea Power Station. There will be no Friday Night Tube service between Charing Cross and Morden. Replacement bus services operate during day hours only, for Night journeys please use Night Bus services"
+2026-11-14T06:01:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-14T06:01:00Z,suffragette,overground,0,3,Part Suspended,Suffragette Line: No service between Barking and Barking Riverside while we fix a points failure at Barking. GOOD SERVICE on the rest of the line.
+2026-11-14T06:01:00Z,tram,tram,0,10,Good Service,
+2026-11-14T06:01:00Z,victoria,tube,0,10,Good Service,
+2026-11-14T06:01:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
+2026-11-14T06:01:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
+2026-11-14T06:01:00Z,weaver,overground,0,10,Good Service,
+2026-11-14T06:01:00Z,windrush,overground,0,10,Good Service,
