@@ -1,17 +1,16 @@
 {
- "generated_utc": "2026-11-14T13:46:00Z",
- "latest_run_utc": "2026-11-14T13:45:00Z",
- "latest_observation_utc": "2026-11-14T13:41:00.000Z",
- "runs_today": 58,
+ "generated_utc": "2026-11-14T14:01:32Z",
+ "latest_run_utc": "2026-11-14T14:01:00Z",
+ "latest_observation_utc": "2026-11-14T13:56:00.000Z",
+ "runs_today": 59,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.187,
+ "median_crowding": 0.185,
  "lines_not_good_service": [
   "district",
   "hammersmith-city",
   "jubilee",
   "metropolitan",
-  "mildmay",
   "northern",
   "suffragette",
   "waterloo-city"
