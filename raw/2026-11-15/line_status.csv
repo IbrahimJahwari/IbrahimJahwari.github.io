@@ -2005,3 +2005,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-15T23:01:00Z,weaver,overground,0,10,Good Service,
 2026-11-15T23:01:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: Sunday 15 November, no service between New Cross Gate and West Croydon / Crystal Palace. Rail replacement buses will run as follows: New Cross Gate - Brockley - Honor Oak Park - Forest Hill - Sydenham - Crystal Palace. Tickets will be accepted on Southern Railway services between Crystal Palace and East Croydon via Norwood Junction. Alternatively, customers may use local buses or trams via any reasonable route."
 2026-11-15T23:01:00Z,windrush,overground,1,9,Minor Delays,Windrush Line: Minor delays between Surrey Quays and Clapham Junction due to an earlier points failure at Denmark Hill. No service between New Cross Gate and Crystal Palace / West Croydon due to planned engineering work. GOOD SERVICE on the rest of the line.
+2026-11-15T23:15:00Z,bakerloo,tube,0,9,Minor Delays,Bakerloo Line: Minor delays between Stonebridge Park and Harrow & Wealdstone due to an earlier signal failure at Kenton. GOOD SERVICE on the rest of the line.
+2026-11-15T23:15:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due train cancellations.
+2026-11-15T23:15:00Z,circle,tube,0,10,Good Service,
+2026-11-15T23:15:00Z,district,tube,0,10,Good Service,
+2026-11-15T23:15:00Z,dlr,dlr,0,5,Part Closure,"DOCKLANDS LIGHT RAILWAY: Sunday 15 November, no service between Shadwell and Tower Gateway."
+2026-11-15T23:15:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-15T23:15:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-15T23:15:00Z,jubilee,tube,0,10,Good Service,
+2026-11-15T23:15:00Z,liberty,overground,0,10,Good Service,
+2026-11-15T23:15:00Z,lioness,overground,0,10,Good Service,
+2026-11-15T23:15:00Z,metropolitan,tube,0,9,Minor Delays,Metropolitan Line: Minor delays between Harrow-on-the-Hill and Uxbridge due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-15T23:15:00Z,mildmay,overground,0,5,Part Closure,"MILDMAY LINE: Sunday 15 November, no service between Willesden Junction and Clapham Junction. There will also be no SOUTHERN services between Watford Junction and Clapham Junction at these times. Please use local London Buses connections."
+2026-11-15T23:15:00Z,northern,tube,0,5,Part Closure,"NORTHERN LINE: From 0530 Sunday 15 November, no service between Euston (Bank Branch) / Charing Cross and Morden / Battersea Power Station. Replacement bus services operate."
+2026-11-15T23:15:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-15T23:15:00Z,suffragette,overground,0,10,Good Service,
+2026-11-15T23:15:00Z,tram,tram,0,10,Good Service,
+2026-11-15T23:15:00Z,victoria,tube,0,6,Severe Delays,"Victoria Line: Severe delays due to an earlier fire alert at Seven Sisters and an earlier points failure at Brixton. Tickets are being accepted on London Buses, Suffragette line, Weaver line, Greater Anglia, Southeastern and South Western Railway services."
+2026-11-15T23:15:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
+2026-11-15T23:15:00Z,weaver,overground,0,10,Good Service,
+2026-11-15T23:15:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: Sunday 15 November, no service between New Cross Gate and West Croydon / Crystal Palace. Rail replacement buses will run as follows: New Cross Gate - Brockley - Honor Oak Park - Forest Hill - Sydenham - Crystal Palace. Tickets will be accepted on Southern Railway services between Crystal Palace and East Croydon via Norwood Junction. Alternatively, customers may use local buses or trams via any reasonable route."
