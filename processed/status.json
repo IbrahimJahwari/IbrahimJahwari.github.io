@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-15T07:31:21Z",
- "latest_run_utc": "2026-11-15T07:31:00Z",
- "latest_observation_utc": "2026-11-15T07:26:00.000Z",
- "runs_today": 32,
+ "generated_utc": "2026-11-15T07:46:03Z",
+ "latest_run_utc": "2026-11-15T07:45:00Z",
+ "latest_observation_utc": "2026-11-15T07:41:00.000Z",
+ "runs_today": 33,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.037,
+ "median_crowding": 0.041,
  "lines_not_good_service": [
   "dlr",
   "elizabeth",
@@ -16,6 +16,6 @@
   "waterloo-city",
   "windrush"
  ],
- "stations_with_lift_out": 20,
+ "stations_with_lift_out": 18,
  "failed_source_calls_today": 0
 }
