@@ -607,3 +607,26 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-15T06:45:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-11-15T06:45:00Z,weaver,overground,0,10,Good Service,
 2026-11-15T06:45:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: Sunday 15 November, no service between New Cross Gate and West Croydon / Crystal Palace. Rail replacement buses will run as follows: New Cross Gate - Brockley - Honor Oak Park - Forest Hill - Sydenham - Crystal Palace. Tickets will be accepted on Southern Railway services between Crystal Palace and East Croydon via Norwood Junction. Alternatively, customers may use local buses or trams via any reasonable route."
+2026-11-15T07:01:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-15T07:01:00Z,central,tube,0,10,Good Service,
+2026-11-15T07:01:00Z,circle,tube,0,10,Good Service,
+2026-11-15T07:01:00Z,district,tube,0,10,Good Service,
+2026-11-15T07:01:00Z,dlr,dlr,0,5,Part Closure,"DOCKLANDS LIGHT RAILWAY: Sunday 15 November, no service between Shadwell and Tower Gateway."
+2026-11-15T07:01:00Z,elizabeth,elizabeth-line,0,5,Part Closure,"ELIZABETH LINE: Sunday 15 November, until 0800, no service between West Drayton and Slough. Replacement bus service W1 operates between Hayes & Harlington and Slough via West Drayton and Langley (not serving Iver)."
+2026-11-15T07:01:00Z,elizabeth,elizabeth-line,1,5,Part Closure,"ELIZABETH LINE: Sunday 15 November, until 1015, no service between Paddington and Abbey Wood / Stratford. Trains operate between Paddington National Rail station and Heathrow Terminal 4, Heathrow Terminal 5, West Drayton (until 0800) and Reading (after 0800), and between Liverpool Street National Rail station and Shenfield, not serving Whitechapel."
+2026-11-15T07:01:00Z,elizabeth,elizabeth-line,2,3,Part Suspended,No service between Stratford and Liverpool Street due to a late finish of finish of engineering work. NO SERVICE between West Drayton and Slough until 08.15 and between Paddington/Liverpool Street and Whitechapel to Abbey Wood until 10.15 due to planned engineering work. GOOD SERVICE on the rest of the line.
+2026-11-15T07:01:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-15T07:01:00Z,jubilee,tube,0,10,Good Service,
+2026-11-15T07:01:00Z,liberty,overground,0,10,Good Service,
+2026-11-15T07:01:00Z,lioness,overground,0,10,Good Service,
+2026-11-15T07:01:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-15T07:01:00Z,mildmay,overground,0,5,Part Closure,"MILDMAY LINE: Sunday 15 November, no service between Willesden Junction and Clapham Junction. There will also be no SOUTHERN services between Watford Junction and Clapham Junction at these times. Please use local London Buses connections."
+2026-11-15T07:01:00Z,northern,tube,0,5,Part Closure,"NORTHERN LINE: From 0530 Sunday 15 November, no service between Euston (Bank Branch) / Charing Cross and Morden / Battersea Power Station. Replacement bus services operate."
+2026-11-15T07:01:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-15T07:01:00Z,suffragette,overground,0,4,Planned Closure,"SUFFRAGETTE LINE: Sunday 15 November, until 1315, no service between Gospel Oak and Barking Riverside. Use VICTORIA LINE connections between Seven Sisters (for South Tottenham), Blackhorse Road and Walthamstow Central, and local London Buses services between Barking and Barking Riverside. Replacement buses operate."
+2026-11-15T07:01:00Z,tram,tram,0,10,Good Service,
+2026-11-15T07:01:00Z,victoria,tube,0,10,Good Service,
+2026-11-15T07:01:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
+2026-11-15T07:01:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
+2026-11-15T07:01:00Z,weaver,overground,0,10,Good Service,
+2026-11-15T07:01:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: Sunday 15 November, no service between New Cross Gate and West Croydon / Crystal Palace. Rail replacement buses will run as follows: New Cross Gate - Brockley - Honor Oak Park - Forest Hill - Sydenham - Crystal Palace. Tickets will be accepted on Southern Railway services between Crystal Palace and East Croydon via Norwood Junction. Alternatively, customers may use local buses or trams via any reasonable route."
