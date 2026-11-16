@@ -1,14 +1,16 @@
 {
- "generated_utc": "2026-11-16T06:46:10Z",
- "latest_run_utc": "2026-11-16T06:46:00Z",
- "latest_observation_utc": "2026-11-16T06:41:00.000Z",
- "runs_today": 28,
+ "generated_utc": "2026-11-16T07:01:32Z",
+ "latest_run_utc": "2026-11-16T07:01:00Z",
+ "latest_observation_utc": "2026-11-16T06:56:00.000Z",
+ "runs_today": 29,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.089,
+ "median_crowding": 0.105,
  "lines_not_good_service": [
-  "northern"
+  "hammersmith-city",
+  "northern",
+  "waterloo-city"
  ],
- "stations_with_lift_out": 18,
+ "stations_with_lift_out": 17,
  "failed_source_calls_today": 0
 }
