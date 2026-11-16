@@ -1,15 +1,16 @@
 {
- "generated_utc": "2026-11-16T15:16:14Z",
- "latest_run_utc": "2026-11-16T15:16:00Z",
- "latest_observation_utc": "2026-11-16T15:11:00.000Z",
- "runs_today": 63,
+ "generated_utc": "2026-11-16T15:31:20Z",
+ "latest_run_utc": "2026-11-16T15:31:00Z",
+ "latest_observation_utc": "2026-11-16T15:26:00.000Z",
+ "runs_today": 64,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.133,
+ "median_crowding": 0.146,
  "lines_not_good_service": [
   "bakerloo",
-  "central"
+  "central",
+  "district"
  ],
- "stations_with_lift_out": 22,
+ "stations_with_lift_out": 21,
  "failed_source_calls_today": 0
 }
