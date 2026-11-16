@@ -103,3 +103,27 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-16T01:01:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning.
 2026-11-16T01:01:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: Sunday 15 November, no service between New Cross Gate and West Croydon / Crystal Palace. Rail replacement buses will run as follows: New Cross Gate - Brockley - Honor Oak Park - Forest Hill - Sydenham - Crystal Palace. Tickets will be accepted on Southern Railway services between Crystal Palace and East Croydon via Norwood Junction. Alternatively, customers may use local buses or trams via any reasonable route."
 2026-11-16T01:01:00Z,windrush,overground,1,20,Service Closed,Windrush Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,bakerloo,tube,0,20,Service Closed,Bakerloo Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,central,tube,0,20,Service Closed,Central Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,circle,tube,0,20,Service Closed,Circle Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,district,tube,0,20,Service Closed,District Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,dlr,dlr,0,5,Part Closure,"DOCKLANDS LIGHT RAILWAY: Sunday 15 November, no service between Shadwell and Tower Gateway."
+2026-11-16T01:15:00Z,dlr,dlr,1,20,Service Closed,Docklands Light Railway: Service will resume later this morning.
+2026-11-16T01:15:00Z,elizabeth,elizabeth-line,0,20,Service Closed,Service will resume later this morning.
+2026-11-16T01:15:00Z,hammersmith-city,tube,0,20,Service Closed,Hammersmith and City Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,jubilee,tube,0,20,Service Closed,Jubilee Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,liberty,overground,0,20,Service Closed,Liberty Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,lioness,overground,0,20,Service Closed,Lioness Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,metropolitan,tube,0,20,Service Closed,Metropolitan Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,mildmay,overground,0,5,Part Closure,"MILDMAY LINE: Sunday 15 November, no service between Willesden Junction and Clapham Junction. There will also be no SOUTHERN services between Watford Junction and Clapham Junction at these times. Please use local London Buses connections."
+2026-11-16T01:15:00Z,mildmay,overground,1,20,Service Closed,Mildmay Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,northern,tube,0,5,Part Closure,"NORTHERN LINE: From 0530 Sunday 15 November, no service between Euston (Bank Branch) / Charing Cross and Morden / Battersea Power Station. Replacement bus services operate."
+2026-11-16T01:15:00Z,northern,tube,1,20,Service Closed,Northern Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,piccadilly,tube,0,20,Service Closed,Piccadilly Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,suffragette,overground,0,20,Service Closed,Suffragette Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,tram,tram,0,20,Service Closed,London Tramlink: Service will resume later this morning.
+2026-11-16T01:15:00Z,victoria,tube,0,20,Service Closed,Victoria Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning.
+2026-11-16T01:15:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: Sunday 15 November, no service between New Cross Gate and West Croydon / Crystal Palace. Rail replacement buses will run as follows: New Cross Gate - Brockley - Honor Oak Park - Forest Hill - Sydenham - Crystal Palace. Tickets will be accepted on Southern Railway services between Crystal Palace and East Croydon via Norwood Junction. Alternatively, customers may use local buses or trams via any reasonable route."
+2026-11-16T01:15:00Z,windrush,overground,1,20,Service Closed,Windrush Line: Service will resume later this morning.
