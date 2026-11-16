@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-16T23:16:05Z",
- "latest_run_utc": "2026-11-16T23:16:00Z",
- "latest_observation_utc": "2026-11-16T23:11:00.000Z",
- "runs_today": 96,
+ "generated_utc": "2026-11-16T23:31:25Z",
+ "latest_run_utc": "2026-11-16T23:31:00Z",
+ "latest_observation_utc": "2026-11-16T23:26:00.000Z",
+ "runs_today": 97,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.063,
+ "median_crowding": 0.056,
  "lines_not_good_service": [
   "elizabeth",
   "mildmay"
