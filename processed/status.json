@@ -1,16 +1,12 @@
 {
- "generated_utc": "2026-11-16T04:01:30Z",
- "latest_run_utc": "2026-11-16T04:01:00Z",
- "latest_observation_utc": "2026-11-16T03:56:00.000Z",
- "runs_today": 17,
+ "generated_utc": "2026-11-16T04:16:07Z",
+ "latest_run_utc": "2026-11-16T04:15:00Z",
+ "latest_observation_utc": "2026-11-16T04:11:00.000Z",
+ "runs_today": 18,
  "stations_total": 272,
  "stations_with_data": 231,
  "median_crowding": 0.001,
  "lines_not_good_service": [
-  "bakerloo",
-  "central",
-  "circle",
-  "district",
   "dlr",
   "elizabeth",
   "hammersmith-city",
@@ -28,6 +24,6 @@
   "weaver",
   "windrush"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 17,
  "failed_source_calls_today": 0
 }
