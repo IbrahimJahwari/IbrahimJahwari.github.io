@@ -1548,3 +1548,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-17T18:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-17T18:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-17T18:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-17T18:46:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-17T18:46:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-17T18:46:00Z,circle,tube,0,10,Good Service,
+2026-11-17T18:46:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays between Turnham Green and Richmond due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-17T18:46:00Z,dlr,dlr,0,10,Good Service,
+2026-11-17T18:46:00Z,elizabeth,elizabeth-line,0,6,Severe Delays,Severe delays between Whitechapel and Shenfield while we fix a track fault between Forest Gate and Manor Park. London Underground is accepting tickets via reasonable routes. GOOD SERVICE on the rest of the line.
+2026-11-17T18:46:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-17T18:46:00Z,jubilee,tube,0,10,Good Service,
+2026-11-17T18:46:00Z,liberty,overground,0,10,Good Service,
+2026-11-17T18:46:00Z,lioness,overground,0,10,Good Service,
+2026-11-17T18:46:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-17T18:46:00Z,mildmay,overground,0,3,Part Suspended,Mildmay Line: No service between Willesden Junction and Clapham Junction while emergency services deal with a casualty on the track. London Underground are accepting tickets via any reasonable route. GOOD SERVICE on the rest of the line.
+2026-11-17T18:46:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays between Camden Town and Battersea Power Station southbound only via Charing Cross while we fix a points failure at Kennington. GOOD SERVICE on the rest of the line.
+2026-11-17T18:46:00Z,piccadilly,tube,0,9,Minor Delays,Piccadilly Line: Minor delays between Acton Town and Heathrow Terminals / Uxbridge due to an earlier person ill on a train at Caledonian Road. GOOD SERVIVCE on the rest of the line.
+2026-11-17T18:46:00Z,suffragette,overground,0,10,Good Service,
+2026-11-17T18:46:00Z,tram,tram,0,10,Good Service,
+2026-11-17T18:46:00Z,victoria,tube,0,10,Good Service,
+2026-11-17T18:46:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-17T18:46:00Z,weaver,overground,0,10,Good Service,
+2026-11-17T18:46:00Z,windrush,overground,0,10,Good Service,
