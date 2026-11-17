@@ -99,3 +99,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-17T01:01:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00.
 2026-11-17T01:01:00Z,weaver,overground,0,10,Good Service,
 2026-11-17T01:01:00Z,windrush,overground,0,10,Good Service,
+2026-11-17T01:15:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-17T01:15:00Z,central,tube,0,6,Severe Delays,Central Line: Severe delays between White City and Ealing Broadway/West Ruislip whilst we respond to a fire alert in the EAST Acton area. GOOD SERVICE on the rest of the line. Tickets will be accepted on local buses.
+2026-11-17T01:15:00Z,circle,tube,0,10,Good Service,
+2026-11-17T01:15:00Z,district,tube,0,10,Good Service,
+2026-11-17T01:15:00Z,dlr,dlr,0,10,Good Service,
+2026-11-17T01:15:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-17T01:15:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-17T01:15:00Z,jubilee,tube,0,10,Good Service,
+2026-11-17T01:15:00Z,liberty,overground,0,10,Good Service,
+2026-11-17T01:15:00Z,lioness,overground,0,10,Good Service,
+2026-11-17T01:15:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-17T01:15:00Z,mildmay,overground,0,10,Good Service,
+2026-11-17T01:15:00Z,northern,tube,0,10,Good Service,
+2026-11-17T01:15:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-17T01:15:00Z,suffragette,overground,0,10,Good Service,
+2026-11-17T01:15:00Z,tram,tram,0,10,Good Service,
+2026-11-17T01:15:00Z,victoria,tube,0,10,Good Service,
+2026-11-17T01:15:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00.
+2026-11-17T01:15:00Z,weaver,overground,0,10,Good Service,
+2026-11-17T01:15:00Z,windrush,overground,0,10,Good Service,
