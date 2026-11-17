@@ -1,15 +1,15 @@
 {
- "generated_utc": "2026-11-17T13:46:10Z",
- "latest_run_utc": "2026-11-17T13:46:00Z",
- "latest_observation_utc": "2026-11-17T13:41:00.000Z",
- "runs_today": 58,
+ "generated_utc": "2026-11-17T14:01:35Z",
+ "latest_run_utc": "2026-11-17T14:01:00Z",
+ "latest_observation_utc": "2026-11-17T13:56:00.000Z",
+ "runs_today": 59,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.14,
+ "median_crowding": 0.132,
  "lines_not_good_service": [
   "central",
   "piccadilly"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 15,
  "failed_source_calls_today": 0
 }
