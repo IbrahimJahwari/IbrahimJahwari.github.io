@@ -1,13 +1,14 @@
 {
- "generated_utc": "2026-11-17T07:01:40Z",
- "latest_run_utc": "2026-11-17T07:01:00Z",
- "latest_observation_utc": "2026-11-17T06:56:00.000Z",
- "runs_today": 30,
+ "generated_utc": "2026-11-17T07:16:19Z",
+ "latest_run_utc": "2026-11-17T07:16:00Z",
+ "latest_observation_utc": "2026-11-17T07:11:00.000Z",
+ "runs_today": 31,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.118,
+ "median_crowding": 0.143,
  "lines_not_good_service": [
-  "elizabeth"
+  "elizabeth",
+  "northern"
  ],
  "stations_with_lift_out": 17,
  "failed_source_calls_today": 0
