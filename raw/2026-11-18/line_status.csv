@@ -1696,3 +1696,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-18T20:16:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-18T20:16:00Z,weaver,overground,0,10,Good Service,
 2026-11-18T20:16:00Z,windrush,overground,0,10,Good Service,
+2026-11-18T20:23:00Z,bakerloo,tube,0,9,Minor Delays,Bakerloo Line: Minor delays due to train cancellations.
+2026-11-18T20:23:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-18T20:23:00Z,circle,tube,0,9,Minor Delays,Circle Line: Minor delays clockwise only while we fix a faulty train at cannon street. GOOD SERVICE on the rest of the line.
+2026-11-18T20:23:00Z,district,tube,0,6,Severe Delays,District Line: Severe delays between Tower Hill and Earl's Court while we fix a faulty train at Cannon Street. GOOD SERVICE on the rest of the line. Tickets are being accepted on London Buses.
+2026-11-18T20:23:00Z,dlr,dlr,0,10,Good Service,
+2026-11-18T20:23:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-18T20:23:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-18T20:23:00Z,jubilee,tube,0,10,Good Service,
+2026-11-18T20:23:00Z,liberty,overground,0,10,Good Service,
+2026-11-18T20:23:00Z,lioness,overground,0,10,Good Service,
+2026-11-18T20:23:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-18T20:23:00Z,mildmay,overground,0,10,Good Service,
+2026-11-18T20:23:00Z,northern,tube,0,10,Good Service,
+2026-11-18T20:23:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-18T20:23:00Z,suffragette,overground,0,10,Good Service,
+2026-11-18T20:23:00Z,tram,tram,0,10,Good Service,
+2026-11-18T20:23:00Z,victoria,tube,0,10,Good Service,
+2026-11-18T20:23:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-18T20:23:00Z,weaver,overground,0,10,Good Service,
+2026-11-18T20:23:00Z,windrush,overground,0,10,Good Service,
