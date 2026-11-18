@@ -1,16 +1,15 @@
 {
- "generated_utc": "2026-11-18T13:48:31Z",
- "latest_run_utc": "2026-11-18T13:46:00Z",
- "latest_observation_utc": "2026-11-18T13:41:00.000Z",
- "runs_today": 58,
+ "generated_utc": "2026-11-18T14:01:39Z",
+ "latest_run_utc": "2026-11-18T14:01:00Z",
+ "latest_observation_utc": "2026-11-18T13:56:00.000Z",
+ "runs_today": 59,
  "stations_total": 272,
  "stations_with_data": 207,
- "median_crowding": 0.129,
+ "median_crowding": 0.13,
  "lines_not_good_service": [
   "central",
-  "district",
   "hammersmith-city"
  ],
- "stations_with_lift_out": 15,
+ "stations_with_lift_out": 14,
  "failed_source_calls_today": 0
 }
