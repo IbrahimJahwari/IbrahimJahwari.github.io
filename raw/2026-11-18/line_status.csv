@@ -1492,3 +1492,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-18T17:46:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-18T17:46:00Z,weaver,overground,0,10,Good Service,
 2026-11-18T17:46:00Z,windrush,overground,0,10,Good Service,
+2026-11-18T18:01:00Z,bakerloo,tube,0,9,Minor Delays,Bakerloo Line: Minor delays between Stonebridge Park and Harrow & Wealdstone due to an earlier faulty train at Elephant & Castle. GOOD SERVICE on the rest of the line.
+2026-11-18T18:01:00Z,central,tube,0,6,Severe Delays,Central Line: Severe delays between Leytonstone and Hainault due to an earlier faulty train at Chancery Lane. Tickets are being accepted on London Buses. MINOR DELAYS on the rest of the line due to train cancellations.
+2026-11-18T18:01:00Z,central,tube,1,9,Minor Delays,Central Line: Severe delays between Leytonstone and Hainault due to an earlier faulty train at Chancery Lane. Tickets are being accepted on London Buses. MINOR DELAYS on the rest of the line due to train cancellations.
+2026-11-18T18:01:00Z,circle,tube,0,10,Good Service,
+2026-11-18T18:01:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays between Tower Hill and Earl's Court and between Turnham Green and Richmond due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-18T18:01:00Z,dlr,dlr,0,10,Good Service,
+2026-11-18T18:01:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-18T18:01:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-18T18:01:00Z,jubilee,tube,0,10,Good Service,
+2026-11-18T18:01:00Z,liberty,overground,0,10,Good Service,
+2026-11-18T18:01:00Z,lioness,overground,0,10,Good Service,
+2026-11-18T18:01:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-18T18:01:00Z,mildmay,overground,0,10,Good Service,
+2026-11-18T18:01:00Z,northern,tube,0,10,Good Service,
+2026-11-18T18:01:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-18T18:01:00Z,suffragette,overground,0,10,Good Service,
+2026-11-18T18:01:00Z,tram,tram,0,10,Good Service,
+2026-11-18T18:01:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to train cancellations.
+2026-11-18T18:01:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-18T18:01:00Z,weaver,overground,0,10,Good Service,
+2026-11-18T18:01:00Z,windrush,overground,0,10,Good Service,
