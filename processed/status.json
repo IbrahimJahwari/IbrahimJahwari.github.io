@@ -1,17 +1,15 @@
 {
- "generated_utc": "2026-11-18T21:16:10Z",
- "latest_run_utc": "2026-11-18T21:16:00Z",
- "latest_observation_utc": "2026-11-18T21:11:00.000Z",
- "runs_today": 89,
+ "generated_utc": "2026-11-18T21:31:23Z",
+ "latest_run_utc": "2026-11-18T21:31:00Z",
+ "latest_observation_utc": "2026-11-18T21:26:00.000Z",
+ "runs_today": 90,
  "stations_total": 272,
  "stations_with_data": 175,
- "median_crowding": 0.103,
+ "median_crowding": 0.105,
  "lines_not_good_service": [
   "bakerloo",
   "central",
-  "circle",
-  "district",
-  "hammersmith-city"
+  "district"
  ],
  "stations_with_lift_out": 18,
  "failed_source_calls_today": 0
