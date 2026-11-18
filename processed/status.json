@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-18T10:46:07Z",
- "latest_run_utc": "2026-11-18T10:46:00Z",
- "latest_observation_utc": "2026-11-18T10:41:00.000Z",
- "runs_today": 45,
+ "generated_utc": "2026-11-18T11:01:30Z",
+ "latest_run_utc": "2026-11-18T11:01:00Z",
+ "latest_observation_utc": "2026-11-18T10:56:00.000Z",
+ "runs_today": 46,
  "stations_total": 272,
- "stations_with_data": 214,
- "median_crowding": 0.141,
+ "stations_with_data": 207,
+ "median_crowding": 0.14,
  "lines_not_good_service": [
   "central",
   "circle",
@@ -13,6 +13,6 @@
   "metropolitan",
   "victoria"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 17,
  "failed_source_calls_today": 0
 }
