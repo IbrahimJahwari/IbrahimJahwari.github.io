@@ -1,15 +1,16 @@
 {
- "generated_utc": "2026-11-18T22:46:10Z",
- "latest_run_utc": "2026-11-18T22:46:00Z",
- "latest_observation_utc": "2026-11-18T22:41:00.000Z",
- "runs_today": 95,
+ "generated_utc": "2026-11-18T23:01:41Z",
+ "latest_run_utc": "2026-11-18T23:01:00Z",
+ "latest_observation_utc": "2026-11-18T22:56:00.000Z",
+ "runs_today": 96,
  "stations_total": 272,
  "stations_with_data": 175,
- "median_crowding": 0.095,
+ "median_crowding": 0.094,
  "lines_not_good_service": [
   "bakerloo",
   "central",
   "district",
+  "elizabeth",
   "mildmay"
  ],
  "stations_with_lift_out": 19,
