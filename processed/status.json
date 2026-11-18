@@ -1,17 +1,16 @@
 {
- "generated_utc": "2026-11-18T09:31:27Z",
- "latest_run_utc": "2026-11-18T09:31:00Z",
- "latest_observation_utc": "2026-11-18T09:26:00.000Z",
- "runs_today": 40,
+ "generated_utc": "2026-11-18T09:46:08Z",
+ "latest_run_utc": "2026-11-18T09:46:00Z",
+ "latest_observation_utc": "2026-11-18T09:41:00.000Z",
+ "runs_today": 41,
  "stations_total": 272,
  "stations_with_data": 255,
- "median_crowding": 0.236,
+ "median_crowding": 0.18,
  "lines_not_good_service": [
   "central",
-  "district",
   "northern",
   "victoria"
  ],
- "stations_with_lift_out": 14,
+ "stations_with_lift_out": 15,
  "failed_source_calls_today": 0
 }
