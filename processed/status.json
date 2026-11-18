@@ -1,18 +1,17 @@
 {
- "generated_utc": "2026-11-18T11:01:30Z",
- "latest_run_utc": "2026-11-18T11:01:00Z",
- "latest_observation_utc": "2026-11-18T10:56:00.000Z",
- "runs_today": 46,
+ "generated_utc": "2026-11-18T11:16:03Z",
+ "latest_run_utc": "2026-11-18T11:15:00Z",
+ "latest_observation_utc": "2026-11-18T11:06:00.000Z",
+ "runs_today": 47,
  "stations_total": 272,
  "stations_with_data": 207,
- "median_crowding": 0.14,
+ "median_crowding": 0.129,
  "lines_not_good_service": [
   "central",
   "circle",
   "hammersmith-city",
-  "metropolitan",
-  "victoria"
+  "metropolitan"
  ],
- "stations_with_lift_out": 17,
+ "stations_with_lift_out": 18,
  "failed_source_calls_today": 0
 }
