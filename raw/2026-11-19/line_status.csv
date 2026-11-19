@@ -842,3 +842,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-19T10:01:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-19T10:01:00Z,weaver,overground,0,10,Good Service,
 2026-11-19T10:01:00Z,windrush,overground,0,10,Good Service,
+2026-11-19T10:10:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-19T10:10:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-19T10:10:00Z,circle,tube,0,9,Minor Delays,"Circle Line: Minor delays clockwise only, due to an earlier person ill on a train at Edgware road. GOOD SERVICE on the rest of the line."
+2026-11-19T10:10:00Z,district,tube,0,6,Severe Delays,District Line: Severe delays between High Street Kensington and Edgware Road due to an earlier person ill on a train at Edgware Road. Tickets are being accepted on London Buses and Elizabeth Line services. GOOD SERVICE on the rest of the line.
+2026-11-19T10:10:00Z,dlr,dlr,0,10,Good Service,
+2026-11-19T10:10:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-19T10:10:00Z,hammersmith-city,tube,0,9,Minor Delays,"Hammersmith and City Line: Minor delays eastbound only, due to an earlier person ill on a train at Edgware road. GOOD SERVICE on the rest of the line."
+2026-11-19T10:10:00Z,jubilee,tube,0,6,Severe Delays,"Jubilee Line: Severe delays due to train cancellations. Tickets are being accepted on, London Buses, Mildmay Line, DLR, Elizabeth Line, C2C, Southeastern and Thameslink services."
+2026-11-19T10:10:00Z,liberty,overground,0,10,Good Service,
+2026-11-19T10:10:00Z,lioness,overground,0,10,Good Service,
+2026-11-19T10:10:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-19T10:10:00Z,mildmay,overground,0,10,Good Service,
+2026-11-19T10:10:00Z,northern,tube,0,10,Good Service,
+2026-11-19T10:10:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-19T10:10:00Z,suffragette,overground,0,10,Good Service,
+2026-11-19T10:10:00Z,tram,tram,0,10,Good Service,
+2026-11-19T10:10:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to train cancellations.
+2026-11-19T10:10:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-19T10:10:00Z,weaver,overground,0,10,Good Service,
+2026-11-19T10:10:00Z,windrush,overground,0,10,Good Service,
