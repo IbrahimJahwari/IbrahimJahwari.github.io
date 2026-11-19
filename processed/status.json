@@ -1,16 +1,15 @@
 {
- "generated_utc": "2026-11-19T10:46:21Z",
- "latest_run_utc": "2026-11-19T10:46:00Z",
- "latest_observation_utc": "2026-11-19T10:41:00.000Z",
- "runs_today": 46,
+ "generated_utc": "2026-11-19T11:01:41Z",
+ "latest_run_utc": "2026-11-19T11:01:00Z",
+ "latest_observation_utc": "2026-11-19T10:56:00.000Z",
+ "runs_today": 47,
  "stations_total": 272,
  "stations_with_data": 175,
- "median_crowding": 0.149,
+ "median_crowding": 0.137,
  "lines_not_good_service": [
   "central",
   "jubilee",
-  "metropolitan",
-  "victoria"
+  "metropolitan"
  ],
  "stations_with_lift_out": 20,
  "failed_source_calls_today": 0
