@@ -1,14 +1,15 @@
 {
- "generated_utc": "2026-11-19T07:31:19Z",
- "latest_run_utc": "2026-11-19T07:31:00Z",
- "latest_observation_utc": "2026-11-19T07:26:00.000Z",
- "runs_today": 32,
+ "generated_utc": "2026-11-19T07:46:08Z",
+ "latest_run_utc": "2026-11-19T07:46:00Z",
+ "latest_observation_utc": "2026-11-19T07:41:00.000Z",
+ "runs_today": 33,
  "stations_total": 272,
  "stations_with_data": 175,
- "median_crowding": 0.173,
+ "median_crowding": 0.217,
  "lines_not_good_service": [
   "central",
-  "district"
+  "district",
+  "jubilee"
  ],
  "stations_with_lift_out": 21,
  "failed_source_calls_today": 0
