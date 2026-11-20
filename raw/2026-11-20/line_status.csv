@@ -1065,3 +1065,27 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-20T12:16:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-20T12:16:00Z,weaver,overground,0,10,Good Service,
 2026-11-20T12:16:00Z,windrush,overground,0,10,Good Service,
+2026-11-20T12:31:00Z,bakerloo,tube,0,6,Severe Delays,"Bakerloo Line: Severe delays due to a track fault at Willesden Junction. London Buses, Lioness line and Thameslink are accepting valid tickets via any reasonable route."
+2026-11-20T12:31:00Z,central,tube,0,6,Severe Delays,"Central Line: Severe delays between Leytonstone and Epping via Woodford, and MINOR DELAYS on the rest of the line due to an earlier fire near the track at Leytonstone. London Buses, Liberty line and Greater Anglia are accepting valid tickets via any reasonable route."
+2026-11-20T12:31:00Z,central,tube,1,9,Minor Delays,"Central Line: Severe delays between Leytonstone and Epping via Woodford, and MINOR DELAYS on the rest of the line due to an earlier fire near the track at Leytonstone. London Buses, Liberty line and Greater Anglia are accepting valid tickets via any reasonable route."
+2026-11-20T12:31:00Z,circle,tube,0,10,Good Service,
+2026-11-20T12:31:00Z,district,tube,0,5,Part Closure,"TUBE STRIKE: Piccadilly line service control staff are planning to take strike action from Friday 20 until Saturday evening, 21 November. Due to shared infrastructure around the Ealing Common District line depot, there will be no DISTRICT LINE service between Earls Court and Richmond / Ealing Broadway from midday on Friday until Saturday evening, with a reduced service on the rest of the line. No Piccadilly line service is expected during the strike. Replacement bus services operate during Friday Night Tube and Saturday daytime hours only. Please use MILDMAY LINE services between Gunnersbury, Kew Gardens and Richmond, where available."
+2026-11-20T12:31:00Z,district,tube,1,6,Severe Delays,"District Line: No service between Earl's Court and Ealing Broadway / Richmond due to strike action. SEVERE DELAYS on the rest of the line due to train cancellations. London Buses, DLR, Elizabeth line, C2C and South Western Railway are accepting valid tickets via any reasonable route."
+2026-11-20T12:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-20T12:31:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-20T12:31:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-20T12:31:00Z,jubilee,tube,0,10,Good Service,
+2026-11-20T12:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-20T12:31:00Z,lioness,overground,0,10,Good Service,
+2026-11-20T12:31:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-20T12:31:00Z,mildmay,overground,0,10,Good Service,
+2026-11-20T12:31:00Z,northern,tube,0,10,Good Service,
+2026-11-20T12:31:00Z,piccadilly,tube,0,4,Planned Closure,"TUBE STRIKE: Piccadilly line service control staff are planning to take strike action from Friday 20 until Saturday evening 21 November. Piccadilly line customers should complete journeys by 1030 on Friday morning as service will begin to reduce after this time. There will be no service from midday on Friday until Saturday evening, including Night Tube on Friday night. Normal Night Tube service is expected to operate on Saturday night. Due to shared infrastructure around the Ealing Common District line depot, there will be no DISTRICT LINE service between Earls Court and Richmond / Ealing Broadway from midday on Friday until Saturday evening. Replacement buses will operate during Friday Night Tube hours and Saturday daytime only. Please use ELIZABETH LINE services for travel between Central London and Heathrow, and METROPOLITAN LINE services between Rayners Lane and Uxbridge."
+2026-11-20T12:31:00Z,piccadilly,tube,1,6,Severe Delays,"Piccadilly Line: No Service between Acton Town and Heathrow / Uxbridge and between Cockfosters and Green Park westbound only due to strike action and SEVERE DELAYS on the rest of the line. London Buses, Elizabeth line, Great Northern, Weaver line and South Western Railway are accepting valid tickets via any reasonable route."
+2026-11-20T12:31:00Z,piccadilly,tube,2,3,Part Suspended,"Piccadilly Line: No Service between Acton Town and Heathrow / Uxbridge and between Cockfosters and Green Park westbound only due to strike action and SEVERE DELAYS on the rest of the line. London Buses, Elizabeth line, Great Northern, Weaver line and South Western Railway are accepting valid tickets via any reasonable route."
+2026-11-20T12:31:00Z,suffragette,overground,0,10,Good Service,
+2026-11-20T12:31:00Z,tram,tram,0,10,Good Service,
+2026-11-20T12:31:00Z,victoria,tube,0,10,Good Service,
+2026-11-20T12:31:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-20T12:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-20T12:31:00Z,windrush,overground,0,10,Good Service,
