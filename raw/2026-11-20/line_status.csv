@@ -661,3 +661,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-20T07:46:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-20T07:46:00Z,weaver,overground,0,10,Good Service,
 2026-11-20T07:46:00Z,windrush,overground,0,10,Good Service,
+2026-11-20T08:01:00Z,bakerloo,tube,0,6,Severe Delays,Bakerloo Line: Severe delays due to a track fault at Willesden Junction. London Buses and Thameslink are accepting valid tickets via any reasonable route.
+2026-11-20T08:01:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-20T08:01:00Z,circle,tube,0,10,Good Service,
+2026-11-20T08:01:00Z,district,tube,0,9,Minor Delays,"District Line: Severe delays between Barking and Earl's Court due to an earlier faulty train at Upton Park. London Buses, C2C,DLR and Elizabeth line are accepting valid tickets via any reasonable route. MINOR DELAYS on the rest of the line due to train cancellations."
+2026-11-20T08:01:00Z,district,tube,1,6,Severe Delays,"District Line: Severe delays between Barking and Earl's Court due to an earlier faulty train at Upton Park. London Buses, C2C,DLR and Elizabeth line are accepting valid tickets via any reasonable route. MINOR DELAYS on the rest of the line due to train cancellations."
+2026-11-20T08:01:00Z,dlr,dlr,0,10,Good Service,
+2026-11-20T08:01:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-20T08:01:00Z,hammersmith-city,tube,0,9,Minor Delays,Hammersmith and City Line: Minor delays due to an earlier faulty train at Euston Square and Upton Park.
+2026-11-20T08:01:00Z,jubilee,tube,0,10,Good Service,
+2026-11-20T08:01:00Z,liberty,overground,0,10,Good Service,
+2026-11-20T08:01:00Z,lioness,overground,0,6,Severe Delays,Lioness Line: Severe delays due to a track fault at Willesden Junction. London Buses are accepting valid tickets via any reasonable route.
+2026-11-20T08:01:00Z,metropolitan,tube,0,6,Severe Delays,Metropolitan Line: Severe delays between Harrow-on-the-Hill and Aldgate due to an earlier faulty train at Euston Square. London Buses are accepting valid tickets via any reasonable route. GOOD SERVICE on the rest of the line.
+2026-11-20T08:01:00Z,mildmay,overground,0,10,Good Service,
+2026-11-20T08:01:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays between Camden Town and Kennington via Charing Cross while we fix a points failure at Kennington. GOOD SERVICE on the rest of the line.
+2026-11-20T08:01:00Z,piccadilly,tube,0,9,Minor Delays,Piccadilly Line: Minor delays due to strike action.
+2026-11-20T08:01:00Z,suffragette,overground,0,10,Good Service,
+2026-11-20T08:01:00Z,tram,tram,0,10,Good Service,
+2026-11-20T08:01:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to train cancellations.
+2026-11-20T08:01:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-20T08:01:00Z,weaver,overground,0,10,Good Service,
+2026-11-20T08:01:00Z,windrush,overground,0,10,Good Service,
