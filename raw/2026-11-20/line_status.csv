@@ -559,3 +559,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-20T06:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-20T06:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-20T06:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-20T06:46:00Z,bakerloo,tube,0,9,Minor Delays,Bakerloo Line: Minor delays between Queens's Park and Harrow & Wealdstone due to a track fault at Willesden Junction.
+2026-11-20T06:46:00Z,central,tube,0,10,Good Service,
+2026-11-20T06:46:00Z,circle,tube,0,10,Good Service,
+2026-11-20T06:46:00Z,district,tube,0,10,Good Service,
+2026-11-20T06:46:00Z,dlr,dlr,0,10,Good Service,
+2026-11-20T06:46:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-20T06:46:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-20T06:46:00Z,jubilee,tube,0,10,Good Service,
+2026-11-20T06:46:00Z,liberty,overground,0,10,Good Service,
+2026-11-20T06:46:00Z,lioness,overground,0,9,Minor Delays,Lioness Line: Minor delays due to a track fault at Willesden Junction.
+2026-11-20T06:46:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-20T06:46:00Z,mildmay,overground,0,10,Good Service,
+2026-11-20T06:46:00Z,northern,tube,0,10,Good Service,
+2026-11-20T06:46:00Z,piccadilly,tube,0,9,Minor Delays,Piccadilly Line: Minor delays due to strike action.
+2026-11-20T06:46:00Z,suffragette,overground,0,10,Good Service,
+2026-11-20T06:46:00Z,tram,tram,0,10,Good Service,
+2026-11-20T06:46:00Z,victoria,tube,0,10,Good Service,
+2026-11-20T06:46:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-20T06:46:00Z,weaver,overground,0,10,Good Service,
+2026-11-20T06:46:00Z,windrush,overground,0,10,Good Service,
