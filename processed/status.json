@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-20T00:31:27Z",
- "latest_run_utc": "2026-11-20T00:31:00Z",
- "latest_observation_utc": "2026-11-20T00:26:00.000Z",
- "runs_today": 3,
+ "generated_utc": "2026-11-20T00:46:14Z",
+ "latest_run_utc": "2026-11-20T00:46:00Z",
+ "latest_observation_utc": "2026-11-20T00:41:00.000Z",
+ "runs_today": 4,
  "stations_total": 272,
  "stations_with_data": 174,
- "median_crowding": 0.047,
+ "median_crowding": 0.037,
  "lines_not_good_service": [
   "waterloo-city"
  ],
