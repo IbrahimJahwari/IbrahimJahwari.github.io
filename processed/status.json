@@ -1,17 +1,17 @@
 {
- "generated_utc": "2026-11-20T15:31:33Z",
- "latest_run_utc": "2026-11-20T15:31:00Z",
- "latest_observation_utc": "2026-11-20T15:26:00.000Z",
- "runs_today": 65,
+ "generated_utc": "2026-11-20T15:46:16Z",
+ "latest_run_utc": "2026-11-20T15:46:00Z",
+ "latest_observation_utc": "2026-11-20T15:41:00.000Z",
+ "runs_today": 66,
  "stations_total": 272,
  "stations_with_data": 171,
- "median_crowding": 0.147,
+ "median_crowding": 0.156,
  "lines_not_good_service": [
   "bakerloo",
   "central",
   "district",
   "piccadilly"
  ],
- "stations_with_lift_out": 18,
+ "stations_with_lift_out": 17,
  "failed_source_calls_today": 1
 }
