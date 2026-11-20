@@ -1967,3 +1967,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-20T22:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-20T22:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-20T22:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-20T22:46:00Z,bakerloo,tube,0,9,Minor Delays,Bakerloo Line: Minor delays due to a track fault at Willesden Junction.
+2026-11-20T22:46:00Z,central,tube,0,10,Good Service,
+2026-11-20T22:46:00Z,circle,tube,0,10,Good Service,
+2026-11-20T22:46:00Z,district,tube,0,6,Severe Delays,"District Line: No service between Turnham Green and Ealing Broadway due to strike action. SEVERE DELAYS on the rest of the line due to train cancellations. London Buses, DLR, Mildmay line, South Western Railway, Elizabeth line, C2C and South Western Railway are accepting valid tickets via any reasonable route."
+2026-11-20T22:46:00Z,district,tube,1,5,Part Closure,"TUBE STRIKE: Piccadilly line service control staff are taking strike action from Friday 20 until Saturday evening, 21 November. Due to shared infrastructure around the Ealing Common District line depot, there will be no DISTRICT LINE service between Turnham Green and Ealing Broadway from midday on Friday until Saturday evening, with a reduced service on the rest of the line. No Piccadilly line service is expected during the strike. Replacement bus services operate during Friday Night Tube and Saturday daytime hours only. Please use MILDMAY LINE services between Gunnersbury, Kew Gardens and Richmond, where available."
+2026-11-20T22:46:00Z,dlr,dlr,0,10,Good Service,
+2026-11-20T22:46:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-20T22:46:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-20T22:46:00Z,jubilee,tube,0,10,Good Service,
+2026-11-20T22:46:00Z,liberty,overground,0,10,Good Service,
+2026-11-20T22:46:00Z,lioness,overground,0,10,Good Service,
+2026-11-20T22:46:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-20T22:46:00Z,mildmay,overground,0,10,Good Service,
+2026-11-20T22:46:00Z,northern,tube,0,6,Severe Delays,Northern Line: Severe delays between Camden Town and Battersea Power Station via Charing Cross southbound only due to train cancellations. MINOR DELAYS on the rest of the line. London Buses are accepting ticket via any reasonable route.
+2026-11-20T22:46:00Z,northern,tube,1,9,Minor Delays,Northern Line: Severe delays between Camden Town and Battersea Power Station via Charing Cross southbound only due to train cancellations. MINOR DELAYS on the rest of the line. London Buses are accepting ticket via any reasonable route.
+2026-11-20T22:46:00Z,piccadilly,tube,0,4,Planned Closure,"TUBE STRIKE: Piccadilly line service control staff are planning to take strike action from Friday 20 until Saturday evening 21 November. There will be no service from midday on Friday until Saturday evening, including Night Tube on Friday night. Normal Night Tube service is expected to operate on Saturday night. Due to shared infrastructure around the Ealing Common District line depot, there will be no DISTRICT LINE service between Turnham Green and Ealing Broadway from midday on Friday until Saturday evening. Replacement buses will operate during Friday Night Tube hours and Saturday daytime only. Please use ELIZABETH LINE services for travel between Central London and Heathrow, and between terminals, and METROPOLITAN LINE services between Rayners Lane and Uxbridge."
+2026-11-20T22:46:00Z,suffragette,overground,0,10,Good Service,
+2026-11-20T22:46:00Z,tram,tram,0,10,Good Service,
+2026-11-20T22:46:00Z,victoria,tube,0,9,Minor Delays,Victoria Line: Minor delays due to an earlier points failure at Brixton.
+2026-11-20T22:46:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-20T22:46:00Z,weaver,overground,0,10,Good Service,
+2026-11-20T22:46:00Z,windrush,overground,0,10,Good Service,
