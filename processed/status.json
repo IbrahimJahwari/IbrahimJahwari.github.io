@@ -1,16 +1,17 @@
 {
- "generated_utc": "2026-11-20T10:46:19Z",
- "latest_run_utc": "2026-11-20T10:46:00Z",
- "latest_observation_utc": "2026-11-20T10:41:00.000Z",
- "runs_today": 46,
+ "generated_utc": "2026-11-20T11:01:39Z",
+ "latest_run_utc": "2026-11-20T11:01:00Z",
+ "latest_observation_utc": "2026-11-20T10:56:00.000Z",
+ "runs_today": 47,
  "stations_total": 272,
  "stations_with_data": 174,
- "median_crowding": 0.134,
+ "median_crowding": 0.126,
  "lines_not_good_service": [
   "bakerloo",
   "central",
   "district",
   "lioness",
+  "metropolitan",
   "northern",
   "piccadilly",
   "victoria"
