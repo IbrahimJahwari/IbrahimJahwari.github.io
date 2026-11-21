@@ -1,10 +1,10 @@
 {
- "generated_utc": "2026-11-21T09:46:07Z",
- "latest_run_utc": "2026-11-21T09:46:00Z",
- "latest_observation_utc": "2026-11-21T09:41:00.000Z",
- "runs_today": 41,
+ "generated_utc": "2026-11-21T10:01:32Z",
+ "latest_run_utc": "2026-11-21T10:01:00Z",
+ "latest_observation_utc": "2026-11-21T09:56:00.000Z",
+ "runs_today": 42,
  "stations_total": 272,
- "stations_with_data": 173,
+ "stations_with_data": 172,
  "median_crowding": 0.109,
  "lines_not_good_service": [
   "bakerloo",
@@ -12,10 +12,9 @@
   "dlr",
   "hammersmith-city",
   "lioness",
-  "metropolitan",
   "piccadilly",
   "waterloo-city"
  ],
- "stations_with_lift_out": 13,
+ "stations_with_lift_out": 14,
  "failed_source_calls_today": 0
 }
