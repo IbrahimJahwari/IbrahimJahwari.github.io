@@ -151,3 +151,26 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-21T01:31:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-11-21T01:31:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning.
 2026-11-21T01:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-21T01:46:00Z,bakerloo,tube,0,20,Service Closed,Bakerloo Line: Service will resume later this morning. There will be no service between Queen's Park and Harrow & Wealdstone due to planned engineering work.
+2026-11-21T01:46:00Z,central,tube,0,10,Good Service,
+2026-11-21T01:46:00Z,circle,tube,0,20,Service Closed,Circle Line: Service will resume later this morning.
+2026-11-21T01:46:00Z,district,tube,0,5,Part Closure,"TUBE STRIKE: Piccadilly line service control staff are taking strike action from Friday 20 until Saturday evening, 21 November. Due to shared infrastructure around the Ealing Common District line depot, there will be no DISTRICT LINE service between Turnham Green and Ealing Broadway from midday on Friday until Saturday evening, with a reduced service on the rest of the line. No Piccadilly line service is expected during the strike. Replacement bus services operate during Friday Night Tube and Saturday daytime hours only. Please use MILDMAY LINE services between Gunnersbury, Kew Gardens and Richmond, where available."
+2026-11-21T01:46:00Z,district,tube,1,20,Service Closed,District Line: Service will resume later this morning.
+2026-11-21T01:46:00Z,dlr,dlr,0,20,Service Closed,Docklands Light Railway: Service will resume later this morning. There will be no service between Stratford International and Canning Town due to planned engineering work.
+2026-11-21T01:46:00Z,elizabeth,elizabeth-line,0,20,Service Closed,Service will resume later this morning.
+2026-11-21T01:46:00Z,hammersmith-city,tube,0,20,Service Closed,Hammersmith and City Line: Service will resume later this morning.
+2026-11-21T01:46:00Z,jubilee,tube,0,10,Good Service,
+2026-11-21T01:46:00Z,liberty,overground,0,20,Service Closed,Liberty Line: Service will resume later this morning.
+2026-11-21T01:46:00Z,lioness,overground,0,20,Service Closed,Lioness Line: Service will resume Monday morning. There will be no service between Euston and Watford Junction due to planned engineering work.
+2026-11-21T01:46:00Z,metropolitan,tube,0,20,Service Closed,Metropolitan Line: Service will resume later this morning.
+2026-11-21T01:46:00Z,mildmay,overground,0,20,Service Closed,Mildmay Line: Service will resume later this morning.
+2026-11-21T01:46:00Z,northern,tube,0,5,Part Closure,"NORTHERN LINE: On the early mornings of Saturday 21 and Sunday 22 November, no Night Tube service between Kennington and Stockwell. Please use Night Bus Route N155 between Kennington, Oval and Stockwell. For travel between Central London and stations between Stockwell and Morden, use Victoria line connections via Stockwell."
+2026-11-21T01:46:00Z,northern,tube,1,9,Minor Delays,Northern Line: No service between Stockwell and Kennington due to a points failure at Kennington. MINOR DELAYS on the rest of the line.
+2026-11-21T01:46:00Z,northern,tube,2,3,Part Suspended,Northern Line: No service between Stockwell and Kennington due to a points failure at Kennington. MINOR DELAYS on the rest of the line.
+2026-11-21T01:46:00Z,piccadilly,tube,0,4,Planned Closure,"TUBE STRIKE: Piccadilly line service control staff are planning to take strike action from Friday 20 until Saturday evening 21 November. There will be no service from midday on Friday until Saturday evening, including Night Tube on Friday night. Normal Night Tube service is expected to operate on Saturday night. Due to shared infrastructure around the Ealing Common District line depot, there will be no DISTRICT LINE service between Turnham Green and Ealing Broadway from midday on Friday until Saturday evening. Replacement buses will operate during Friday Night Tube hours and Saturday daytime only. Please use ELIZABETH LINE services for travel between Central London and Heathrow, and between terminals, and METROPOLITAN LINE services between Rayners Lane and Uxbridge."
+2026-11-21T01:46:00Z,suffragette,overground,0,20,Service Closed,Suffragette Line: Service will resume later this morning.
+2026-11-21T01:46:00Z,tram,tram,0,20,Service Closed,London Tramlink: Service will resume later this morning.
+2026-11-21T01:46:00Z,victoria,tube,0,10,Good Service,
+2026-11-21T01:46:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
+2026-11-21T01:46:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning.
+2026-11-21T01:46:00Z,windrush,overground,0,10,Good Service,
