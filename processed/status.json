@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-21T13:46:13Z",
- "latest_run_utc": "2026-11-21T13:46:00Z",
- "latest_observation_utc": "2026-11-21T13:41:00.000Z",
- "runs_today": 58,
+ "generated_utc": "2026-11-21T14:01:40Z",
+ "latest_run_utc": "2026-11-21T14:01:00Z",
+ "latest_observation_utc": "2026-11-21T13:56:00.000Z",
+ "runs_today": 59,
  "stations_total": 272,
  "stations_with_data": 171,
- "median_crowding": 0.178,
+ "median_crowding": 0.175,
  "lines_not_good_service": [
   "bakerloo",
   "district",
@@ -13,7 +13,6 @@
   "hammersmith-city",
   "lioness",
   "piccadilly",
-  "victoria",
   "waterloo-city"
  ],
  "stations_with_lift_out": 14,
