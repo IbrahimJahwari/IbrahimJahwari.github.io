@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-21T08:31:24Z",
- "latest_run_utc": "2026-11-21T08:31:00Z",
- "latest_observation_utc": "2026-11-21T08:26:00.000Z",
- "runs_today": 36,
+ "generated_utc": "2026-11-21T08:46:10Z",
+ "latest_run_utc": "2026-11-21T08:46:00Z",
+ "latest_observation_utc": "2026-11-21T08:41:00.000Z",
+ "runs_today": 37,
  "stations_total": 272,
  "stations_with_data": 170,
- "median_crowding": 0.065,
+ "median_crowding": 0.07,
  "lines_not_good_service": [
   "bakerloo",
   "district",
@@ -13,6 +13,7 @@
   "hammersmith-city",
   "jubilee",
   "lioness",
+  "metropolitan",
   "northern",
   "piccadilly",
   "waterloo-city"
