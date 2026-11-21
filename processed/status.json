@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-21T00:31:27Z",
- "latest_run_utc": "2026-11-21T00:31:00Z",
- "latest_observation_utc": "2026-11-21T00:26:00.000Z",
- "runs_today": 3,
+ "generated_utc": "2026-11-21T00:46:21Z",
+ "latest_run_utc": "2026-11-21T00:46:00Z",
+ "latest_observation_utc": "2026-11-21T00:41:00.000Z",
+ "runs_today": 4,
  "stations_total": 272,
  "stations_with_data": 170,
- "median_crowding": 0.057,
+ "median_crowding": 0.046,
  "lines_not_good_service": [
   "bakerloo",
   "circle",
@@ -13,7 +13,8 @@
   "hammersmith-city",
   "metropolitan",
   "northern",
-  "piccadilly"
+  "piccadilly",
+  "waterloo-city"
  ],
  "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
