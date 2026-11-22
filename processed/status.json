@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-22T10:01:37Z",
- "latest_run_utc": "2026-11-22T10:01:00Z",
- "latest_observation_utc": "2026-11-22T09:56:00.000Z",
- "runs_today": 43,
+ "generated_utc": "2026-11-22T10:16:15Z",
+ "latest_run_utc": "2026-11-22T10:16:00Z",
+ "latest_observation_utc": "2026-11-22T10:11:00.000Z",
+ "runs_today": 44,
  "stations_total": 272,
  "stations_with_data": 174,
- "median_crowding": 0.084,
+ "median_crowding": 0.088,
  "lines_not_good_service": [
   "bakerloo",
   "dlr",
@@ -13,8 +13,7 @@
   "lioness",
   "metropolitan",
   "mildmay",
-  "waterloo-city",
-  "weaver"
+  "waterloo-city"
  ],
  "stations_with_lift_out": 21,
  "failed_source_calls_today": 0
