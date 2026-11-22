@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-22T12:01:33Z",
- "latest_run_utc": "2026-11-22T12:01:00Z",
- "latest_observation_utc": "2026-11-22T11:56:00.000Z",
- "runs_today": 51,
+ "generated_utc": "2026-11-22T12:16:13Z",
+ "latest_run_utc": "2026-11-22T12:16:00Z",
+ "latest_observation_utc": "2026-11-22T12:11:00.000Z",
+ "runs_today": 52,
  "stations_total": 272,
  "stations_with_data": 174,
- "median_crowding": 0.12,
+ "median_crowding": 0.123,
  "lines_not_good_service": [
   "bakerloo",
   "district",
@@ -16,6 +16,6 @@
   "mildmay",
   "waterloo-city"
  ],
- "stations_with_lift_out": 18,
+ "stations_with_lift_out": 17,
  "failed_source_calls_today": 0
 }
