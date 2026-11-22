@@ -421,3 +421,26 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-22T04:01:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-11-22T04:01:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning. There will be no service until 10:15 due to planned engineering work.
 2026-11-22T04:01:00Z,windrush,overground,0,10,Good Service,
+2026-11-22T04:16:00Z,bakerloo,tube,0,5,Part Closure,"BAKERLOO LINE: Saturday 21 and Sunday 22 November, no service between Queens Park and Harrow & Wealdstone. Please note that special bus service 718 will NOT operate. There will also be no LIONESS LINE service between Euston and Watford Junction. LONDON NORTH WESTERN RAILWAY trains continue to stop at Harrow & Wealdstone. SOUTHERN trains stop at Wembley Central and Harrow & Wealdstone until 1900 Saturday only, not on Sunday."
+2026-11-22T04:16:00Z,central,tube,0,10,Good Service,
+2026-11-22T04:16:00Z,circle,tube,0,10,Good Service,
+2026-11-22T04:16:00Z,district,tube,0,10,Good Service,
+2026-11-22T04:16:00Z,dlr,dlr,0,5,Part Closure,"DOCKLANDS LIGHT RAILWAY: Saturday 21 and Sunday 22 November, no service between Canning Town and Stratford International. Please use JUBILEE LINE and local London Buses services."
+2026-11-22T04:16:00Z,elizabeth,elizabeth-line,0,20,Service Closed,Service will resume later this morning. There will be no service between Paddington and Ealing Broadway until 07:45 due to planned engineering work.
+2026-11-22T04:16:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-22T04:16:00Z,jubilee,tube,0,10,Good Service,
+2026-11-22T04:16:00Z,liberty,overground,0,20,Service Closed,Liberty Line: Service will resume later this morning.
+2026-11-22T04:16:00Z,lioness,overground,0,4,Planned Closure,"LIONESS LINE: Saturday 21 and Sunday 22 November, no service between Euston and Watford Junction. There will also be no BAKERLOO LINE service between Queens Park and Harrow & Wealdstone. Special bus service 720 operates (please note service 718 will NOT operate). LONDON NORTH WESTERN RAILWAY trains continue to serve Euston, Harrow & Wealdstone, Bushey and Watford Junction. SOUTHERN trains serve Wembley Central, Harrow & Wealdstone and Watford Junction until 1900 Saturday only, not on Sunday."
+2026-11-22T04:16:00Z,lioness,overground,1,20,Service Closed,Lioness Line: No service until Monday morning due to planned engineering work.
+2026-11-22T04:16:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-22T04:16:00Z,mildmay,overground,0,20,Service Closed,Mildmay Line: Service will resume later this morning. There will be no service between Willesden Junction and Richmond due to planned engineering work.
+2026-11-22T04:16:00Z,northern,tube,0,5,Part Closure,"NORTHERN LINE: On the early mornings of Saturday 21 and Sunday 22 November, no Night Tube service between Kennington and Stockwell. Please use Night Bus Route N155 between Kennington, Oval and Stockwell. For travel between Central London and stations between Stockwell and Morden, use Victoria line connections via Stockwell."
+2026-11-22T04:16:00Z,northern,tube,1,3,Part Suspended,Northern Line: No service between Kennington and Stockwell due to a points failure at Kennington. Tickets being accepted on London Buses. GOOD SERVICE on the rest of the line.
+2026-11-22T04:16:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-22T04:16:00Z,suffragette,overground,0,10,Good Service,
+2026-11-22T04:16:00Z,tram,tram,0,20,Service Closed,London Tramlink: Service will resume later this morning.
+2026-11-22T04:16:00Z,victoria,tube,0,10,Good Service,
+2026-11-22T04:16:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
+2026-11-22T04:16:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
+2026-11-22T04:16:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning. There will be no service until 10:15 due to planned engineering work.
+2026-11-22T04:16:00Z,windrush,overground,0,10,Good Service,
