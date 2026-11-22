@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-22T12:46:15Z",
- "latest_run_utc": "2026-11-22T12:46:00Z",
- "latest_observation_utc": "2026-11-22T12:41:00.000Z",
- "runs_today": 54,
+ "generated_utc": "2026-11-22T13:01:37Z",
+ "latest_run_utc": "2026-11-22T13:01:00Z",
+ "latest_observation_utc": "2026-11-22T12:56:00.000Z",
+ "runs_today": 55,
  "stations_total": 272,
  "stations_with_data": 173,
- "median_crowding": 0.124,
+ "median_crowding": 0.131,
  "lines_not_good_service": [
   "bakerloo",
   "district",
@@ -17,6 +17,6 @@
   "northern",
   "waterloo-city"
  ],
- "stations_with_lift_out": 18,
+ "stations_with_lift_out": 17,
  "failed_source_calls_today": 0
 }
