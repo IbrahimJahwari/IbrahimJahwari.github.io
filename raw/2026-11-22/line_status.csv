@@ -1540,3 +1540,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-22T16:16:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
 2026-11-22T16:16:00Z,weaver,overground,0,10,Good Service,
 2026-11-22T16:16:00Z,windrush,overground,0,10,Good Service,
+2026-11-22T16:31:00Z,bakerloo,tube,0,5,Part Closure,"BAKERLOO LINE: Saturday 21 and Sunday 22 November, no service between Queens Park and Harrow & Wealdstone. Please note that special bus service 718 will NOT operate. There will also be no LIONESS LINE service between Euston and Watford Junction. LONDON NORTH WESTERN RAILWAY trains continue to stop at Harrow & Wealdstone. SOUTHERN trains stop at Wembley Central and Harrow & Wealdstone until 1900 Saturday only, not on Sunday."
+2026-11-22T16:31:00Z,central,tube,0,10,Good Service,
+2026-11-22T16:31:00Z,circle,tube,0,10,Good Service,
+2026-11-22T16:31:00Z,district,tube,0,9,Minor Delays,District Line: Minor delays between Earl's Court and Kensington (Olympia) due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-22T16:31:00Z,dlr,dlr,0,5,Part Closure,"DOCKLANDS LIGHT RAILWAY: Saturday 21 and Sunday 22 November, no service between Canning Town and Stratford International. Please use JUBILEE LINE and local London Buses services."
+2026-11-22T16:31:00Z,elizabeth,elizabeth-line,0,7,Reduced Service,"ELIZABETH LINE: Sunday 22 November, from 0740, a reduced service operates between Paddington and Heathrow Terminal 4 / Maidenhead. Two trains an hour serve West Drayton, Langley, Slough, Burnham and Maidenhead. Four trains an hour serve Heathrow Terminals 2 and 3. Eight trains an hour serve Ealing Broadway, Southall and Hayes & Harlington."
+2026-11-22T16:31:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-22T16:31:00Z,jubilee,tube,0,10,Good Service,
+2026-11-22T16:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-22T16:31:00Z,lioness,overground,0,4,Planned Closure,"LIONESS LINE: Saturday 21 and Sunday 22 November, no service between Euston and Watford Junction. There will also be no BAKERLOO LINE service between Queens Park and Harrow & Wealdstone. Special bus service 720 operates (please note service 718 will NOT operate). LONDON NORTH WESTERN RAILWAY trains continue to serve Euston, Harrow & Wealdstone, Bushey and Watford Junction. SOUTHERN trains serve Wembley Central, Harrow & Wealdstone and Watford Junction until 1900 Saturday only, not on Sunday."
+2026-11-22T16:31:00Z,metropolitan,tube,0,9,Minor Delays,Metropolitan Line: Minor delays between Harrow-on-the-Hill and Uxbridge due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-22T16:31:00Z,mildmay,overground,0,5,Part Closure,"MILDMAY LINE: Sunday 22 November, no service between Willesden Junction and Richmond. Use DISTRICT LINE services between Gunnersbury and Richmond. Replacement bus service R operates between Willesden Junction and Gunnersbury via Acton Central (The Vale) and South Acton (Acton Lane)."
+2026-11-22T16:31:00Z,mildmay,overground,1,7,Reduced Service,"MILDMAY LINE: Sunday 22 November, until 2215, a reduced service operates between Camden Road and Willesden Junction."
+2026-11-22T16:31:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays due to an earlier points failure at Camden Town.
+2026-11-22T16:31:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-22T16:31:00Z,suffragette,overground,0,10,Good Service,
+2026-11-22T16:31:00Z,tram,tram,0,10,Good Service,
+2026-11-22T16:31:00Z,victoria,tube,0,10,Good Service,
+2026-11-22T16:31:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
+2026-11-22T16:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-22T16:31:00Z,windrush,overground,0,10,Good Service,
