@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-22T23:46:17Z",
- "latest_run_utc": "2026-11-22T23:46:00Z",
- "latest_observation_utc": "2026-11-22T23:41:00.000Z",
- "runs_today": 100,
+ "generated_utc": "2026-11-23T00:01:43Z",
+ "latest_run_utc": "2026-11-23T00:01:00Z",
+ "latest_observation_utc": "2026-11-22T23:56:00.000Z",
+ "runs_today": 1,
  "stations_total": 272,
  "stations_with_data": 174,
- "median_crowding": 0.041,
+ "median_crowding": 0.031,
  "lines_not_good_service": [
   "bakerloo",
   "district",
@@ -13,8 +13,7 @@
   "elizabeth",
   "lioness",
   "metropolitan",
-  "mildmay",
-  "waterloo-city"
+  "mildmay"
  ],
  "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
