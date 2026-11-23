@@ -1560,3 +1560,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-23T18:16:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-23T18:16:00Z,weaver,overground,0,10,Good Service,
 2026-11-23T18:16:00Z,windrush,overground,0,10,Good Service,
+2026-11-23T18:31:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-23T18:31:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-23T18:31:00Z,circle,tube,0,10,Good Service,
+2026-11-23T18:31:00Z,district,tube,0,10,Good Service,
+2026-11-23T18:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-23T18:31:00Z,elizabeth,elizabeth-line,0,6,Severe Delays,Severe delays while we conduct a safety inspection of the track at Ealing Broadway and due to an earlier customer incident at Stratford. Tickets are being accepted on London Underground.
+2026-11-23T18:31:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-23T18:31:00Z,jubilee,tube,0,10,Good Service,
+2026-11-23T18:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-23T18:31:00Z,lioness,overground,0,10,Good Service,
+2026-11-23T18:31:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-23T18:31:00Z,mildmay,overground,0,10,Good Service,
+2026-11-23T18:31:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays between High Barnet and Kennington via Charing Cross due to train cancellations and due to a points failure at Kennington. GOOD SERVICE on the rest of the line.
+2026-11-23T18:31:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-23T18:31:00Z,suffragette,overground,0,10,Good Service,
+2026-11-23T18:31:00Z,tram,tram,0,10,Good Service,
+2026-11-23T18:31:00Z,victoria,tube,0,10,Good Service,
+2026-11-23T18:31:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-23T18:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-23T18:31:00Z,windrush,overground,0,10,Good Service,
