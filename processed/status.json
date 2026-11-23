@@ -1,13 +1,15 @@
 {
- "generated_utc": "2026-11-23T14:01:43Z",
- "latest_run_utc": "2026-11-23T14:01:00Z",
- "latest_observation_utc": "2026-11-23T13:56:00.000Z",
- "runs_today": 59,
+ "generated_utc": "2026-11-23T14:16:27Z",
+ "latest_run_utc": "2026-11-23T14:16:00Z",
+ "latest_observation_utc": "2026-11-23T14:11:00.000Z",
+ "runs_today": 60,
  "stations_total": 272,
  "stations_with_data": 174,
- "median_crowding": 0.115,
+ "median_crowding": 0.12,
  "lines_not_good_service": [
+  "bakerloo",
   "central",
+  "lioness",
   "metropolitan"
  ],
  "stations_with_lift_out": 19,
