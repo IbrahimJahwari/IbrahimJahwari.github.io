@@ -1,8 +1,8 @@
 {
- "generated_utc": "2026-11-23T14:46:32Z",
- "latest_run_utc": "2026-11-23T14:46:00Z",
- "latest_observation_utc": "2026-11-23T14:41:00.000Z",
- "runs_today": 62,
+ "generated_utc": "2026-11-23T15:01:47Z",
+ "latest_run_utc": "2026-11-23T15:01:00Z",
+ "latest_observation_utc": "2026-11-23T14:56:00.000Z",
+ "runs_today": 63,
  "stations_total": 272,
  "stations_with_data": 174,
  "median_crowding": 0.124,
@@ -10,7 +10,6 @@
   "bakerloo",
   "central",
   "district",
-  "lioness",
   "metropolitan"
  ],
  "stations_with_lift_out": 19,
