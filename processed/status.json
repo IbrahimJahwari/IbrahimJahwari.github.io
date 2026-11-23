@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-23T10:46:26Z",
- "latest_run_utc": "2026-11-23T10:46:00Z",
- "latest_observation_utc": "2026-11-23T10:41:00.000Z",
- "runs_today": 46,
+ "generated_utc": "2026-11-23T11:01:53Z",
+ "latest_run_utc": "2026-11-23T11:01:00Z",
+ "latest_observation_utc": "2026-11-23T10:56:00.000Z",
+ "runs_today": 47,
  "stations_total": 272,
  "stations_with_data": 174,
- "median_crowding": 0.134,
+ "median_crowding": 0.125,
  "lines_not_good_service": [
   "district",
   "metropolitan"
