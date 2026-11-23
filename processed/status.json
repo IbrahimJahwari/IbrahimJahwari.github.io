@@ -1,15 +1,16 @@
 {
- "generated_utc": "2026-11-23T12:16:21Z",
- "latest_run_utc": "2026-11-23T12:16:00Z",
- "latest_observation_utc": "2026-11-23T12:11:00.000Z",
- "runs_today": 52,
+ "generated_utc": "2026-11-23T12:31:35Z",
+ "latest_run_utc": "2026-11-23T12:31:00Z",
+ "latest_observation_utc": "2026-11-23T12:26:00.000Z",
+ "runs_today": 53,
  "stations_total": 272,
  "stations_with_data": 174,
- "median_crowding": 0.11,
+ "median_crowding": 0.115,
  "lines_not_good_service": [
   "metropolitan",
+  "mildmay",
   "suffragette"
  ],
- "stations_with_lift_out": 21,
+ "stations_with_lift_out": 20,
  "failed_source_calls_today": 0
 }
