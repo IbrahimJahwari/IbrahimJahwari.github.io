@@ -1091,3 +1091,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-23T12:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-23T12:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-23T12:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-23T12:46:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-23T12:46:00Z,central,tube,0,10,Good Service,
+2026-11-23T12:46:00Z,circle,tube,0,10,Good Service,
+2026-11-23T12:46:00Z,district,tube,0,10,Good Service,
+2026-11-23T12:46:00Z,dlr,dlr,0,10,Good Service,
+2026-11-23T12:46:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-23T12:46:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-23T12:46:00Z,jubilee,tube,0,10,Good Service,
+2026-11-23T12:46:00Z,liberty,overground,0,10,Good Service,
+2026-11-23T12:46:00Z,lioness,overground,0,10,Good Service,
+2026-11-23T12:46:00Z,metropolitan,tube,0,9,Minor Delays,Metropolitan Line: Minor delays between Moor Park and Chesham due to train cancellations. The next southbound train from Chesham will be at 13:26. GOOD SERVICE on the rest of the line.
+2026-11-23T12:46:00Z,mildmay,overground,0,9,Minor Delays,Mildmay Line: Minor delays while we fix a points failure at Shepherd's Bush.
+2026-11-23T12:46:00Z,northern,tube,0,10,Good Service,
+2026-11-23T12:46:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-23T12:46:00Z,suffragette,overground,0,9,Minor Delays,Suffragette Line: No service between Gospel Oak and Upper Holloway and MINOR DELAYS on the rest of the line while we fix a points failure at Gospel Oak. London Underground are accepting tickets via any reasonable route.
+2026-11-23T12:46:00Z,suffragette,overground,1,3,Part Suspended,Suffragette Line: No service between Gospel Oak and Upper Holloway and MINOR DELAYS on the rest of the line while we fix a points failure at Gospel Oak. London Underground are accepting tickets via any reasonable route.
+2026-11-23T12:46:00Z,tram,tram,0,10,Good Service,
+2026-11-23T12:46:00Z,victoria,tube,0,10,Good Service,
+2026-11-23T12:46:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-23T12:46:00Z,weaver,overground,0,10,Good Service,
+2026-11-23T12:46:00Z,windrush,overground,0,10,Good Service,
