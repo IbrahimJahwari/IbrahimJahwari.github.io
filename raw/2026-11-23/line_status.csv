@@ -522,3 +522,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-23T05:46:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-11-23T05:46:00Z,weaver,overground,0,10,Good Service,
 2026-11-23T05:46:00Z,windrush,overground,0,10,Good Service,
+2026-11-23T06:01:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-23T06:01:00Z,central,tube,0,10,Good Service,
+2026-11-23T06:01:00Z,circle,tube,0,10,Good Service,
+2026-11-23T06:01:00Z,district,tube,0,10,Good Service,
+2026-11-23T06:01:00Z,dlr,dlr,0,10,Good Service,
+2026-11-23T06:01:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-23T06:01:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-23T06:01:00Z,jubilee,tube,0,10,Good Service,
+2026-11-23T06:01:00Z,liberty,overground,0,10,Good Service,
+2026-11-23T06:01:00Z,lioness,overground,0,7,Reduced Service,"LIONESS LINE: Monday 23 November, the 0545 train from Watford Junction to Euston will start from Willesden Junction at 0620"
+2026-11-23T06:01:00Z,metropolitan,tube,0,3,Part Suspended,Metropolitan Line: No service between Chalfont & Latimer and Amersham while we fix a signal failure at Amersham. GOOD SERVICE on the rest of the line. Tickets will be accepted on Chiltern Railways via any reasonable route.
+2026-11-23T06:01:00Z,mildmay,overground,0,7,Reduced Service,"MILDMAY LINE: Monday 23 November, the 0558 first train from Richmond to Stratford will start from Camden Road at 0636. Customers from Richmond should use the next train at 0608. The 0621 train from Richmond to Stratford will start from Highbury & Islington at 0706"
+2026-11-23T06:01:00Z,northern,tube,0,10,Good Service,
+2026-11-23T06:01:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-23T06:01:00Z,suffragette,overground,0,10,Good Service,
+2026-11-23T06:01:00Z,tram,tram,0,10,Good Service,
+2026-11-23T06:01:00Z,victoria,tube,0,10,Good Service,
+2026-11-23T06:01:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-23T06:01:00Z,weaver,overground,0,10,Good Service,
+2026-11-23T06:01:00Z,windrush,overground,0,10,Good Service,
