@@ -1827,3 +1827,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-23T21:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-23T21:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-23T21:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-23T21:46:00Z,bakerloo,tube,0,10,Good Service,
+2026-11-23T21:46:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays due to train cancellations.
+2026-11-23T21:46:00Z,circle,tube,0,10,Good Service,
+2026-11-23T21:46:00Z,district,tube,0,10,Good Service,
+2026-11-23T21:46:00Z,dlr,dlr,0,10,Good Service,
+2026-11-23T21:46:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-23T21:46:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-23T21:46:00Z,jubilee,tube,0,10,Good Service,
+2026-11-23T21:46:00Z,liberty,overground,0,10,Good Service,
+2026-11-23T21:46:00Z,lioness,overground,0,10,Good Service,
+2026-11-23T21:46:00Z,metropolitan,tube,0,9,Minor Delays,"Metropolitan Line: Minor delays between Moor Park and Chesham due to train cancellations. After the 21:01 departure from Chesham, the next southbound train will be at 21:56. GOOD SERVICE on the rest of the line."
+2026-11-23T21:46:00Z,mildmay,overground,0,10,Good Service,
+2026-11-23T21:46:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays between Camden Town and Kennington via Charing Cross due to train cancellations and a points failure at Kennington. GOOD SERVICE on the rest of the line.
+2026-11-23T21:46:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-23T21:46:00Z,suffragette,overground,0,10,Good Service,
+2026-11-23T21:46:00Z,tram,tram,0,10,Good Service,
+2026-11-23T21:46:00Z,victoria,tube,0,10,Good Service,
+2026-11-23T21:46:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-23T21:46:00Z,weaver,overground,0,10,Good Service,
+2026-11-23T21:46:00Z,windrush,overground,0,10,Good Service,
