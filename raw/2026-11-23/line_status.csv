@@ -1236,3 +1236,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-23T14:16:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-23T14:16:00Z,weaver,overground,0,10,Good Service,
 2026-11-23T14:16:00Z,windrush,overground,0,10,Good Service,
+2026-11-23T14:31:00Z,bakerloo,tube,0,9,Minor Delays,Bakerloo Line: Severe delays between Queen's Park and Harrow & Wealdstone. Tickets are being accepted on London Buses and London Northwestern Railway services. MINOR DELAYS between Queens's Park and Elephant & Castle due to an earlier faulty train at Queen's Park.
+2026-11-23T14:31:00Z,bakerloo,tube,1,6,Severe Delays,Bakerloo Line: Severe delays between Queen's Park and Harrow & Wealdstone. Tickets are being accepted on London Buses and London Northwestern Railway services. MINOR DELAYS between Queens's Park and Elephant & Castle due to an earlier faulty train at Queen's Park.
+2026-11-23T14:31:00Z,central,tube,0,9,Minor Delays,Central Line: Minor delays between North Acton and West Ruislip / Ealing Broadway and between Leytonstone and Epping / Hainault via Newbury Park due to train cancellations. GOOD SERVICE on the rest of the line.
+2026-11-23T14:31:00Z,circle,tube,0,10,Good Service,
+2026-11-23T14:31:00Z,district,tube,0,10,Good Service,
+2026-11-23T14:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-23T14:31:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-23T14:31:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-23T14:31:00Z,jubilee,tube,0,10,Good Service,
+2026-11-23T14:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-23T14:31:00Z,lioness,overground,0,9,Minor Delays,Lioness Line: Minor delays due to an earlier faulty train at Queen's Park.
+2026-11-23T14:31:00Z,metropolitan,tube,0,9,Minor Delays,Metropolitan Line: Minor delays between Harrow-on-the-Hill and Uxbridge due to a person ill on a train earlier at Rayners Lane. GOOD SERVICE on the rest of the line.
+2026-11-23T14:31:00Z,mildmay,overground,0,10,Good Service,
+2026-11-23T14:31:00Z,northern,tube,0,10,Good Service,
+2026-11-23T14:31:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-23T14:31:00Z,suffragette,overground,0,10,Good Service,
+2026-11-23T14:31:00Z,tram,tram,0,10,Good Service,
+2026-11-23T14:31:00Z,victoria,tube,0,10,Good Service,
+2026-11-23T14:31:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-23T14:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-23T14:31:00Z,windrush,overground,0,10,Good Service,
