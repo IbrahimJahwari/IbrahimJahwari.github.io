@@ -1,15 +1,15 @@
 {
- "generated_utc": "2026-11-24T19:46:27Z",
- "latest_run_utc": "2026-11-24T19:46:00Z",
- "latest_observation_utc": "2026-11-24T19:41:00.000Z",
- "runs_today": 82,
+ "generated_utc": "2026-11-24T20:01:39Z",
+ "latest_run_utc": "2026-11-24T20:01:00Z",
+ "latest_observation_utc": "2026-11-24T19:56:00.000Z",
+ "runs_today": 83,
  "stations_total": 272,
- "stations_with_data": 247,
- "median_crowding": 0.113,
+ "stations_with_data": 173,
+ "median_crowding": 0.143,
  "lines_not_good_service": [
   "central",
   "northern"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 17,
  "failed_source_calls_today": 0
 }
