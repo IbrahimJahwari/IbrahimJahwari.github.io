@@ -1,13 +1,14 @@
 {
- "generated_utc": "2026-11-24T23:01:52Z",
- "latest_run_utc": "2026-11-24T23:01:00Z",
- "latest_observation_utc": "2026-11-24T22:56:00.000Z",
- "runs_today": 95,
+ "generated_utc": "2026-11-24T23:16:17Z",
+ "latest_run_utc": "2026-11-24T23:16:00Z",
+ "latest_observation_utc": "2026-11-24T23:11:00.000Z",
+ "runs_today": 96,
  "stations_total": 272,
  "stations_with_data": 173,
- "median_crowding": 0.086,
+ "median_crowding": 0.08,
  "lines_not_good_service": [
   "northern",
+  "piccadilly",
   "weaver"
  ],
  "stations_with_lift_out": 18,
