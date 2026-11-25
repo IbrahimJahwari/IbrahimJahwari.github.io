@@ -1,17 +1,17 @@
 {
- "generated_utc": "2026-11-25T00:01:41Z",
- "latest_run_utc": "2026-11-25T00:01:00Z",
- "latest_observation_utc": "2026-11-24T23:56:00.000Z",
- "runs_today": 1,
+ "generated_utc": "2026-11-25T00:16:19Z",
+ "latest_run_utc": "2026-11-25T00:16:00Z",
+ "latest_observation_utc": "2026-11-25T00:11:00.000Z",
+ "runs_today": 2,
  "stations_total": 272,
  "stations_with_data": 173,
- "median_crowding": 0.052,
+ "median_crowding": 0.039,
  "lines_not_good_service": [
   "northern",
   "piccadilly",
   "weaver",
   "windrush"
  ],
- "stations_with_lift_out": 17,
+ "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
 }
