@@ -1,16 +1,16 @@
 {
- "generated_utc": "2026-11-25T22:01:57Z",
- "latest_run_utc": "2026-11-25T22:01:00Z",
- "latest_observation_utc": "2026-11-25T21:56:00.000Z",
- "runs_today": 90,
+ "generated_utc": "2026-11-25T22:16:26Z",
+ "latest_run_utc": "2026-11-25T22:16:00Z",
+ "latest_observation_utc": "2026-11-25T22:11:00.000Z",
+ "runs_today": 91,
  "stations_total": 272,
  "stations_with_data": 173,
- "median_crowding": 0.098,
+ "median_crowding": 0.102,
  "lines_not_good_service": [
   "jubilee",
   "northern",
   "victoria"
  ],
- "stations_with_lift_out": 15,
+ "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
 }
