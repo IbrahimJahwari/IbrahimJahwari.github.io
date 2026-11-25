@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-25T22:16:26Z",
- "latest_run_utc": "2026-11-25T22:16:00Z",
- "latest_observation_utc": "2026-11-25T22:11:00.000Z",
- "runs_today": 91,
+ "generated_utc": "2026-11-25T22:31:35Z",
+ "latest_run_utc": "2026-11-25T22:31:00Z",
+ "latest_observation_utc": "2026-11-25T22:26:00.000Z",
+ "runs_today": 92,
  "stations_total": 272,
  "stations_with_data": 173,
- "median_crowding": 0.102,
+ "median_crowding": 0.097,
  "lines_not_good_service": [
   "jubilee",
   "northern",
