@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-25T10:26:12Z",
- "latest_run_utc": "2026-11-25T10:25:00Z",
- "latest_observation_utc": "2026-11-25T10:21:00.000Z",
- "runs_today": 44,
+ "generated_utc": "2026-11-25T10:31:33Z",
+ "latest_run_utc": "2026-11-25T10:31:00Z",
+ "latest_observation_utc": "2026-11-25T10:26:00.000Z",
+ "runs_today": 45,
  "stations_total": 272,
- "stations_with_data": 237,
- "median_crowding": 0.115,
+ "stations_with_data": 188,
+ "median_crowding": 0.142,
  "lines_not_good_service": [
   "northern"
  ],
