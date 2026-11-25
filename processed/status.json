@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-25T08:16:19Z",
- "latest_run_utc": "2026-11-25T08:16:00Z",
- "latest_observation_utc": "2026-11-25T08:11:00.000Z",
- "runs_today": 35,
+ "generated_utc": "2026-11-25T08:31:33Z",
+ "latest_run_utc": "2026-11-25T08:31:00Z",
+ "latest_observation_utc": "2026-11-25T08:26:00.000Z",
+ "runs_today": 36,
  "stations_total": 272,
- "stations_with_data": 173,
- "median_crowding": 0.306,
+ "stations_with_data": 215,
+ "median_crowding": 0.293,
  "lines_not_good_service": [
   "northern",
   "victoria"
