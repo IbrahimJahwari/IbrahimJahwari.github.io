@@ -1,14 +1,15 @@
 {
- "generated_utc": "2026-11-25T19:16:26Z",
- "latest_run_utc": "2026-11-25T19:16:00Z",
- "latest_observation_utc": "2026-11-25T19:11:00.000Z",
- "runs_today": 78,
+ "generated_utc": "2026-11-25T19:31:37Z",
+ "latest_run_utc": "2026-11-25T19:31:00Z",
+ "latest_observation_utc": "2026-11-25T19:26:00.000Z",
+ "runs_today": 79,
  "stations_total": 272,
- "stations_with_data": 246,
- "median_crowding": 0.132,
+ "stations_with_data": 247,
+ "median_crowding": 0.11,
  "lines_not_good_service": [
   "central",
   "elizabeth",
+  "jubilee",
   "northern"
  ],
  "stations_with_lift_out": 15,
