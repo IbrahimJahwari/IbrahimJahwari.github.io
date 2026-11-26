@@ -543,3 +543,25 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-26T06:16:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-26T06:16:00Z,weaver,overground,0,10,Good Service,
 2026-11-26T06:16:00Z,windrush,overground,0,10,Good Service,
+2026-11-26T06:31:00Z,bakerloo,tube,0,3,Part Suspended,Bakerloo Line: No service between Queen's Park and Harrow & Wealdstone due to a track fault at Kensal Green. Tickets are being accepted on London Buses and London Northwestern Railway. GOOD SERVICE on the rest of the line.
+2026-11-26T06:31:00Z,central,tube,0,10,Good Service,
+2026-11-26T06:31:00Z,circle,tube,0,10,Good Service,
+2026-11-26T06:31:00Z,district,tube,0,3,Part Suspended,District Line: No service between Parsons Green and Wimbledon while we fix a signal failure at Southfields. Tickets are being accepted on London Buses. GOOD SERVICE on the rest of the line.
+2026-11-26T06:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-26T06:31:00Z,elizabeth,elizabeth-line,0,9,Minor Delays,Minor delays between Paddington and Heathrow Terminals / Reading due to a late finish of engineering work. GOOD SERVICE on the rest of the line.
+2026-11-26T06:31:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-26T06:31:00Z,jubilee,tube,0,10,Good Service,
+2026-11-26T06:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-26T06:31:00Z,lioness,overground,0,6,Severe Delays,Lioness Line: No service between Willesden Junction and Queen's Park and SEVERE DELAYS between Queen's Park and Euston due to a track fault at Kensal Green. London Underground are accepting tickets via any reasonable route. MINOR DELAYS on the rest of the line.
+2026-11-26T06:31:00Z,lioness,overground,1,9,Minor Delays,Lioness Line: No service between Willesden Junction and Queen's Park and SEVERE DELAYS between Queen's Park and Euston due to a track fault at Kensal Green. London Underground are accepting tickets via any reasonable route. MINOR DELAYS on the rest of the line.
+2026-11-26T06:31:00Z,lioness,overground,2,3,Part Suspended,Lioness Line: No service between Willesden Junction and Queen's Park and SEVERE DELAYS between Queen's Park and Euston due to a track fault at Kensal Green. London Underground are accepting tickets via any reasonable route. MINOR DELAYS on the rest of the line.
+2026-11-26T06:31:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-26T06:31:00Z,mildmay,overground,0,10,Good Service,
+2026-11-26T06:31:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays between Kennington and Camden Town via Charing Cross due to a points failure at Kennington. GOOD SERVICE on the rest of the line.
+2026-11-26T06:31:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-26T06:31:00Z,suffragette,overground,0,10,Good Service,
+2026-11-26T06:31:00Z,tram,tram,0,10,Good Service,
+2026-11-26T06:31:00Z,victoria,tube,0,10,Good Service,
+2026-11-26T06:31:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-26T06:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-26T06:31:00Z,windrush,overground,0,10,Good Service,
