@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-26T15:46:44Z",
- "latest_run_utc": "2026-11-26T15:46:00Z",
- "latest_observation_utc": "2026-11-26T15:41:00.000Z",
- "runs_today": 66,
+ "generated_utc": "2026-11-26T16:01:58Z",
+ "latest_run_utc": "2026-11-26T16:01:00Z",
+ "latest_observation_utc": "2026-11-26T15:56:00.000Z",
+ "runs_today": 67,
  "stations_total": 272,
  "stations_with_data": 172,
- "median_crowding": 0.111,
+ "median_crowding": 0.119,
  "lines_not_good_service": [
   "bakerloo",
   "central",
@@ -13,7 +13,6 @@
   "district",
   "hammersmith-city",
   "jubilee",
-  "lioness",
   "metropolitan",
   "mildmay",
   "northern",
@@ -21,6 +20,6 @@
   "victoria",
   "waterloo-city"
  ],
- "stations_with_lift_out": 16,
+ "stations_with_lift_out": 15,
  "failed_source_calls_today": 0
 }
