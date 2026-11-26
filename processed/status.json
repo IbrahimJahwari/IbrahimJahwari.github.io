@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-26T19:46:23Z",
- "latest_run_utc": "2026-11-26T19:46:00Z",
- "latest_observation_utc": "2026-11-26T19:41:00.000Z",
- "runs_today": 82,
+ "generated_utc": "2026-11-26T20:01:45Z",
+ "latest_run_utc": "2026-11-26T20:01:00Z",
+ "latest_observation_utc": "2026-11-26T19:56:00.000Z",
+ "runs_today": 83,
  "stations_total": 272,
  "stations_with_data": 173,
- "median_crowding": 0.099,
+ "median_crowding": 0.084,
  "lines_not_good_service": [
   "bakerloo",
   "central",
@@ -18,7 +18,8 @@
   "northern",
   "piccadilly",
   "victoria",
-  "waterloo-city"
+  "waterloo-city",
+  "windrush"
  ],
  "stations_with_lift_out": 20,
  "failed_source_calls_today": 0
