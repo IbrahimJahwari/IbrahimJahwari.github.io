@@ -501,3 +501,23 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-26T05:46:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00.
 2026-11-26T05:46:00Z,weaver,overground,0,10,Good Service,
 2026-11-26T05:46:00Z,windrush,overground,0,10,Good Service,
+2026-11-26T06:01:00Z,bakerloo,tube,0,3,Part Suspended,Bakerloo Line: No service between Queen's Park and Harrow & Wealdstone while we fix a track fault at Kensal Green. Tickets are being accepted on London Buses and London Northestern Railway. GOOD SERVICE on the rest of the line.
+2026-11-26T06:01:00Z,central,tube,0,10,Good Service,
+2026-11-26T06:01:00Z,circle,tube,0,10,Good Service,
+2026-11-26T06:01:00Z,district,tube,0,10,Good Service,
+2026-11-26T06:01:00Z,dlr,dlr,0,10,Good Service,
+2026-11-26T06:01:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-26T06:01:00Z,hammersmith-city,tube,0,10,Good Service,
+2026-11-26T06:01:00Z,jubilee,tube,0,10,Good Service,
+2026-11-26T06:01:00Z,liberty,overground,0,10,Good Service,
+2026-11-26T06:01:00Z,lioness,overground,0,3,Part Suspended,Lioness Line: No service between Euston and Willesden Junction while we fix a track fault at Kensal Green. London Underground are accepting tickets via any reasonable route. GOOD SERVICE on the rest of the line.
+2026-11-26T06:01:00Z,metropolitan,tube,0,10,Good Service,
+2026-11-26T06:01:00Z,mildmay,overground,0,10,Good Service,
+2026-11-26T06:01:00Z,northern,tube,0,9,Minor Delays,Northern Line: Minor delays between Kennington and Camden Town via Charing Cross due to a points failure at Kennington. GOOD SERVICE on the rest of the line.
+2026-11-26T06:01:00Z,piccadilly,tube,0,10,Good Service,
+2026-11-26T06:01:00Z,suffragette,overground,0,10,Good Service,
+2026-11-26T06:01:00Z,tram,tram,0,10,Good Service,
+2026-11-26T06:01:00Z,victoria,tube,0,10,Good Service,
+2026-11-26T06:01:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-26T06:01:00Z,weaver,overground,0,10,Good Service,
+2026-11-26T06:01:00Z,windrush,overground,0,10,Good Service,
