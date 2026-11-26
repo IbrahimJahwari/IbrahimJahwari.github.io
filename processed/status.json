@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-26T10:31:42Z",
- "latest_run_utc": "2026-11-26T10:31:00Z",
- "latest_observation_utc": "2026-11-26T10:26:00.000Z",
- "runs_today": 44,
+ "generated_utc": "2026-11-26T10:46:24Z",
+ "latest_run_utc": "2026-11-26T10:46:00Z",
+ "latest_observation_utc": "2026-11-26T10:41:00.000Z",
+ "runs_today": 45,
  "stations_total": 272,
  "stations_with_data": 173,
- "median_crowding": 0.119,
+ "median_crowding": 0.105,
  "lines_not_good_service": [
   "bakerloo",
   "central",
@@ -15,6 +15,6 @@
   "northern",
   "victoria"
  ],
- "stations_with_lift_out": 17,
+ "stations_with_lift_out": 18,
  "failed_source_calls_today": 0
 }
