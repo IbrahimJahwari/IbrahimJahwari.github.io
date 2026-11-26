@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-26T06:02:00Z",
- "latest_run_utc": "2026-11-26T06:01:00Z",
- "latest_observation_utc": "2026-11-26T05:56:00.000Z",
- "runs_today": 26,
+ "generated_utc": "2026-11-26T06:16:22Z",
+ "latest_run_utc": "2026-11-26T06:16:00Z",
+ "latest_observation_utc": "2026-11-26T06:11:00.000Z",
+ "runs_today": 27,
  "stations_total": 272,
- "stations_with_data": 172,
- "median_crowding": 0.029,
+ "stations_with_data": 173,
+ "median_crowding": 0.042,
  "lines_not_good_service": [
   "bakerloo",
   "lioness",
