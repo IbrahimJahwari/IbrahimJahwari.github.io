@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-26T22:46:18Z",
- "latest_run_utc": "2026-11-26T22:46:00Z",
- "latest_observation_utc": "2026-11-26T22:41:00.000Z",
- "runs_today": 95,
+ "generated_utc": "2026-11-26T23:01:45Z",
+ "latest_run_utc": "2026-11-26T23:01:00Z",
+ "latest_observation_utc": "2026-11-26T22:56:00.000Z",
+ "runs_today": 96,
  "stations_total": 272,
  "stations_with_data": 170,
- "median_crowding": 0.028,
+ "median_crowding": 0.023,
  "lines_not_good_service": [
   "bakerloo",
   "central",
