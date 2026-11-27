@@ -1518,3 +1518,26 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-27T15:31:00Z,waterloo-city,tube,0,10,Good Service,
 2026-11-27T15:31:00Z,weaver,overground,0,10,Good Service,
 2026-11-27T15:31:00Z,windrush,overground,0,10,Good Service,
+2026-11-27T15:46:00Z,bakerloo,tube,0,6,Severe Delays,"Bakerloo Line: No service between Harrow & Wealdstone and Stonebridge Park southbound only, and SEVERE DELAYS on the rest of the line due to strike action."
+2026-11-27T15:46:00Z,bakerloo,tube,1,3,Part Suspended,"Bakerloo Line: No service between Harrow & Wealdstone and Stonebridge Park southbound only, and SEVERE DELAYS on the rest of the line due to strike action."
+2026-11-27T15:46:00Z,central,tube,0,6,Severe Delays,"Central Line: Severe delays due to the unavailability of control room staff. Tickets will be accepted on London Buses, Liberty Line, Elizabeth Line, Chiltern Railways, Great Western Railways and Greater Anglia services via any reasonable route."
+2026-11-27T15:46:00Z,circle,tube,0,6,Severe Delays,Circle Line: Severe delays due to strike action.
+2026-11-27T15:46:00Z,district,tube,0,6,Severe Delays,"District Line: Severe delays due to strike action. If you're travelling beyond Earl's Court, please take the first train and change there. Services are operating every 10 minutes."
+2026-11-27T15:46:00Z,dlr,dlr,0,10,Good Service,
+2026-11-27T15:46:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-27T15:46:00Z,hammersmith-city,tube,0,6,Severe Delays,Hammersmith and City Line: Severe delays due to strike action.
+2026-11-27T15:46:00Z,jubilee,tube,0,10,Good Service,
+2026-11-27T15:46:00Z,liberty,overground,0,10,Good Service,
+2026-11-27T15:46:00Z,lioness,overground,0,10,Good Service,
+2026-11-27T15:46:00Z,metropolitan,tube,0,6,Severe Delays,Metropolitan Line: Severe delays due to strike action.
+2026-11-27T15:46:00Z,mildmay,overground,0,10,Good Service,
+2026-11-27T15:46:00Z,northern,tube,0,6,Severe Delays,Northern Line: Severe delays due to strike action.
+2026-11-27T15:46:00Z,piccadilly,tube,0,9,Minor Delays,"Piccadilly Line: No service between Rayners Lane and Uxbridge, and SEVERE DELAYS between Acton Town and Rayners Lane and MINORS DELAYS on the rest of the line due to strike action."
+2026-11-27T15:46:00Z,piccadilly,tube,1,6,Severe Delays,"Piccadilly Line: No service between Rayners Lane and Uxbridge, and SEVERE DELAYS between Acton Town and Rayners Lane and MINORS DELAYS on the rest of the line due to strike action."
+2026-11-27T15:46:00Z,piccadilly,tube,2,3,Part Suspended,"Piccadilly Line: No service between Rayners Lane and Uxbridge, and SEVERE DELAYS between Acton Town and Rayners Lane and MINORS DELAYS on the rest of the line due to strike action."
+2026-11-27T15:46:00Z,suffragette,overground,0,10,Good Service,
+2026-11-27T15:46:00Z,tram,tram,0,10,Good Service,
+2026-11-27T15:46:00Z,victoria,tube,0,6,Severe Delays,Victoria Line: Severe delays due to strike action.
+2026-11-27T15:46:00Z,waterloo-city,tube,0,10,Good Service,
+2026-11-27T15:46:00Z,weaver,overground,0,10,Good Service,
+2026-11-27T15:46:00Z,windrush,overground,0,10,Good Service,
