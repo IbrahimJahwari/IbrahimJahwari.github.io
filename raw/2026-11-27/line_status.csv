@@ -976,3 +976,28 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-27T10:16:00Z,waterloo-city,tube,0,2,Suspended,Waterloo and City Line: No service due to strike action.
 2026-11-27T10:16:00Z,weaver,overground,0,10,Good Service,
 2026-11-27T10:16:00Z,windrush,overground,0,10,Good Service,
+2026-11-27T10:31:00Z,bakerloo,tube,0,6,Severe Delays,Bakerloo Line: No service between Queen's Park and Harrow & Wealdstone due to strike action. SEVERE DELAYS on the rest of the line. Services are operating every 10 minutes.
+2026-11-27T10:31:00Z,bakerloo,tube,1,3,Part Suspended,Bakerloo Line: No service between Queen's Park and Harrow & Wealdstone due to strike action. SEVERE DELAYS on the rest of the line. Services are operating every 10 minutes.
+2026-11-27T10:31:00Z,central,tube,0,6,Severe Delays,Central Line: No service between White City and Liverpool Street due to strike action. SEVERE DELAYS on the rest of the line. Services are operating every 20 minutes.
+2026-11-27T10:31:00Z,central,tube,1,3,Part Suspended,Central Line: No service between White City and Liverpool Street due to strike action. SEVERE DELAYS on the rest of the line. Services are operating every 20 minutes.
+2026-11-27T10:31:00Z,circle,tube,0,6,Severe Delays,Circle Line: No service Aldgate and Edgware Road via Embankment due to strike action. SEVERE DELAYS on the rest of the line. Services are operating every 10 minutes.
+2026-11-27T10:31:00Z,circle,tube,1,3,Part Suspended,Circle Line: No service Aldgate and Edgware Road via Embankment due to strike action. SEVERE DELAYS on the rest of the line. Services are operating every 10 minutes.
+2026-11-27T10:31:00Z,district,tube,0,6,Severe Delays,"District Line: Severe delays due to strike action. If you're travelling beyond Earl's Court, please take the first train and change there. Services are operating every 10 minutes."
+2026-11-27T10:31:00Z,dlr,dlr,0,10,Good Service,
+2026-11-27T10:31:00Z,elizabeth,elizabeth-line,0,10,Good Service,
+2026-11-27T10:31:00Z,hammersmith-city,tube,0,6,Severe Delays,Hammersmith and City Line: Severe delays due to strike action. Services are operating every 20 minutes.
+2026-11-27T10:31:00Z,jubilee,tube,0,9,Minor Delays,Jubilee Line: Minor delays due to strike action.
+2026-11-27T10:31:00Z,liberty,overground,0,10,Good Service,
+2026-11-27T10:31:00Z,lioness,overground,0,10,Good Service,
+2026-11-27T10:31:00Z,metropolitan,tube,0,6,Severe Delays,"Metropolitan Line: No service between Baker Street and Aldgate due to strike action. SEVERE DELAYS on the rest of the line. Services are operating between Baker Street and Uxbridge / Watford every 15 minutes, between Baker Street and Amersham every 30 minutes, and between Watford and Chesham every 30 minutes. Customers travelling to Chesham are advised to go to Watford and change."
+2026-11-27T10:31:00Z,metropolitan,tube,1,3,Part Suspended,"Metropolitan Line: No service between Baker Street and Aldgate due to strike action. SEVERE DELAYS on the rest of the line. Services are operating between Baker Street and Uxbridge / Watford every 15 minutes, between Baker Street and Amersham every 30 minutes, and between Watford and Chesham every 30 minutes. Customers travelling to Chesham are advised to go to Watford and change."
+2026-11-27T10:31:00Z,mildmay,overground,0,10,Good Service,
+2026-11-27T10:31:00Z,northern,tube,0,6,Severe Delays,Northern Line: Severe delays due to strike action.
+2026-11-27T10:31:00Z,piccadilly,tube,0,6,Severe Delays,Piccadilly Line: Severe delays between Arnos Grove and Cockfosters and between Acton Town and Heathrow Terminals 2&3 due to strike action. Services are operating every 25 minutes between Arnos Grove and Cockfosters and every 15 minutes between Acton Town and Heathrow Terminals 2&3. NO SERVICE on the rest of the line.
+2026-11-27T10:31:00Z,piccadilly,tube,1,3,Part Suspended,Piccadilly Line: Severe delays between Arnos Grove and Cockfosters and between Acton Town and Heathrow Terminals 2&3 due to strike action. Services are operating every 25 minutes between Arnos Grove and Cockfosters and every 15 minutes between Acton Town and Heathrow Terminals 2&3. NO SERVICE on the rest of the line.
+2026-11-27T10:31:00Z,suffragette,overground,0,10,Good Service,
+2026-11-27T10:31:00Z,tram,tram,0,10,Good Service,
+2026-11-27T10:31:00Z,victoria,tube,0,6,Severe Delays,Victoria Line: Severe delays due to strike action. Services are operating every 10 minutes.
+2026-11-27T10:31:00Z,waterloo-city,tube,0,2,Suspended,Waterloo and City Line: No service due to strike action.
+2026-11-27T10:31:00Z,weaver,overground,0,10,Good Service,
+2026-11-27T10:31:00Z,windrush,overground,0,10,Good Service,
