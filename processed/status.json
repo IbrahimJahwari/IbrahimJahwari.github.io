@@ -1,17 +1,18 @@
 {
- "generated_utc": "2026-11-27T22:46:18Z",
- "latest_run_utc": "2026-11-27T22:46:00Z",
- "latest_observation_utc": "2026-11-27T22:41:00.000Z",
- "runs_today": 95,
+ "generated_utc": "2026-11-27T23:01:45Z",
+ "latest_run_utc": "2026-11-27T23:01:00Z",
+ "latest_observation_utc": "2026-11-27T22:56:00.000Z",
+ "runs_today": 96,
  "stations_total": 272,
  "stations_with_data": 173,
- "median_crowding": 0.088,
+ "median_crowding": 0.087,
  "lines_not_good_service": [
   "central",
   "hammersmith-city",
   "metropolitan",
   "mildmay",
   "northern",
+  "suffragette",
   "victoria"
  ],
  "stations_with_lift_out": 16,
