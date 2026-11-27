@@ -1,8 +1,8 @@
 {
- "generated_utc": "2026-11-27T02:46:21Z",
- "latest_run_utc": "2026-11-27T02:46:00Z",
- "latest_observation_utc": "2026-11-27T02:41:00.000Z",
- "runs_today": 12,
+ "generated_utc": "2026-11-27T03:01:54Z",
+ "latest_run_utc": "2026-11-27T03:01:00Z",
+ "latest_observation_utc": "2026-11-27T02:56:00.000Z",
+ "runs_today": 13,
  "stations_total": 272,
  "stations_with_data": 159,
  "median_crowding": 0.002,
