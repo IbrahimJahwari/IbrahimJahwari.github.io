@@ -1,10 +1,10 @@
 {
- "generated_utc": "2026-11-27T02:16:33Z",
- "latest_run_utc": "2026-11-27T02:16:00Z",
- "latest_observation_utc": "2026-11-27T02:11:00.000Z",
- "runs_today": 10,
+ "generated_utc": "2026-11-27T02:31:35Z",
+ "latest_run_utc": "2026-11-27T02:31:00Z",
+ "latest_observation_utc": "2026-11-27T02:26:00.000Z",
+ "runs_today": 11,
  "stations_total": 272,
- "stations_with_data": 164,
+ "stations_with_data": 162,
  "median_crowding": 0.003,
  "lines_not_good_service": [
   "bakerloo",
@@ -28,6 +28,6 @@
   "weaver",
   "windrush"
  ],
- "stations_with_lift_out": 17,
+ "stations_with_lift_out": 18,
  "failed_source_calls_today": 0
 }
