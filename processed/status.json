@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-28T13:16:25Z",
- "latest_run_utc": "2026-11-28T13:16:00Z",
- "latest_observation_utc": "2026-11-28T13:11:00.000Z",
- "runs_today": 56,
+ "generated_utc": "2026-11-28T13:31:35Z",
+ "latest_run_utc": "2026-11-28T13:31:00Z",
+ "latest_observation_utc": "2026-11-28T13:26:00.000Z",
+ "runs_today": 57,
  "stations_total": 272,
  "stations_with_data": 173,
- "median_crowding": 0.178,
+ "median_crowding": 0.189,
  "lines_not_good_service": [
   "central",
   "circle",
@@ -14,6 +14,7 @@
   "hammersmith-city",
   "liberty",
   "metropolitan",
+  "piccadilly",
   "waterloo-city",
   "windrush"
  ],
