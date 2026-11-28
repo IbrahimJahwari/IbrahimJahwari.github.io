@@ -368,3 +368,24 @@ run_utc,line_id,mode,status_index,severity,description,reason
 2026-11-28T04:10:00Z,waterloo-city,tube,0,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
 2026-11-28T04:10:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning.
 2026-11-28T04:10:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: From 0100 Saturday 28 and all day Sunday 29 November, including Friday and Saturday Night Overground, no service between Highbury & Islington and Battersea Park / Clapham Junction / New Cross / New Cross Gate. Use MILDMAY LINE services between Highbury & Islington, Canonbury and Dalston Kingsland. Replacement bus services operate."
+2026-11-28T04:16:00Z,bakerloo,tube,0,20,Service Closed,Bakerloo Line: Service will resume later this morning.
+2026-11-28T04:16:00Z,central,tube,0,10,Good Service,
+2026-11-28T04:16:00Z,circle,tube,0,20,Service Closed,"Circle Line: Service will resume later this morning. There will be no service between Hammersmith and Tower Hill and between, Edgware Road to High Street Kensington due to planned engineering work."
+2026-11-28T04:16:00Z,district,tube,0,20,Service Closed,District Line: Service will resume later this morning. There will be no service between Edgware Road and High Street Kensington due to planned engineering work.
+2026-11-28T04:16:00Z,dlr,dlr,0,20,Service Closed,Docklands Light Railway: Service will resume later this morning.
+2026-11-28T04:16:00Z,elizabeth,elizabeth-line,0,20,Service Closed,"Service will resume later this morning. There will be no service between Paddington and Maidenhead / Heathrow Terminals and between, Paddington and Abbey Wood / Shenfield due to planned engineering work."
+2026-11-28T04:16:00Z,hammersmith-city,tube,0,20,Service Closed,Hammersmith and City Line: Service will NOT resume in the morning. There will be no service on the entire line due to planned engineering work.
+2026-11-28T04:16:00Z,jubilee,tube,0,10,Good Service,
+2026-11-28T04:16:00Z,liberty,overground,0,20,Service Closed,Liberty Line: Service will NOT resume in the morning. There will be no service on the entire line due to planned engineering work.
+2026-11-28T04:16:00Z,lioness,overground,0,20,Service Closed,Lioness Line: Service will resume later this morning.
+2026-11-28T04:16:00Z,metropolitan,tube,0,20,Service Closed,Metropolitan Line: Service will resume later this morning. There will be no service between Baker Street and Aldgate due to planned engineering work.
+2026-11-28T04:16:00Z,mildmay,overground,0,20,Service Closed,Mildmay Line: Service will resume later this morning.
+2026-11-28T04:16:00Z,northern,tube,0,3,Part Suspended,Northern Line: No service between Stockwell and Kennington due to a points failure at Kennington. GOOD SERVICE on the rest of the line. Tickets are being accepted on London Buses.
+2026-11-28T04:16:00Z,piccadilly,tube,0,9,Minor Delays,Piccadilly Line: Minor delays while we fix a signal system failure.
+2026-11-28T04:16:00Z,suffragette,overground,0,20,Service Closed,Suffragette Line: Service will resume later this morning.
+2026-11-28T04:16:00Z,tram,tram,0,20,Service Closed,London Tramlink: Service will resume later this morning.
+2026-11-28T04:16:00Z,victoria,tube,0,10,Good Service,
+2026-11-28T04:16:00Z,waterloo-city,tube,0,4,Planned Closure,"Waterloo & City line: service operates 06:00 until 00:30, Monday to Friday only. There is no service on Saturdays, Sundays and on bank/public holidays."
+2026-11-28T04:16:00Z,waterloo-city,tube,1,20,Service Closed,Waterloo and City Line: Service will resume at 06:00 on Monday.
+2026-11-28T04:16:00Z,weaver,overground,0,20,Service Closed,Weaver Line: Service will resume later this morning.
+2026-11-28T04:16:00Z,windrush,overground,0,5,Part Closure,"WINDRUSH LINE: From 0100 Saturday 28 and all day Sunday 29 November, including Friday and Saturday Night Overground, no service between Highbury & Islington and Battersea Park / Clapham Junction / New Cross / New Cross Gate. Use MILDMAY LINE services between Highbury & Islington, Canonbury and Dalston Kingsland. Replacement bus services operate."
