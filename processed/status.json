@@ -1,11 +1,11 @@
 {
- "generated_utc": "2026-11-28T00:31:37Z",
- "latest_run_utc": "2026-11-28T00:31:00Z",
- "latest_observation_utc": "2026-11-28T00:26:00.000Z",
- "runs_today": 3,
+ "generated_utc": "2026-11-28T00:46:35Z",
+ "latest_run_utc": "2026-11-28T00:46:00Z",
+ "latest_observation_utc": "2026-11-28T00:41:00.000Z",
+ "runs_today": 4,
  "stations_total": 272,
  "stations_with_data": 173,
- "median_crowding": 0.06,
+ "median_crowding": 0.049,
  "lines_not_good_service": [
   "central",
   "circle",
@@ -13,7 +13,8 @@
   "jubilee",
   "metropolitan",
   "northern",
-  "victoria"
+  "victoria",
+  "waterloo-city"
  ],
  "stations_with_lift_out": 16,
  "failed_source_calls_today": 0
